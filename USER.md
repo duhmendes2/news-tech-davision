@@ -2,8 +2,8 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:**
-- **What to call them:**
+- **Name:** Duh Mendes
+- **What to call them:** Duh
 - **Pronouns:** _(optional)_
 - **Timezone:** America/Sao_Paulo
 - **Notes:**
