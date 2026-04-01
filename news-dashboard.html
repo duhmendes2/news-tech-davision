@@ -65,10 +65,37 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 31/03/2026, 22:33:26
+      Atualizado: 31/03/2026, 22:42:13
     </div>
-    <a class="refresh-btn" href="javascript:location.reload()">↻ Atualizar</a>
+    <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
   </header>
+  <script>
+  async function triggerUpdate() {
+    const btn = document.getElementById('refreshBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Buscando...';
+    const token = '';
+    if (!token) { btn.textContent = '❌ Token não configurado'; return; }
+    try {
+      await fetch('https://api.github.com/repos/duhmendes2/news-tech-davision/actions/workflows/update-news.yml/dispatches', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref: 'master' })
+      });
+      btn.textContent = '🔄 Atualizando...';
+      // Aguarda ~70s para o workflow concluir e recarrega
+      let t = 70;
+      const iv = setInterval(() => {
+        t--;
+        btn.textContent = '🔄 Aguardando... ' + t + 's';
+        if (t <= 0) { clearInterval(iv); location.reload(); }
+      }, 1000);
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = '↻ Atualizar';
+    }
+  }
+  </script>
 
   <nav class="nav-bar">
     <a class="nav-btn" href="#ia">🤖 IA</a><a class="nav-btn" href="#robtica">⚙️ Robótica</a><a class="nav-btn" href="#tecnologia">💻 Tecnologia</a>
@@ -91,7 +118,7 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 759</span><span class="badge">💬 322</span>
+            <span class="badge">⬆ 778</span><span class="badge">💬 324</span>
           </div>
           <h3 class="card-title">The Claude Code Source Leak: fake tools, frustration regexes, undercover mode</h3>
           <p class="card-desc">Related ongoing thread: Claude Code&#x27;s source code has been leaked via a map file in their NPM registry - https:&#x2F;&#x2F;news.ycombinator.com&#…</p>
@@ -104,7 +131,7 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 319</span><span class="badge">💬 286</span>
+            <span class="badge">⬆ 327</span><span class="badge">💬 287</span>
           </div>
           <h3 class="card-title">OpenAI closes funding round at an $852B valuation</h3>
           <p class="card-desc">https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;accelerating-the-next-phase-ai</p>
@@ -117,7 +144,7 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 86</span><span class="badge">💬 35</span>
+            <span class="badge">⬆ 88</span><span class="badge">💬 37</span>
           </div>
           <h3 class="card-title">Show HN: 1-Bit Bonsai, the First Commercially Viable 1-Bit LLMs</h3>
           
@@ -255,7 +282,7 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 136</span><span class="badge">💬 23</span>
+            <span class="badge">⬆ 138</span><span class="badge">💬 24</span>
           </div>
           <h3 class="card-title">Ministack (Replacement for LocalStack)</h3>
           
@@ -268,7 +295,7 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 123</span><span class="badge">💬 40</span>
+            <span class="badge">⬆ 130</span><span class="badge">💬 42</span>
           </div>
           <h3 class="card-title">A dot a day keeps the clutter away</h3>
           
@@ -281,22 +308,9 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 174</span><span class="badge">💬 322</span>
+            <span class="badge">⬆ 179</span><span class="badge">💬 326</span>
           </div>
           <h3 class="card-title">Slop is not necessarily the future</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://solvespace.com/webver.pl" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 282</span><span class="badge">💬 92</span>
-          </div>
-          <h3 class="card-title">Open source CAD in the browser (Solvespace)</h3>
           
         </div>
       </a>
@@ -307,9 +321,22 @@
             <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
             <span class="source-name">Hacker News</span>
             <span class="date">31 de mar. de 2026</span>
-            <span class="badge">⬆ 45</span><span class="badge">💬 10</span>
+            <span class="badge">⬆ 50</span><span class="badge">💬 11</span>
           </div>
           <h3 class="card-title">Ordinary Lab Gloves May Have Skewed Microplastic Data</h3>
+          
+        </div>
+      </a>
+      <a class="card" href="https://solvespace.com/webver.pl" target="_blank" rel="noopener">
+        <div class="card-img card-img--placeholder"><span>H</span></div>
+        <div class="card-body">
+          <div class="card-meta">
+            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+            <span class="source-name">Hacker News</span>
+            <span class="date">31 de mar. de 2026</span>
+            <span class="badge">⬆ 287</span><span class="badge">💬 92</span>
+          </div>
+          <h3 class="card-title">Open source CAD in the browser (Solvespace)</h3>
           
         </div>
       </a>
@@ -332,7 +359,7 @@
           <div class="card-meta">
             <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
             <span class="source-name">techcrunch</span>
-            <span class="date">01 de abr. de 2026</span>
+            <span class="date">31 de mar. de 2026</span>
             
           </div>
           <h3 class="card-title">Toyota&#8217;s Woven Capital appoints new CIO and COO in push for finding the &#8216;future of mobility&#8217;</h3>
