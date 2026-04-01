@@ -83,7 +83,7 @@ function filterRecent(items) {
   });
 }
 
-function generateHTML(items) {
+function generateHTML(items, ghToken) {
   const now = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
   const recent = filterRecent(items);
   const categories = { 'IA': [], 'Robótica': [], 'Produção de Conteúdo': [], 'Tecnologia': [] };
@@ -210,8 +210,35 @@ function generateHTML(items) {
       <strong>IA & Tecnologia</strong><br>
       Atualizado: ${now}
     </div>
-    <a class="refresh-btn" href="javascript:location.reload()">↻ Atualizar</a>
+    <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
   </header>
+  <script>
+  async function triggerUpdate() {
+    const btn = document.getElementById('refreshBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Buscando...';
+    const token = '${ghToken}';
+    if (!token) { btn.textContent = '❌ Token não configurado'; return; }
+    try {
+      await fetch('https://api.github.com/repos/duhmendes2/news-tech-davision/actions/workflows/update-news.yml/dispatches', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref: 'master' })
+      });
+      btn.textContent = '🔄 Atualizando...';
+      // Aguarda ~70s para o workflow concluir e recarrega
+      let t = 70;
+      const iv = setInterval(() => {
+        t--;
+        btn.textContent = '🔄 Aguardando... ' + t + 's';
+        if (t <= 0) { clearInterval(iv); location.reload(); }
+      }, 1000);
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = '↻ Atualizar';
+    }
+  }
+  </script>
 
   <nav class="nav-bar">
     ${navButtons}
@@ -275,7 +302,8 @@ async function main() {
   console.log(`\n✅ ${items.length} notícias coletadas`);
   console.log('🖼️  Gerando dashboard...');
 
-  const html = generateHTML(items);
+  const ghToken = process.env.GH_DISPATCH_TOKEN || '';
+  const html = generateHTML(items, ghToken);
   const outPath = path.join(__dirname, 'news-dashboard.html');
   fs.writeFileSync(outPath, html, 'utf8');
 
