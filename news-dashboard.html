@@ -9,54 +9,147 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
 
-    header { background: linear-gradient(135deg, #1a1d27 0%, #12151e 100%); border-bottom: 1px solid #1e2230; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, #818cf8, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .header-meta { font-size: 0.8rem; color: #64748b; text-align: right; }
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a1d27 0%, #12151e 100%);
+      border-bottom: 1px solid #1e2230;
+      padding: 20px 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; background: linear-gradient(135deg, #818cf8, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
+    .header-meta { font-size: 0.75rem; color: #64748b; text-align: right; white-space: nowrap; }
     .header-meta strong { color: #94a3b8; }
-    .refresh-btn { background: #1e2230; border: 1px solid #2d3348; color: #94a3b8; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .refresh-btn { background: #1e2230; border: 1px solid #2d3348; color: #94a3b8; padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; transition: all .2s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
     .refresh-btn:hover { background: #2d3348; color: #e2e8f0; }
 
-    .nav-bar { background: #12151e; border-bottom: 1px solid #1e2230; padding: 10px 40px; display: flex; gap: 8px; flex-wrap: wrap; }
-    .nav-btn { background: #1a1d27; border: 1px solid #1e2230; color: #94a3b8; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; text-decoration: none; transition: all .2s; white-space: nowrap; }
-    .nav-btn:hover { background: #2d3348; color: #e2e8f0; border-color: #3d4460; }
+    /* ── Toolbar (nav + search + filters) ── */
+    .toolbar {
+      background: #12151e;
+      border-bottom: 1px solid #1e2230;
+      padding: 10px 40px;
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .nav-btn {
+      background: #1a1d27; border: 1px solid #1e2230; color: #94a3b8;
+      padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+      cursor: pointer; transition: all .2s; white-space: nowrap;
+    }
+    .nav-btn:hover, .nav-btn.active { background: #2d3348; color: #e2e8f0; border-color: #3d4460; }
+    .nav-btn.active { border-color: #818cf8; color: #818cf8; }
+    .nav-btn[data-cat="saved"].active { border-color: #f59e0b; color: #f59e0b; }
+    .nav-btn[data-cat="saved"] .saved-count { display: none; background: #f59e0b30; color: #f59e0b; border-radius: 20px; padding: 1px 7px; font-size: 0.7rem; font-weight: 700; }
+    .nav-btn[data-cat="saved"].has-saved .saved-count { display: inline; }
 
-    main { max-width: 1400px; margin: 0 auto; padding: 40px; }
+    .toolbar-sep { width: 1px; height: 20px; background: #1e2230; flex-shrink: 0; }
 
-    .stats { display: flex; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
-    .stat { background: #1a1d27; border: 1px solid #1e2230; border-radius: 12px; padding: 16px 24px; }
-    .stat-value { font-size: 1.8rem; font-weight: 700; color: #818cf8; }
-    .stat-label { font-size: 0.75rem; color: #64748b; margin-top: 2px; }
+    .date-filter-group { display: flex; gap: 6px; }
+    .date-btn {
+      background: #1a1d27; border: 1px solid #1e2230; color: #94a3b8;
+      padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+      cursor: pointer; transition: all .2s; white-space: nowrap;
+    }
+    .date-btn:hover { background: #2d3348; color: #e2e8f0; }
+    .date-btn.active { background: #6366f120; border-color: #6366f1; color: #818cf8; }
 
+    .search-wrap { margin-left: auto; position: relative; }
+    .search-input {
+      background: #1a1d27; border: 1px solid #1e2230; color: #e2e8f0;
+      padding: 6px 12px 6px 34px; border-radius: 20px; font-size: 0.8rem;
+      width: 220px; outline: none; transition: border-color .2s, width .2s;
+      font-family: inherit;
+    }
+    .search-input::placeholder { color: #475569; }
+    .search-input:focus { border-color: #3d4460; width: 280px; }
+    .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #475569; font-size: 0.85rem; pointer-events: none; }
+    .clear-btn { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #475569; font-size: 0.8rem; cursor: pointer; display: none; background: none; border: none; }
+    .clear-btn.visible { display: block; }
+
+    /* ── Main ── */
+    main { max-width: 1400px; margin: 0 auto; padding: 36px 40px; }
+
+    .stats { display: flex; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
+    .stat { background: #1a1d27; border: 1px solid #1e2230; border-radius: 12px; padding: 14px 22px; }
+    .stat-value { font-size: 1.6rem; font-weight: 700; color: #818cf8; }
+    .stat-label { font-size: 0.72rem; color: #64748b; margin-top: 2px; }
+
+    /* ── Empty state ── */
+    .empty-state { text-align: center; padding: 80px 20px; color: #475569; }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+    .empty-state p { font-size: 0.9rem; }
+
+    /* ── Sections ── */
     .category { margin-bottom: 48px; }
-    .category-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-    .category-title::after { content: ''; flex: 1; height: 1px; background: color-mix(in srgb, var(--cat-color) 30%, transparent); }
-    .count { background: color-mix(in srgb, var(--cat-color) 20%, transparent); color: var(--cat-color); border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; font-weight: 600; }
+    .category[hidden] { display: none; }
+    .category-title {
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .category-title::after { content: ''; flex: 1; height: 1px; background: color-mix(in srgb, var(--cat-color) 25%, transparent); }
+    .count { background: color-mix(in srgb, var(--cat-color) 15%, transparent); color: var(--cat-color); border-radius: 20px; padding: 2px 10px; font-size: 0.72rem; font-weight: 600; }
 
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    /* ── Cards ── */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
 
-    .card { background: #1a1d27; border: 1px solid #1e2230; border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform .2s, border-color .2s, box-shadow .2s; }
-    .card:hover { transform: translateY(-4px); border-color: #2d3348; box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+    .card {
+      background: #1a1d27; border: 1px solid #1e2230; border-radius: 14px;
+      overflow: hidden; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #2d3348; box-shadow: 0 10px 36px rgba(0,0,0,.45); }
+    .card[hidden] { display: none; }
 
-    .card-img { width: 100%; height: 180px; background-size: cover; background-position: center; background-color: #12151e; }
+    .card-img { width: 100%; height: 170px; background-size: cover; background-position: center; background-color: #12151e; flex-shrink: 0; }
     .card-img--placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e2230, #12151e); }
-    .card-img--placeholder span { font-size: 3rem; color: #2d3348; }
+    .card-img--placeholder span { font-size: 2.5rem; color: #2d3348; }
 
-    .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .source-logo { width: 16px; height: 16px; border-radius: 4px; }
-    .source-name { font-size: 0.75rem; font-weight: 600; color: #818cf8; text-transform: uppercase; letter-spacing: .05em; }
-    .date { font-size: 0.7rem; color: #64748b; margin-left: auto; }
-    .badge { font-size: 0.7rem; color: #94a3b8; background: #12151e; border-radius: 6px; padding: 2px 6px; }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .card-meta { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .source-logo { width: 14px; height: 14px; border-radius: 3px; }
+    .source-name { font-size: 0.72rem; font-weight: 600; color: #818cf8; text-transform: uppercase; letter-spacing: .06em; }
+    .date { font-size: 0.68rem; color: #64748b; margin-left: auto; }
+    .badge { font-size: 0.68rem; color: #94a3b8; background: #12151e; border-radius: 6px; padding: 2px 6px; }
 
-    .card-title { font-size: 0.95rem; font-weight: 600; line-height: 1.4; color: #e2e8f0; }
-    .card-desc { font-size: 0.8rem; color: #94a3b8; line-height: 1.5; margin-top: auto; }
+    .card-title { font-size: 0.92rem; font-weight: 600; line-height: 1.45; color: #e2e8f0; }
+    .card-desc { font-size: 0.78rem; color: #94a3b8; line-height: 1.55; margin-top: auto; padding-top: 4px; }
 
-    footer { text-align: center; padding: 40px; color: #475569; font-size: 0.8rem; border-top: 1px solid #1e2230; }
+    /* ── Botão salvar ── */
+    .save-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(15,17,23,.7); border: 1px solid #2d3348;
+      color: #64748b; width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; cursor: pointer; backdrop-filter: blur(4px);
+      transition: all .2s; z-index: 2; flex-shrink: 0;
+    }
+    .save-btn:hover { background: rgba(30,34,48,.9); color: #f59e0b; border-color: #f59e0b; transform: scale(1.1); }
+    .save-btn.saved { background: #f59e0b20; border-color: #f59e0b; color: #f59e0b; }
+
+    /* ── Seção Salvos ── */
+    #sec-saved .category-title { --cat-color: #f59e0b; }
+    .saved-empty { text-align: center; padding: 48px 20px; color: #475569; font-size: 0.85rem; }
+    .saved-empty .icon { font-size: 2.5rem; margin-bottom: 10px; }
+
+    /* ── Search highlight ── */
+    mark { background: #6366f130; color: #a5b4fc; border-radius: 2px; }
+
+    /* ── Result count ── */
+    .result-info { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
+    .result-info strong { color: #94a3b8; }
+
+    footer { text-align: center; padding: 36px; color: #475569; font-size: 0.78rem; border-top: 1px solid #1e2230; }
 
     @media (max-width: 768px) {
-      header { padding: 16px 20px; }
-      main { padding: 20px; }
+      header { padding: 14px 16px; flex-wrap: wrap; }
+      .toolbar { padding: 10px 16px; }
+      main { padding: 20px 16px; }
       .cards-grid { grid-template-columns: 1fr; }
+      .search-wrap { margin-left: 0; width: 100%; }
+      .search-input { width: 100% !important; }
     }
   </style>
 </head>
@@ -65,26 +158,927 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 04/04/2026, 16:32:12
+      Atualizado: 04/04/2026, 17:30:51
     </div>
-    <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
+    <div class="header-actions">
+      <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
+    </div>
   </header>
+
+  <nav class="toolbar">
+    <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <div class="toolbar-sep"></div>
+    <div class="date-filter-group">
+      <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
+      <button class="date-btn"        data-date="today" onclick="filterByDate('today')">Hoje</button>
+      <button class="date-btn"        data-date="yesterday" onclick="filterByDate('yesterday')">Ontem</button>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="searchInput" type="text" placeholder="Buscar notícias..." oninput="onSearch(this.value)">
+      <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="stats" id="statsBar">
+      <div class="stat"><div class="stat-value" id="statTotal">33</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">17</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">2</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">14</div><div class="stat-label">Tecnologia</div></div>
+    </div>
+
+    <div class="result-info" id="resultInfo" style="display:none"></div>
+
+    <div id="sections">
+      
+    <section class="category" id="sec-ia" data-cat="IA">
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">17</span></h2>
+      <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="how many products does microsoft have named 'copilot'? i mapped every one"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-04T19:39:43.000Z"
+           data-url="https://teybannerman.com/strategy/2026/03/31/how-many-microsoft-copilot-are-there.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://teybannerman.com/strategy/2026/03/31/how-many-microsoft-copilot-are-there.html',title:'How many products does Microsoft have named \'Copilot\'? I mapped every one',source:'Hacker News',date:'2026-04-04T19:39:43.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://teybannerman.com/strategy/2026/03/31/how-many-microsoft-copilot-are-there.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 44</span><span class="badge">💬 13</span>
+            </div>
+            <h3 class="card-title">How many products does Microsoft have named 'Copilot'? I mapped every one</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="tell hn: anthropic no longer allowing claude code subscriptions to use openclaw"
+           data-desc="received the following email from anthropic:hi,starting april 4 at 12pm pt &#x2f; 8pm bst, you’ll no longer be able to use your claude subscription limits for third-party harnesses including openclaw."
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-03T22:55:24.000Z"
+           data-url="https://news.ycombinator.com/item?id=47633396">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.ycombinator.com/item?id=47633396',title:'Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw',source:'Hacker News',date:'2026-04-03T22:55:24.000Z',image:'',description:'Received the following email from Anthropic:Hi,Starting April 4 at 12pm PT &#x2F; 8pm BST, you’ll no longer be able to use your Claude subscription li',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://news.ycombinator.com/item?id=47633396" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">03 de abr. de 2026</span>
+              <span class="badge">⬆ 987</span><span class="badge">💬 759</span>
+            </div>
+            <h3 class="card-title">Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw</h3>
+            <p class="card-desc">Received the following email from Anthropic:Hi,Starting April 4 at 12pm PT &#x2F; 8pm BST, you’ll no longer be able to use your Claude subscription li…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="artemis ii crew take “spectacular” image of earth"
+           data-desc="https:&#x2f;&#x2f;www.nasa.gov&#x2f;image-detail&#x2f;fd02_for-pao&#x2f;"
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-03T19:35:02.000Z"
+           data-url="https://www.bbc.com/news/articles/ce8jzr423p9o">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bbc.com/news/articles/ce8jzr423p9o',title:'Artemis II crew take “spectacular” image of Earth',source:'Hacker News',date:'2026-04-03T19:35:02.000Z',image:'',description:'https:&#x2F;&#x2F;www.nasa.gov&#x2F;image-detail&#x2F;fd02_for-pao&#x2F;',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.bbc.com/news/articles/ce8jzr423p9o" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">03 de abr. de 2026</span>
+              <span class="badge">⬆ 992</span><span class="badge">💬 343</span>
+            </div>
+            <h3 class="card-title">Artemis II crew take “spectacular” image of Earth</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;www.nasa.gov&#x2F;image-detail&#x2F;fd02_for-pao&#x2F;</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="components of a coding agent"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-04T13:16:33.000Z"
+           data-url="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://magazine.sebastianraschka.com/p/components-of-a-coding-agent',title:'Components of a Coding Agent',source:'Hacker News',date:'2026-04-04T13:16:33.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 94</span><span class="badge">💬 40</span>
+            </div>
+            <h3 class="card-title">Components of a Coding Agent</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="emotion concepts and their function in a large language model"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-04T06:30:25.000Z"
+           data-url="https://www.anthropic.com/research/emotion-concepts-function">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.anthropic.com/research/emotion-concepts-function',title:'Emotion concepts and their function in a large language model',source:'Hacker News',date:'2026-04-04T06:30:25.000Z',image:'https://cdn.sanity.io/images/4zrzovbb/website/1f6efd2520ecc6bc7b5bccd6f4bbcf79bb47dbc1-3764x2380.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.anthropic.com/research/emotion-concepts-function" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://cdn.sanity.io/images/4zrzovbb/website/1f6efd2520ecc6bc7b5bccd6f4bbcf79bb47dbc1-3764x2380.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 90</span><span class="badge">💬 80</span>
+            </div>
+            <h3 class="card-title">Emotion concepts and their function in a large language model</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: sllm – split a gpu node with other developers, unlimited tokens"
+           data-desc="running deepseek v3 (685b) requires 8×h100 gpus which is about $14k&#x2f;month. most developers only need 15-25 tok&#x2f;s. sllm lets you join a cohort of developers sharing a dedicated node. you rese"
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-04T15:18:58.000Z"
+           data-url="https://sllm.cloud">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://sllm.cloud',title:'Show HN: sllm – Split a GPU node with other developers, unlimited tokens',source:'Hacker News',date:'2026-04-04T15:18:58.000Z',image:'',description:'Running DeepSeek V3 (685B) requires 8×H100 GPUs which is about $14k&#x2F;month. Most developers only need 15-25 tok&#x2F;s. sllm lets you join a cohor',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://sllm.cloud" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 70</span><span class="badge">💬 45</span>
+            </div>
+            <h3 class="card-title">Show HN: sllm – Split a GPU node with other developers, unlimited tokens</h3>
+            <p class="card-desc">Running DeepSeek V3 (685B) requires 8×H100 GPUs which is about $14k&#x2F;month. Most developers only need 15-25 tok&#x2F;s. sllm lets you join a cohor…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="anthropic says claude code subscribers will need to pay extra for openclaw usage"
+           data-desc="it’s about to become more expensive for claude code subscribers to use anthropic’s coding assistant with openclaw and other third-party tools."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Sat, 04 Apr 2026 16:32:22 +0000"
+           data-url="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/',title:'Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage',source:'techcrunch',date:'Sat, 04 Apr 2026 16:32:22 +0000',image:'',description:'It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage</h3>
+            <p class="card-desc">It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="anthropic is having a moment in the private markets; spacex could spoil the party"
+           data-desc="glen anderson, president of rainmaker securities, says the secondary market for private shares has never been more active — with anthropic the hottest trade around, openai losing ground, and spacex's "
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Sat, 04 Apr 2026 01:31:00 +0000"
+           data-url="https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/',title:'Anthropic is having a moment in the private markets; SpaceX could spoil the party',source:'techcrunch',date:'Sat, 04 Apr 2026 01:31:00 +0000',image:'',description:'Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic is having a moment in the private markets; SpaceX could spoil the party</h3>
+            <p class="card-desc">Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="lucid blames dip in q1 sales on seat supplier issue"
+           data-desc="lucid said it has resolved the problem and is not changing its guidance for 2026."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Sat, 04 Apr 2026 01:03:13 +0000"
+           data-url="https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/',title:'Lucid blames dip in Q1 sales on seat supplier issue',source:'techcrunch',date:'Sat, 04 Apr 2026 01:03:13 +0000',image:'',description:'Lucid said it has resolved the problem and is not changing its guidance for 2026.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Lucid blames dip in Q1 sales on seat supplier issue</h3>
+            <p class="card-desc">Lucid said it has resolved the problem and is not changing its guidance for 2026.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="tesla&#8217;s texas factory workforce reportedly shrunk 22% in 2025"
+           data-desc="tesla's headcount fell from 21,191 workers to 16,506 workers in 2025, according to a report, as it grappled with its second straight year of declining sales."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 20:43:25 +0000"
+           data-url="https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/',title:'Tesla&#8217;s Texas factory workforce reportedly shrunk 22% in 2025',source:'techcrunch',date:'Fri, 03 Apr 2026 20:43:25 +0000',image:'',description:'Tesla\'s headcount fell from 21,191 workers to 16,506 workers in 2025, according to a report, as it grappled with its second straight year of declining',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Tesla&#8217;s Texas factory workforce reportedly shrunk 22% in 2025</h3>
+            <p class="card-desc">Tesla's headcount fell from 21,191 workers to 16,506 workers in 2025, according to a report, as it grappled with its second straight year of declining…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="openai executive shuffle includes new role for coo brad lightcap to lead &#8216;special projects&#8217;"
+           data-desc="in addition to lightcap's new role, openai cmo kate rouch will be stepping away from the company to focus on cancer recovery, with a plan to return when her health allows."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 20:35:34 +0000"
+           data-url="https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/',title:'OpenAI executive shuffle includes new role for COO Brad Lightcap to lead &#8216;special projects&#8217;',source:'techcrunch',date:'Fri, 03 Apr 2026 20:35:34 +0000',image:'',description:'In addition to Lightcap\'s new role, OpenAI CMO Kate Rouch will be stepping away from the company to focus on cancer recovery, with a plan to return wh',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">OpenAI executive shuffle includes new role for COO Brad Lightcap to lead &#8216;special projects&#8217;</h3>
+            <p class="card-desc">In addition to Lightcap's new role, OpenAI CMO Kate Rouch will be stepping away from the company to focus on cancer recovery, with a plan to return wh…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="anthropic buys biotech startup coefficient bio in $400m deal: reports"
+           data-desc="anthropic has purchased the stealth biotech ai startup coefficient bio in a $400 million stock deal, according to the information and eric newcomer."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 20:28:40 +0000"
+           data-url="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/',title:'Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports',source:'techcrunch',date:'Fri, 03 Apr 2026 20:28:40 +0000',image:'https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256664479.jpg?resize=1200,800',description:'Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256664479.jpg?resize=1200,800')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports</h3>
+            <p class="card-desc">Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="anthropic ramps up its political activities with a new pac"
+           data-desc="with the midterms right around the corner, the new group is positioned to back candidates who support the ai company's policy agenda."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 20:22:18 +0000"
+           data-url="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/',title:'Anthropic ramps up its political activities with a new PAC',source:'techcrunch',date:'Fri, 03 Apr 2026 20:22:18 +0000',image:'https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-.jpg?w=1024',description:'With the midterms right around the corner, the new group is positioned to back candidates who support the AI company\'s policy agenda.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-.jpg?w=1024')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic ramps up its political activities with a new PAC</h3>
+            <p class="card-desc">With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ai companies are building huge natural gas plants to power data centers. what could go wrong?"
+           data-desc="meta, microsoft, and google are all betting big on new natural gas power plants to run their ai data centers. they may regret it."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 19:48:22 +0000"
+           data-url="https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/',title:'AI companies are building huge natural gas plants to power data centers. What could go wrong?',source:'techcrunch',date:'Fri, 03 Apr 2026 19:48:22 +0000',image:'',description:'Meta, Microsoft, and Google are all betting big on new natural gas power plants to run their AI data centers. They may regret it.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">AI companies are building huge natural gas plants to power data centers. What could go wrong?</h3>
+            <p class="card-desc">Meta, Microsoft, and Google are all betting big on new natural gas power plants to run their AI data centers. They may regret it.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="europe’s cyber agency blames hacking gangs for massive data breach and leak"
+           data-desc="cert-eu blamed the cybercrime group teampcp for the recent hack on the european commission, and said the notorious shinyhunters gang was responsible for leaking the stolen data online."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 15:50:43 +0000"
+           data-url="https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/',title:'Europe’s cyber agency blames hacking gangs for massive data breach and leak',source:'techcrunch',date:'Fri, 03 Apr 2026 15:50:43 +0000',image:'',description:'CERT-EU blamed the cybercrime group TeamPCP for the recent hack on the European Commission, and said the notorious ShinyHunters gang was responsible f',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Europe’s cyber agency blames hacking gangs for massive data breach and leak</h3>
+            <p class="card-desc">CERT-EU blamed the cybercrime group TeamPCP for the recent hack on the European Commission, and said the notorious ShinyHunters gang was responsible f…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the facebook insider building content moderation for the ai era"
+           data-desc="moonbounce has raised $12 million to grow its ai control engine that converts content moderation policies into consistent, predictable ai behavior."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 14:00:15 +0000"
+           data-url="https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/',title:'The Facebook insider building content moderation for the AI era',source:'techcrunch',date:'Fri, 03 Apr 2026 14:00:15 +0000',image:'',description:'Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The Facebook insider building content moderation for the AI era</h3>
+            <p class="card-desc">Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="four things we’d need to put data centers in space"
+           data-desc="mit technology review explains: let our writers untangle the complex, messy world of technology to help you understand what’s coming next. you can read more from the series here. in january, elon musk"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Fri, 03 Apr 2026 17:03:19 +0000"
+           data-url="https://www.technologyreview.com/2026/04/03/1135073/four-things-wed-need-to-put-data-centers-in-space/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/03/1135073/four-things-wed-need-to-put-data-centers-in-space/',title:'Four things we’d need to put data centers in space',source:'mit',date:'Fri, 03 Apr 2026 17:03:19 +0000',image:'',description:'MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can rea',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/03/1135073/four-things-wed-need-to-put-data-centers-in-space/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Four things we’d need to put data centers in space</h3>
+            <p class="card-desc">MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can rea…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">2</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="after fighting malware for decades, this cybersecurity veteran is now hacking drones"
+           data-desc="mikko hyppönen is one of the most recognizable faces of the cybersecurity industry. after fighting computer viruses, worms, and malware, for more than 35 years, he tells techcrunch why he is now worki"
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Sat, 04 Apr 2026 13:00:00 +0000"
+           data-url="https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/',title:'After fighting malware for decades, this cybersecurity veteran is now hacking drones',source:'techcrunch',date:'Sat, 04 Apr 2026 13:00:00 +0000',image:'',description:'Mikko Hyppönen is one of the most recognizable faces of the cybersecurity industry. After fighting computer viruses, worms, and malware, for more than',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">After fighting malware for decades, this cybersecurity veteran is now hacking drones</h3>
+            <p class="card-desc">Mikko Hyppönen is one of the most recognizable faces of the cybersecurity industry. After fighting computer viruses, worms, and malware, for more than…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the final days of the tesla model x and s are here. all bets are on the cybercab."
+           data-desc="it's a new era for tesla — and one that will rely on its ability to launch the cybercab and mass-produce the optimus robot."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Fri, 03 Apr 2026 16:48:09 +0000"
+           data-url="https://techcrunch.com/2026/04/03/the-final-days-of-the-tesla-model-x-and-s-are-here-all-bets-are-on-the-cybercab/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/the-final-days-of-the-tesla-model-x-and-s-are-here-all-bets-are-on-the-cybercab/',title:'The final days of the Tesla Model X and S are here. All bets are on the Cybercab.',source:'techcrunch',date:'Fri, 03 Apr 2026 16:48:09 +0000',image:'',description:'It\'s a new era for Tesla — and one that will rely on its ability to launch the Cybercab and mass-produce the Optimus robot.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/the-final-days-of-the-tesla-model-x-and-s-are-here-all-bets-are-on-the-cybercab/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The final days of the Tesla Model X and S are here. All bets are on the Cybercab.</h3>
+            <p class="card-desc">It's a new era for Tesla — and one that will rely on its ability to launch the Cybercab and mass-produce the Optimus robot.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
+    <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">14</span></h2>
+      <div class="cards-grid" id="grid-tecnologia">
+      <div class="card"
+           data-title="show hn: a game where you build a gpu"
+           data-desc="thought the resources for gpu arch were lacking, so here we are"
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T16:45:54.000Z"
+           data-url="https://jaso1024.com/mvidia/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://jaso1024.com/mvidia/',title:'Show HN: A game where you build a GPU',source:'Hacker News',date:'2026-04-04T16:45:54.000Z',image:'',description:'Thought the resources for GPU arch were lacking, so here we are',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://jaso1024.com/mvidia/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 290</span><span class="badge">💬 102</span>
+            </div>
+            <h3 class="card-title">Show HN: A game where you build a GPU</h3>
+            <p class="card-desc">Thought the resources for GPU arch were lacking, so here we are</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="sopwith – 1984 game (2000)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T18:06:24.000Z"
+           data-url="http://www.sopwith.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'http://www.sopwith.org/',title:'Sopwith – 1984 Game (2000)',source:'Hacker News',date:'2026-04-04T18:06:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="http://www.sopwith.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 46</span><span class="badge">💬 19</span>
+            </div>
+            <h3 class="card-title">Sopwith – 1984 Game (2000)</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="embarrassingly simple self-distillation improves code generation"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T10:26:21.000Z"
+           data-url="https://arxiv.org/abs/2604.01193">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.01193',title:'Embarrassingly simple self-distillation improves code generation',source:'Hacker News',date:'2026-04-04T10:26:21.000Z',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.01193" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 437</span><span class="badge">💬 132</span>
+            </div>
+            <h3 class="card-title">Embarrassingly simple self-distillation improves code generation</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: turboquant-wasm – google's vector quantization in the browser"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T14:53:16.000Z"
+           data-url="https://github.com/teamchong/turboquant-wasm">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/teamchong/turboquant-wasm',title:'Show HN: TurboQuant-WASM – Google\'s vector quantization in the browser',source:'Hacker News',date:'2026-04-04T14:53:16.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/teamchong/turboquant-wasm" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 89</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">Show HN: TurboQuant-WASM – Google's vector quantization in the browser</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="apple approves driver that lets nvidia egpus work with arm macs"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T16:16:10.000Z"
+           data-url="https://www.theverge.com/tech/907003/apple-approves-driver-that-lets-nvidia-egpus-work-with-arm-macs">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theverge.com/tech/907003/apple-approves-driver-that-lets-nvidia-egpus-work-with-arm-macs',title:'Apple approves driver that lets Nvidia eGPUs work with Arm Macs',source:'Hacker News',date:'2026-04-04T16:16:10.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.theverge.com/tech/907003/apple-approves-driver-that-lets-nvidia-egpus-work-with-arm-macs" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 206</span><span class="badge">💬 99</span>
+            </div>
+            <h3 class="card-title">Apple approves driver that lets Nvidia eGPUs work with Arm Macs</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="author of &quot;careless people&quot; banned from saying anything negative about meta"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T14:48:26.000Z"
+           data-url="https://www.thetimes.com/uk/technology-uk/article/sarah-wynn-williams-careless-people-meta-nrffdfpmf">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.thetimes.com/uk/technology-uk/article/sarah-wynn-williams-careless-people-meta-nrffdfpmf',title:'Author of &quot;Careless People&quot; banned from saying anything negative about Meta',source:'Hacker News',date:'2026-04-04T14:48:26.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.thetimes.com/uk/technology-uk/article/sarah-wynn-williams-careless-people-meta-nrffdfpmf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 546</span><span class="badge">💬 368</span>
+            </div>
+            <h3 class="card-title">Author of "Careless People" banned from saying anything negative about Meta</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="plague ships"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T17:33:21.000Z"
+           data-url="https://www.afloat.com.au/feature/plague-ships/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.afloat.com.au/feature/plague-ships/',title:'Plague Ships',source:'Hacker News',date:'2026-04-04T17:33:21.000Z',image:'https://www.afloat.com.au/wp-content/uploads/2020/06/Quirky-Plague-Ships-Head.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.afloat.com.au/feature/plague-ships/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.afloat.com.au/wp-content/uploads/2020/06/Quirky-Plague-Ships-Head.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 21</span><span class="badge">💬 2</span>
+            </div>
+            <h3 class="card-title">Plague Ships</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="scientists observe an immune signaling complex forming inside cells"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T17:52:55.000Z"
+           data-url="https://news.stanford.edu/stories/2026/03/immune-response-inside-cells-inflammation-research">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.stanford.edu/stories/2026/03/immune-response-inside-cells-inflammation-research',title:'Scientists observe an immune signaling complex forming inside cells',source:'Hacker News',date:'2026-04-04T17:52:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://news.stanford.edu/stories/2026/03/immune-response-inside-cells-inflammation-research" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 65</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">Scientists observe an immune signaling complex forming inside cells</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="some unusual trees"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T09:04:19.000Z"
+           data-url="https://thoughts.wyounas.com/p/some-unusual-trees">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://thoughts.wyounas.com/p/some-unusual-trees',title:'Some Unusual Trees',source:'Hacker News',date:'2026-04-04T09:04:19.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://thoughts.wyounas.com/p/some-unusual-trees" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 209</span><span class="badge">💬 62</span>
+            </div>
+            <h3 class="card-title">Some Unusual Trees</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the cms is dead, long live the cms"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T11:24:30.000Z"
+           data-url="https://next.jazzsequence.com/posts/the-cms-is-dead-long-live-the-cms">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://next.jazzsequence.com/posts/the-cms-is-dead-long-live-the-cms',title:'The CMS is dead, long live the CMS',source:'Hacker News',date:'2026-04-04T11:24:30.000Z',image:'https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2026/04/03013745/the-cms-is-dead-long-live-the-cms.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://next.jazzsequence.com/posts/the-cms-is-dead-long-live-the-cms" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://sfo2.digitaloceanspaces.com/cdn.jazzsequence/wp-content/uploads/2026/04/03013745/the-cms-is-dead-long-live-the-cms.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 63</span>
+            </div>
+            <h3 class="card-title">The CMS is dead, long live the CMS</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the indie internet index – submit your favorite sites"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-04T14:18:06.000Z"
+           data-url="https://iii.social">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://iii.social',title:'The Indie Internet Index – submit your favorite sites',source:'Hacker News',date:'2026-04-04T14:18:06.000Z',image:'https://iii.social/icon.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://iii.social" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://iii.social/icon.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 35</span><span class="badge">💬 7</span>
+            </div>
+            <h3 class="card-title">The Indie Internet Index – submit your favorite sites</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the anonymous social app that thinks it can work in saudi arabia"
+           data-desc="when fizz quietly debuted in saudi arabia, founder and ceo teddy solomon wasn’t expecting the app to catch on like it did."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Fri, 03 Apr 2026 22:24:57 +0000"
+           data-url="https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/',title:'The anonymous social app that thinks it can work in Saudi Arabia',source:'techcrunch',date:'Fri, 03 Apr 2026 22:24:57 +0000',image:'',description:'When Fizz quietly debuted in Saudi Arabia, founder and CEO Teddy Solomon wasn’t expecting the app to catch on like it did.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The anonymous social app that thinks it can work in Saudi Arabia</h3>
+            <p class="card-desc">When Fizz quietly debuted in Saudi Arabia, founder and CEO Teddy Solomon wasn’t expecting the app to catch on like it did.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="best ipad apps to boost productivity and make your life easier"
+           data-desc="there are many ipad apps to help you organize recipes, sync tasks across devices, be more productive, and manage your notes."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Fri, 03 Apr 2026 19:56:49 +0000"
+           data-url="https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/',title:'Best iPad apps to boost productivity and make your life easier',source:'techcrunch',date:'Fri, 03 Apr 2026 19:56:49 +0000',image:'',description:'There are many iPad apps to help you organize recipes, sync tasks across devices, be more productive, and manage your notes.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Best iPad apps to boost productivity and make your life easier</h3>
+            <p class="card-desc">There are many iPad apps to help you organize recipes, sync tasks across devices, be more productive, and manage your notes.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="people would rather have an amazon warehouse in their backyard than a data center"
+           data-desc="a new poll shows that the debate over data centers is far from settled."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Fri, 03 Apr 2026 19:20:36 +0000"
+           data-url="https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/',title:'People would rather have an Amazon warehouse in their backyard than a data center',source:'techcrunch',date:'Fri, 03 Apr 2026 19:20:36 +0000',image:'',description:'A new poll shows that the debate over data centers is far from settled.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">03 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">People would rather have an Amazon warehouse in their backyard than a data center</h3>
+            <p class="card-desc">A new poll shows that the debate over data centers is far from settled.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
+    </div>
+
+    <section class="category" id="sec-saved" data-cat="saved" hidden>
+      <h2 class="category-title">⭐ Salvos <span class="count" id="cnt-saved">0</span></h2>
+      <div class="cards-grid" id="grid-saved">
+        <div class="saved-empty">
+          <div class="icon">⭐</div>
+          <p>Nenhuma notícia salva ainda.<br>Clique no ⭐ de qualquer card para guardar aqui.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="empty-state" id="emptyState" style="display:none">
+      <div class="icon">🔍</div>
+      <p>Nenhuma notícia encontrada para <strong id="emptyTerm"></strong></p>
+    </div>
+  </main>
+
+  <footer>
+    Dados via Hacker News API + RSS (Slashdot · VentureBeat · TechCrunch · The Verge · Wired · MIT Tech Review · arXiv) · Apify Actor <code>duhmendes~hotnews-ai-tech</code>
+  </footer>
+
   <script>
+  // ── Curadoria — localStorage ──
+  const SAVED_KEY = 'hotnews_saved';
+
+  function getSaved() {
+    try { return JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'); } catch { return []; }
+  }
+
+  function setSaved(list) {
+    localStorage.setItem(SAVED_KEY, JSON.stringify(list));
+  }
+
+  function updateSavedBadge() {
+    const saved = getSaved();
+    const n = saved.length;
+    const btn = document.querySelector('.nav-btn[data-cat="saved"]');
+    const countEl = document.getElementById('savedCount');
+    if (countEl) countEl.textContent = n;
+    if (btn) btn.classList.toggle('has-saved', n > 0);
+    const cntEl = document.getElementById('cnt-saved');
+    if (cntEl) cntEl.textContent = n;
+  }
+
+  function renderSavedCards() {
+    const saved = getSaved();
+    const grid = document.getElementById('grid-saved');
+    if (!grid) return;
+    if (!saved.length) {
+      grid.innerHTML = '<div class="saved-empty"><div class="icon">⭐</div><p>Nenhuma notícia salva ainda.<br>Clique no ⭐ de qualquer card para guardar aqui.</p></div>';
+      return;
+    }
+    grid.innerHTML = saved.map(item => {
+      const date = item.date ? (() => { try { return new Date(item.date).toLocaleDateString('pt-BR', { day:'2-digit', month:'short', year:'numeric' }); } catch { return ''; } })() : '';
+      const imgHtml = item.image
+        ? `<div class="card-img" style="background-image:url('${item.image}')"></div>`
+        : `<div class="card-img card-img--placeholder"><span>${(item.source||'?')[0].toUpperCase()}</span></div>`;
+      return `
+      <div class="card saved-card" data-url="${(item.url||'').replace(/"/g,'&quot;')}" data-cat="${item.cat||''}">
+        <button class="save-btn saved" title="Remover dos salvos" onclick="toggleSave(event, this, ${JSON.stringify(item).replace(/"/g,'&quot;')})">⭐</button>
+        <a class="card-link" href="${item.url}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          ${imgHtml}
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="source-name">${item.source||''}</span>
+              ${date ? `<span class="date">${date}</span>` : ''}
+            </div>
+            <h3 class="card-title">${item.title||''}</h3>
+            ${item.description ? `<p class="card-desc">${item.description.substring(0,150)}${item.description.length>150?'…':''}</p>` : ''}
+          </div>
+        </a>
+      </div>`;
+    }).join('');
+  }
+
+  function toggleSave(event, btn, item) {
+    event.preventDefault();
+    event.stopPropagation();
+    const saved = getSaved();
+    const idx = saved.findIndex(s => s.url === item.url);
+    if (idx >= 0) {
+      saved.splice(idx, 1);
+      btn.classList.remove('saved');
+      btn.title = 'Salvar notícia';
+      // remove também da seção de salvos se estiver visível
+      const savedCard = document.querySelector(`#grid-saved .saved-card[data-url="${CSS.escape(item.url)}"]`);
+      if (savedCard) savedCard.remove();
+      // se grid ficou vazio, mostra empty
+      const grid = document.getElementById('grid-saved');
+      if (grid && !grid.querySelector('.saved-card')) {
+        grid.innerHTML = '<div class="saved-empty"><div class="icon">⭐</div><p>Nenhuma notícia salva ainda.<br>Clique no ⭐ de qualquer card para guardar aqui.</p></div>';
+      }
+    } else {
+      saved.unshift(item); // mais recente primeiro
+      btn.classList.add('saved');
+      btn.title = 'Remover dos salvos';
+      renderSavedCards();
+    }
+    setSaved(saved);
+    updateSavedBadge();
+  }
+
+  // ── Init curadoria ──
+  function initSaved() {
+    updateSavedBadge();
+    renderSavedCards();
+    // marca botões dos cards que já estão salvos
+    const saved = getSaved();
+    const urls = new Set(saved.map(s => s.url));
+    document.querySelectorAll('.card[data-url]').forEach(card => {
+      if (urls.has(card.dataset.url)) {
+        const btn = card.querySelector('.save-btn');
+        if (btn) { btn.classList.add('saved'); btn.title = 'Remover dos salvos'; }
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initSaved);
+
+  // ── Estado do filtro ──
+  let activeCategory = 'all';
+  let activeDateFilter = 'all';
+  let activeSearch = '';
+
+  // ── Trigger atualização via GitHub Actions ──
   async function triggerUpdate() {
     const btn = document.getElementById('refreshBtn');
+    let token = localStorage.getItem('gh_dispatch_token');
+    if (!token) {
+      token = prompt('Cole seu GitHub Personal Access Token (escopo: workflow):');
+      if (!token) return;
+      localStorage.setItem('gh_dispatch_token', token);
+    }
     btn.disabled = true;
     btn.textContent = '⏳ Buscando...';
-    const token = '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';
-    if (!token) { btn.textContent = '❌ Token não configurado'; return; }
     try {
-      await fetch('https://api.github.com/repos/duhmendes2/news-tech-davision/actions/workflows/update-news.yml/dispatches', {
+      const res = await fetch('https://api.github.com/repos/duhmendes2/news-tech-davision/actions/workflows/update-news.yml/dispatches', {
         method: 'POST',
         headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
         body: JSON.stringify({ ref: 'master' })
       });
+      if (res.status === 401 || res.status === 403) {
+        localStorage.removeItem('gh_dispatch_token');
+        btn.disabled = false;
+        btn.textContent = '❌ Token inválido — tente novamente';
+        return;
+      }
       btn.textContent = '🔄 Atualizando...';
-      // Aguarda ~70s para o workflow concluir e recarrega
-      let t = 70;
+      let t = 80;
       const iv = setInterval(() => {
         t--;
         btn.textContent = '🔄 Aguardando... ' + t + 's';
@@ -95,399 +1089,108 @@
       btn.textContent = '↻ Atualizar';
     }
   }
+
+  // ── Filtro por categoria ──
+  function filterByCategory(cat) {
+    activeCategory = cat;
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+
+    // A seção de salvos só aparece quando a aba "saved" está ativa
+    const savedSec = document.getElementById('sec-saved');
+    if (savedSec) savedSec.hidden = cat !== 'saved';
+
+    // Oculta seções normais quando a aba "saved" está ativa
+    document.querySelectorAll('.category[data-cat]:not(#sec-saved)').forEach(sec => {
+      if (cat === 'saved') sec.hidden = true;
+    });
+
+    if (cat !== 'saved') applyFilters();
+  }
+
+  // ── Filtro por data ──
+  function filterByDate(range) {
+    activeDateFilter = range;
+    document.querySelectorAll('.date-btn').forEach(b => b.classList.toggle('active', b.dataset.date === range));
+    applyFilters();
+  }
+
+  // ── Busca ──
+  function onSearch(val) {
+    activeSearch = val.trim().toLowerCase();
+    document.getElementById('clearBtn').classList.toggle('visible', activeSearch.length > 0);
+    applyFilters();
+  }
+
+  function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    onSearch('');
+  }
+
+  // ── Aplica todos os filtros ──
+  function applyFilters() {
+    const now = new Date();
+    const todayStart = new Date(now); todayStart.setHours(0,0,0,0);
+    const yesterdayStart = new Date(todayStart); yesterdayStart.setDate(yesterdayStart.getDate() - 1);
+
+    const sections = document.querySelectorAll('.category[data-cat]');
+    let totalVisible = 0;
+
+    sections.forEach(sec => {
+      const secCat = sec.dataset.cat;
+      const catMatch = activeCategory === 'all' || activeCategory === secCat;
+      if (!catMatch) { sec.hidden = true; return; }
+
+      const cards = sec.querySelectorAll('.card');
+      let visibleInSection = 0;
+
+      cards.forEach(card => {
+        const dateStr = card.dataset.date;
+        let dateOk = true;
+        if (activeDateFilter !== 'all' && dateStr) {
+          const d = new Date(dateStr);
+          if (!isNaN(d)) {
+            if (activeDateFilter === 'today')     dateOk = d >= todayStart;
+            if (activeDateFilter === 'yesterday') dateOk = d >= yesterdayStart && d < todayStart;
+          }
+        }
+
+        const searchOk = !activeSearch ||
+          card.dataset.title.includes(activeSearch) ||
+          card.dataset.desc.includes(activeSearch) ||
+          card.dataset.source.includes(activeSearch);
+
+        const visible = dateOk && searchOk;
+        card.hidden = !visible;
+        if (visible) visibleInSection++;
+      });
+
+      sec.hidden = visibleInSection === 0;
+      totalVisible += visibleInSection;
+
+      // atualiza contador da seção
+      const countEl = sec.querySelector('.count');
+      if (countEl) countEl.textContent = visibleInSection;
+    });
+
+    // empty state
+    const empty = document.getElementById('emptyState');
+    empty.style.display = totalVisible === 0 ? 'block' : 'none';
+    if (activeSearch) document.getElementById('emptyTerm').textContent = '"' + activeSearch + '"';
+
+    // result info
+    const info = document.getElementById('resultInfo');
+    const hasFilter = activeCategory !== 'all' || activeDateFilter !== 'all' || activeSearch;
+    if (hasFilter) {
+      info.style.display = 'block';
+      let parts = [];
+      if (activeSearch) parts.push('busca: <strong>"' + activeSearch + '"</strong>');
+      if (activeCategory !== 'all') parts.push('categoria: <strong>' + activeCategory + '</strong>');
+      if (activeDateFilter !== 'all') parts.push('data: <strong>' + (activeDateFilter === 'today' ? 'hoje' : 'ontem') + '</strong>');
+      info.innerHTML = totalVisible + ' resultado' + (totalVisible !== 1 ? 's' : '') + ' — ' + parts.join(' · ');
+    } else {
+      info.style.display = 'none';
+    }
+  }
   </script>
-
-  <nav class="nav-bar">
-    <a class="nav-btn" href="#ia">🤖 IA</a><a class="nav-btn" href="#robtica">⚙️ Robótica</a><a class="nav-btn" href="#tecnologia">💻 Tecnologia</a>
-  </nav>
-
-  <main>
-    <div class="stats">
-      <div class="stat"><div class="stat-value">28</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1">14</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b">2</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981">12</div><div class="stat-label">Tecnologia</div></div>
-    </div>
-
-    
-      <section class="category" id="ia">
-        <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count">14</span></h2>
-        <div class="cards-grid">
-      <a class="card" href="https://sllm.cloud" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 57</span><span class="badge">💬 35</span>
-          </div>
-          <h3 class="card-title">Show HN: sllm – Split a GPU node with other developers, unlimited tokens</h3>
-          <p class="card-desc">Running DeepSeek V3 (685B) requires 8×H100 GPUs which is about $14k&#x2F;month. Most developers only need 15-25 tok&#x2F;s. sllm lets you join a cohor…</p>
-        </div>
-      </a>
-      <a class="card" href="https://news.ycombinator.com/item?id=47633396" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">03 de abr. de 2026</span>
-            <span class="badge">⬆ 969</span><span class="badge">💬 743</span>
-          </div>
-          <h3 class="card-title">Tell HN: Anthropic no longer allowing Claude Code subscriptions to use OpenClaw</h3>
-          <p class="card-desc">Received the following email from Anthropic:Hi,Starting April 4 at 12pm PT &#x2F; 8pm BST, you’ll no longer be able to use your Claude subscription li…</p>
-        </div>
-      </a>
-      <a class="card" href="https://www.bbc.com/news/articles/ce8jzr423p9o" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">03 de abr. de 2026</span>
-            <span class="badge">⬆ 976</span><span class="badge">💬 332</span>
-          </div>
-          <h3 class="card-title">Artemis II crew take “spectacular” image of Earth</h3>
-          <p class="card-desc">https:&#x2F;&#x2F;www.nasa.gov&#x2F;image-detail&#x2F;fd02_for-pao&#x2F;</p>
-        </div>
-      </a>
-      <a class="card" href="https://magazine.sebastianraschka.com/p/components-of-a-coding-agent" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 80</span><span class="badge">💬 31</span>
-          </div>
-          <h3 class="card-title">Components of a Coding Agent</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">04 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage</h3>
-          <p class="card-desc">It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">04 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Anthropic is having a moment in the private markets; SpaceX could spoil the party</h3>
-          <p class="card-desc">Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest…</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/lucid-blames-dip-in-q1-sales-on-seat-supplier-issue/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">04 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Lucid blames dip in Q1 sales on seat supplier issue</h3>
-          <p class="card-desc">Lucid said it has resolved the problem and is not changing its guidance for 2026.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/teslas-texas-factory-workforce-reportedly-shrunk-22-in-2025/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Tesla&#8217;s Texas factory workforce reportedly shrunk 22% in 2025</h3>
-          <p class="card-desc">Tesla's headcount fell from 21,191 workers to 16,506 workers in 2025, according to a report, as it grappled with its second straight year of declining…</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">OpenAI executive shuffle includes new role for COO Brad Lightcap to lead &#8216;special projects&#8217;</h3>
-          <p class="card-desc">In addition to Lightcap's new role, OpenAI CMO Kate Rouch will be stepping away from the company to focus on cancer recovery, with a plan to return wh…</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/" target="_blank" rel="noopener">
-        <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2256664479.jpg?resize=1200,800')"></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports</h3>
-          <p class="card-desc">Anthropic has purchased the stealth biotech AI startup Coefficient Bio in a $400 million stock deal, according to The Information and Eric Newcomer.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/" target="_blank" rel="noopener">
-        <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-.jpg?w=1024')"></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Anthropic ramps up its political activities with a new PAC</h3>
-          <p class="card-desc">With the midterms right around the corner, the new group is positioned to back candidates who support the AI company's policy agenda.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">AI companies are building huge natural gas plants to power data centers. What could go wrong?</h3>
-          <p class="card-desc">Meta, Microsoft, and Google are all betting big on new natural gas power plants to run their AI data centers. They may regret it.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Europe’s cyber agency blames hacking gangs for massive data breach and leak</h3>
-          <p class="card-desc">CERT-EU blamed the cybercrime group TeamPCP for the recent hack on the European Commission, and said the notorious ShinyHunters gang was responsible f…</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">The Facebook insider building content moderation for the AI era</h3>
-          <p class="card-desc">Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.</p>
-        </div>
-      </a></div>
-      </section>
-      <section class="category" id="robtica">
-        <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count">2</span></h2>
-        <div class="cards-grid">
-      <a class="card" href="https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">04 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">After fighting malware for decades, this cybersecurity veteran is now hacking drones</h3>
-          <p class="card-desc">Mikko Hyppönen is one of the most recognizable faces of the cybersecurity industry. After fighting computer viruses, worms, and malware, for more than…</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/the-final-days-of-the-tesla-model-x-and-s-are-here-all-bets-are-on-the-cybercab/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">The final days of the Tesla Model X and S are here. All bets are on the Cybercab.</h3>
-          <p class="card-desc">It's a new era for Tesla — and one that will rely on its ability to launch the Cybercab and mass-produce the Optimus robot.</p>
-        </div>
-      </a></div>
-      </section>
-      <section class="category" id="tecnologia">
-        <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count">12</span></h2>
-        <div class="cards-grid">
-      <a class="card" href="https://jaso1024.com/mvidia/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 215</span><span class="badge">💬 66</span>
-          </div>
-          <h3 class="card-title">Show HN: A game where you build a GPU</h3>
-          <p class="card-desc">Thought the resources for GPU arch were lacking, so here we are</p>
-        </div>
-      </a>
-      <a class="card" href="https://arxiv.org/abs/2604.01193" target="_blank" rel="noopener">
-        <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 402</span><span class="badge">💬 121</span>
-          </div>
-          <h3 class="card-title">Simple self-distillation improves code generation</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://github.com/teamchong/turboquant-wasm" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 78</span><span class="badge">💬 4</span>
-          </div>
-          <h3 class="card-title">Show HN: TurboQuant-WASM – Google's vector quantization in the browser</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="http://www.sopwith.org/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 14</span><span class="badge">💬 5</span>
-          </div>
-          <h3 class="card-title">Sopwith</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://news.stanford.edu/stories/2026/03/immune-response-inside-cells-inflammation-research" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 54</span><span class="badge">💬 4</span>
-          </div>
-          <h3 class="card-title">Scientists observe an immune signaling complex forming inside cells</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://www.theverge.com/tech/907003/apple-approves-driver-that-lets-nvidia-egpus-work-with-arm-macs" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 159</span><span class="badge">💬 67</span>
-          </div>
-          <h3 class="card-title">Apple approves driver that lets Nvidia eGPUs work with Arm Macs</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://thoughts.wyounas.com/p/some-unusual-trees" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 199</span><span class="badge">💬 54</span>
-          </div>
-          <h3 class="card-title">Some Unusual Trees</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://www.thetimes.com/uk/technology-uk/article/sarah-wynn-williams-careless-people-meta-nrffdfpmf" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>H</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 482</span><span class="badge">💬 332</span>
-          </div>
-          <h3 class="card-title">Author of "Careless People" banned from saying anything negative about Meta</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://www.afloat.com.au/feature/plague-ships/" target="_blank" rel="noopener">
-        <div class="card-img" style="background-image:url('https://www.afloat.com.au/wp-content/uploads/2020/06/Quirky-Plague-Ships-Head.jpg')"></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-            <span class="source-name">Hacker News</span>
-            <span class="date">04 de abr. de 2026</span>
-            <span class="badge">⬆ 8</span><span class="badge">💬 1</span>
-          </div>
-          <h3 class="card-title">Plague Ships</h3>
-          
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/the-anonymous-social-app-that-thinks-it-can-work-in-saudi-arabia/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">The anonymous social app that thinks it can work in Saudi Arabia</h3>
-          <p class="card-desc">When Fizz quietly debuted in Saudi Arabia, founder and CEO Teddy Solomon wasn’t expecting the app to catch on like it did.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/best-ipad-apps-to-boost-productivity-make-your-life-easier/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">Best iPad apps to boost productivity and make your life easier</h3>
-          <p class="card-desc">There are many iPad apps to help you organize recipes, sync tasks across devices, be more productive, and manage your notes.</p>
-        </div>
-      </a>
-      <a class="card" href="https://techcrunch.com/2026/04/03/people-would-rather-have-an-amazon-warehouse-in-their-backyard-than-a-data-center/" target="_blank" rel="noopener">
-        <div class="card-img card-img--placeholder"><span>T</span></div>
-        <div class="card-body">
-          <div class="card-meta">
-            <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-            <span class="source-name">techcrunch</span>
-            <span class="date">03 de abr. de 2026</span>
-            
-          </div>
-          <h3 class="card-title">People would rather have an Amazon warehouse in their backyard than a data center</h3>
-          <p class="card-desc">A new poll shows that the debate over data centers is far from settled.</p>
-        </div>
-      </a></div>
-      </section>
-  </main>
-
-  <footer>
-    Dados coletados via Hacker News API + RSS feeds públicos · Apify Actor <code>duhmendes~hotnews-ai-tech</code>
-  </footer>
 </body>
 </html>
