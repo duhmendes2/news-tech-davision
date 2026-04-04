@@ -141,6 +141,63 @@
     .result-info { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
     .result-info strong { color: #94a3b8; }
 
+    /* ── Curadoria Davision ── */
+    .curadoria-section {
+      max-width: 1400px; margin: 0 auto 0; padding: 0 40px 56px;
+    }
+    .curadoria-card {
+      background: linear-gradient(135deg, #1a1d27 0%, #16192280 100%);
+      border: 1px solid #2d3348;
+      border-radius: 20px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .curadoria-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #6366f108, #ec489908);
+      pointer-events: none;
+    }
+    .curadoria-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+    }
+    .curadoria-title {
+      font-size: 1.1rem; font-weight: 700;
+      background: linear-gradient(135deg, #818cf8, #ec4899);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .curadoria-meta { font-size: 0.75rem; color: #64748b; }
+    .curadoria-meta strong { color: #94a3b8; }
+    .prompt-box {
+      background: #0f1117; border: 1px solid #1e2230; border-radius: 12px;
+      padding: 20px; font-size: 0.8rem; color: #94a3b8; line-height: 1.7;
+      white-space: pre-wrap; word-break: break-word;
+      max-height: 380px; overflow-y: auto; font-family: 'Inter', sans-serif;
+      resize: vertical;
+    }
+    .prompt-box::-webkit-scrollbar { width: 6px; }
+    .prompt-box::-webkit-scrollbar-track { background: #0f1117; }
+    .prompt-box::-webkit-scrollbar-thumb { background: #2d3348; border-radius: 3px; }
+    .curadoria-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; align-items: center; }
+    .copy-btn {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      border: none; color: white; padding: 10px 22px; border-radius: 10px;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer;
+      transition: all .2s; display: flex; align-items: center; gap: 7px;
+    }
+    .copy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px #6366f140; }
+    .copy-btn.copied { background: linear-gradient(135deg, #10b981, #34d399); }
+    .regen-btn {
+      background: #1a1d27; border: 1px solid #2d3348; color: #94a3b8;
+      padding: 10px 18px; border-radius: 10px; font-size: 0.82rem;
+      cursor: pointer; transition: all .2s;
+    }
+    .regen-btn:hover { background: #2d3348; color: #e2e8f0; }
+    .prompt-hint { font-size: 0.72rem; color: #475569; margin-left: auto; }
+
     footer { text-align: center; padding: 36px; color: #475569; font-size: 0.78rem; border-top: 1px solid #1e2230; }
 
     @media (max-width: 768px) {
@@ -158,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 04/04/2026, 18:30:38
+      Atualizado: 04/04/2026, 18:37:37
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -183,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">49</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">26</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">3</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">20</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">50</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">27</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">4</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">19</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -192,7 +249,7 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">26</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">27</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="anthropic announces claude subscribers must now pay extra to use openclaw"
@@ -429,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 159</span><span class="badge">💬 63</span>
+              <span class="badge">⬆ 167</span><span class="badge">💬 66</span>
             </div>
             <h3 class="card-title">How many products does Microsoft have named 'Copilot'?</h3>
             
@@ -451,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 108</span><span class="badge">💬 46</span>
+              <span class="badge">⬆ 111</span><span class="badge">💬 46</span>
             </div>
             <h3 class="card-title">Components of a Coding Agent</h3>
             
@@ -473,9 +530,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 106</span><span class="badge">💬 92</span>
+              <span class="badge">⬆ 109</span><span class="badge">💬 95</span>
             </div>
             <h3 class="card-title">Emotion concepts and their function in a large language model</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="iranian missile blitz takes down aws data centers in bahrain and dubai"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-04T18:23:55.000Z"
+           data-url="https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones',title:'Iranian missile blitz takes down AWS data centers in Bahrain and Dubai',source:'Hacker News',date:'2026-04-04T18:23:55.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">04 de abr. de 2026</span>
+              <span class="badge">⬆ 64</span><span class="badge">💬 25</span>
+            </div>
+            <h3 class="card-title">Iranian missile blitz takes down AWS data centers in Bahrain and Dubai</h3>
             
           </div>
         </a>
@@ -495,7 +574,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 84</span><span class="badge">💬 54</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 56</span>
             </div>
             <h3 class="card-title">Show HN: sllm – Split a GPU node with other developers, unlimited tokens</h3>
             <p class="card-desc">Running DeepSeek V3 (685B) requires 8×H100 GPUs which is about $14k&#x2F;month. Most developers only need 15-25 tok&#x2F;s. sllm lets you join a cohor…</p>
@@ -503,23 +582,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="iranian missile blitz takes down aws data centers in bahrain and dubai"
+           data-title="claude code found a linux vulnerability hidden for 23 years"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-04T18:23:55.000Z"
-           data-url="https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones',title:'Iranian missile blitz takes down AWS data centers in Bahrain and Dubai',source:'Hacker News',date:'2026-04-04T18:23:55.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.tomshardware.com/tech-industry/iranian-missile-blitz-takes-down-aws-data-centers-in-bahrain-and-dubai-amazon-declares-hard-down-status-for-multiple-zones" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-04-03T23:46:51.000Z"
+           data-url="https://mtlynch.io/claude-code-found-linux-vulnerability/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://mtlynch.io/claude-code-found-linux-vulnerability/',title:'Claude Code Found a Linux Vulnerability Hidden for 23 Years',source:'Hacker News',date:'2026-04-03T23:46:51.000Z',image:'https://mtlynch.io/claude-code-found-linux-vulnerability/model-effectiveness.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://mtlynch.io/claude-code-found-linux-vulnerability/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://mtlynch.io/claude-code-found-linux-vulnerability/model-effectiveness.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 52</span><span class="badge">💬 23</span>
+              <span class="date">03 de abr. de 2026</span>
+              <span class="badge">⬆ 317</span><span class="badge">💬 201</span>
             </div>
-            <h3 class="card-title">Iranian missile blitz takes down AWS data centers in Bahrain and Dubai</h3>
+            <h3 class="card-title">Claude Code Found a Linux Vulnerability Hidden for 23 Years</h3>
             
           </div>
         </a>
@@ -768,8 +847,30 @@
       </div></div>
     </section>
     <section class="category" id="sec-robtica" data-cat="Robótica">
-      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">3</span></h2>
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">4</span></h2>
       <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="are employers using your data to figure out the lowest salary you'll accept?"
+           data-desc="marketwatch looks at "surveillance wages," pay rates "based not on an employee's performance or seniority, but on formulas that use their personal data, often collected without employees' knowledge." "
+           data-source="slashdot"
+           data-cat="Robótica"
+           data-date="2026-04-04T20:34:00+00:00"
+           data-url="https://it.slashdot.org/story/26/04/04/0420240/are-employers-using-your-data-to-figure-out-the-lowest-salary-youll-accept?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://it.slashdot.org/story/26/04/04/0420240/are-employers-using-your-data-to-figure-out-the-lowest-salary-youll-accept?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Are Employers Using Your Data To Figure Out the Lowest Salary You\'ll Accept?',source:'slashdot',date:'2026-04-04T20:34:00+00:00',image:'https://a.fsdn.com/sd/topics/social_64.png',description:'MarketWatch looks at "surveillance wages," pay rates "based not on an employee\'s performance or seniority, but on formulas that use their personal dat',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://it.slashdot.org/story/26/04/04/0420240/are-employers-using-your-data-to-figure-out-the-lowest-salary-youll-accept?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/social_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Are Employers Using Your Data To Figure Out the Lowest Salary You'll Accept?</h3>
+            <p class="card-desc">MarketWatch looks at "surveillance wages," pay rates "based not on an employee's performance or seniority, but on formulas that use their personal dat…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="no, amd is not buying intel"
            data-desc=""the april 1st timing should have been your first clue," writes gadget review. techspot's false story was just an april fool's prank mdash; although gadget review thinks it's still funny how "somethin"
@@ -838,16 +939,16 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">20</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">19</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="slashdot"
-           data-desc="marketwatch looks at "surveillance wages," pay rates "based not on an employee's performance or seniority, but on formulas that use their personal data, often collected without employees' knowledge." "
+           data-desc="slashdot reader kirkman14 writes: a year before the web opened to the public, texas entrepreneur don lokke was trying to syndicate weekly political cartoons to bulletin board systems. his "telecomics,"
            data-source="slashdot"
            data-cat="Tecnologia"
-           data-date="2026-04-04T20:34:00+00:00"
+           data-date="2026-04-04T21:34:00+00:00"
            data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-04T20:34:00+00:00',image:'',description:'MarketWatch looks at "surveillance wages," pay rates "based not on an employee\'s performance or seniority, but on formulas that use their personal dat',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-04T21:34:00+00:00',image:'',description:'Slashdot reader Kirkman14 writes: A year before the Web opened to the public, Texas entrepreneur Don Lokke was trying to syndicate weekly political ca',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
@@ -858,7 +959,7 @@
               
             </div>
             <h3 class="card-title">Slashdot</h3>
-            <p class="card-desc">MarketWatch looks at "surveillance wages," pay rates "based not on an employee's performance or seniority, but on formulas that use their personal dat…</p>
+            <p class="card-desc">Slashdot reader Kirkman14 writes: A year before the Web opened to the public, Texas entrepreneur Don Lokke was trying to syndicate weekly political ca…</p>
           </div>
         </a>
       </div>
@@ -907,28 +1008,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="college student, cat meme helped crack massive botnet case"
-           data-desc="the wall street journal shares the "wild behind-the-scenes story" of how the world's largest and most destructive botnet was uncovered and taken down, writes slashdot reader sturgeon. "at times, the n"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-04-03T18:00:00+00:00"
-           data-url="https://it.slashdot.org/story/26/04/03/1629207/college-student-cat-meme-helped-crack-massive-botnet-case?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://it.slashdot.org/story/26/04/03/1629207/college-student-cat-meme-helped-crack-massive-botnet-case?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'College Student, Cat Meme Helped Crack Massive Botnet Case',source:'slashdot',date:'2026-04-03T18:00:00+00:00',image:'https://a.fsdn.com/sd/topics/botnet_64.png',description:'The Wall Street Journal shares the "wild behind-the-scenes story" of how the world\'s largest and most destructive botnet was uncovered and taken down,',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://it.slashdot.org/story/26/04/03/1629207/college-student-cat-meme-helped-crack-massive-botnet-case?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/botnet_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">03 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">College Student, Cat Meme Helped Crack Massive Botnet Case</h3>
-            <p class="card-desc">The Wall Street Journal shares the "wild behind-the-scenes story" of how the world's largest and most destructive botnet was uncovered and taken down,…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="show hn: a game where you build a gpu"
            data-desc="thought the resources for gpu arch were lacking, so here we are"
            data-source="hacker news"
@@ -943,7 +1022,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 340</span><span class="badge">💬 108</span>
+              <span class="badge">⬆ 345</span><span class="badge">💬 108</span>
             </div>
             <h3 class="card-title">Show HN: A game where you build a GPU</h3>
             <p class="card-desc">Thought the resources for GPU arch were lacking, so here we are</p>
@@ -965,7 +1044,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 463</span><span class="badge">💬 139</span>
+              <span class="badge">⬆ 466</span><span class="badge">💬 144</span>
             </div>
             <h3 class="card-title">Embarrassingly simple self-distillation improves code generation</h3>
             
@@ -995,28 +1074,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="student debt burdened them, so they moved abroad and stopped paying"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-04T20:35:02.000Z"
-           data-url="https://www.nytimes.com/2026/04/04/business/student-loans-abroad-default.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nytimes.com/2026/04/04/business/student-loans-abroad-default.html',title:'Student Debt Burdened Them, So They Moved Abroad and Stopped Paying',source:'Hacker News',date:'2026-04-04T20:35:02.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.nytimes.com/2026/04/04/business/student-loans-abroad-default.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 30</span><span class="badge">💬 38</span>
-            </div>
-            <h3 class="card-title">Student Debt Burdened Them, So They Moved Abroad and Stopped Paying</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="apple approves driver that lets nvidia egpus work with arm macs"
            data-desc=""
            data-source="hacker news"
@@ -1031,7 +1088,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 252</span><span class="badge">💬 120</span>
+              <span class="badge">⬆ 256</span><span class="badge">💬 122</span>
             </div>
             <h3 class="card-title">Apple approves driver that lets Nvidia eGPUs work with Arm Macs</h3>
             
@@ -1053,7 +1110,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 607</span><span class="badge">💬 409</span>
+              <span class="badge">⬆ 614</span><span class="badge">💬 411</span>
             </div>
             <h3 class="card-title">Author of "Careless People" banned from saying anything negative about Meta</h3>
             
@@ -1075,7 +1132,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 218</span><span class="badge">💬 65</span>
+              <span class="badge">⬆ 219</span><span class="badge">💬 65</span>
             </div>
             <h3 class="card-title">Some Unusual Trees</h3>
             
@@ -1097,7 +1154,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de abr. de 2026</span>
-              <span class="badge">⬆ 47</span><span class="badge">💬 9</span>
+              <span class="badge">⬆ 50</span><span class="badge">💬 9</span>
             </div>
             <h3 class="card-title">The Indie Internet Index – submit your favorite sites</h3>
             
@@ -1189,6 +1246,28 @@
             </div>
             <h3 class="card-title">Sopwith – 1984 Game (2000)</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="unpacking peter thiel&#8217;s big bet on solar-powered cow collars"
+           data-desc="why did founders fund invest $220 million in cattle management startup halter?"
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Sat, 04 Apr 2026 21:30:00 +0000"
+           data-url="https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/',title:'Unpacking Peter Thiel&#8217;s big bet on solar-powered cow collars',source:'techcrunch',date:'Sat, 04 Apr 2026 21:30:00 +0000',image:'',description:'Why did Founders Fund invest $220 million in cattle management startup Halter?',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">04 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Unpacking Peter Thiel&#8217;s big bet on solar-powered cow collars</h3>
+            <p class="card-desc">Why did Founders Fund invest $220 million in cattle management startup Halter?</p>
           </div>
         </a>
       </div>
@@ -1299,6 +1378,23 @@
     </div>
   </main>
 
+  <div class="curadoria-section">
+    <div class="curadoria-card">
+      <div class="curadoria-header">
+        <div class="curadoria-title">✦ Prompt de Curadoria Davision</div>
+        <div class="curadoria-meta">Gerado com <strong id="promptNewsCount">0</strong> notícias · <span id="promptDate"></span></div>
+      </div>
+      <div class="prompt-box" id="promptBox"></div>
+      <div class="curadoria-actions">
+        <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">
+          <span id="copyIcon">📋</span> Copiar prompt
+        </button>
+        <button class="regen-btn" onclick="generatePrompt()">↺ Regenerar</button>
+        <span class="prompt-hint">Cole em qualquer IA para obter a curadoria</span>
+      </div>
+    </div>
+  </div>
+
   <footer>
     Dados via Hacker News API + RSS (Slashdot · VentureBeat · TechCrunch · The Verge · Wired · MIT Tech Review · arXiv) · Apify Actor <code>duhmendes~hotnews-ai-tech</code>
   </footer>
@@ -1399,7 +1495,85 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initSaved);
+  document.addEventListener('DOMContentLoaded', () => { initSaved(); generatePrompt(); });
+
+  // ── Prompt de Curadoria Davision ──
+  function generatePrompt() {
+    // Coleta todas as notícias visíveis nos cards
+    const cards = document.querySelectorAll('#sections .card[data-title]');
+    const news = [];
+    cards.forEach((card, i) => {
+      const title = card.querySelector('.card-title')?.textContent?.trim();
+      const desc  = card.querySelector('.card-desc')?.textContent?.trim();
+      const source = card.dataset.source || '';
+      const cat   = card.dataset.cat || '';
+      if (title) news.push({ n: i + 1, title, desc: desc || '', source, cat });
+    });
+
+    if (!news.length) return;
+
+    const today = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+    document.getElementById('promptDate').textContent = today;
+    document.getElementById('promptNewsCount').textContent = news.length;
+
+    const newsList = news.map(n =>
+      `[${n.n}] ${n.title}${n.desc ? '\n     ' + n.desc.substring(0, 120) + (n.desc.length > 120 ? '…' : '') : ''}\n     Fonte: ${n.source} | Categoria: ${n.cat}`
+    ).join('\n\n');
+
+    const prompt = `Você é estrategista de conteúdo da Davision — uma marca de referência em IA, robótica e tecnologia emergente no Brasil.
+
+Abaixo estão ${news.length} notícias coletadas hoje (${today}). Analise cada uma e selecione as **3 melhores** para se tornarem posts da Davision.
+
+Para cada notícia selecionada, avalie:
+• **Potencial de retenção** — a notícia prende a atenção? Gera curiosidade? Vale parar o scroll?
+• **Engajamento dentro da bolha** — o quanto ressoa com a audiência já engajada de IA/tech?
+• **Engajamento fora da bolha** — tem apelo para quem ainda não conhece a Davision? Pode atrair novos seguidores?
+• **Ângulo editorial** — qual é a melhor narrativa para a Davision explorar nessa notícia?
+
+Para cada um dos 3 posts escolhidos, entregue:
+1. Por que essa notícia foi selecionada (justificativa de curadoria)
+2. Formato recomendado (carrossel, Reel, post único, Stories)
+3. Ângulo narrativo sugerido
+4. Hook de abertura (primeira frase que para o scroll)
+
+---
+NOTÍCIAS DO DIA:
+
+${newsList}
+---
+
+Selecione os 3 melhores posts e entregue a análise completa.`;
+
+    document.getElementById('promptBox').textContent = prompt;
+  }
+
+  async function copyPrompt() {
+    const text = document.getElementById('promptBox').textContent;
+    if (!text) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyBtn');
+      const icon = document.getElementById('copyIcon');
+      btn.classList.add('copied');
+      icon.textContent = '✓';
+      btn.childNodes[1].textContent = ' Copiado!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        icon.textContent = '📋';
+        btn.childNodes[1].textContent = ' Copiar prompt';
+      }, 2500);
+    } catch {
+      // fallback para browsers sem clipboard API
+      const box = document.getElementById('promptBox');
+      const sel = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(box);
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+    }
+  }
 
   // ── Estado do filtro ──
   let activeCategory = 'all';
