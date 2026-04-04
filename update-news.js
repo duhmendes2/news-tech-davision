@@ -261,6 +261,63 @@ function generateHTML(items) {
     .result-info { font-size: 0.8rem; color: #64748b; margin-bottom: 24px; }
     .result-info strong { color: #94a3b8; }
 
+    /* ── Curadoria Davision ── */
+    .curadoria-section {
+      max-width: 1400px; margin: 0 auto 0; padding: 0 40px 56px;
+    }
+    .curadoria-card {
+      background: linear-gradient(135deg, #1a1d27 0%, #16192280 100%);
+      border: 1px solid #2d3348;
+      border-radius: 20px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .curadoria-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #6366f108, #ec489908);
+      pointer-events: none;
+    }
+    .curadoria-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+    }
+    .curadoria-title {
+      font-size: 1.1rem; font-weight: 700;
+      background: linear-gradient(135deg, #818cf8, #ec4899);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .curadoria-meta { font-size: 0.75rem; color: #64748b; }
+    .curadoria-meta strong { color: #94a3b8; }
+    .prompt-box {
+      background: #0f1117; border: 1px solid #1e2230; border-radius: 12px;
+      padding: 20px; font-size: 0.8rem; color: #94a3b8; line-height: 1.7;
+      white-space: pre-wrap; word-break: break-word;
+      max-height: 380px; overflow-y: auto; font-family: 'Inter', sans-serif;
+      resize: vertical;
+    }
+    .prompt-box::-webkit-scrollbar { width: 6px; }
+    .prompt-box::-webkit-scrollbar-track { background: #0f1117; }
+    .prompt-box::-webkit-scrollbar-thumb { background: #2d3348; border-radius: 3px; }
+    .curadoria-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; align-items: center; }
+    .copy-btn {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      border: none; color: white; padding: 10px 22px; border-radius: 10px;
+      font-size: 0.82rem; font-weight: 600; cursor: pointer;
+      transition: all .2s; display: flex; align-items: center; gap: 7px;
+    }
+    .copy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px #6366f140; }
+    .copy-btn.copied { background: linear-gradient(135deg, #10b981, #34d399); }
+    .regen-btn {
+      background: #1a1d27; border: 1px solid #2d3348; color: #94a3b8;
+      padding: 10px 18px; border-radius: 10px; font-size: 0.82rem;
+      cursor: pointer; transition: all .2s;
+    }
+    .regen-btn:hover { background: #2d3348; color: #e2e8f0; }
+    .prompt-hint { font-size: 0.72rem; color: #475569; margin-left: auto; }
+
     footer { text-align: center; padding: 36px; color: #475569; font-size: 0.78rem; border-top: 1px solid #1e2230; }
 
     @media (max-width: 768px) {
@@ -376,6 +433,23 @@ function generateHTML(items) {
     </div>
   </main>
 
+  <div class="curadoria-section">
+    <div class="curadoria-card">
+      <div class="curadoria-header">
+        <div class="curadoria-title">✦ Prompt de Curadoria Davision</div>
+        <div class="curadoria-meta">Gerado com <strong id="promptNewsCount">0</strong> notícias · <span id="promptDate"></span></div>
+      </div>
+      <div class="prompt-box" id="promptBox"></div>
+      <div class="curadoria-actions">
+        <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">
+          <span id="copyIcon">📋</span> Copiar prompt
+        </button>
+        <button class="regen-btn" onclick="generatePrompt()">↺ Regenerar</button>
+        <span class="prompt-hint">Cole em qualquer IA para obter a curadoria</span>
+      </div>
+    </div>
+  </div>
+
   <footer>
     Dados via Hacker News API + RSS (Slashdot · VentureBeat · TechCrunch · The Verge · Wired · MIT Tech Review · arXiv) · Apify Actor <code>duhmendes~hotnews-ai-tech</code>
   </footer>
@@ -476,7 +550,85 @@ function generateHTML(items) {
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initSaved);
+  document.addEventListener('DOMContentLoaded', () => { initSaved(); generatePrompt(); });
+
+  // ── Prompt de Curadoria Davision ──
+  function generatePrompt() {
+    // Coleta todas as notícias visíveis nos cards
+    const cards = document.querySelectorAll('#sections .card[data-title]');
+    const news = [];
+    cards.forEach((card, i) => {
+      const title = card.querySelector('.card-title')?.textContent?.trim();
+      const desc  = card.querySelector('.card-desc')?.textContent?.trim();
+      const source = card.dataset.source || '';
+      const cat   = card.dataset.cat || '';
+      if (title) news.push({ n: i + 1, title, desc: desc || '', source, cat });
+    });
+
+    if (!news.length) return;
+
+    const today = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+    document.getElementById('promptDate').textContent = today;
+    document.getElementById('promptNewsCount').textContent = news.length;
+
+    const newsList = news.map(n =>
+      \`[\${n.n}] \${n.title}\${n.desc ? '\\n     ' + n.desc.substring(0, 120) + (n.desc.length > 120 ? '…' : '') : ''}\\n     Fonte: \${n.source} | Categoria: \${n.cat}\`
+    ).join('\\n\\n');
+
+    const prompt = \`Você é estrategista de conteúdo da Davision — uma marca de referência em IA, robótica e tecnologia emergente no Brasil.
+
+Abaixo estão \${news.length} notícias coletadas hoje (\${today}). Analise cada uma e selecione as **3 melhores** para se tornarem posts da Davision.
+
+Para cada notícia selecionada, avalie:
+• **Potencial de retenção** — a notícia prende a atenção? Gera curiosidade? Vale parar o scroll?
+• **Engajamento dentro da bolha** — o quanto ressoa com a audiência já engajada de IA/tech?
+• **Engajamento fora da bolha** — tem apelo para quem ainda não conhece a Davision? Pode atrair novos seguidores?
+• **Ângulo editorial** — qual é a melhor narrativa para a Davision explorar nessa notícia?
+
+Para cada um dos 3 posts escolhidos, entregue:
+1. Por que essa notícia foi selecionada (justificativa de curadoria)
+2. Formato recomendado (carrossel, Reel, post único, Stories)
+3. Ângulo narrativo sugerido
+4. Hook de abertura (primeira frase que para o scroll)
+
+---
+NOTÍCIAS DO DIA:
+
+\${newsList}
+---
+
+Selecione os 3 melhores posts e entregue a análise completa.\`;
+
+    document.getElementById('promptBox').textContent = prompt;
+  }
+
+  async function copyPrompt() {
+    const text = document.getElementById('promptBox').textContent;
+    if (!text) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyBtn');
+      const icon = document.getElementById('copyIcon');
+      btn.classList.add('copied');
+      icon.textContent = '✓';
+      btn.childNodes[1].textContent = ' Copiado!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        icon.textContent = '📋';
+        btn.childNodes[1].textContent = ' Copiar prompt';
+      }, 2500);
+    } catch {
+      // fallback para browsers sem clipboard API
+      const box = document.getElementById('promptBox');
+      const sel = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(box);
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+    }
+  }
 
   // ── Estado do filtro ──
   let activeCategory = 'all';
