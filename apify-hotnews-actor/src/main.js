@@ -24,7 +24,7 @@ const SOURCE_LOGOS = {
 
 function parseRSS(xml, sourceName) {
   const items = [];
-  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+  const itemRegex = /<item[^>]*>([\s\S]*?)<\/item>/g;
   let match;
   while ((match = itemRegex.exec(xml)) !== null) {
     const block = match[1];
@@ -35,7 +35,7 @@ function parseRSS(xml, sourceName) {
     const title = get('title');
     const link  = (get('link') || block.match(/<link>([^<]+)<\/link>/)?.[1] || '').trim();
     const desc  = get('description').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 250);
-    const date  = get('pubDate') || get('published') || '';
+    const date  = get('pubDate') || get('published') || get('dc:date') || '';
 
     // Tentar extrair imagem do RSS
     let image = '';
