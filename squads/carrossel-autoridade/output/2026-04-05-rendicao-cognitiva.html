@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rendição Cognitiva — Davision</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --surface2: #1e1e1e;
+    --border: #2a2a2a;
+    --accent: #7c3aed;
+    --accent2: #a855f7;
+    --green: #22c55e;
+    --text: #f0f0f0;
+    --muted: #666;
+    --blue: #3b82f6;
+    --amber: #f59e0b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 0 0 80px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .logo { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); }
+  .sep { color: var(--muted); }
+  .title-header { font-size: 14px; color: var(--muted); font-weight: 400; }
+  .fonte-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--muted); text-decoration: none;
+    padding: 7px 13px; border: 1px solid var(--border);
+    border-radius: 8px; transition: all 0.2s;
+  }
+  .fonte-link:hover { border-color: var(--accent); color: var(--accent2); }
+
+  /* PROGRESS */
+  .progress-bar { height: 3px; background: var(--border); position: sticky; top: 57px; z-index: 99; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.4s ease; width: 11.1%; }
+
+  /* NAV DOTS */
+  .slide-nav {
+    display: flex; gap: 6px; padding: 20px 24px 0;
+    flex-wrap: wrap; max-width: 860px; margin: 0 auto;
+  }
+  .nav-dot {
+    height: 32px; min-width: 32px; padding: 0 10px;
+    border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--muted);
+    font-size: 11px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+    white-space: nowrap;
+  }
+  .nav-dot:hover { border-color: var(--accent); color: var(--accent2); }
+  .nav-dot.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .nav-dot.done { border-color: var(--green); color: var(--green); }
+
+  /* MAIN */
+  main { max-width: 860px; margin: 0 auto; padding: 24px 24px 0; }
+
+  .slide { display: none; animation: fadeIn 0.3s ease; }
+  .slide.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SLIDE HEADER */
+  .slide-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .slide-num {
+    background: var(--accent); color: white;
+    font-size: 12px; font-weight: 700;
+    padding: 4px 10px; border-radius: 6px;
+    letter-spacing: 0.05em; white-space: nowrap;
+  }
+  .slide-label { font-size: 18px; font-weight: 700; color: var(--text); }
+  .slide-bg-tag {
+    margin-left: auto; font-size: 11px; padding: 3px 8px;
+    border-radius: 4px; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap;
+  }
+  .bg-dark  { background: #1a1a2e; color: #818cf8; border: 1px solid #3730a3; }
+  .bg-light { background: #1a2e1a; color: #86efac; border: 1px solid #166534; }
+  .bg-accent{ background: #2d1a3e; color: #c084fc; border: 1px solid #7e22ce; }
+
+  /* FIELD */
+  .field {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px; margin-bottom: 12px;
+    transition: border-color 0.2s; position: relative;
+  }
+  .field:hover { border-color: #3a3a3a; }
+
+  .field-label {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .label-headline  { color: var(--accent2); }
+  .label-subtitulo { color: #a78bfa; }
+  .label-texto     { color: #94a3b8; }
+  .label-destaque  { color: #fb923c; }
+  .label-legenda   { color: #34d399; }
+  .label-hashtag   { color: #f472b6; }
+
+  .field-content {
+    font-size: 15px; line-height: 1.8; color: var(--text);
+    padding-right: 88px; white-space: pre-wrap; word-break: break-word;
+  }
+
+  /* COPY BTN */
+  .copy-btn {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--muted); border-radius: 8px; padding: 6px 12px;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center;
+    gap: 6px; white-space: nowrap; z-index: 2;
+  }
+  .copy-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+  .copy-btn.copied { background: var(--green); border-color: var(--green); color: white; }
+  .copy-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+  /* COPY ALL */
+  .copy-all-btn {
+    width: 100%; background: var(--surface2); border: 1px dashed var(--border);
+    color: var(--muted); border-radius: 10px; padding: 12px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .copy-all-btn:hover { border-color: var(--accent); color: var(--accent2); background: rgba(124,58,237,0.05); }
+  .copy-all-btn.copied { border-color: var(--green); color: var(--green); }
+
+  /* NAV ACTIONS */
+  .nav-actions {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .nav-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); border-radius: 10px; padding: 10px 20px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; gap: 8px;
+  }
+  .nav-btn:hover { border-color: var(--accent); color: var(--accent2); }
+  .nav-btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
+  .nav-btn.primary:hover { background: #6d28d9; }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn:disabled:hover { border-color: var(--border); color: var(--text); }
+  .slide-counter { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 32px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--green); color: white; font-weight: 700;
+    font-size: 13px; padding: 10px 20px; border-radius: 999px;
+    z-index: 999; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 600px) {
+    .field-content { padding-right: 0; padding-bottom: 48px; }
+    .copy-btn { top: auto; bottom: 12px; right: 12px; }
+  }
+
+  /* ÍCONES inline */
+  .icon-copy { display: inline-block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <span class="logo">Davision</span>
+    <span class="sep">/</span>
+    <span class="title-header">Rendição Cognitiva</span>
+  </div>
+  <a href="https://science.slashdot.org/story/26/04/03/2334204/cognitive-surrender-leads-ai-users-to-abandon-logical-thinking-research-finds" target="_blank" class="fonte-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    Fonte
+  </a>
+</header>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="slide-nav" id="slideNav"></div>
+
+<main>
+
+<!-- SLIDE 1 — Cover -->
+<div class="slide active" data-slide="0">
+  <div class="slide-header">
+    <span class="slide-num">01 — Cover</span>
+    <span class="slide-label">Abertura</span>
+    <span class="slide-bg-tag bg-dark">Dark</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(0)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    Copiar slide inteiro
+  </button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">Terceirizar o raciocínio tem um preço.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-subtitulo">Subtítulo</div>
+    <div class="field-content">Uma pesquisa com 9.500 testes mediu quanto você está pagando.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavra destaque</div>
+    <div class="field-content">preço</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" disabled>← Anterior</button>
+    <span class="slide-counter">1 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 2 — A Pesquisa -->
+<div class="slide" data-slide="1">
+  <div class="slide-header">
+    <span class="slide-num">02 — O Estudo</span>
+    <span class="slide-label">A Pesquisa</span>
+    <span class="slide-bg-tag bg-light">Light</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">O estudo</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">Texto</div>
+    <div class="field-content">Pesquisadores analisaram 1.372 pessoas em mais de 9.500 testes individuais. O objetivo era simples: medir o que acontece com o raciocínio humano quando um assistente de geração de texto está no meio da equação.
+
+Em cada teste, os participantes recebiam uma tarefa lógica ou analítica. Em parte dos casos, o assistente fornecia uma resposta deliberadamente errada. A pergunta era: as pessoas percebem?
+
+O resultado: 73.2% aceitaram o raciocínio falho sem questionar. Apenas 19.7% contestaram o output.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavras destaque</div>
+    <div class="field-content">73.2% · 19.7% · sem questionar</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">2 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 3 — O que os dados revelam -->
+<div class="slide" data-slide="2">
+  <div class="slide-header">
+    <span class="slide-num">03 — Análise</span>
+    <span class="slide-label">O que os dados revelam</span>
+    <span class="slide-bg-tag bg-dark">Dark</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">Não é sobre errar. É sobre nem tentar.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">Texto</div>
+    <div class="field-content">O dado mais relevante não é o percentual de erros aceitos. É o que ele revela sobre o processo cognitivo por trás da aceitação.
+
+Os pesquisadores observaram que a maioria dos participantes não comparou o output com o próprio raciocínio. Eles simplesmente substituíram um pelo outro. A ferramenta não foi usada como apoio ao pensamento. Foi usada no lugar dele.
+
+Os autores chamam esse comportamento de "Cognitive Surrender" — rendição cognitiva. Não é distração. Não é preguiça acidental. É uma transferência ativa de autoridade intelectual para um sistema que não tem nenhuma.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavras destaque</div>
+    <div class="field-content">Cognitive Surrender · rendição cognitiva · transferência ativa</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">3 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 4 — Quem resiste -->
+<div class="slide" data-slide="3">
+  <div class="slide-header">
+    <span class="slide-num">04 — Padrão</span>
+    <span class="slide-label">Quem resiste</span>
+    <span class="slide-bg-tag bg-accent">Accent</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">Existe um padrão em quem não se rende.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">Texto</div>
+    <div class="field-content">A pesquisa identificou uma variável consistente entre os 19.7% que questionaram os outputs incorretos: índices mais altos de raciocínio fluído.
+
+Raciocínio fluído é a capacidade de resolver problemas novos sem depender de conhecimento acumulado. É o músculo do pensamento crítico em tempo real.
+
+A conclusão prática é direta: quem mantém o hábito de raciocinar ativamente resiste mais à aceitação passiva. Não porque seja mais inteligente no sentido amplo, mas porque o músculo está em uso.
+
+A ferramenta não criou a diferença. Ela revelou uma diferença que já existia.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavras destaque</div>
+    <div class="field-content">raciocínio fluído · músculo · já existia</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">4 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 5 — Contexto histórico -->
+<div class="slide" data-slide="4">
+  <div class="slide-header">
+    <span class="slide-num">05 — Contexto</span>
+    <span class="slide-label">Não é novidade</span>
+    <span class="slide-bg-tag bg-light">Light</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">Isso não começou com o ChatGPT.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">Texto</div>
+    <div class="field-content">Pesquisas sobre aceitação acrítica de informação existem há décadas. Um dos comentaristas do estudo citou um dado que reaparece em múltiplas pesquisas sobre comportamento informacional: entre 10% e 15% das pessoas verificam ativamente o que leem. O restante sempre operou por confiança na fonte.
+
+A diferença hoje é a escala e a sofisticação da interface. Um blog podia parecer amador. Um portal de notícias, parcial. Um assistente de geração de texto parece neutro, preciso e imediato — mesmo quando erra.
+
+A preguiça cognitiva não é nova. O que é novo é uma ferramenta que parece não merecer desconfiança.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavras destaque</div>
+    <div class="field-content">10% a 15% · parece não merecer desconfiança</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">5 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 6 — Take Davision -->
+<div class="slide" data-slide="5">
+  <div class="slide-header">
+    <span class="slide-num">06 — Take</span>
+    <span class="slide-label">Davision</span>
+    <span class="slide-bg-tag bg-dark">Dark</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(5)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">O problema não está na ferramenta. Está na postura de quem usa.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">Texto</div>
+    <div class="field-content">O estudo deixa uma conclusão incômoda na mesa: os assistentes de geração de texto não reduzem a inteligência de ninguém. Eles amplificam o que já está lá.
+
+Quem raciocina com a ferramenta sai mais rápido e mais longe. Quem delega para ela sai com uma resposta que não sabe avaliar.
+
+A pesquisa chama de rendição cognitiva. Mas rendição implica uma batalha. E a maioria nem percebeu que havia uma.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-destaque">Palavras destaque</div>
+    <div class="field-content">amplificam o que já está lá · nem percebeu que havia uma batalha</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">6 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- SLIDE 7 — CTA -->
+<div class="slide" data-slide="6">
+  <div class="slide-header">
+    <span class="slide-num">07 — CTA</span>
+    <span class="slide-label">Encerramento</span>
+    <span class="slide-bg-tag bg-accent">Accent</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar slide inteiro</button>
+  <div class="field">
+    <div class="field-label label-headline">Headline</div>
+    <div class="field-content">Com qual lado você discordou mais?</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-texto">CTA</div>
+    <div class="field-content">Salva esse carrossel. Vale reler depois de uma semana usando assistentes de IA. Comenta: você questiona os outputs ou aceita na maioria das vezes?</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">7 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- LEGENDA -->
+<div class="slide" data-slide="7">
+  <div class="slide-header">
+    <span class="slide-num" style="background:#22c55e">Legenda</span>
+    <span class="slide-label">Caption Instagram</span>
+  </div>
+  <button class="copy-all-btn" onclick="copyAll(7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar legenda inteira</button>
+  <div class="field">
+    <div class="field-label label-legenda">Hook — primeiros 125 chars</div>
+    <div class="field-content">Pesquisa com 9.500 testes: 73% das pessoas aceitam respostas erradas de assistentes de texto sem questionar.</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="field">
+    <div class="field-label label-legenda">Corpo</div>
+    <div class="field-content">Mas o dado mais importante não é esse número.
+
+É o que a pesquisa chama de "Cognitive Surrender": a transferência ativa da autoridade intelectual para uma ferramenta que não tem nenhuma.
+
+Não é preguiça. Não é distração. É uma escolha inconsciente que a maioria está fazendo toda vez que abre o ChatGPT ou o Gemini sem checar o output.
+
+A boa notícia: existe um padrão em quem resiste. E ele não depende de ser mais inteligente. Depende de manter o hábito de raciocinar.
+
+Você ainda está fazendo isso?</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">8 / 9</span>
+    <button class="nav-btn primary" onclick="goSlide(1)">Próximo →</button>
+  </div>
+</div>
+
+<!-- HASHTAGS -->
+<div class="slide" data-slide="8">
+  <div class="slide-header">
+    <span class="slide-num" style="background:#f472b6">Tags</span>
+    <span class="slide-label">Hashtags</span>
+  </div>
+  <div class="field">
+    <div class="field-label label-hashtag">Bloco completo</div>
+    <div class="field-content">#cognitiveai #pensamentocritico #chatgpt #gemini #davision #techbrasil #inteligenciaartificial #tecnologia #IA2026 #comportamento #raciocinio</div>
+    <button class="copy-btn" onclick="copyField(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button>
+  </div>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="goSlide(-1)">← Anterior</button>
+    <span class="slide-counter">9 / 9</span>
+    <button class="nav-btn" disabled style="opacity:0.3">Fim ✓</button>
+  </div>
+</div>
+
+</main>
+
+<div class="toast" id="toast">Copiado!</div>
+
+<script>
+  const TOTAL = 9;
+  let current = 0;
+  const done = new Set();
+
+  const allData = [
+    "HEADLINE:\nTerceirizar o raciocínio tem um preço.\n\nSUBTÍTULO:\nUma pesquisa com 9.500 testes mediu quanto você está pagando.\n\nDESTAQUE: preço\nBACKGROUND: dark",
+    "HEADLINE:\nO estudo\n\nTEXTO:\nPesquisadores analisaram 1.372 pessoas em mais de 9.500 testes individuais. O objetivo era simples: medir o que acontece com o raciocínio humano quando um assistente de geração de texto está no meio da equação.\n\nEm cada teste, os participantes recebiam uma tarefa lógica ou analítica. Em parte dos casos, o assistente fornecia uma resposta deliberadamente errada. A pergunta era: as pessoas percebem?\n\nO resultado: 73.2% aceitaram o raciocínio falho sem questionar. Apenas 19.7% contestaram o output.\n\nDESTAQUE: 73.2% · 19.7% · sem questionar\nBACKGROUND: light",
+    "HEADLINE:\nNão é sobre errar. É sobre nem tentar.\n\nTEXTO:\nO dado mais relevante não é o percentual de erros aceitos. É o que ele revela sobre o processo cognitivo por trás da aceitação.\n\nOs pesquisadores observaram que a maioria dos participantes não comparou o output com o próprio raciocínio. Eles simplesmente substituíram um pelo outro. A ferramenta não foi usada como apoio ao pensamento. Foi usada no lugar dele.\n\nOs autores chamam esse comportamento de \"Cognitive Surrender\" — rendição cognitiva. Não é distração. Não é preguiça acidental. É uma transferência ativa de autoridade intelectual para um sistema que não tem nenhuma.\n\nDESTAQUE: Cognitive Surrender · rendição cognitiva · transferência ativa\nBACKGROUND: dark",
+    "HEADLINE:\nExiste um padrão em quem não se rende.\n\nTEXTO:\nA pesquisa identificou uma variável consistente entre os 19.7% que questionaram os outputs incorretos: índices mais altos de raciocínio fluído.\n\nRaciocínio fluído é a capacidade de resolver problemas novos sem depender de conhecimento acumulado. É o músculo do pensamento crítico em tempo real.\n\nA conclusão prática é direta: quem mantém o hábito de raciocinar ativamente resiste mais à aceitação passiva. Não porque seja mais inteligente no sentido amplo, mas porque o músculo está em uso.\n\nA ferramenta não criou a diferença. Ela revelou uma diferença que já existia.\n\nDESTAQUE: raciocínio fluído · músculo · já existia\nBACKGROUND: accent",
+    "HEADLINE:\nIsso não começou com o ChatGPT.\n\nTEXTO:\nPesquisas sobre aceitação acrítica de informação existem há décadas. Um dos comentaristas do estudo citou um dado que reaparece em múltiplas pesquisas sobre comportamento informacional: entre 10% e 15% das pessoas verificam ativamente o que leem. O restante sempre operou por confiança na fonte.\n\nA diferença hoje é a escala e a sofisticação da interface. Um blog podia parecer amador. Um portal de notícias, parcial. Um assistente de geração de texto parece neutro, preciso e imediato — mesmo quando erra.\n\nA preguiça cognitiva não é nova. O que é novo é uma ferramenta que parece não merecer desconfiança.\n\nDESTAQUE: 10% a 15% · parece não merecer desconfiança\nBACKGROUND: light",
+    "HEADLINE:\nO problema não está na ferramenta. Está na postura de quem usa.\n\nTEXTO:\nO estudo deixa uma conclusão incômoda na mesa: os assistentes de geração de texto não reduzem a inteligência de ninguém. Eles amplificam o que já está lá.\n\nQuem raciocina com a ferramenta sai mais rápido e mais longe. Quem delega para ela sai com uma resposta que não sabe avaliar.\n\nA pesquisa chama de rendição cognitiva. Mas rendição implica uma batalha. E a maioria nem percebeu que havia uma.\n\nDESTAQUE: amplificam o que já está lá · nem percebeu que havia uma batalha\nBACKGROUND: dark",
+    "HEADLINE:\nCom qual lado você discordou mais?\n\nCTA:\nSalva esse carrossel. Vale reler depois de uma semana usando assistentes de IA. Comenta: você questiona os outputs ou aceita na maioria das vezes?\n\nBACKGROUND: accent",
+    "LEGENDA COMPLETA:\n\nPesquisa com 9.500 testes: 73% das pessoas aceitam respostas erradas de assistentes de texto sem questionar.\n\nMas o dado mais importante não é esse número.\n\nÉ o que a pesquisa chama de \"Cognitive Surrender\": a transferência ativa da autoridade intelectual para uma ferramenta que não tem nenhuma.\n\nNão é preguiça. Não é distração. É uma escolha inconsciente que a maioria está fazendo toda vez que abre o ChatGPT ou o Gemini sem checar o output.\n\nA boa notícia: existe um padrão em quem resiste. E ele não depende de ser mais inteligente. Depende de manter o hábito de raciocinar.\n\nVocê ainda está fazendo isso?",
+    "#cognitiveai #pensamentocritico #chatgpt #gemini #davision #techbrasil #inteligenciaartificial #tecnologia #IA2026 #comportamento #raciocinio"
+  ];
+
+  const navLabels = ['01','02','03','04','05','06','07','LEG','###'];
+
+  function buildNav() {
+    const nav = document.getElementById('slideNav');
+    nav.innerHTML = navLabels.map((l, i) => `
+      <button class="nav-dot ${i === 0 ? 'active' : ''}" onclick="goTo(${i})" id="dot${i}">${l}</button>
+    `).join('');
+  }
+
+  function updateProgress() {
+    document.getElementById('progressFill').style.width = (((current + 1) / TOTAL) * 100) + '%';
+  }
+
+  function goTo(idx) {
+    document.querySelectorAll('.slide')[current].classList.remove('active');
+    document.getElementById('dot' + current).classList.remove('active');
+    current = idx;
+    document.querySelectorAll('.slide')[current].classList.add('active');
+    const dot = document.getElementById('dot' + current);
+    dot.classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goSlide(dir) {
+    const next = current + dir;
+    if (next >= 0 && next < TOTAL) goTo(next);
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg || 'Copiado!';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  const iconCopy = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;
+  const iconCheck = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+  function copyField(btn) {
+    const content = btn.closest('.field').querySelector('.field-content').innerText;
+    navigator.clipboard.writeText(content).then(() => {
+      btn.classList.add('copied');
+      btn.innerHTML = iconCheck + ' Copiado!';
+      showToast();
+      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = iconCopy + ' Copiar'; }, 2000);
+    });
+  }
+
+  function copyAll(idx) {
+    navigator.clipboard.writeText(allData[idx]).then(() => {
+      const btns = document.querySelectorAll('.slide.active .copy-all-btn');
+      btns.forEach(b => { b.classList.add('copied'); b.innerHTML = iconCheck + ' Tudo copiado!'; });
+      done.add(current);
+      document.getElementById('dot' + current).classList.add('done');
+      showToast('Slide copiado!');
+      setTimeout(() => {
+        btns.forEach(b => {
+          b.classList.remove('copied');
+          b.innerHTML = iconCopy + ' Copiar slide inteiro';
+        });
+      }, 2500);
+    });
+  }
+
+  buildNav();
+  updateProgress();
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goSlide(1);
+    if (e.key === 'ArrowLeft') goSlide(-1);
+  });
+</script>
+</body>
+</html>
