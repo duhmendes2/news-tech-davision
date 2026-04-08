@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 08/04/2026, 09:10:48
+      Atualizado: 08/04/2026, 11:09:09
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">72</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">44</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">27</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">75</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">45</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">27</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,7 +249,7 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">44</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">45</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="slashdot"
@@ -494,6 +494,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="megatrain: full precision training of 100b+ parameter llms on a single gpu"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-08T12:19:00.000Z"
+           data-url="https://arxiv.org/abs/2604.05091">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.05091',title:'MegaTrain: Full Precision Training of 100B+ Parameter LLMs on a Single GPU',source:'Hacker News',date:'2026-04-08T12:19:00.000Z',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.05091" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de abr. de 2026</span>
+              <span class="badge">⬆ 67</span><span class="badge">💬 12</span>
+            </div>
+            <h3 class="card-title">MegaTrain: Full Precision Training of 100B+ Parameter LLMs on a Single GPU</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="project glasswing: securing critical software for the ai era"
            data-desc="related: assessing claude mythos preview&#x27;s cybersecurity capabilities - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=47679155system card: claude mythos preview [pdf] - https:&#x2f;&#x2f;ne"
            data-source="hacker news"
@@ -508,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 1333</span><span class="badge">💬 672</span>
+              <span class="badge">⬆ 1383</span><span class="badge">💬 710</span>
             </div>
             <h3 class="card-title">Project Glasswing: Securing critical software for the AI era</h3>
             <p class="card-desc">Related: Assessing Claude Mythos Preview&#x27;s cybersecurity capabilities - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47679155System Card: …</p>
@@ -530,7 +552,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 733</span><span class="badge">💬 529</span>
+              <span class="badge">⬆ 765</span><span class="badge">💬 554</span>
             </div>
             <h3 class="card-title">System Card: Claude Mythos Preview [pdf]</h3>
             <p class="card-desc">Related: Project Glasswing: Securing critical software for the AI era - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47679121Assessing Claude M…</p>
@@ -538,35 +560,57 @@
         </a>
       </div>
       <div class="card"
-           data-title="show hn: an interactive map of tolkien's middle-earth"
-           data-desc="an interactive map of tolkien’s middle-earth, with events from across the legendarium plotted as markers.i have been commuting a fair bit between the east and west coast, and thanks to american airlin"
+           data-title="llm plays an 8-bit commander x16 game using structured &quot;smart senses&quot;"
+           data-desc="i connected the chatgpt api (model gpt-4o) to an 8-bit shoot-&#x27;em-up game, pvp-ai, running on a commander x16 emulator.instead of pixels or audio, the model receives structured text summaries, wha"
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-07T20:42:37.000Z"
-           data-url="https://middle-earth-interactive-map.web.app/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://middle-earth-interactive-map.web.app/',title:'Show HN: An interactive map of Tolkien\'s Middle-earth',source:'Hacker News',date:'2026-04-07T20:42:37.000Z',image:'',description:'An interactive map of Tolkien’s Middle-earth, with events from across the legendarium plotted as markers.I have been commuting a fair bit between the ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://middle-earth-interactive-map.web.app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-08T12:56:58.000Z"
+           data-url="https://pvp-ai.russell-harper.com">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://pvp-ai.russell-harper.com',title:'LLM plays an 8-bit Commander X16 game using structured &quot;smart senses&quot;',source:'Hacker News',date:'2026-04-08T12:56:58.000Z',image:'',description:'I connected the ChatGPT API (model gpt-4o) to an 8-bit shoot-&#x27;em-up game, PvP-AI, running on a Commander X16 emulator.Instead of pixels or audio,',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://pvp-ai.russell-harper.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 222</span><span class="badge">💬 41</span>
+              <span class="date">08 de abr. de 2026</span>
+              <span class="badge">⬆ 3</span>
             </div>
-            <h3 class="card-title">Show HN: An interactive map of Tolkien's Middle-earth</h3>
-            <p class="card-desc">An interactive map of Tolkien’s Middle-earth, with events from across the legendarium plotted as markers.I have been commuting a fair bit between the …</p>
+            <h3 class="card-title">LLM plays an 8-bit Commander X16 game using structured "smart senses"</h3>
+            <p class="card-desc">I connected the ChatGPT API (model gpt-4o) to an 8-bit shoot-&#x27;em-up game, PvP-AI, running on a Commander X16 emulator.Instead of pixels or audio,…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="atlassian launches visual ai tools and third-party agents in confluence"
+           data-desc="confluence users can now create visual assets within the software in addition to new third-party agents working with lovable, replit, and gamma."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Apr 2026 13:00:00 +0000"
+           data-url="https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/',title:'Atlassian launches visual AI tools and third-party agents in Confluence',source:'techcrunch',date:'Wed, 08 Apr 2026 13:00:00 +0000',image:'',description:'Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Atlassian launches visual AI tools and third-party agents in Confluence</h3>
+            <p class="card-desc">Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.</p>
           </div>
         </a>
       </div>
       <div class="card"
            data-title="x is rolling out automatic translation and photo editing powered by grok"
-           data-desc="new automatic translations and photo editing on x are powered by the companys flagship ai model."
+           data-desc="new automatic translations and photo editing on x are powered by the company's flagship ai model."
            data-source="techcrunch"
            data-cat="IA"
            data-date="Wed, 08 Apr 2026 12:06:22 +0000"
            data-url="https://techcrunch.com/2026/04/08/x-is-rolling-out-automatic-translation-and-photo-editing-powered-by-grok/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/08/x-is-rolling-out-automatic-translation-and-photo-editing-powered-by-grok/',title:'X is rolling out automatic translation and photo editing powered by Grok',source:'techcrunch',date:'Wed, 08 Apr 2026 12:06:22 +0000',image:'',description:'New automatic translations and photo editing on X are powered by the companys flagship AI model.',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/08/x-is-rolling-out-automatic-translation-and-photo-editing-powered-by-grok/',title:'X is rolling out automatic translation and photo editing powered by Grok',source:'techcrunch',date:'Wed, 08 Apr 2026 12:06:22 +0000',image:'',description:'New automatic translations and photo editing on X are powered by the company\'s flagship AI model.',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/04/08/x-is-rolling-out-automatic-translation-and-photo-editing-powered-by-grok/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
@@ -577,7 +621,7 @@
               
             </div>
             <h3 class="card-title">X is rolling out automatic translation and photo editing powered by Grok</h3>
-            <p class="card-desc">New automatic translations and photo editing on X are powered by the companys flagship AI model.</p>
+            <p class="card-desc">New automatic translations and photo editing on X are powered by the company's flagship AI model.</p>
           </div>
         </a>
       </div>
@@ -802,46 +846,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="trump administration plans to cut cybersecurity agency&#8217;s budget by $700 million"
-           data-desc="the budget proposal would force cisa to operate with a significantly lower budget than previous years, citing the government's claims that the election misinformation programs were used to "target the"
-           data-source="techcrunch"
+           data-title="the download: water threats in iran and ai&#8217;s impact on what entrepreneurs make"
+           data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. desalination plants in the middle east are increasingly vulner"
+           data-source="mit"
            data-cat="IA"
-           data-date="Tue, 07 Apr 2026 13:50:51 +0000"
-           data-url="https://techcrunch.com/2026/04/07/cisa-budget-cuts-700-million-cybersecurity-agency-trump/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/07/cisa-budget-cuts-700-million-cybersecurity-agency-trump/',title:'Trump administration plans to cut cybersecurity agency&#8217;s budget by $700 million',source:'techcrunch',date:'Tue, 07 Apr 2026 13:50:51 +0000',image:'',description:'The budget proposal would force CISA to operate with a significantly lower budget than previous years, citing the government\'s claims that the electio',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/07/cisa-budget-cuts-700-million-cybersecurity-agency-trump/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+           data-date="Wed, 08 Apr 2026 12:10:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/08/1135405/the-download-water-threats-iran-ais-impact-on-entrepreneurs-make/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/08/1135405/the-download-water-threats-iran-ais-impact-on-entrepreneurs-make/',title:'The Download: water threats in Iran and AI&#8217;s impact on what entrepreneurs make',source:'mit',date:'Wed, 08 Apr 2026 12:10:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2024/06/USWDS_SPREAD.jpg?w=3000',description:'This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Desalination',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/08/1135405/the-download-water-threats-iran-ais-impact-on-entrepreneurs-make/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2024/06/USWDS_SPREAD.jpg?w=3000')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de abr. de 2026</span>
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">08 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Trump administration plans to cut cybersecurity agency&#8217;s budget by $700 million</h3>
-            <p class="card-desc">The budget proposal would force CISA to operate with a significantly lower budget than previous years, citing the government's claims that the electio…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="why a former airpods engineer is now building heat pumps"
-           data-desc="merino energy has simplified the heat pump dramatically in a quest to make them cheaper and easier to install."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 07 Apr 2026 13:00:27 +0000"
-           data-url="https://techcrunch.com/2026/04/07/why-a-former-airpods-engineer-is-now-building-heat-pumps/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/07/why-a-former-airpods-engineer-is-now-building-heat-pumps/',title:'Why a former AirPods engineer is now building heat pumps',source:'techcrunch',date:'Tue, 07 Apr 2026 13:00:27 +0000',image:'',description:'Merino Energy has simplified the heat pump dramatically in a quest to make them cheaper and easier to install.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/07/why-a-former-airpods-engineer-is-now-building-heat-pumps/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Why a former AirPods engineer is now building heat pumps</h3>
-            <p class="card-desc">Merino Energy has simplified the heat pump dramatically in a quest to make them cheaper and easier to install.</p>
+            <h3 class="card-title">The Download: water threats in Iran and AI&#8217;s impact on what entrepreneurs make</h3>
+            <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Desalination…</p>
           </div>
         </a>
       </div>
@@ -1220,8 +1242,34 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="final 3 days to save up to $500 on your techcrunch disrupt 2026 pass"
+           data-desc="save up to $500 on your techcrunch disrupt 2026 pass until april 10, 11:59 p.m. pt. secure your spot at the center of the tech ecosystem. register here."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Wed, 08 Apr 2026 14:00:00 +0000"
+           data-url="https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/',title:'Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass',source:'techcrunch',date:'Wed, 08 Apr 2026 14:00:00 +0000',image:'',description:'Save up to $500 on your TechCrunch Disrupt 2026 pass until April 10, 11:59 p.m. PT. Secure your spot at the center of the tech ecosystem. Register her',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/08/final-3-days-to-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass</h3>
+            <p class="card-desc">Save up to $500 on your TechCrunch Disrupt 2026 pass until April 10, 11:59 p.m. PT. Secure your spot at the center of the tech ecosystem. Register her…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
       <div class="card"
            data-title="revision demoparty 2026: razor1911 [video]"
@@ -1238,10 +1286,32 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 217</span><span class="badge">💬 79</span>
+              <span class="badge">⬆ 247</span><span class="badge">💬 87</span>
             </div>
             <h3 class="card-title">Revision Demoparty 2026: Razor1911 [video]</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="as youtube grows on tv, it eyes more interactive video across formats"
+           data-desc="youtube's hiring across roles, partnerships, and a bengaluru hub shows how it is building out its tv strategy."
+           data-source="techcrunch"
+           data-cat="Produção de Conteúdo"
+           data-date="Wed, 08 Apr 2026 14:03:04 +0000"
+           data-url="https://techcrunch.com/2026/04/08/as-youtube-grows-on-tv-it-eyes-more-interactive-video-across-formats/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/08/as-youtube-grows-on-tv-it-eyes-more-interactive-video-across-formats/',title:'As YouTube grows on TV, it eyes more interactive video across formats',source:'techcrunch',date:'Wed, 08 Apr 2026 14:03:04 +0000',image:'',description:'YouTube\'s hiring across roles, partnerships, and a Bengaluru hub shows how it is building out its TV strategy.',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/08/as-youtube-grows-on-tv-it-eyes-more-interactive-video-across-formats/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">As YouTube grows on TV, it eyes more interactive video across formats</h3>
+            <p class="card-desc">YouTube's hiring across roles, partnerships, and a Bengaluru hub shows how it is building out its TV strategy.</p>
           </div>
         </a>
       </div></div>
@@ -1256,9 +1326,9 @@
            data-cat="Tecnologia"
            data-date="2026-04-07T23:00:00+00:00"
            data-url="https://hardware.slashdot.org/story/26/04/07/2157238/apple-faces-massive-dilemma-with-success-of-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/07/2157238/apple-faces-massive-dilemma-with-success-of-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Apple Faces \'Massive Dilemma\' With Success of the MacBook Neo',source:'slashdot',date:'2026-04-07T23:00:00+00:00',image:'https://a.fsdn.com/sd/topics/applelaptop_64.png',description:'Apple may have a supply problem on its hands with the MacBook Neo... The laptop reportedly relies on "binned" A18 Pro chips with one GPU core disabled',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/07/2157238/apple-faces-massive-dilemma-with-success-of-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Apple Faces \'Massive Dilemma\' With Success of the MacBook Neo',source:'slashdot',date:'2026-04-07T23:00:00+00:00',image:'',description:'Apple may have a supply problem on its hands with the MacBook Neo... The laptop reportedly relies on "binned" A18 Pro chips with one GPU core disabled',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://hardware.slashdot.org/story/26/04/07/2157238/apple-faces-massive-dilemma-with-success-of-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/applelaptop_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1338,13 +1408,13 @@
         </a>
       </div>
       <div class="card"
-           data-title="the git commands i run before reading any code"
+           data-title="git commands i run before reading any code"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
            data-date="2026-04-08T08:53:42.000Z"
            data-url="https://piechowski.io/post/git-commands-before-reading-code/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://piechowski.io/post/git-commands-before-reading-code/',title:'The Git Commands I Run Before Reading Any Code',source:'Hacker News',date:'2026-04-08T08:53:42.000Z',image:'https://piechowski.io/post/git-commands-before-reading-code/cover_hu3f66e25b7571f7e32d40f355f31a2ca9_56928_1200x630_resize_box_2.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://piechowski.io/post/git-commands-before-reading-code/',title:'Git commands I run before reading any code',source:'Hacker News',date:'2026-04-08T08:53:42.000Z',image:'https://piechowski.io/post/git-commands-before-reading-code/cover_hu3f66e25b7571f7e32d40f355f31a2ca9_56928_1200x630_resize_box_2.png',description:'',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://piechowski.io/post/git-commands-before-reading-code/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('https://piechowski.io/post/git-commands-before-reading-code/cover_hu3f66e25b7571f7e32d40f355f31a2ca9_56928_1200x630_resize_box_2.png')"></div>
           <div class="card-body">
@@ -1352,9 +1422,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 314</span><span class="badge">💬 69</span>
+              <span class="badge">⬆ 656</span><span class="badge">💬 151</span>
             </div>
-            <h3 class="card-title">The Git Commands I Run Before Reading Any Code</h3>
+            <h3 class="card-title">Git commands I run before reading any code</h3>
             
           </div>
         </a>
@@ -1366,7 +1436,7 @@
            data-cat="Tecnologia"
            data-date="2026-04-08T07:23:39.000Z"
            data-url="https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/',title:'Veracrypt Project Update',source:'Hacker News',date:'2026-04-08T07:23:39.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/',title:'Veracrypt project update',source:'Hacker News',date:'2026-04-08T07:23:39.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://sourceforge.net/p/veracrypt/discussion/general/thread/9620d7a4b3/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -1374,53 +1444,75 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 437</span><span class="badge">💬 123</span>
+              <span class="badge">⬆ 597</span><span class="badge">💬 196</span>
             </div>
-            <h3 class="card-title">Veracrypt Project Update</h3>
+            <h3 class="card-title">Veracrypt project update</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="i've sold out"
+           data-title="škoda duobell: a bicycle bell that penetrates noise-cancelling headphones"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-08T09:21:38.000Z"
-           data-url="https://mariozechner.at/posts/2026-04-08-ive-sold-out/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://mariozechner.at/posts/2026-04-08-ive-sold-out/',title:'I\'ve Sold Out',source:'Hacker News',date:'2026-04-08T09:21:38.000Z',image:'https://mariozechner.at/posts/2026-04-08-ive-sold-out/media/header.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://mariozechner.at/posts/2026-04-08-ive-sold-out/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://mariozechner.at/posts/2026-04-08-ive-sold-out/media/header.png')"></div>
+           data-date="2026-04-08T08:50:37.000Z"
+           data-url="https://www.skoda-storyboard.com/en/skoda-world/skoda-duobell-a-bicycle-bell-that-outsmarts-even-smart-headphones/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.skoda-storyboard.com/en/skoda-world/skoda-duobell-a-bicycle-bell-that-outsmarts-even-smart-headphones/',title:'Škoda DuoBell: A bicycle bell that penetrates noise-cancelling headphones',source:'Hacker News',date:'2026-04-08T08:50:37.000Z',image:'https://cdn.skoda-storyboard.com/2025/07/kim_2ee84de4.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.skoda-storyboard.com/en/skoda-world/skoda-duobell-a-bicycle-bell-that-outsmarts-even-smart-headphones/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://cdn.skoda-storyboard.com/2025/07/kim_2ee84de4.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 106</span><span class="badge">💬 63</span>
+              <span class="badge">⬆ 204</span><span class="badge">💬 274</span>
             </div>
-            <h3 class="card-title">I've Sold Out</h3>
+            <h3 class="card-title">Škoda DuoBell: A bicycle bell that penetrates noise-cancelling headphones</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="lunar flyby"
+           data-title="they're made out of meat (1991)"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-07T15:03:18.000Z"
-           data-url="https://www.nasa.gov/gallery/lunar-flyby/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nasa.gov/gallery/lunar-flyby/',title:'Lunar Flyby',source:'Hacker News',date:'2026-04-07T15:03:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.nasa.gov/gallery/lunar-flyby/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-08T11:20:50.000Z"
+           data-url="http://www.terrybisson.com/theyre-made-out-of-meat-2/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'http://www.terrybisson.com/theyre-made-out-of-meat-2/',title:'They\'re Made Out of Meat (1991)',source:'Hacker News',date:'2026-04-08T11:20:50.000Z',image:'http://www.terrybisson.com/wp-content/uploads/2019/04/TB-logo-2.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="http://www.terrybisson.com/theyre-made-out-of-meat-2/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('http://www.terrybisson.com/wp-content/uploads/2019/04/TB-logo-2.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de abr. de 2026</span>
+              <span class="badge">⬆ 47</span><span class="badge">💬 12</span>
+            </div>
+            <h3 class="card-title">They're Made Out of Meat (1991)</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="us cities are axing flock safety surveillance technology"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-08T12:26:14.000Z"
+           data-url="https://www.cnet.com/home/security/when-flock-comes-to-town-why-cities-are-axing-the-controversial-surveillance-technology/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.cnet.com/home/security/when-flock-comes-to-town-why-cities-are-axing-the-controversial-surveillance-technology/',title:'US cities are axing Flock Safety surveillance technology',source:'Hacker News',date:'2026-04-08T12:26:14.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.cnet.com/home/security/when-flock-comes-to-town-why-cities-are-axing-the-controversial-surveillance-technology/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 775</span><span class="badge">💬 184</span>
+              <span class="date">08 de abr. de 2026</span>
+              <span class="badge">⬆ 113</span><span class="badge">💬 41</span>
             </div>
-            <h3 class="card-title">Lunar Flyby</h3>
+            <h3 class="card-title">US cities are axing Flock Safety surveillance technology</h3>
             
           </div>
         </a>
@@ -1440,9 +1532,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 28</span><span class="badge">💬 4</span>
+              <span class="badge">⬆ 69</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">Audio Reactive LED Strips Are Diabolically Hard</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="lunar flyby"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-07T15:03:18.000Z"
+           data-url="https://www.nasa.gov/gallery/lunar-flyby/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nasa.gov/gallery/lunar-flyby/',title:'Lunar Flyby',source:'Hacker News',date:'2026-04-07T15:03:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.nasa.gov/gallery/lunar-flyby/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de abr. de 2026</span>
+              <span class="badge">⬆ 828</span><span class="badge">💬 202</span>
+            </div>
+            <h3 class="card-title">Lunar Flyby</h3>
             
           </div>
         </a>
@@ -1462,7 +1576,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 192</span><span class="badge">💬 53</span>
+              <span class="badge">⬆ 214</span><span class="badge">💬 60</span>
             </div>
             <h3 class="card-title">Protect your shed</h3>
             
@@ -1484,9 +1598,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 553</span><span class="badge">💬 226</span>
+              <span class="badge">⬆ 571</span><span class="badge">💬 231</span>
             </div>
             <h3 class="card-title">GLM-5.1: Towards Long-Horizon Tasks</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="mario and earendil"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-08T09:13:17.000Z"
+           data-url="https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/',title:'Mario and Earendil',source:'Hacker News',date:'2026-04-08T09:13:17.000Z',image:'https://lucumr.pocoo.org/social/2026-04-08-mario-and-earendil-social.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://lucumr.pocoo.org/social/2026-04-08-mario-and-earendil-social.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de abr. de 2026</span>
+              <span class="badge">⬆ 29</span><span class="badge">💬 10</span>
+            </div>
+            <h3 class="card-title">Mario and Earendil</h3>
             
           </div>
         </a>
@@ -1506,53 +1642,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 417</span><span class="badge">💬 94</span>
+              <span class="badge">⬆ 436</span><span class="badge">💬 103</span>
             </div>
             <h3 class="card-title">Cambodia unveils statue to honour famous landmine-sniffing rat</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="s3 files"
-           data-desc="https:&#x2f;&#x2f;aws.amazon.com&#x2f;blogs&#x2f;aws&#x2f;launching-s3-files-making-s..."
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-07T19:44:01.000Z"
-           data-url="https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html',title:'S3 Files',source:'Hacker News',date:'2026-04-07T19:44:01.000Z',image:'https://www.allthingsdistributed.com/images/sunflowers.jpg',description:'https:&#x2F;&#x2F;aws.amazon.com&#x2F;blogs&#x2F;aws&#x2F;launching-s3-files-making-s...',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.allthingsdistributed.com/2026/04/s3-files-and-the-changing-face-of-s3.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.allthingsdistributed.com/images/sunflowers.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de abr. de 2026</span>
-              <span class="badge">⬆ 319</span><span class="badge">💬 92</span>
-            </div>
-            <h3 class="card-title">S3 Files</h3>
-            <p class="card-desc">https:&#x2F;&#x2F;aws.amazon.com&#x2F;blogs&#x2F;aws&#x2F;launching-s3-files-making-s...</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="mario and earendil"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-08T09:13:17.000Z"
-           data-url="https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/',title:'Mario and Earendil',source:'Hacker News',date:'2026-04-08T09:13:17.000Z',image:'https://lucumr.pocoo.org/social/2026-04-08-mario-and-earendil-social.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://lucumr.pocoo.org/2026/4/8/mario-and-earendil/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://lucumr.pocoo.org/social/2026-04-08-mario-and-earendil-social.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">08 de abr. de 2026</span>
-              <span class="badge">⬆ 13</span><span class="badge">💬 2</span>
-            </div>
-            <h3 class="card-title">Mario and Earendil</h3>
             
           </div>
         </a>
@@ -1686,28 +1778,6 @@
             </div>
             <h3 class="card-title">Hate jump scares? This app warns you before they happen</h3>
             <p class="card-desc">The app uses iPhone Live Activities to alert you when scary scenes are about to happen, while also tracking what to watch and where to stream it.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="4 days left to save close to $500 on techcrunch disrupt 2026 passes"
-           data-desc="four days left to save up to $482 on your techcrunch disrupt 2026 ticket. these low rates will disappear on april 10 at 11:59 p.m. pt. register now."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 07 Apr 2026 14:00:00 +0000"
-           data-url="https://techcrunch.com/2026/04/07/4-days-left-to-save-close-to-500-on-techcrunch-disrupt-2026-passes/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/07/4-days-left-to-save-close-to-500-on-techcrunch-disrupt-2026-passes/',title:'4 days left to save close to $500 on TechCrunch Disrupt 2026 passes',source:'techcrunch',date:'Tue, 07 Apr 2026 14:00:00 +0000',image:'',description:'Four days left to save up to $482 on your TechCrunch Disrupt 2026 ticket. These low rates will disappear on April 10 at 11:59 p.m. PT. Register now.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/07/4-days-left-to-save-close-to-500-on-techcrunch-disrupt-2026-passes/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">4 days left to save close to $500 on TechCrunch Disrupt 2026 passes</h3>
-            <p class="card-desc">Four days left to save up to $482 on your TechCrunch Disrupt 2026 ticket. These low rates will disappear on April 10 at 11:59 p.m. PT. Register now.</p>
           </div>
         </a>
       </div>
