@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Instalação - Qwen AE Companion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #e94560; }
+        h2 { color: #0f3460; margin-top: 30px; }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #e94560;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        ul { line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Instalação do Qwen AE Companion</h1>
+        
+        <div class="warning">
+            <strong>⚠️ Importante:</strong> Esta extensão requer que você habilite extensões não assinadas no After Effects.
+        </div>
+
+        <h2>Passo 1: Habilitar Modo Debug</h2>
+        
+        <div class="step">
+            <h3>Windows:</h3>
+            <ol>
+                <li>Feche o After Effects</li>
+                <li>Pressione <code>Win + R</code>, digite <code>regedit</code> e pressione Enter</li>
+                <li>Navegue até: <code>HKEY_CURRENT_USER\SOFTWARE\Adobe\CSXS.10</code></li>
+                <li>Clique com botão direito → Novo → Valor String</li>
+                <li>Nomeie como <code>PlayerDebugMode</code></li>
+                <li>Defina o valor como <code>1</code></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>Mac:</h3>
+            <ol>
+                <li>Feche o After Effects</li>
+                <li>Abra o Terminal</li>
+                <li>Execute: <pre>defaults write com.adobe.CSXS.10 PlayerDebugMode 1</pre></li>
+            </ol>
+        </div>
+
+        <h2>Passo 2: Copiar a Extensão</h2>
+
+        <div class="step">
+            <h3>Windows:</h3>
+            <p>Copie a pasta <code>qwen-ae-companion</code> para:</p>
+            <pre>C:\Users\SEU_USUARIO\AppData\Roaming\Adobe\CEP\extensions\</pre>
+            <p><small>Se a pasta <code>CEP</code> ou <code>extensions</code> não existir, crie-as.</small></p>
+        </div>
+
+        <div class="step">
+            <h3>Mac:</h3>
+            <p>Copie a pasta <code>qwen-ae-companion</code> para:</p>
+            <pre>/Users/SEU_USUARIO/Library/Application Support/Adobe/CEP/extensions/</pre>
+            <p><small>Use <code>Cmd + Shift + G</code> no Finder para acessar a pasta Library.</small></p>
+        </div>
+
+        <h2>Passo 3: Usar a Extensão</h2>
+
+        <div class="step">
+            <ol>
+                <li>Inicie o After Effects</li>
+                <li>Vá em <code>Window → Extensions → Qwen AE Companion</code></li>
+                <li>Cole sua API Key do Qwen (obtenha em <a href="https://dashscope.console.aliyun.com/" target="_blank">DashScope Console</a>)</li>
+                <li>Comece a criar! 🎨</li>
+            </ol>
+        </div>
+
+        <h2>📝 Exemplos do que Pedir</h2>
+        <ul>
+            <li>"Crie uma composição 1920x1080 com um texto animado"</li>
+            <li>"Adicione um efeito de blur e anime de 0 a 50"</li>
+            <li>"Crie 5 camadas de sólido com cores diferentes"</li>
+            <li>"Anime a posição criando um movimento de quicada"</li>
+            <li>"Aplique CC Sphere na camada selecionada"</li>
+        </ul>
+
+        <div class="warning">
+            <strong>⚠️ Controle Total:</strong> Esta extensão dá acesso completo ao After Effects via ExtendScript. 
+            O Qwen pode executar qualquer operação. Sempre revise o código antes de executar se estiver inseguro.
+        </div>
+
+        <h2>🆘 Problemas?</h2>
+        <ul>
+            <li>Verifique se o <code>PlayerDebugMode</code> está configurado corretamente</li>
+            <li>Certifique-se de que a pasta está em <code>extensions</code> (plural)</li>
+            <li>Reinicie o After Effects após instalar</li>
+            <li>Verifique se sua API Key do Qwen é válida</li>
+        </ul>
+    </div>
+</body>
+</html>
