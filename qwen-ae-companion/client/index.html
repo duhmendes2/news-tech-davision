@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen AE Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: #16213e;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #0f3460;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            color: #e94560;
+        }
+        
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .message {
+            max-width: 85%;
+            padding: 12px;
+            border-radius: 10px;
+            line-height: 1.4;
+            font-size: 13px;
+        }
+        
+        .user-message {
+            background: #0f3460;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+        
+        .assistant-message {
+            background: #16213e;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            border-left: 3px solid #e94560;
+        }
+        
+        .system-message {
+            background: #2d3436;
+            align-self: center;
+            font-size: 11px;
+            color: #aaa;
+        }
+        
+        .input-area {
+            padding: 15px;
+            background: #16213e;
+            border-top: 2px solid #0f3460;
+        }
+        
+        .api-key-section {
+            margin-bottom: 10px;
+        }
+        
+        .api-key-section input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #0f3460;
+            border-radius: 5px;
+            background: #1a1a2e;
+            color: #eee;
+            font-size: 12px;
+        }
+        
+        .input-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #0f3460;
+            border-radius: 5px;
+            background: #1a1a2e;
+            color: #eee;
+            resize: none;
+            font-size: 13px;
+            font-family: inherit;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #ff6b6b;
+        }
+        
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        
+        .code-block {
+            background: #0d1117;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            overflow-x: auto;
+            margin-top: 8px;
+            border: 1px solid #30363d;
+        }
+        
+        .execute-btn {
+            margin-top: 8px;
+            padding: 6px 12px;
+            font-size: 11px;
+            background: #2ea043;
+        }
+        
+        .execute-btn:hover {
+            background: #3fb950;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0f3460;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 Qwen AE Companion</h1>
+    </div>
+    
+    <div class="chat-container" id="chatContainer">
+        <div class="message assistant-message">
+            Olá! Sou seu assistente Qwen integrado ao After Effects. 
+            <br><br>
+            Posso criar composições, aplicar efeitos, animar propriedades com keyframes e muito mais. 
+            <br><br>
+            Basta me dizer o que você precisa!
+        </div>
+    </div>
+    
+    <div class="input-area">
+        <div class="api-key-section">
+            <input type="password" id="apiKey" placeholder="Cole sua API Key do Qwen aqui">
+        </div>
+        <div class="input-row">
+            <textarea id="userInput" rows="2" placeholder="Descreva o que quer criar no After Effects..."></textarea>
+            <button id="sendBtn" onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script src="CSInterface.js"></script>
+    <script>
+        const chatContainer = document.getElementById('chatContainer');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const apiKeyInput = document.getElementById('apiKey');
+        
+        let csInterface = new CSInterface();
+        
+        function addMessage(content, type) {
+            const div = document.createElement('div');
+            div.className = `message ${type}-message`;
+            div.innerHTML = content;
+            chatContainer.appendChild(div);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return div;
+        }
+        
+        function parseResponse(responseText) {
+            const codeMatch = responseText.match(/```(?:javascript|extendscript|jsx)?\n([\s\S]*?)\n```/);
+            if (codeMatch) {
+                return {
+                    hasCode: true,
+                    code: codeMatch[1],
+                    explanation: responseText.replace(codeMatch[0], '').trim()
+                };
+            }
+            return { hasCode: false, code: null, explanation: responseText };
+        }
+        
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            const apiKey = apiKeyInput.value.trim();
+            
+            if (!message) return;
+            if (!apiKey) {
+                addMessage('⚠️ Por favor, insira sua API Key do Qwen primeiro.', 'system');
+                return;
+            }
+            
+            addMessage(message, 'user');
+            userInput.value = '';
+            sendBtn.disabled = true;
+            
+            const loadingMsg = addMessage('⏳ Gerando código...', 'system');
+            
+            try {
+                const systemPrompt = `Você é um assistente especialista em Adobe After Effects com controle total sobre a aplicação.
+                
+Sua função é gerar código ExtendScript (JavaScript do After Effects) para executar qualquer tarefa solicitada.
+
+REGRAS IMPORTANTES:
+1. SEMPRE gere código ExtendScript completo e executável
+2. O código deve ser envolvido em blocos de código markdown (\`\`\`javascript ... \`\`\`)
+3. Você tem PERMISSÃO TOTAL para:
+   - Criar/modificar composições
+   - Adicionar/remover camadas
+   - Aplicar quaisquer efeitos
+   - Criar/editar keyframes
+   - Modificar propriedades de tempo, posição, escala, rotação, opacidade, etc.
+   - Criar formas, textos, sólidos, lights, cameras
+   - Acessar e modificar qualquer propriedade do projeto
+4. Seja criativo e implemente exatamente o que o usuário pedir
+5. Se necessário, explique brevemente o que o código faz antes ou depois do bloco de código
+
+Exemplo de resposta:
+"Vou criar uma composição com um texto animado."
+
+\`\`\`javascript
+var comp = app.project.items.addComp("Minha Composição", 1920, 1080, 1, 5, 30);
+var textLayer = comp.layers.addText("Olá Mundo!");
+textLayer.property("ADBE Text Properties").property("ADBE Text Document").setValue("Olá Mundo!");
+var scaleProp = textLayer.property("ADBE Transform Group").property("ADBE Scale");
+scaleProp.setValueAtTime(0, [0, 0]);
+scaleProp.setValueAtTime(1, [100, 100]);
+\`\`\`
+
+"Agora execute este código clicando no botão 'Executar'."`;
+
+                const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: 'qwen-plus',
+                        messages: [
+                            { role: 'system', content: systemPrompt },
+                            { role: 'user', content: message }
+                        ],
+                        temperature: 0.7,
+                        max_tokens: 2000
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Erro na API: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                const assistantMessage = data.choices[0].message.content;
+                
+                loadingMsg.remove();
+                
+                const parsed = parseResponse(assistantMessage);
+                
+                if (parsed.hasCode) {
+                    let htmlContent = parsed.explanation || '';
+                    if (parsed.explanation) htmlContent += '<br><br>';
+                    htmlContent += `<div class="code-block">${escapeHtml(parsed.code)}</div>`;
+                    htmlContent += `<button class="execute-btn" onclick='executeCode(${JSON.stringify(parsed.code).replace(/'/g, "\\'")})'>▶ Executar no After Effects</button>`;
+                    addMessage(htmlContent, 'assistant');
+                } else {
+                    addMessage(assistantMessage, 'assistant');
+                }
+                
+            } catch (error) {
+                loadingMsg.remove();
+                addMessage(`❌ Erro: ${error.message}`, 'system');
+            }
+            
+            sendBtn.disabled = false;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function executeCode(code) {
+            csInterface.evalScript(`
+                try {
+                    ${code}
+                    "CÓDIGO_EXECUTADO_COM_SUCESSO";
+                } catch(e) {
+                    "ERRO: " + e.toString();
+                }
+            `, function(result) {
+                if (result === "CÓDIGO_EXECUTADO_COM_SUCESSO") {
+                    addMessage('✅ Código executado com sucesso no After Effects!', 'system');
+                } else {
+                    addMessage(`❌ Erro na execução: ${result}`, 'system');
+                }
+            });
+        }
+        
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
