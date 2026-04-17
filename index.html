@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 17/04/2026, 14:02:53
+      Atualizado: 17/04/2026, 15:11:30
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -241,7 +241,7 @@
   <main>
     <div class="stats" id="statsBar">
       <div class="stat"><div class="stat-value" id="statTotal">82</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">56</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">26</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">56</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -251,6 +251,28 @@
     <section class="category" id="sec-ia" data-cat="IA">
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">56</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from ars technica: on thursday, openai announced it had developed a large language model specifically trained on common biology workflows. called gpt-rosalind after"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-17T18:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-17T18:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: On Thursday, OpenAI announced it had developed a large language model specifically trained on c',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">17 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from Ars Technica: On Thursday, OpenAI announced it had developed a large language model specifically trained on c…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="newly unsealed records reveal amazon's price-fixing tactics"
            data-desc="newly unsealed records in california's antitrust case against amazon allegedly show the company pressured third-party sellers to raise prices on rival sites like walmart, target, and wayfair so amazon"
@@ -442,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 331</span><span class="badge">💬 189</span>
+              <span class="badge">⬆ 455</span><span class="badge">💬 285</span>
             </div>
             <h3 class="card-title">Claude Design</h3>
             
@@ -464,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 138</span><span class="badge">💬 60</span>
+              <span class="badge">⬆ 260</span><span class="badge">💬 143</span>
             </div>
             <h3 class="card-title">Claude Opus 4.7 costs 20–30% more per session</h3>
             
@@ -486,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 66</span><span class="badge">💬 39</span>
+              <span class="badge">⬆ 83</span><span class="badge">💬 46</span>
             </div>
             <h3 class="card-title">Healthchecks.io Now Uses Self-Hosted Object Storage</h3>
             
@@ -508,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">16 de abr. de 2026</span>
-              <span class="badge">⬆ 1909</span><span class="badge">💬 1387</span>
+              <span class="badge">⬆ 1922</span><span class="badge">💬 1403</span>
             </div>
             <h3 class="card-title">Claude Opus 4.7</h3>
             
@@ -516,24 +538,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="scan your website to see how ready it is for ai agents"
+           data-title="solitaire simulator for finding the best strategy: current record is 8.590%"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-17T13:55:25.000Z"
-           data-url="https://isitagentready.com">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://isitagentready.com',title:'Scan your website to see how ready it is for AI agents',source:'Hacker News',date:'2026-04-17T13:55:25.000Z',image:'https://isitagentready.com/og-image.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://isitagentready.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://isitagentready.com/og-image.png')"></div>
+           data-date="2026-04-17T01:38:01.000Z"
+           data-url="https://github.com/dacracot/Klondike3-Simulator">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/dacracot/Klondike3-Simulator',title:'Solitaire simulator for finding the best strategy: Current record is 8.590%',source:'Hacker News',date:'2026-04-17T01:38:01.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://github.com/dacracot/Klondike3-Simulator" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 56</span><span class="badge">💬 101</span>
+              <span class="badge">⬆ 12</span><span class="badge">💬 2</span>
             </div>
-            <h3 class="card-title">Scan your website to see how ready it is for AI agents</h3>
+            <h3 class="card-title">Solitaire simulator for finding the best strategy: Current record is 8.590%</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="hackers are abusing unpatched windows security flaws to hack into organizations"
+           data-desc="a security researcher published details of three security vulnerabilities in windows defender, and the code used to exploit them. now, hackers are taking advantage of the vulnerabilities in real-life "
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Fri, 17 Apr 2026 17:48:46 +0000"
+           data-url="https://techcrunch.com/2026/04/17/hackers-are-abusing-unpatched-windows-security-flaws-to-hack-into-organizations/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/17/hackers-are-abusing-unpatched-windows-security-flaws-to-hack-into-organizations/',title:'Hackers are abusing unpatched Windows security flaws to hack into organizations',source:'techcrunch',date:'Fri, 17 Apr 2026 17:48:46 +0000',image:'',description:'A security researcher published details of three security vulnerabilities in Windows Defender, and the code used to exploit them. Now, hackers are tak',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/17/hackers-are-abusing-unpatched-windows-security-flaws-to-hack-into-organizations/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">17 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Hackers are abusing unpatched Windows security flaws to hack into organizations</h3>
+            <p class="card-desc">A security researcher published details of three security vulnerabilities in Windows Defender, and the code used to exploit them. Now, hackers are tak…</p>
           </div>
         </a>
       </div>
@@ -720,9 +764,9 @@
            data-cat="IA"
            data-date="Fri, 17 Apr 2026 02:55:06 +0000"
            data-url="https://techcrunch.com/2026/04/16/new-leaders-new-fund-sequoia-has-raised-7b-to-expand-its-ai-bets/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/16/new-leaders-new-fund-sequoia-has-raised-7b-to-expand-its-ai-bets/',title:'New leaders, new fund: Sequoia has raised $7B to expand its AI bets',source:'techcrunch',date:'Fri, 17 Apr 2026 02:55:06 +0000',image:'',description:'The fundraise is the first major capital raise under Sequoia\'s new leadership, with Alfred Lin and Pat Grady now serving as co-stewards of the 54-year',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/16/new-leaders-new-fund-sequoia-has-raised-7b-to-expand-its-ai-bets/',title:'New leaders, new fund: Sequoia has raised $7B to expand its AI bets',source:'techcrunch',date:'Fri, 17 Apr 2026 02:55:06 +0000',image:'https://techcrunch.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-13-at-3.33.43-PM.png?resize=1200,649',description:'The fundraise is the first major capital raise under Sequoia\'s new leadership, with Alfred Lin and Pat Grady now serving as co-stewards of the 54-year',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/04/16/new-leaders-new-fund-sequoia-has-raised-7b-to-expand-its-ai-bets/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-13-at-3.33.43-PM.png?resize=1200,649')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
@@ -842,50 +886,6 @@
             </div>
             <h3 class="card-title">Physical Intelligence, a hot robotics startup, says its new robot brain can figure out tasks it was never taught</h3>
             <p class="card-desc">The new model, called π0.7, represents what the company describes as an early but meaningful step toward the long-sought goal of a general-purpose rob…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="slash, a ramp competitor founded by teenagers, raises $100m at $1.4b valuation"
-           data-desc="five years later the founders, now 24 years old, say their startup has achieved $300 million in annualized revenue."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 16 Apr 2026 19:20:46 +0000"
-           data-url="https://techcrunch.com/2026/04/16/slash-a-ramp-competitor-founded-by-teenagers-raises-100m-at-1-4b-valuation/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/16/slash-a-ramp-competitor-founded-by-teenagers-raises-100m-at-1-4b-valuation/',title:'Slash, a Ramp competitor founded by teenagers, raises $100M at $1.4B valuation',source:'techcrunch',date:'Thu, 16 Apr 2026 19:20:46 +0000',image:'https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-1476391614.jpg?resize=1200,738',description:'Five years later the founders, now 24 years old, say their startup has achieved $300 million in annualized revenue.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/16/slash-a-ramp-competitor-founded-by-teenagers-raises-100m-at-1-4b-valuation/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-1476391614.jpg?resize=1200,738')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">16 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Slash, a Ramp competitor founded by teenagers, raises $100M at $1.4B valuation</h3>
-            <p class="card-desc">Five years later the founders, now 24 years old, say their startup has achieved $300 million in annualized revenue.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openai takes aim at anthropic with beefed-up codex that gives it more power over your desktop"
-           data-desc="openai's agentic coding tool has gotten a major makeover, with a variety of new powers and abilities."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 16 Apr 2026 19:18:41 +0000"
-           data-url="https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/',title:'OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop',source:'techcrunch',date:'Thu, 16 Apr 2026 19:18:41 +0000',image:'',description:'OpenAI\'s agentic coding tool has gotten a major makeover, with a variety of new powers and abilities.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/16/openai-takes-aim-at-anthropic-with-beefed-up-codex-that-gives-it-more-power-over-your-desktop/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">16 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">OpenAI takes aim at Anthropic with beefed-up Codex that gives it more power over your desktop</h3>
-            <p class="card-desc">OpenAI's agentic coding tool has gotten a major makeover, with a variety of new powers and abilities.</p>
           </div>
         </a>
       </div>
@@ -1484,19 +1484,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="show hn: stage – putting humans back in control of code review"
+           data-desc="hey hn! we&#x27;re charles and dean, and we&#x27;re building stage: a code review tool that guides you through reading a pr step by step, instead of piecing together a giant diff.here&#x27;s a demo vi"
+           data-source="hacker news"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-04-16T17:36:29.000Z"
+           data-url="https://stagereview.app/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stagereview.app/',title:'Show HN: Stage – Putting humans back in control of code review',source:'Hacker News',date:'2026-04-16T17:36:29.000Z',image:'',description:'Hey HN! We&#x27;re Charles and Dean, and we&#x27;re building Stage: a code review tool that guides you through reading a PR step by step, instead of p',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://stagereview.app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">16 de abr. de 2026</span>
+              <span class="badge">⬆ 54</span><span class="badge">💬 52</span>
+            </div>
+            <h3 class="card-title">Show HN: Stage – Putting humans back in control of code review</h3>
+            <p class="card-desc">Hey HN! We&#x27;re Charles and Dean, and we&#x27;re building Stage: a code review tool that guides you through reading a PR step by step, instead of p…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">26</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">25</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="microsoft increases the fat32 limit from 32gb to 2tb"
            data-desc="longtime slashdot reader amimojo writes: windows has limited fat32 partitions to a maximum of 32gb for decades now. when memory cards and usb drives exceeded 32gb in size, the only options were exfat "
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-04-17T17:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-17T17:00:00+00:00',image:'',description:'Longtime Slashdot reader AmiMoJo writes: Windows has limited FAT32 partitions to a maximum of 32GB for decades now. When memory cards and USB drives e',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://hardware.slashdot.org/story/26/04/17/1623236/microsoft-increases-the-fat32-limit-from-32gb-to-2tb?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/17/1623236/microsoft-increases-the-fat32-limit-from-32gb-to-2tb?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Microsoft Increases the FAT32 Limit From 32GB To 2TB',source:'slashdot',date:'2026-04-17T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/storage_64.png',description:'Longtime Slashdot reader AmiMoJo writes: Windows has limited FAT32 partitions to a maximum of 32GB for decades now. When memory cards and USB drives e',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/04/17/1623236/microsoft-increases-the-fat32-limit-from-32gb-to-2tb?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/storage_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1504,7 +1530,7 @@
               <span class="date">17 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Microsoft Increases the FAT32 Limit From 32GB To 2TB</h3>
             <p class="card-desc">Longtime Slashdot reader AmiMoJo writes: Windows has limited FAT32 partitions to a maximum of 32GB for decades now. When memory cards and USB drives e…</p>
           </div>
         </a>
@@ -1516,9 +1542,9 @@
            data-cat="Tecnologia"
            data-date="2026-04-17T07:00:00+00:00"
            data-url="https://apple.slashdot.org/story/26/04/17/0336256/intels-new-core-series-3-is-its-answer-to-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://apple.slashdot.org/story/26/04/17/0336256/intels-new-core-series-3-is-its-answer-to-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Intel\'s New Core Series 3 Is Its Answer To the MacBook Neo',source:'slashdot',date:'2026-04-17T07:00:00+00:00',image:'https://a.fsdn.com/sd/topics/intel_64.png',description:'Intel has launched a new budget-focused Core Series 3 processor line for lower-cost laptops -- "Intel\'s response to budget CPUs that are appearing in ',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://apple.slashdot.org/story/26/04/17/0336256/intels-new-core-series-3-is-its-answer-to-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Intel\'s New Core Series 3 Is Its Answer To the MacBook Neo',source:'slashdot',date:'2026-04-17T07:00:00+00:00',image:'',description:'Intel has launched a new budget-focused Core Series 3 processor line for lower-cost laptops -- "Intel\'s response to budget CPUs that are appearing in ',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://apple.slashdot.org/story/26/04/17/0336256/intels-new-core-series-3-is-its-answer-to-the-macbook-neo?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/intel_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1620,28 +1646,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="researchers induce smells with ultrasound, no chemical cartridges required"
-           data-desc="an anonymous reader quotes a report from uploadvr: a group of independent researchers built a device that can artificially induce smell using ultrasound, with no consumable cartridges required. [...] "
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-04-16T15:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/04/16/079216/researchers-induce-smells-with-ultrasound-no-chemical-cartridges-required?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/04/16/079216/researchers-induce-smells-with-ultrasound-no-chemical-cartridges-required?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Researchers Induce Smells With Ultrasound, No Chemical Cartridges Required',source:'slashdot',date:'2026-04-16T15:00:00+00:00',image:'https://a.fsdn.com/sd/topics/technology_64.png',description:'An anonymous reader quotes a report from UploadVR: A group of independent researchers built a device that can artificially induce smell using ultrasou',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/04/16/079216/researchers-induce-smells-with-ultrasound-no-chemical-cartridges-required?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/technology_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">16 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Researchers Induce Smells With Ultrasound, No Chemical Cartridges Required</h3>
-            <p class="card-desc">An anonymous reader quotes a report from UploadVR: A group of independent researchers built a device that can artificially induce smell using ultrasou…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="isaac asimov: the last question (1956)"
            data-desc=""
            data-source="hacker news"
@@ -1656,7 +1660,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 410</span><span class="badge">💬 145</span>
+              <span class="badge">⬆ 464</span><span class="badge">💬 174</span>
             </div>
             <h3 class="card-title">Isaac Asimov: The Last Question (1956)</h3>
             
@@ -1678,31 +1682,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 88</span><span class="badge">💬 24</span>
+              <span class="badge">⬆ 118</span><span class="badge">💬 45</span>
             </div>
             <h3 class="card-title">Middle schooler finds coin from Troy in Berlin</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="nasa force"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-17T15:47:41.000Z"
-           data-url="https://nasaforce.gov/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://nasaforce.gov/',title:'NASA Force',source:'Hacker News',date:'2026-04-17T15:47:41.000Z',image:'https://nasaforce.gov/og-image.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://nasaforce.gov/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://nasaforce.gov/og-image.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 30</span><span class="badge">💬 31</span>
-            </div>
-            <h3 class="card-title">NASA Force</h3>
             
           </div>
         </a>
@@ -1722,7 +1704,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 9</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 19</span>
             </div>
             <h3 class="card-title">NIST gives up enriching most CVEs</h3>
             
@@ -1744,7 +1726,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 270</span><span class="badge">💬 82</span>
+              <span class="badge">⬆ 346</span><span class="badge">💬 106</span>
             </div>
             <h3 class="card-title">It Is Time to Ban the Sale of Precise Geolocation</h3>
             
@@ -1766,7 +1748,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 47</span><span class="badge">💬 4</span>
+              <span class="badge">⬆ 58</span><span class="badge">💬 8</span>
             </div>
             <h3 class="card-title">Iceye Open Data</h3>
             
@@ -1774,23 +1756,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="hyperscalers have already outspent most famous us megaprojects"
+           data-title="show hn: smol machines – subsecond coldstart, portable virtual machines"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-17T16:23:22.000Z"
-           data-url="https://twitter.com/finmoorhouse/status/2044933442236776794">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/finmoorhouse/status/2044933442236776794',title:'Hyperscalers have already outspent most famous US megaprojects',source:'Hacker News',date:'2026-04-17T16:23:22.000Z',image:'https://pbs.twimg.com/media/HGEN8FGWQAAN7Np.jpg:large',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://twitter.com/finmoorhouse/status/2044933442236776794" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://pbs.twimg.com/media/HGEN8FGWQAAN7Np.jpg:large')"></div>
+           data-date="2026-04-17T17:18:58.000Z"
+           data-url="https://github.com/smol-machines/smolvm">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/smol-machines/smolvm',title:'Show HN: Smol machines – subsecond coldstart, portable virtual machines',source:'Hacker News',date:'2026-04-17T17:18:58.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/smol-machines/smolvm" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 19</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 10</span><span class="badge">💬 7</span>
             </div>
-            <h3 class="card-title">Hyperscalers have already outspent most famous US megaprojects</h3>
+            <h3 class="card-title">Show HN: Smol machines – subsecond coldstart, portable virtual machines</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: paniclock – close your macbook lid disable touchid –> password unlock"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-17T16:38:44.000Z"
+           data-url="https://github.com/paniclock/paniclock/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/paniclock/paniclock/',title:'Show HN: PanicLock – Close your MacBook lid disable TouchID –> password unlock',source:'Hacker News',date:'2026-04-17T16:38:44.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/paniclock/paniclock/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">17 de abr. de 2026</span>
+              <span class="badge">⬆ 19</span><span class="badge">💬 9</span>
+            </div>
+            <h3 class="card-title">Show HN: PanicLock – Close your MacBook lid disable TouchID –> password unlock</h3>
             
           </div>
         </a>
@@ -1810,7 +1814,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">16 de abr. de 2026</span>
-              <span class="badge">⬆ 961</span><span class="badge">💬 510</span>
+              <span class="badge">⬆ 972</span><span class="badge">💬 517</span>
             </div>
             <h3 class="card-title">Codex for almost everything</h3>
             
@@ -1832,7 +1836,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 7</span><span class="badge">💬 1</span>
+              <span class="badge">⬆ 15</span><span class="badge">💬 6</span>
             </div>
             <h3 class="card-title">The Gregorio project – GPL tools for typesetting Gregorian chant</h3>
             
@@ -1840,68 +1844,68 @@
         </a>
       </div>
       <div class="card"
-           data-title="teddy roosevelt and abraham lincoln in the same photo (2010)"
+           data-title="nasa force"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-17T09:18:16.000Z"
-           data-url="https://prologue.blogs.archives.gov/2010/11/09/teddy-roosevelt-and-abraham-lincoln-in-the-same-photo/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://prologue.blogs.archives.gov/2010/11/09/teddy-roosevelt-and-abraham-lincoln-in-the-same-photo/',title:'Teddy Roosevelt and Abraham Lincoln in the same photo (2010)',source:'Hacker News',date:'2026-04-17T09:18:16.000Z',image:'https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2022/01/NYT-Teddy-Abe.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://prologue.blogs.archives.gov/2010/11/09/teddy-roosevelt-and-abraham-lincoln-in-the-same-photo/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2022/01/NYT-Teddy-Abe.jpg')"></div>
+           data-date="2026-04-17T15:47:41.000Z"
+           data-url="https://nasaforce.gov/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://nasaforce.gov/',title:'NASA Force',source:'Hacker News',date:'2026-04-17T15:47:41.000Z',image:'https://nasaforce.gov/og-image.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://nasaforce.gov/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://nasaforce.gov/og-image.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 78</span><span class="badge">💬 12</span>
+              <span class="badge">⬆ 62</span><span class="badge">💬 82</span>
             </div>
-            <h3 class="card-title">Teddy Roosevelt and Abraham Lincoln in the same photo (2010)</h3>
+            <h3 class="card-title">NASA Force</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="ada, its design, and the language that built the languages"
+           data-title="hyperscalers have already outspent most famous us megaprojects"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-17T08:51:38.000Z"
-           data-url="https://www.iqiipi.com/the-quiet-colossus.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.iqiipi.com/the-quiet-colossus.html',title:'Ada, Its Design, and the Language That Built the Languages',source:'Hacker News',date:'2026-04-17T08:51:38.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.iqiipi.com/the-quiet-colossus.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-04-17T16:23:22.000Z"
+           data-url="https://twitter.com/finmoorhouse/status/2044933442236776794">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/finmoorhouse/status/2044933442236776794',title:'Hyperscalers have already outspent most famous US megaprojects',source:'Hacker News',date:'2026-04-17T16:23:22.000Z',image:'https://pbs.twimg.com/media/HGEN8FGWQAAN7Np.jpg:large',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://twitter.com/finmoorhouse/status/2044933442236776794" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://pbs.twimg.com/media/HGEN8FGWQAAN7Np.jpg:large')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 200</span><span class="badge">💬 133</span>
+              <span class="badge">⬆ 45</span><span class="badge">💬 32</span>
             </div>
-            <h3 class="card-title">Ada, Its Design, and the Language That Built the Languages</h3>
+            <h3 class="card-title">Hyperscalers have already outspent most famous US megaprojects</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="fim – linux framebuffer image viewer"
-           data-desc=""
-           data-source="hacker news"
+           data-title="zoom teams up with world to verify humans in meetings"
+           data-desc="zoom will show a badge on verified participants' tile."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-04-17T07:20:46.000Z"
-           data-url="https://www.nongnu.org/fbi-improved/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nongnu.org/fbi-improved/',title:'FIM – Linux framebuffer image viewer',source:'Hacker News',date:'2026-04-17T07:20:46.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.nongnu.org/fbi-improved/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Fri, 17 Apr 2026 17:15:00 +0000"
+           data-url="https://techcrunch.com/2026/04/17/zoom-teams-up-with-world-to-verify-humans-in-meeting/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/17/zoom-teams-up-with-world-to-verify-humans-in-meeting/',title:'Zoom teams up with World to verify humans in meetings',source:'techcrunch',date:'Fri, 17 Apr 2026 17:15:00 +0000',image:'',description:'Zoom will show a badge on verified participants\' tile.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/17/zoom-teams-up-with-world-to-verify-humans-in-meeting/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 113</span><span class="badge">💬 57</span>
+              
             </div>
-            <h3 class="card-title">FIM – Linux framebuffer image viewer</h3>
-            
+            <h3 class="card-title">Zoom teams up with World to verify humans in meetings</h3>
+            <p class="card-desc">Zoom will show a badge on verified participants' tile.</p>
           </div>
         </a>
       </div>
