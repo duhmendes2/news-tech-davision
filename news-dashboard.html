@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 18/04/2026, 18:34:47
+      Atualizado: 18/04/2026, 19:34:17
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">52</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">27</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">53</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">27</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -251,6 +251,28 @@
     <section class="category" id="sec-ia" data-cat="IA">
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">27</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="slashdot reader bismillah shared this report from itnews: research and development engineer romain marchand of paris headquartered quarkslab obtained a telematic control unit (tcu) from a salvage yard"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-18T21:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-18T21:34:00+00:00',image:'',description:'Slashdot reader Bismillah shared this report from ITNews: Research and development engineer Romain Marchand of Paris headquartered Quarkslab obtained ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">18 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Slashdot reader Bismillah shared this report from ITNews: Research and development engineer Romain Marchand of Paris headquartered Quarkslab obtained …</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="us congress fails to pass long-term fisa extension, authorizes it through april 30"
            data-desc="yesterday the u.s. congress approved "a short-term extension" of a fisa law that allows wiretaps without a warrant for surveilling foreign targets, reports cnn mdash; but only until april 30. republic"
@@ -368,15 +390,15 @@
            data-cat="IA"
            data-date="2026-04-18T19:19:24.000Z"
            data-url="https://samhenri.gold/blog/20260418-claude-design/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://samhenri.gold/blog/20260418-claude-design/',title:'Thoughts and feelings around Claude Design',source:'Hacker News',date:'2026-04-18T19:19:24.000Z',image:'https://samhenri.gold/.netlify/images?url=_astro%2F20260418-claude-design.DKni9yQ3.jpg&fm=jpg&w=1200&h=630&dpl=69e3e9d4b6e7410008c9dc23',description:'',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://samhenri.gold/blog/20260418-claude-design/',title:'Thoughts and feelings around Claude Design',source:'Hacker News',date:'2026-04-18T19:19:24.000Z',image:'https://samhenri.gold/.netlify/images?url=_astro%2F20260418-claude-design.DKni9yQ3.jpg&fm=jpg&w=1200&h=630&dpl=69e40337d9c9460008d15d12',description:'',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://samhenri.gold/blog/20260418-claude-design/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://samhenri.gold/.netlify/images?url=_astro%2F20260418-claude-design.DKni9yQ3.jpg&fm=jpg&w=1200&h=630&dpl=69e3e9d4b6e7410008c9dc23')"></div>
+          <div class="card-img" style="background-image:url('https://samhenri.gold/.netlify/images?url=_astro%2F20260418-claude-design.DKni9yQ3.jpg&fm=jpg&w=1200&h=630&dpl=69e40337d9c9460008d15d12')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 105</span><span class="badge">💬 45</span>
+              <span class="badge">⬆ 144</span><span class="badge">💬 93</span>
             </div>
             <h3 class="card-title">Thoughts and feelings around Claude Design</h3>
             
@@ -398,31 +420,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 48</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 76</span><span class="badge">💬 59</span>
             </div>
             <h3 class="card-title">College instructor turns to typewriters to curb AI-written work</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="graphs that explain the state of ai in 2026"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-04-18T17:12:44.000Z"
-           data-url="https://spectrum.ieee.org/state-of-ai-index-2026">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spectrum.ieee.org/state-of-ai-index-2026',title:'Graphs that explain the state of AI in 2026',source:'Hacker News',date:'2026-04-18T17:12:44.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 49</span><span class="badge">💬 32</span>
-            </div>
-            <h3 class="card-title">Graphs that explain the state of AI in 2026</h3>
             
           </div>
         </a>
@@ -442,10 +442,32 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 11</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 17</span><span class="badge">💬 2</span>
             </div>
             <h3 class="card-title">Show HN: AI Subroutines – Run automation scripts inside your browser tab</h3>
             <p class="card-desc">We built AI Subroutines in rtrvr.ai. Record a browser task once, save it as a callable tool, replay it at: zero token cost, zero LLM inference delay, …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="graphs that explain the state of ai in 2026"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-18T17:12:44.000Z"
+           data-url="https://spectrum.ieee.org/state-of-ai-index-2026">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spectrum.ieee.org/state-of-ai-index-2026',title:'Graphs that explain the state of AI in 2026',source:'Hacker News',date:'2026-04-18T17:12:44.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://spectrum.ieee.org/state-of-ai-index-2026" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de abr. de 2026</span>
+              <span class="badge">⬆ 58</span><span class="badge">💬 36</span>
+            </div>
+            <h3 class="card-title">Graphs that explain the state of AI in 2026</h3>
+            
           </div>
         </a>
       </div>
@@ -758,28 +780,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="netflix plans to add a vertical video feed, use ai for recommendations"
-           data-desc="netflix is going to launch a tiktok-like vertical video feed within its apps this month, and plans to use ai broadly for content creation and recommendations."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Fri, 17 Apr 2026 13:17:18 +0000"
-           data-url="https://techcrunch.com/2026/04/17/netflix-plans-to-add-a-vertical-video-feed-use-ai-for-recommendations/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/17/netflix-plans-to-add-a-vertical-video-feed-use-ai-for-recommendations/',title:'Netflix plans to add a vertical video feed, use AI for recommendations',source:'techcrunch',date:'Fri, 17 Apr 2026 13:17:18 +0000',image:'',description:'Netflix is going to launch a TikTok-like vertical video feed within its apps this month, and plans to use AI broadly for content creation and recommen',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/17/netflix-plans-to-add-a-vertical-video-feed-use-ai-for-recommendations/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">17 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Netflix plans to add a vertical video feed, use AI for recommendations</h3>
-            <p class="card-desc">Netflix is going to launch a TikTok-like vertical video feed within its apps this month, and plans to use AI broadly for content creation and recommen…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="the download: bad news for inner neanderthals, and ai warfare’s human illusion"
            data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. the problem with thinking you’re part neanderthal there’s a th"
            data-source="mit"
@@ -846,19 +846,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="tesla brings its robotaxi service to dallas and houston"
+           data-desc="tesla is expanding its robotaxi service to dallas and houston, according to a social media post from the company. the post says simply that “robotaxi is now rolling out in dallas houston 🤠” and inclu"
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Sat, 18 Apr 2026 21:37:15 +0000"
+           data-url="https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/',title:'Tesla brings its robotaxi service to Dallas and Houston',source:'techcrunch',date:'Sat, 18 Apr 2026 21:37:15 +0000',image:'',description:'Tesla is expanding its robotaxi service to Dallas and Houston, according to a social media post from the company. The post says simply that “Robotaxi ',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">18 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Tesla brings its robotaxi service to Dallas and Houston</h3>
+            <p class="card-desc">Tesla is expanding its robotaxi service to Dallas and Houston, according to a social media post from the company. The post says simply that “Robotaxi …</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
       <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">25</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="fewer us college students major in cs. more choose data science, engineering"
            data-desc=""from 2008 to 2024, the number of four-year computer science degrees granted rose about fivefold..." reports the washington post. then in 2025 cs suddenly dropped from the fourth-largest undergraduate"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-04-18T20:34:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-18T20:34:00+00:00',image:'',description:'"From 2008 to 2024, the number of four-year computer science degrees granted rose about fivefold..." reports the Washington Post. Then in 2025 CS sudd',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://developers.slashdot.org/story/26/04/18/0332245/fewer-us-college-students-major-in-cs-more-choose-data-science-engineering?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developers.slashdot.org/story/26/04/18/0332245/fewer-us-college-students-major-in-cs-more-choose-data-science-engineering?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Fewer US College Students Major in CS. More Choose Data Science, Engineering',source:'slashdot',date:'2026-04-18T20:34:00+00:00',image:'https://a.fsdn.com/sd/topics/programming_64.png',description:'"From 2008 to 2024, the number of four-year computer science degrees granted rose about fivefold..." reports the Washington Post. Then in 2025 CS sudd',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://developers.slashdot.org/story/26/04/18/0332245/fewer-us-college-students-major-in-cs-more-choose-data-science-engineering?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/programming_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -866,7 +892,7 @@
               <span class="date">18 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Fewer US College Students Major in CS. More Choose Data Science, Engineering</h3>
             <p class="card-desc">"From 2008 to 2024, the number of four-year computer science degrees granted rose about fivefold..." reports the Washington Post. Then in 2025 CS sudd…</p>
           </div>
         </a>
@@ -1048,24 +1074,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="amazon's new fire tv sticks no longer support sideloading"
-           data-desc="amazon's newest fire tv sticks are dropping support for normal sideloading, blocking apps from outside the amazon appstore unless the device is registered with developers. cord cutters news reports: t"
-           data-source="slashdot"
+           data-title="any color you like: nist scientists create 'any wavelength' lasers"
+           data-desc=""
+           data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-17T19:00:00+00:00"
-           data-url="https://entertainment.slashdot.org/story/26/04/17/180203/amazons-new-fire-tv-sticks-no-longer-support-sideloading?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://entertainment.slashdot.org/story/26/04/17/180203/amazons-new-fire-tv-sticks-no-longer-support-sideloading?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Amazon\'s New Fire TV Sticks No Longer Support Sideloading',source:'slashdot',date:'2026-04-17T19:00:00+00:00',image:'https://a.fsdn.com/sd/topics/tv_64.png',description:'Amazon\'s newest Fire TV Sticks are dropping support for normal sideloading, blocking apps from outside the Amazon Appstore unless the device is regist',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://entertainment.slashdot.org/story/26/04/17/180203/amazons-new-fire-tv-sticks-no-longer-support-sideloading?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/tv_64.png')"></div>
+           data-date="2026-04-18T20:54:17.000Z"
+           data-url="https://www.nist.gov/news-events/news/2026/04/any-color-you-nist-scientists-create-any-wavelength-lasers-tiny-circuits">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nist.gov/news-events/news/2026/04/any-color-you-nist-scientists-create-any-wavelength-lasers-tiny-circuits',title:'Any Color You Like: NIST Scientists Create \'Any Wavelength\' Lasers',source:'Hacker News',date:'2026-04-18T20:54:17.000Z',image:'https://www.nist.gov/sites/default/files/styles/social/public/images/2026/04/14/DSC04675.JPG?itok=cGTaD8t6',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.nist.gov/news-events/news/2026/04/any-color-you-nist-scientists-create-any-wavelength-lasers-tiny-circuits" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.nist.gov/sites/default/files/styles/social/public/images/2026/04/14/DSC04675.JPG?itok=cGTaD8t6')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">17 de abr. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de abr. de 2026</span>
+              <span class="badge">⬆ 50</span><span class="badge">💬 13</span>
             </div>
-            <h3 class="card-title">Amazon's New Fire TV Sticks No Longer Support Sideloading</h3>
-            <p class="card-desc">Amazon's newest Fire TV Sticks are dropping support for normal sideloading, blocking apps from outside the Amazon Appstore unless the device is regist…</p>
+            <h3 class="card-title">Any Color You Like: NIST Scientists Create 'Any Wavelength' Lasers</h3>
+            
           </div>
         </a>
       </div>
@@ -1084,9 +1110,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 195</span><span class="badge">💬 58</span>
+              <span class="badge">⬆ 213</span><span class="badge">💬 66</span>
             </div>
             <h3 class="card-title">The electromechanical angle computer inside the B-52 bomber's star tracker</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="optimizing ruby path methods"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-18T20:42:29.000Z"
+           data-url="https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html',title:'Optimizing Ruby Path Methods',source:'Hacker News',date:'2026-04-18T20:42:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de abr. de 2026</span>
+              <span class="badge">⬆ 23</span><span class="badge">💬 9</span>
+            </div>
+            <h3 class="card-title">Optimizing Ruby Path Methods</h3>
             
           </div>
         </a>
@@ -1106,7 +1154,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 601</span><span class="badge">💬 320</span>
+              <span class="badge">⬆ 630</span><span class="badge">💬 328</span>
             </div>
             <h3 class="card-title">Migrating from DigitalOcean to Hetzner</h3>
             
@@ -1128,31 +1176,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 298</span><span class="badge">💬 101</span>
+              <span class="badge">⬆ 307</span><span class="badge">💬 105</span>
             </div>
             <h3 class="card-title">State of Kdenlive</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="floating point fun on cortex-m processors"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-17T10:32:49.000Z"
-           data-url="https://danielmangum.com/posts/floating-point-cortex-m/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://danielmangum.com/posts/floating-point-cortex-m/',title:'Floating Point Fun on Cortex-M Processors',source:'Hacker News',date:'2026-04-17T10:32:49.000Z',image:'https://danielmangum.com/images/twitter-card.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://danielmangum.com/posts/floating-point-cortex-m/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://danielmangum.com/images/twitter-card.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">17 de abr. de 2026</span>
-              <span class="badge">⬆ 11</span>
-            </div>
-            <h3 class="card-title">Floating Point Fun on Cortex-M Processors</h3>
             
           </div>
         </a>
@@ -1172,9 +1198,75 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 65</span><span class="badge">💬 26</span>
+              <span class="badge">⬆ 74</span><span class="badge">💬 29</span>
             </div>
             <h3 class="card-title">Show HN: MDV – a Markdown superset for docs, dashboards, and slides with data</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="traders placed over $1b in perfectly timed bets on the iran war"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-18T18:36:07.000Z"
+           data-url="https://www.theguardian.com/world/2026/apr/18/iran-war-bets-ethics-concerns">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theguardian.com/world/2026/apr/18/iran-war-bets-ethics-concerns',title:'Traders placed over $1B in perfectly timed bets on the Iran war',source:'Hacker News',date:'2026-04-18T18:36:07.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.theguardian.com/world/2026/apr/18/iran-war-bets-ethics-concerns" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de abr. de 2026</span>
+              <span class="badge">⬆ 137</span><span class="badge">💬 92</span>
+            </div>
+            <h3 class="card-title">Traders placed over $1B in perfectly timed bets on the Iran war</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="floating point fun on cortex-m processors"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-17T10:32:49.000Z"
+           data-url="https://danielmangum.com/posts/floating-point-cortex-m/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://danielmangum.com/posts/floating-point-cortex-m/',title:'Floating Point Fun on Cortex-M Processors',source:'Hacker News',date:'2026-04-17T10:32:49.000Z',image:'https://danielmangum.com/images/twitter-card.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://danielmangum.com/posts/floating-point-cortex-m/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://danielmangum.com/images/twitter-card.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">17 de abr. de 2026</span>
+              <span class="badge">⬆ 21</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">Floating Point Fun on Cortex-M Processors</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="pgque: zero-bloat postgres queue"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-18T16:50:46.000Z"
+           data-url="https://github.com/NikolayS/pgque">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/NikolayS/pgque',title:'PgQue: Zero-Bloat Postgres Queue',source:'Hacker News',date:'2026-04-18T16:50:46.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/NikolayS/pgque" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de abr. de 2026</span>
+              <span class="badge">⬆ 51</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">PgQue: Zero-Bloat Postgres Queue</h3>
             
           </div>
         </a>
@@ -1194,75 +1286,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 360</span><span class="badge">💬 380</span>
+              <span class="badge">⬆ 377</span><span class="badge">💬 393</span>
             </div>
             <h3 class="card-title">Opus 4.7 to 4.6 Inflation is ~45%</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="optimizing ruby path methods"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-18T20:42:29.000Z"
-           data-url="https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html',title:'Optimizing Ruby Path Methods',source:'Hacker News',date:'2026-04-18T20:42:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://byroot.github.io/ruby/performance/2026/04/18/faster-paths.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 3</span>
-            </div>
-            <h3 class="card-title">Optimizing Ruby Path Methods</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="postgresql production incident caused by transaction id wraparound"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-18T20:34:31.000Z"
-           data-url="https://www.sqlservercentral.com/articles/i-too-have-a-production-story-a-downtime-caused-by-postgres-transaction-id-wraparound-problem">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.sqlservercentral.com/articles/i-too-have-a-production-story-a-downtime-caused-by-postgres-transaction-id-wraparound-problem',title:'PostgreSQL production incident caused by transaction ID wraparound',source:'Hacker News',date:'2026-04-18T20:34:31.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.sqlservercentral.com/articles/i-too-have-a-production-story-a-downtime-caused-by-postgres-transaction-id-wraparound-problem" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 6</span><span class="badge">💬 1</span>
-            </div>
-            <h3 class="card-title">PostgreSQL production incident caused by transaction ID wraparound</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="fuzix os"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-18T15:24:18.000Z"
-           data-url="https://www.fuzix.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.fuzix.org/',title:'Fuzix OS',source:'Hacker News',date:'2026-04-18T15:24:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.fuzix.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de abr. de 2026</span>
-              <span class="badge">⬆ 55</span><span class="badge">💬 24</span>
-            </div>
-            <h3 class="card-title">Fuzix OS</h3>
             
           </div>
         </a>
