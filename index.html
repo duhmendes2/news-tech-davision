@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 21/04/2026, 14:00:39
+      Atualizado: 21/04/2026, 15:38:58
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">76</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">51</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">22</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">77</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">50</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">51</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">50</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from bloomberg: at google, leaders are anxious about falling behind in the race to offer ai coding tools, especially as rivals like anthropic pbc offer more effecti"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-21T18:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-21T18:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Bloomberg: At Google, leaders are anxious about falling behind in the race to offer AI coding tools, especial',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from Bloomberg: At Google, leaders are anxious about falling behind in the race to offer AI coding tools, especial…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="amazon to invest up to another $25 billion in anthropic"
            data-desc="amazon is expanding its anthropic partnership with a deal to invest up to another $25 billion, while anthropic commits to spending more than $100 billion on aws infrastructure over the next decade to "
@@ -406,35 +428,35 @@
         </a>
       </div>
       <div class="card"
-           data-title="videos catch amazon delivery drones dropping packages from 10 feet in the air"
-           data-desc="there's been a few complaints about amazon's drone delivery service. "the automated mailmen are dropping off packages from 10 feet in the air," reports the new york post, "rendering the contents of ea"
-           data-source="slashdot"
+           data-title="the vercel breach: oauth attack exposes risk in platform environment variables"
+           data-desc="vercel april 2026 security incident - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=47824463 - april 2026 (485 comments)a roblox cheat and one ai tool brought down vercel&#x27;s platform - https"
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-20T11:34:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/04/20/0729233/videos-catch-amazon-delivery-drones-dropping-packages-from-10-feet-in-the-air?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/04/20/0729233/videos-catch-amazon-delivery-drones-dropping-packages-from-10-feet-in-the-air?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Videos Catch Amazon Delivery Drones Dropping Packages From 10 Feet in the Air',source:'slashdot',date:'2026-04-20T11:34:00+00:00',image:'',description:'There\'s been a few complaints about Amazon\'s drone delivery service. "The automated mailmen are dropping off packages from 10 feet in the air," report',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/04/20/0729233/videos-catch-amazon-delivery-drones-dropping-packages-from-10-feet-in-the-air?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-date="2026-04-21T17:14:35.000Z"
+           data-url="https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html',title:'The Vercel breach: OAuth attack exposes risk in platform environment variables',source:'Hacker News',date:'2026-04-21T17:14:35.000Z',image:'',description:'Vercel April 2026 security incident - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47824463 - April 2026 (485 comments)A Roblox cheat and one A',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.trendmicro.com/en_us/research/26/d/vercel-breach-oauth-supply-chain.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">20 de abr. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 71</span><span class="badge">💬 25</span>
             </div>
-            <h3 class="card-title">Videos Catch Amazon Delivery Drones Dropping Packages From 10 Feet in the Air</h3>
-            <p class="card-desc">There's been a few complaints about Amazon's drone delivery service. "The automated mailmen are dropping off packages from 10 feet in the air," report…</p>
+            <h3 class="card-title">The Vercel breach: OAuth attack exposes risk in platform environment variables</h3>
+            <p class="card-desc">Vercel April 2026 security incident - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47824463 - April 2026 (485 comments)A Roblox cheat and one A…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="show hn: gomodel – an open-source ai gateway in go; 44x lighter than litellm"
+           data-title="show hn: gomodel – an open-source ai gateway in go"
            data-desc="hi, i’m jakub, a solo founder based in warsaw.i’ve been building gomodel since december with a couple of contributors. it&#x27;s an open-source ai gateway that sits between your app and model provider"
            data-source="hacker news"
            data-cat="IA"
            data-date="2026-04-21T14:11:53.000Z"
            data-url="https://github.com/ENTERPILOT/GOModel/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/ENTERPILOT/GOModel/',title:'Show HN: GoModel – an open-source AI gateway in Go; 44x lighter than LiteLLM',source:'Hacker News',date:'2026-04-21T14:11:53.000Z',image:'',description:'Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/ENTERPILOT/GOModel/',title:'Show HN: GoModel – an open-source AI gateway in Go',source:'Hacker News',date:'2026-04-21T14:11:53.000Z',image:'',description:'Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://github.com/ENTERPILOT/GOModel/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -442,9 +464,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 63</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 107</span><span class="badge">💬 37</span>
             </div>
-            <h3 class="card-title">Show HN: GoModel – an open-source AI gateway in Go; 44x lighter than LiteLLM</h3>
+            <h3 class="card-title">Show HN: GoModel – an open-source AI gateway in Go</h3>
             <p class="card-desc">Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat…</p>
           </div>
         </a>
@@ -464,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 75</span><span class="badge">💬 25</span>
+              <span class="badge">⬆ 88</span><span class="badge">💬 42</span>
             </div>
             <h3 class="card-title">Tindie store under "scheduled maintenance" for days</h3>
             
@@ -486,32 +508,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 385</span><span class="badge">💬 222</span>
+              <span class="badge">⬆ 416</span><span class="badge">💬 240</span>
             </div>
             <h3 class="card-title">Anthropic says OpenClaw-style Claude CLI usage is allowed again</h3>
             
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: ctx – a /resume that works across claude code and codex"
-           data-desc="ctx is a local sqlite-backed skill for claude code and codex that stores context as a persistent workstream that can be continued across agent sessions. each workstream can contain multiple sessions, "
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-04-20T16:35:05.000Z"
-           data-url="https://github.com/dchu917/ctx">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/dchu917/ctx',title:'Show HN: Ctx – a /resume that works across Claude Code and Codex',source:'Hacker News',date:'2026-04-20T16:35:05.000Z',image:'',description:'ctx is a local SQLite-backed skill for Claude Code and Codex that stores context as a persistent workstream that can be continued across agent session',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/dchu917/ctx" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 9</span><span class="badge">💬 2</span>
-            </div>
-            <h3 class="card-title">Show HN: Ctx – a /resume that works across Claude Code and Codex</h3>
-            <p class="card-desc">ctx is a local SQLite-backed skill for Claude Code and Codex that stores context as a persistent workstream that can be continued across agent session…</p>
           </div>
         </a>
       </div>
@@ -530,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 113</span><span class="badge">💬 59</span>
+              <span class="badge">⬆ 125</span><span class="badge">💬 64</span>
             </div>
             <h3 class="card-title">Show HN: Mediator.ai – Using Nash bargaining and LLMs to systematize fairness</h3>
             <p class="card-desc">Eight years ago, my then-fiancée and I decided to get a prenup, so we hired a local mediator. The meetings were useful, but I felt there was no system…</p>
@@ -538,24 +538,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="anthropic takes $5b from amazon and pledges $100b in cloud spending in return"
-           data-desc=""
-           data-source="hacker news"
+           data-title="clarifai deletes 3 million photos that okcupid provided to train facial recognition ai, report says"
+           data-desc="the photo deletion comes after an ftc settlement with clarifai. the company had asked okcupid — whose executives had invested in clarifai — to share data in 2014, according to court documents."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-04-21T13:08:25.000Z"
-           data-url="https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/',title:'Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return',source:'Hacker News',date:'2026-04-21T13:08:25.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Tue, 21 Apr 2026 17:11:01 +0000"
+           data-url="https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/',title:'Clarifai deletes 3 million photos that OkCupid provided to train facial recognition AI, report says',source:'techcrunch',date:'Tue, 21 Apr 2026 17:11:01 +0000',image:'',description:'The photo deletion comes after an FTC settlement with Clarifai. The company had asked OkCupid — whose executives had invested in Clarifai — to share d',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/clarifai-okcupid-facial-recognition-ai-ftc-settlement/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 147</span><span class="badge">💬 145</span>
+              
             </div>
-            <h3 class="card-title">Anthropic takes $5B from Amazon and pledges $100B in cloud spending in return</h3>
-            
+            <h3 class="card-title">Clarifai deletes 3 million photos that OkCupid provided to train facial recognition AI, report says</h3>
+            <p class="card-desc">The photo deletion comes after an FTC settlement with Clarifai. The company had asked OkCupid — whose executives had invested in Clarifai — to share d…</p>
           </div>
         </a>
       </div>
@@ -824,46 +824,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="it&#8217;s not just one thing — it&#8217;s another thing"
-           data-desc="this sentence construction ("it's not just this — it's that") has become so common in ai-generated writing that it's no longer just a clue that a piece of writing may be synthetic — it's almost a guar"
-           data-source="techcrunch"
+           data-title="building agent-first governance and security"
+           data-desc="as ai agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. insecure agents can be manipulated to access sensitive systems and "
+           data-source="mit"
            data-cat="IA"
-           data-date="Mon, 20 Apr 2026 19:37:07 +0000"
-           data-url="https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/',title:'It&#8217;s not just one thing — it&#8217;s another thing',source:'techcrunch',date:'Mon, 20 Apr 2026 19:37:07 +0000',image:'',description:'This sentence construction ("It\'s not just this — it\'s that") has become so common in AI-generated writing that it\'s no longer just a clue that a piec',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/20/ai-writing-its-not-just-this-its-that-barrons/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+           data-date="Tue, 21 Apr 2026 17:22:54 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/',title:'Building agent-first governance and security',source:'mit',date:'Tue, 21 Apr 2026 17:22:54 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/Deloitte-v2-Landing-Page-Card-1.png',description:'As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents c',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/Deloitte-v2-Landing-Page-Card-1.png')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">20 de abr. de 2026</span>
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">It&#8217;s not just one thing — it&#8217;s another thing</h3>
-            <p class="card-desc">This sentence construction ("It's not just this — it's that") has become so common in AI-generated writing that it's no longer just a clue that a piec…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="north korean hackers blamed for $290m crypto theft"
-           data-desc="the hack against kelp dao is the largest crypto heist of the year so far."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Mon, 20 Apr 2026 17:04:05 +0000"
-           data-url="https://techcrunch.com/2026/04/20/north-korea-hackers-blamed-for-290m-crypto-theft/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/20/north-korea-hackers-blamed-for-290m-crypto-theft/',title:'North Korean hackers blamed for $290M crypto theft',source:'techcrunch',date:'Mon, 20 Apr 2026 17:04:05 +0000',image:'',description:'The hack against Kelp DAO is the largest crypto heist of the year so far.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/20/north-korea-hackers-blamed-for-290m-crypto-theft/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">20 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">North Korean hackers blamed for $290M crypto theft</h3>
-            <p class="card-desc">The hack against Kelp DAO is the largest crypto heist of the year so far.</p>
+            <h3 class="card-title">Building agent-first governance and security</h3>
+            <p class="card-desc">As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents c…</p>
           </div>
         </a>
       </div>
@@ -1374,32 +1352,6 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-robtica" data-cat="Robótica">
-      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
-      <div class="cards-grid" id="grid-robtica">
-      <div class="card"
-           data-title="robots beat human records at beijing half-marathon"
-           data-desc="an anonymous reader quotes a report from techcrunch: the winning runner at a beijing half-marathon for humanoid robots finished the race today in 50 minutes and 26 seconds -- significantly faster than"
-           data-source="slashdot"
-           data-cat="Robótica"
-           data-date="2026-04-20T15:00:00+00:00"
-           data-url="https://hardware.slashdot.org/story/26/04/20/0346215/robots-beat-human-records-at-beijing-half-marathon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/20/0346215/robots-beat-human-records-at-beijing-half-marathon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Robots Beat Human Records At Beijing Half-Marathon',source:'slashdot',date:'2026-04-20T15:00:00+00:00',image:'',description:'An anonymous reader quotes a report from TechCrunch: The winning runner at a Beijing half-marathon for humanoid robots finished the race today in 50 m',cat:'Robótica'})">⭐</button>
-        <a class="card-link" href="https://hardware.slashdot.org/story/26/04/20/0346215/robots-beat-human-records-at-beijing-half-marathon?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">20 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Robots Beat Human Records At Beijing Half-Marathon</h3>
-            <p class="card-desc">An anonymous reader quotes a report from TechCrunch: The winning runner at a Beijing half-marathon for humanoid robots finished the race today in 50 m…</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
@@ -1441,7 +1393,7 @@ i built vidstudio, a privacy focused video editor that runs in the browser. i tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 176</span><span class="badge">💬 62</span>
+              <span class="badge">⬆ 196</span><span class="badge">💬 72</span>
             </div>
             <h3 class="card-title">Show HN: VidStudio, a browser based video editor that doesn't upload your files</h3>
             <p class="card-desc">Hi HN,
@@ -1451,18 +1403,18 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">22</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">25</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
-           data-desc="the iea says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-free power outpace rising demand. the trend led the"
+           data-title="xbox game pass ultimate gets a price cut"
+           data-desc="microsoft is cutting the monthly price of xbox game pass ultimate and pc game pass, but the tradeoff is that new call of duty releases will no longer arrive on the service at launch. instead, they'll "
            data-source="slashdot"
            data-cat="Tecnologia"
-           data-date="2026-04-21T16:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-21T16:00:00+00:00',image:'',description:'The IEA says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-f',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-date="2026-04-21T17:00:00+00:00"
+           data-url="https://games.slashdot.org/story/26/04/21/1639222/xbox-game-pass-ultimate-gets-a-price-cut?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://games.slashdot.org/story/26/04/21/1639222/xbox-game-pass-ultimate-gets-a-price-cut?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Xbox Game Pass Ultimate Gets a Price Cut',source:'slashdot',date:'2026-04-21T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/xbox_64.png',description:'Microsoft is cutting the monthly price of Xbox Game Pass Ultimate and PC Game Pass, but the tradeoff is that new Call of Duty releases will no longer ',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://games.slashdot.org/story/26/04/21/1639222/xbox-game-pass-ultimate-gets-a-price-cut?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/xbox_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1470,7 +1422,29 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Xbox Game Pass Ultimate Gets a Price Cut</h3>
+            <p class="card-desc">Microsoft is cutting the monthly price of Xbox Game Pass Ultimate and PC Game Pass, but the tradeoff is that new Call of Duty releases will no longer …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="global growth in solar 'the largest ever observed for any source'"
+           data-desc="the iea says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-free power outpace rising demand. the trend led the"
+           data-source="slashdot"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T16:00:00+00:00"
+           data-url="https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Global Growth In Solar \'the Largest Ever Observed For Any Source\'',source:'slashdot',date:'2026-04-21T16:00:00+00:00',image:'https://a.fsdn.com/sd/topics/power_64.png',description:'The IEA says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-f',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/power_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Global Growth In Solar 'the Largest Ever Observed For Any Source'</h3>
             <p class="card-desc">The IEA says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-f…</p>
           </div>
         </a>
@@ -1564,23 +1538,23 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
         </a>
       </div>
       <div class="card"
-           data-title="original grapheneos responses to wired fact checker"
+           data-title="britannica11.org – a structured edition of the 1911 encyclopædia britannica"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T15:04:24.000Z"
-           data-url="https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker',title:'Original GrapheneOS responses to WIRED fact checker',source:'Hacker News',date:'2026-04-21T15:04:24.000Z',image:'https://discuss.grapheneos.org/opengraph.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://discuss.grapheneos.org/opengraph.png')"></div>
+           data-date="2026-04-21T17:33:50.000Z"
+           data-url="https://britannica11.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://britannica11.org/',title:'Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica',source:'Hacker News',date:'2026-04-21T17:33:50.000Z',image:'https://britannica11.org/title_page.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://britannica11.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://britannica11.org/title_page.jpg')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 137</span><span class="badge">💬 74</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 27</span>
             </div>
-            <h3 class="card-title">Original GrapheneOS responses to WIRED fact checker</h3>
+            <h3 class="card-title">Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica</h3>
             
           </div>
         </a>
@@ -1600,7 +1574,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 500</span><span class="badge">💬 259</span>
+              <span class="badge">⬆ 632</span><span class="badge">💬 326</span>
             </div>
             <h3 class="card-title">Laws of Software Engineering</h3>
             
@@ -1608,23 +1582,45 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
         </a>
       </div>
       <div class="card"
-           data-title="tim cook's impeccable timing"
+           data-title="a periodic map of cheese"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T11:30:03.000Z"
-           data-url="https://stratechery.com/2026/tim-cooks-impeccable-timing/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stratechery.com/2026/tim-cooks-impeccable-timing/',title:'Tim Cook\'s Impeccable Timing',source:'Hacker News',date:'2026-04-21T11:30:03.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://stratechery.com/2026/tim-cooks-impeccable-timing/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-21T16:31:21.000Z"
+           data-url="https://cheesemap.netlify.app/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://cheesemap.netlify.app/',title:'A Periodic Map of Cheese',source:'Hacker News',date:'2026-04-21T16:31:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://cheesemap.netlify.app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 181</span><span class="badge">💬 257</span>
+              <span class="badge">⬆ 56</span><span class="badge">💬 26</span>
             </div>
-            <h3 class="card-title">Tim Cook's Impeccable Timing</h3>
+            <h3 class="card-title">A Periodic Map of Cheese</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="framework laptop 13 pro"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T18:00:34.000Z"
+           data-url="https://frame.work/laptop13pro">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://frame.work/laptop13pro',title:'Framework Laptop 13 Pro',source:'Hacker News',date:'2026-04-21T18:00:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://frame.work/laptop13pro" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 74</span><span class="badge">💬 21</span>
+            </div>
+            <h3 class="card-title">Framework Laptop 13 Pro</h3>
             
           </div>
         </a>
@@ -1644,31 +1640,9 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 59</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 91</span><span class="badge">💬 34</span>
             </div>
             <h3 class="card-title">Fusion Power Plant Simulator</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="john ternus to become apple ceo"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-20T20:39:32.000Z"
-           data-url="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/',title:'John Ternus to become Apple CEO',source:'Hacker News',date:'2026-04-20T20:39:32.000Z',image:'https://www.apple.com/newsroom/images/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/tile/Apple-John-Ternus-Tim-Cook_lp.jpg.og.jpg?202604210035',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.apple.com/newsroom/images/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/tile/Apple-John-Ternus-Tim-Cook_lp.jpg.og.jpg?202604210035')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 2116</span><span class="badge">💬 1210</span>
-            </div>
-            <h3 class="card-title">John Ternus to become Apple CEO</h3>
             
           </div>
         </a>
@@ -1688,7 +1662,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 11</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 3</span>
             </div>
             <h3 class="card-title">Kasane: New drop-in Kakoune front end with GPU rendering and WASM Plugins</h3>
             
@@ -1710,31 +1684,9 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 101</span><span class="badge">💬 30</span>
+              <span class="badge">⬆ 117</span><span class="badge">💬 32</span>
             </div>
             <h3 class="card-title">A type-safe, realtime collaborative Graph Database in a CRDT</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="as oceans warm, great white sharks are overheating"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-21T14:48:55.000Z"
-           data-url="https://e360.yale.edu/digest/great-white-sharks-climate">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://e360.yale.edu/digest/great-white-sharks-climate',title:'As oceans warm, great white sharks are overheating',source:'Hacker News',date:'2026-04-21T14:48:55.000Z',image:'https://yale-threesixty.transforms.svdcdn.com/production/Great-White_Wikipedia.jpg?w=1200&amp;q=60&amp;auto=format&amp;fit=max&amp;dm=1776762631&amp;s=9449d79f7186d96a82d0ca990473e42b',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://e360.yale.edu/digest/great-white-sharks-climate" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://yale-threesixty.transforms.svdcdn.com/production/Great-White_Wikipedia.jpg?w=1200&amp;q=60&amp;auto=format&amp;fit=max&amp;dm=1776762631&amp;s=9449d79f7186d96a82d0ca990473e42b')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 102</span><span class="badge">💬 82</span>
-            </div>
-            <h3 class="card-title">As oceans warm, great white sharks are overheating</h3>
             
           </div>
         </a>
@@ -1754,10 +1706,76 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 197</span><span class="badge">💬 82</span>
+              <span class="badge">⬆ 220</span><span class="badge">💬 87</span>
             </div>
             <h3 class="card-title">MNT Reform is an open hardware laptop, designed and assembled in Germany</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="original grapheneos responses to wired fact checker"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T15:04:24.000Z"
+           data-url="https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker',title:'Original GrapheneOS responses to WIRED fact checker',source:'Hacker News',date:'2026-04-21T15:04:24.000Z',image:'https://discuss.grapheneos.org/opengraph.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://discuss.grapheneos.org/d/34369-original-grapheneos-responses-to-wired-fact-checker" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://discuss.grapheneos.org/opengraph.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 203</span><span class="badge">💬 114</span>
+            </div>
+            <h3 class="card-title">Original GrapheneOS responses to WIRED fact checker</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="tim cook's impeccable timing"
+           data-desc="john ternus to become apple ceo - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=47840219 - april 2026 (1213 comments)"
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T11:30:03.000Z"
+           data-url="https://stratechery.com/2026/tim-cooks-impeccable-timing/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stratechery.com/2026/tim-cooks-impeccable-timing/',title:'Tim Cook\'s Impeccable Timing',source:'Hacker News',date:'2026-04-21T11:30:03.000Z',image:'',description:'John Ternus to become Apple CEO - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47840219 - April 2026 (1213 comments)',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://stratechery.com/2026/tim-cooks-impeccable-timing/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 227</span><span class="badge">💬 324</span>
+            </div>
+            <h3 class="card-title">Tim Cook's Impeccable Timing</h3>
+            <p class="card-desc">John Ternus to become Apple CEO - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47840219 - April 2026 (1213 comments)</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="a look at tim cook&#8217;s 15-year legacy as ceo of apple"
+           data-desc="cook, who joined apple in 1998, succeeded steve jobs as ceo in 2011 and went on to transform apple into a $4 trillion powerhouse."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Tue, 21 Apr 2026 17:40:20 +0000"
+           data-url="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/',title:'A look at Tim Cook&#8217;s 15-year legacy as CEO of Apple',source:'techcrunch',date:'Tue, 21 Apr 2026 17:40:20 +0000',image:'',description:'Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">A look at Tim Cook&#8217;s 15-year legacy as CEO of Apple</h3>
+            <p class="card-desc">Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.</p>
           </div>
         </a>
       </div>
