@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 21/04/2026, 17:02:40
+      Atualizado: 21/04/2026, 18:11:20
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">77</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">49</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">26</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">80</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">53</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">24</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,52 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">49</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">53</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from ars technica: framework has been selling and shipping its modular, repairable, upgradable laptop 13 for five years now, and in that time, it has released six d"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-21T21:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-21T21:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: Framework has been selling and shipping its modular, repairable, upgradable Laptop 13 for five ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from Ars Technica: Framework has been selling and shipping its modular, repairable, upgradable Laptop 13 for five …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="job cuts driven by ai are rising on wall street"
+           data-desc="firms like bank of america, citi, wells fargo, and others are reporting strong profits while reducing head count and automating more work. "all of them credited a.i. to some degree ... in areas rangin"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-21T20:00:00+00:00"
+           data-url="https://news.slashdot.org/story/26/04/21/194240/job-cuts-driven-by-ai-are-rising-on-wall-street?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/04/21/194240/job-cuts-driven-by-ai-are-rising-on-wall-street?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Job Cuts Driven By AI Are Rising On Wall Street',source:'slashdot',date:'2026-04-21T20:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'Firms like Bank of America, Citi, Wells Fargo, and others are reporting strong profits while reducing head count and automating more work. "All of the',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://news.slashdot.org/story/26/04/21/194240/job-cuts-driven-by-ai-are-rising-on-wall-street?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Job Cuts Driven By AI Are Rising On Wall Street</h3>
+            <p class="card-desc">Firms like Bank of America, Citi, Wells Fargo, and others are reporting strong profits while reducing head count and automating more work. "All of the…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="meta to start capturing employee mouse movements, keystrokes for ai training data"
            data-desc="reuters reports that meta plans to start collecting u.s.-based employees' mouse movements, clicks, keystrokes, and occasional screen snapshots to train ai agents that can better learn how humans use c"
@@ -346,9 +390,9 @@
            data-cat="IA"
            data-date="2026-04-20T21:00:00+00:00"
            data-url="https://yro.slashdot.org/story/26/04/20/204204/former-palantir-employee-running-for-congress-unveils-ai-dividend-plan?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/04/20/204204/former-palantir-employee-running-for-congress-unveils-ai-dividend-plan?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Former Palantir Employee Running For Congress Unveils \'AI Dividend\' Plan',source:'slashdot',date:'2026-04-20T21:00:00+00:00',image:'https://a.fsdn.com/sd/topics/government_64.png',description:'Alex Bores, a former Palantir employee and current Democratic House candidate in New York, is proposing an "AI dividend" that would send direct paymen',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/04/20/204204/former-palantir-employee-running-for-congress-unveils-ai-dividend-plan?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Former Palantir Employee Running For Congress Unveils \'AI Dividend\' Plan',source:'slashdot',date:'2026-04-20T21:00:00+00:00',image:'',description:'Alex Bores, a former Palantir employee and current Democratic House candidate in New York, is proposing an "AI dividend" that would send direct paymen',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://yro.slashdot.org/story/26/04/20/204204/former-palantir-employee-running-for-congress-unveils-ai-dividend-plan?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/government_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -384,28 +428,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="palantir posts bond villain manifesto on x"
-           data-desc="deanonymizedcoward writes: engadget reports that palantir has posted to x a summary of ceo alex karp and nicholas w. zamiska's 2025 book, the technological republic, which reads like a utopian idealis"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-04-20T18:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/04/20/1654212/palantir-posts-bond-villain-manifesto-on-x?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/04/20/1654212/palantir-posts-bond-villain-manifesto-on-x?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Palantir Posts Bond Villain Manifesto On X',source:'slashdot',date:'2026-04-20T18:00:00+00:00',image:'',description:'DeanonymizedCoward writes: Engadget reports that Palantir has posted to X a summary of CEO Alex Karp and Nicholas W. Zamiska\'s 2025 book, The Technolo',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/04/20/1654212/palantir-posts-bond-villain-manifesto-on-x?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">20 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Palantir Posts Bond Villain Manifesto On X</h3>
-            <p class="card-desc">DeanonymizedCoward writes: Engadget reports that Palantir has posted to X a summary of CEO Alex Karp and Nicholas W. Zamiska's 2025 book, The Technolo…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="the vercel breach: oauth attack exposes risk in platform environment variables"
            data-desc="vercel april 2026 security incident - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=47824463 - april 2026 (485 comments)a roblox cheat and one ai tool brought down vercel&#x27;s platform - https"
            data-source="hacker news"
@@ -420,32 +442,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 146</span><span class="badge">💬 56</span>
+              <span class="badge">⬆ 189</span><span class="badge">💬 78</span>
             </div>
             <h3 class="card-title">The Vercel breach: OAuth attack exposes risk in platform environment variables</h3>
             <p class="card-desc">Vercel April 2026 security incident - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47824463 - April 2026 (485 comments)A Roblox cheat and one A…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openai livestream"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-04-21T18:50:00.000Z"
-           data-url="https://openai.com/live/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://openai.com/live/',title:'OpenAI Livestream',source:'Hacker News',date:'2026-04-21T18:50:00.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://openai.com/live/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 53</span><span class="badge">💬 38</span>
-            </div>
-            <h3 class="card-title">OpenAI Livestream</h3>
-            
           </div>
         </a>
       </div>
@@ -464,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 127</span><span class="badge">💬 47</span>
+              <span class="badge">⬆ 143</span><span class="badge">💬 52</span>
             </div>
             <h3 class="card-title">Show HN: GoModel – an open-source AI gateway in Go</h3>
             <p class="card-desc">Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat…</p>
@@ -486,9 +486,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 443</span><span class="badge">💬 248</span>
+              <span class="badge">⬆ 465</span><span class="badge">💬 260</span>
             </div>
             <h3 class="card-title">Anthropic says OpenClaw-style Claude CLI usage is allowed again</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="zindex – diagram infrastructure for agents"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-21T20:27:37.000Z"
+           data-url="https://zindex.ai/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://zindex.ai/',title:'Zindex – Diagram Infrastructure for Agents',source:'Hacker News',date:'2026-04-21T20:27:37.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://zindex.ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 4</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">Zindex – Diagram Infrastructure for Agents</h3>
             
           </div>
         </a>
@@ -780,134 +802,200 @@
         </a>
       </div>
       <div class="card"
-           data-title="blue energy raises $380m to build grid-scale nuclear reactors in shipyards"
-           data-desc="by building reactors in shipyards, blue energy says it will tame nuclear power's cost problems, giving it access to cheaper financing."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 21 Apr 2026 10:00:00 +0000"
-           data-url="https://techcrunch.com/2026/04/21/blue-energy-raises-380m-to-build-grid-scale-nuclear-reactors-in-shipyards/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/blue-energy-raises-380m-to-build-grid-scale-nuclear-reactors-in-shipyards/',title:'Blue Energy raises $380M to build grid-scale nuclear reactors in shipyards',source:'techcrunch',date:'Tue, 21 Apr 2026 10:00:00 +0000',image:'',description:'By building reactors in shipyards, Blue Energy says it will tame nuclear power\'s cost problems, giving it access to cheaper financing.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/21/blue-energy-raises-380m-to-build-grid-scale-nuclear-reactors-in-shipyards/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Blue Energy raises $380M to build grid-scale nuclear reactors in shipyards</h3>
-            <p class="card-desc">By building reactors in shipyards, Blue Energy says it will tame nuclear power's cost problems, giving it access to cheaper financing.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="building agent-first governance and security"
-           data-desc="as ai agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. insecure agents can be manipulated to access sensitive systems and "
+           data-title="10 things that matter in ai right now"
+           data-desc=""
            data-source="mit"
            data-cat="IA"
-           data-date="Tue, 21 Apr 2026 17:22:54 +0000"
-           data-url="https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/',title:'Building agent-first governance and security',source:'mit',date:'Tue, 21 Apr 2026 17:22:54 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/Deloitte-v2-Landing-Page-Card-1.png',description:'As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents c',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/Deloitte-v2-Landing-Page-Card-1.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Building agent-first governance and security</h3>
-            <p class="card-desc">As AI agents increasingly work alongside humans across organizations, companies could be inadvertently opening a new attack surface. Insecure agents c…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the download: turning down human noise, and la&#8217;s stunning subway upgrade"
-           data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. the noise we make is hurting animals. can we learn to shut up?"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Tue, 21 Apr 2026 12:10:00 +0000"
-           data-url="https://www.technologyreview.com/2026/04/21/1136246/the-download-human-noise-la-subway-upgrade/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1136246/the-download-human-noise-la-subway-upgrade/',title:'The Download: turning down human noise, and LA&#8217;s stunning subway upgrade',source:'mit',date:'Tue, 21 Apr 2026 12:10:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2024/08/SO24-feature_archives_Opener_thumb.jpg?w=2342',description:'This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. The noise we',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1136246/the-download-human-noise-la-subway-upgrade/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2024/08/SO24-feature_archives_Opener_thumb.jpg?w=2342')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Download: turning down human noise, and LA&#8217;s stunning subway upgrade</h3>
-            <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. The noise we…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the download: murderous &#8216;mirror&#8217; bacteria, and chinese workers fighting ai doubles"
-           data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. no one’s sure if synthetic mirror life will kill us all in feb"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Mon, 20 Apr 2026 12:10:00 +0000"
-           data-url="https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/',title:'The Download: murderous &#8216;mirror&#8217; bacteria, and Chinese workers fighting AI doubles',source:'mit',date:'Mon, 20 Apr 2026 12:10:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2024/04/0700860orig.jpg?w=3000',description:'This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. No one’s sur',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/20/1136154/the-download-murderous-mirror-bacteria-chinese-workers-fight-ai-agents/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2024/04/0700860orig.jpg?w=3000')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">20 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Download: murderous &#8216;mirror&#8217; bacteria, and Chinese workers fighting AI doubles</h3>
-            <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. No one’s sur…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="colossal biosciences said it cloned red wolves. is it for real?"
-           data-desc="if you want to capture something wolflike, it’s best to embark before dawn. so on a morning this january, with the eastern horizon still pink-hued, i drove with two young scientists into a blanket of "
-           data-source="mit"
-           data-cat="IA"
-           data-date="Mon, 20 Apr 2026 10:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/',title:'Colossal Biosciences said it cloned red wolves. Is it for real?',source:'mit',date:'Mon, 20 Apr 2026 10:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/2412_GW_2Month_2_1.jpg?w=1920',description:'If you want to capture something wolflike, it’s best to embark before dawn. So on a morning this January, with the eastern horizon still pink-hued, I ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/20/1135222/red-wolves-colossal-biosciences-clones/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/2412_GW_2Month_2_1.jpg?w=1920')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">20 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Colossal Biosciences said it cloned red wolves. Is it for real?</h3>
-            <p class="card-desc">If you want to capture something wolflike, it’s best to embark before dawn. So on a morning this January, with the eastern horizon still pink-hued, I …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="chinese tech workers are starting to train their ai doubles—and pushing back"
-           data-desc="tech workers in china are being instructed by their bosses to train ai agents to replace them—and it’s prompting a wave of soul-searching among otherwise enthusiastic early adopters. earlier this mont"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Mon, 20 Apr 2026 09:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/',title:'Chinese tech workers are starting to train their AI doubles—and pushing back',source:'mit',date:'Mon, 20 Apr 2026 09:00:00 +0000',image:'',description:'Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherw',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135643/10-ai-artificial-intelligence-trends-technologies-research-2026/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135643/10-ai-artificial-intelligence-trends-technologies-research-2026/',title:'10 Things That Matter in AI Right Now',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135643/10-ai-artificial-intelligence-trends-technologies-research-2026/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>M</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
               <span class="source-name">mit</span>
-              <span class="date">20 de abr. de 2026</span>
+              <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Chinese tech workers are starting to train their AI doubles—and pushing back</h3>
-            <p class="card-desc">Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherw…</p>
+            <h3 class="card-title">10 Things That Matter in AI Right Now</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="llms+"
+           data-desc="when chatgpt launched as an experimental prototype in late 2022, openai’s chatbot became an everyday everything app for hundreds of millions of people. llms like chatgpt were the new future: the entir"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135645/llm-large-language-models-ai/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135645/llm-large-language-models-ai/',title:'LLMs+',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'When ChatGPT launched as an experimental prototype in late 2022, OpenAI’s chatbot became an everyday everything app for hundreds of millions of people',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135645/llm-large-language-models-ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">LLMs+</h3>
+            <p class="card-desc">When ChatGPT launched as an experimental prototype in late 2022, OpenAI’s chatbot became an everyday everything app for hundreds of millions of people…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="supercharged scams"
+           data-desc="when chatgpt was released to the public in late 2022, it opened people’s eyes to how easily generative ai could churn out vast amounts of human-seeming text from simple prompts. this quickly caught th"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135647/supercharged-scams-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135647/supercharged-scams-ai-artificial-intelligence/',title:'Supercharged scams',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'When ChatGPT was released to the public in late 2022, it opened people’s eyes to how easily generative AI could churn out vast amounts of human-seemin',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135647/supercharged-scams-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Supercharged scams</h3>
+            <p class="card-desc">When ChatGPT was released to the public in late 2022, it opened people’s eyes to how easily generative AI could churn out vast amounts of human-seemin…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="world models"
+           data-desc="ai systems have already gained impressive mastery over the digital world, but the physical world is still humanity’s domain. as it turns out, building an ai system that can compose a novel or code an "
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135650/world-models-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135650/world-models-ai-artificial-intelligence/',title:'World models',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'AI systems have already gained impressive mastery over the digital world, but the physical world is still humanity’s domain. As it turns out, building',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135650/world-models-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">World models</h3>
+            <p class="card-desc">AI systems have already gained impressive mastery over the digital world, but the physical world is still humanity’s domain. As it turns out, building…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="weaponized deepfakes"
+           data-desc="for years, experts have warned that deepfakes—ai-generated videos, images, or audio recordings of people doing or saying things they haven’t actually done in real life—could be deployed in malicious w"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135652/weaponized-deepfakes-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135652/weaponized-deepfakes-ai-artificial-intelligence/',title:'Weaponized deepfakes',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'For years, experts have warned that deepfakes—AI-generated videos, images, or audio recordings of people doing or saying things they haven’t actually ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135652/weaponized-deepfakes-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Weaponized deepfakes</h3>
+            <p class="card-desc">For years, experts have warned that deepfakes—AI-generated videos, images, or audio recordings of people doing or saying things they haven’t actually …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="agent orchestration"
+           data-desc="when people say ai will speed up drug development or fear that it will bring about mass layoffs, what they have in mind—whether they know it or not—are ai agents. chatgpt made large language models a "
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135654/agent-orchestration-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135654/agent-orchestration-ai-artificial-intelligence/',title:'Agent orchestration',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'When people say AI will speed up drug development or fear that it will bring about mass layoffs, what they have in mind—whether they know it or not—ar',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135654/agent-orchestration-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Agent orchestration</h3>
+            <p class="card-desc">When people say AI will speed up drug development or fear that it will bring about mass layoffs, what they have in mind—whether they know it or not—ar…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="china’s open-source bet"
+           data-desc="silicon valley ai companies follow a familiar playbook: keep the secret sauce behind an api, and charge for every drop. china’s leading ai labs are playing a different game: they ship models as downlo"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135658/china-open-source-models-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135658/china-open-source-models-ai-artificial-intelligence/',title:'China’s open-source bet',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'Silicon Valley AI companies follow a familiar playbook: Keep the secret sauce behind an API, and charge for every drop. China’s leading AI labs are pl',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135658/china-open-source-models-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">China’s open-source bet</h3>
+            <p class="card-desc">Silicon Valley AI companies follow a familiar playbook: Keep the secret sauce behind an API, and charge for every drop. China’s leading AI labs are pl…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="artificial scientists"
+           data-desc="ai companies frequently invoke the possibility of ai-enabled scientific discovery as a justification for their existence: if the technology eventually cures cancer and solves climate change, then all "
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135663/artificial-scientists-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135663/artificial-scientists-ai-artificial-intelligence/',title:'Artificial scientists',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'AI companies frequently invoke the possibility of AI-enabled scientific discovery as a justification for their existence: If the technology eventually',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135663/artificial-scientists-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Artificial scientists</h3>
+            <p class="card-desc">AI companies frequently invoke the possibility of AI-enabled scientific discovery as a justification for their existence: If the technology eventually…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="resistance"
+           data-desc="turns out not everyone wants to live in the future that ai companies are building. people from all walks of life are speaking out against rising electricity bills from data centers, disappearing jobs,"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135665/resistance-ai-artificial-intelligence-backlash-protests/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135665/resistance-ai-artificial-intelligence-backlash-protests/',title:'Resistance',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'Turns out not everyone wants to live in the future that AI companies are building. People from all walks of life are speaking out against rising elect',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135665/resistance-ai-artificial-intelligence-backlash-protests/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Resistance</h3>
+            <p class="card-desc">Turns out not everyone wants to live in the future that AI companies are building. People from all walks of life are speaking out against rising elect…</p>
           </div>
         </a>
       </div>
@@ -1330,6 +1418,32 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="humanoid data"
+           data-desc="i was recently invited to join an app that would pay me cryptocurrency to film myself doing tasks like putting food into a bowl, microwaving it, and then taking it out. another website suggested i try"
+           data-source="mit"
+           data-cat="Robótica"
+           data-date="Tue, 21 Apr 2026 20:45:00 +0000"
+           data-url="https://www.technologyreview.com/2026/04/21/1135656/humanoid-data-robot-training-ai-artificial-intelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135656/humanoid-data-robot-training-ai-artificial-intelligence/',title:'Humanoid data',source:'mit',date:'Tue, 21 Apr 2026 20:45:00 +0000',image:'',description:'I was recently invited to join an app that would pay me cryptocurrency to film myself doing tasks like putting food into a bowl, microwaving it, and t',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135656/humanoid-data-robot-training-ai-artificial-intelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Humanoid data</h3>
+            <p class="card-desc">I was recently invited to join an app that would pay me cryptocurrency to film myself doing tasks like putting food into a bowl, microwaving it, and t…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
@@ -1363,15 +1477,15 @@ i built vidstudio, a privacy focused video editor that runs in the browser. i tr
            data-cat="Produção de Conteúdo"
            data-date="2026-04-21T11:58:16.000Z"
            data-url="https://vidstudio.app/video-editor">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vidstudio.app/video-editor',title:'Show HN: VidStudio, a browser based video editor that doesn\'t upload your files',source:'Hacker News',date:'2026-04-21T11:58:16.000Z',image:'https://vidstudio.app/og-image.png',description:'Hi HN, I built VidStudio, a privacy focused video editor that runs in the browser. I tried to keep it as frictionless as possible, so there are no acc',cat:'Produção de Conteúdo'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vidstudio.app/video-editor',title:'Show HN: VidStudio, a browser based video editor that doesn\'t upload your files',source:'Hacker News',date:'2026-04-21T11:58:16.000Z',image:'',description:'Hi HN, I built VidStudio, a privacy focused video editor that runs in the browser. I tried to keep it as frictionless as possible, so there are no acc',cat:'Produção de Conteúdo'})">⭐</button>
         <a class="card-link" href="https://vidstudio.app/video-editor" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://vidstudio.app/og-image.png')"></div>
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 207</span><span class="badge">💬 73</span>
+              <span class="badge">⬆ 216</span><span class="badge">💬 76</span>
             </div>
             <h3 class="card-title">Show HN: VidStudio, a browser based video editor that doesn't upload your files</h3>
             <p class="card-desc">Hi HN,
@@ -1381,30 +1495,8 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">26</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">24</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
-      <div class="card"
-           data-title="slashdot"
-           data-desc="firms like bank of america, citi, wells fargo, and others are reporting strong profits while reducing head count and automating more work. "all of them credited a.i. to some degree ... in areas rangin"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-04-21T20:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-21T20:00:00+00:00',image:'',description:'Firms like Bank of America, Citi, Wells Fargo, and others are reporting strong profits while reducing head count and automating more work. "All of the',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Slashdot</h3>
-            <p class="card-desc">Firms like Bank of America, Citi, Wells Fargo, and others are reporting strong profits while reducing head count and automating more work. "All of the…</p>
-          </div>
-        </a>
-      </div>
       <div class="card"
            data-title="xbox game pass ultimate gets a price cut"
            data-desc="microsoft is cutting the monthly price of xbox game pass ultimate and pc game pass, but the tradeoff is that new call of duty releases will no longer arrive on the service at launch. instead, they'll "
@@ -1552,7 +1644,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 105</span><span class="badge">💬 57</span>
+              <span class="badge">⬆ 138</span><span class="badge">💬 71</span>
             </div>
             <h3 class="card-title">Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica</h3>
             
@@ -1574,7 +1666,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 58</span><span class="badge">💬 12</span>
+              <span class="badge">⬆ 92</span><span class="badge">💬 21</span>
             </div>
             <h3 class="card-title">Cal.diy: open-source community edition of cal.com</h3>
             
@@ -1596,7 +1688,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 387</span><span class="badge">💬 211</span>
+              <span class="badge">⬆ 568</span><span class="badge">💬 334</span>
             </div>
             <h3 class="card-title">Framework Laptop 13 Pro</h3>
             
@@ -1618,7 +1710,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 693</span><span class="badge">💬 355</span>
+              <span class="badge">⬆ 737</span><span class="badge">💬 367</span>
             </div>
             <h3 class="card-title">Laws of Software Engineering</h3>
             
@@ -1640,7 +1732,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 93</span><span class="badge">💬 50</span>
+              <span class="badge">⬆ 124</span><span class="badge">💬 58</span>
             </div>
             <h3 class="card-title">A Periodic Map of Cheese</h3>
             
@@ -1662,9 +1754,31 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 111</span><span class="badge">💬 55</span>
+              <span class="badge">⬆ 122</span><span class="badge">💬 63</span>
             </div>
             <h3 class="card-title">Fusion Power Plant Simulator</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="my practitioner view of program analysis"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-20T15:27:30.000Z"
+           data-url="https://sawyer.dev/posts/practitioner-program-analysis/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://sawyer.dev/posts/practitioner-program-analysis/',title:'My practitioner view of program analysis',source:'Hacker News',date:'2026-04-20T15:27:30.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://sawyer.dev/posts/practitioner-program-analysis/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">20 de abr. de 2026</span>
+              <span class="badge">⬆ 13</span>
+            </div>
+            <h3 class="card-title">My practitioner view of program analysis</h3>
             
           </div>
         </a>
@@ -1684,7 +1798,7 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 28</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 3</span>
             </div>
             <h3 class="card-title">Theseus, a Static Windows Emulator</h3>
             
@@ -1692,90 +1806,90 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
         </a>
       </div>
       <div class="card"
-           data-title="ibuilt a tiny unix‑like 'os' with shell and filesystem for arduino uno (2kb ram)"
+           data-title="i don't want your prs anymore"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T17:14:26.000Z"
-           data-url="https://github.com/Arc1011/KernelUNO">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/Arc1011/KernelUNO',title:'Ibuilt a tiny Unix‑like \'OS\' with shell and filesystem for Arduino UNO (2KB RAM)',source:'Hacker News',date:'2026-04-21T17:14:26.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/Arc1011/KernelUNO" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-21T20:21:40.000Z"
+           data-url="https://dpc.pw/posts/i-dont-want-your-prs-anymore/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://dpc.pw/posts/i-dont-want-your-prs-anymore/',title:'I don\'t want your PRs anymore',source:'Hacker News',date:'2026-04-21T20:21:40.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://dpc.pw/posts/i-dont-want-your-prs-anymore/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 28</span><span class="badge">💬 3</span>
+              <span class="badge">⬆ 9</span>
             </div>
-            <h3 class="card-title">Ibuilt a tiny Unix‑like 'OS' with shell and filesystem for Arduino UNO (2KB RAM)</h3>
+            <h3 class="card-title">I don't want your PRs anymore</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="kasane: new drop-in kakoune front end with gpu rendering and wasm plugins"
+           data-title="california has more money than projected after admin miscalculated state budget"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T15:53:22.000Z"
-           data-url="https://github.com/Yus314/kasane">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/Yus314/kasane',title:'Kasane: New drop-in Kakoune front end with GPU rendering and WASM Plugins',source:'Hacker News',date:'2026-04-21T15:53:22.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/Yus314/kasane" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-21T20:28:57.000Z"
+           data-url="https://www.kcra.com/article/california-more-money-than-projected-newsom-miscalculated-budget/71056376">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.kcra.com/article/california-more-money-than-projected-newsom-miscalculated-budget/71056376',title:'California has more money than projected after admin miscalculated state budget',source:'Hacker News',date:'2026-04-21T20:28:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.kcra.com/article/california-more-money-than-projected-newsom-miscalculated-budget/71056376" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 31</span><span class="badge">💬 3</span>
+              <span class="badge">⬆ 5</span>
             </div>
-            <h3 class="card-title">Kasane: New drop-in Kakoune front end with GPU rendering and WASM Plugins</h3>
+            <h3 class="card-title">California has more money than projected after admin miscalculated state budget</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="a type-safe, realtime collaborative graph database in a crdt"
-           data-desc=""
-           data-source="hacker news"
+           data-title="tim cook is stepping down as ceo of apple. here&#8217;s a look at his 15-year legacy, from new products and services to china expansion."
+           data-desc="cook, who joined apple in 1998, succeeded steve jobs as ceo in 2011 and went on to transform apple into a $4 trillion powerhouse."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-04-21T10:33:24.000Z"
-           data-url="https://codemix.com/graph">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://codemix.com/graph',title:'A type-safe, realtime collaborative Graph Database in a CRDT',source:'Hacker News',date:'2026-04-21T10:33:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://codemix.com/graph" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Tue, 21 Apr 2026 21:09:09 +0000"
+           data-url="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-takeaways-ios-silicon-china-trillion-ai/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-takeaways-ios-silicon-china-trillion-ai/',title:'Tim Cook is stepping down as CEO of Apple. Here&#8217;s a look at his 15-year legacy, from new products and services to China expansion.',source:'techcrunch',date:'Tue, 21 Apr 2026 21:09:09 +0000',image:'',description:'Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-takeaways-ios-silicon-china-trillion-ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 123</span><span class="badge">💬 34</span>
+              
             </div>
-            <h3 class="card-title">A type-safe, realtime collaborative Graph Database in a CRDT</h3>
-            
+            <h3 class="card-title">Tim Cook is stepping down as CEO of Apple. Here&#8217;s a look at his 15-year legacy, from new products and services to China expansion.</h3>
+            <p class="card-desc">Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="mnt reform is an open hardware laptop, designed and assembled in germany"
-           data-desc=""
-           data-source="hacker news"
+           data-title="apple&#8217;s john ternus will run one of the world&#8217;s most powerful companies; the job is a minefield"
+           data-desc="apple's top job comes with almost unrivaled power and money, but it comes with plenty of baggage, too."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-04-20T14:14:52.000Z"
-           data-url="http://mnt.stanleylieber.com/reform/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'http://mnt.stanleylieber.com/reform/',title:'MNT Reform is an open hardware laptop, designed and assembled in Germany',source:'Hacker News',date:'2026-04-20T14:14:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="http://mnt.stanleylieber.com/reform/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Tue, 21 Apr 2026 20:23:24 +0000"
+           data-url="https://techcrunch.com/2026/04/21/apples-john-ternus-will-run-one-of-the-worlds-most-powerful-companies-the-job-is-a-minefield/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/apples-john-ternus-will-run-one-of-the-worlds-most-powerful-companies-the-job-is-a-minefield/',title:'Apple&#8217;s John Ternus will run one of the world&#8217;s most powerful companies; the job is a minefield',source:'techcrunch',date:'Tue, 21 Apr 2026 20:23:24 +0000',image:'',description:'Apple\'s top job comes with almost unrivaled power and money, but it comes with plenty of baggage, too.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/apples-john-ternus-will-run-one-of-the-worlds-most-powerful-companies-the-job-is-a-minefield/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de abr. de 2026</span>
-              <span class="badge">⬆ 240</span><span class="badge">💬 89</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">21 de abr. de 2026</span>
+              
             </div>
-            <h3 class="card-title">MNT Reform is an open hardware laptop, designed and assembled in Germany</h3>
-            
+            <h3 class="card-title">Apple&#8217;s John Ternus will run one of the world&#8217;s most powerful companies; the job is a minefield</h3>
+            <p class="card-desc">Apple's top job comes with almost unrivaled power and money, but it comes with plenty of baggage, too.</p>
           </div>
         </a>
       </div>
@@ -1798,28 +1912,6 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
             </div>
             <h3 class="card-title">SusHi Tech Tokyo isn&#8217;t a conference — it&#8217;s a deal room with 60,000 people</h3>
             <p class="card-desc">When 60,000 attendees descend on Tokyo Big Sight April 27–29, the headline numbers are hard to ignore: 750 startup exhibitors, 151 sessions, city lead…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="a look at tim cook&#8217;s 15-year legacy as ceo of apple"
-           data-desc="cook, who joined apple in 1998, succeeded steve jobs as ceo in 2011 and went on to transform apple into a $4 trillion powerhouse."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 21 Apr 2026 17:40:20 +0000"
-           data-url="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/',title:'A look at Tim Cook&#8217;s 15-year legacy as CEO of Apple',source:'techcrunch',date:'Tue, 21 Apr 2026 17:40:20 +0000',image:'',description:'Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/21/apple-tim-cook-ceo-15-year-legacy-timeline/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">A look at Tim Cook&#8217;s 15-year legacy as CEO of Apple</h3>
-            <p class="card-desc">Cook, who joined Apple in 1998, succeeded Steve Jobs as CEO in 2011 and went on to transform Apple into a $4 trillion powerhouse.</p>
           </div>
         </a>
       </div>
@@ -1908,28 +2000,6 @@ I built VidStudio, a privacy focused video editor that runs in the browser. I tr
             </div>
             <h3 class="card-title">Cash App is targeting a new kind of customer: 6- to 12-year-olds</h3>
             <p class="card-desc">The company is expanding its youth-focused services in an effort to build a relationship with Gen Alpha and the upcoming generation of adolescents in …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="digging for clues about the north pole&#8217;s past"
-           data-desc="in the past, even with an icebreaker and during peak melt season, getting to the north pole wasn’t a sure bet. it took favorable winds to crack the frozen ocean surface, and ships had to fight through"
-           data-source="mit"
-           data-cat="Tecnologia"
-           data-date="Tue, 21 Apr 2026 10:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/04/21/1135231/digging-for-truth-north-pole-past-seabed/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/04/21/1135231/digging-for-truth-north-pole-past-seabed/',title:'Digging for clues about the North Pole&#8217;s past',source:'mit',date:'Tue, 21 Apr 2026 10:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/North_Pole_Expedition_MIT_Tech_Rev_TimK_004.jpg?w=2667',description:'In the past, even with an icebreaker and during peak melt season, getting to the North Pole wasn’t a sure bet. It took favorable winds to crack the fr',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/04/21/1135231/digging-for-truth-north-pole-past-seabed/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/North_Pole_Expedition_MIT_Tech_Rev_TimK_004.jpg?w=2667')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Digging for clues about the North Pole&#8217;s past</h3>
-            <p class="card-desc">In the past, even with an icebreaker and during peak melt season, getting to the North Pole wasn’t a sure bet. It took favorable winds to crack the fr…</p>
           </div>
         </a>
       </div>
