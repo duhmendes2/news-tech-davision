@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 21/04/2026, 21:00:48
+      Atualizado: 22/04/2026, 00:47:09
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">76</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">50</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">77</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">27</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,18 +249,40 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">50</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from the new york times: spacex, elon musk's rocket and satellite company, said on tuesday that it had struck a deal with the artificial intelligence start-up curso"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-22T03:30:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-22T03:30:00+00:00',image:'',description:'An anonymous reader quotes a report from the New York Times: SpaceX, Elon Musk\'s rocket and satellite company, said on Tuesday that it had struck a de',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">22 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from the New York Times: SpaceX, Elon Musk's rocket and satellite company, said on Tuesday that it had struck a de…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="florida launches criminal investigation into chatgpt over school shooting"
            data-desc="florida's attorney general has launched a criminal investigation into openai over allegations that the accused gunman in a shooting at florida state university last year used chatgpt to help plan the "
            data-source="slashdot"
            data-cat="IA"
            data-date="2026-04-21T23:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-21T23:00:00+00:00',image:'',description:'Florida\'s attorney general has launched a criminal investigation into OpenAI over allegations that the accused gunman in a shooting at Florida State U',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://yro.slashdot.org/story/26/04/21/2039235/florida-launches-criminal-investigation-into-chatgpt-over-school-shooting?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/04/21/2039235/florida-launches-criminal-investigation-into-chatgpt-over-school-shooting?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Florida Launches Criminal Investigation Into ChatGPT Over School Shooting',source:'slashdot',date:'2026-04-21T23:00:00+00:00',image:'https://a.fsdn.com/sd/topics/court_64.png',description:'Florida\'s attorney general has launched a criminal investigation into OpenAI over allegations that the accused gunman in a shooting at Florida State U',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://yro.slashdot.org/story/26/04/21/2039235/florida-launches-criminal-investigation-into-chatgpt-over-school-shooting?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/court_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +290,7 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Florida Launches Criminal Investigation Into ChatGPT Over School Shooting</h3>
             <p class="card-desc">Florida's attorney general has launched a criminal investigation into OpenAI over allegations that the accused gunman in a shooting at Florida State U…</p>
           </div>
         </a>
@@ -429,12 +451,12 @@
       </div>
       <div class="card"
            data-title="chatgpt images 2.0"
-           data-desc="livestream: https:&#x2f;&#x2f;openai.com&#x2f;live&#x2f;"
+           data-desc="livestream: https:&#x2f;&#x2f;openai.com&#x2f;live&#x2f;system card: https:&#x2f;&#x2f;deploymentsafety.openai.com&#x2f;chatgpt-images-2-0&#x2f;chatg..."
            data-source="hacker news"
            data-cat="IA"
            data-date="2026-04-21T18:50:00.000Z"
            data-url="https://openai.com/index/introducing-chatgpt-images-2-0/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://openai.com/index/introducing-chatgpt-images-2-0/',title:'ChatGPT Images 2.0',source:'Hacker News',date:'2026-04-21T18:50:00.000Z',image:'',description:'Livestream: https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://openai.com/index/introducing-chatgpt-images-2-0/',title:'ChatGPT Images 2.0',source:'Hacker News',date:'2026-04-21T18:50:00.000Z',image:'',description:'Livestream: https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;System card: https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatg.',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -442,10 +464,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 298</span><span class="badge">💬 297</span>
+              <span class="badge">⬆ 546</span><span class="badge">💬 475</span>
             </div>
             <h3 class="card-title">ChatGPT Images 2.0</h3>
-            <p class="card-desc">Livestream: https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;</p>
+            <p class="card-desc">Livestream: https:&#x2F;&#x2F;openai.com&#x2F;live&#x2F;System card: https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;chatgpt-images-2-0&#x2F;chatg.…</p>
           </div>
         </a>
       </div>
@@ -464,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 243</span><span class="badge">💬 91</span>
+              <span class="badge">⬆ 281</span><span class="badge">💬 105</span>
             </div>
             <h3 class="card-title">The Vercel breach: OAuth attack exposes risk in platform environment variables</h3>
             <p class="card-desc">Vercel April 2026 security incident - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47824463 - April 2026 (485 comments)A Roblox cheat and one A…</p>
@@ -486,32 +508,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 53</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 94</span><span class="badge">💬 27</span>
             </div>
             <h3 class="card-title">CrabTrap: An LLM-as-a-judge HTTP proxy to secure agents in production</h3>
             <p class="card-desc">https:&#x2F;&#x2F;www.brex.com&#x2F;journal&#x2F;building-crabtrap-open-source</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="claude code no longer included in pro tier"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-04-21T22:36:24.000Z"
-           data-url="https://bsky.app/profile/edzitron.com/post/3mjzxwfx3qs2a">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://bsky.app/profile/edzitron.com/post/3mjzxwfx3qs2a',title:'Claude Code no longer included in Pro tier',source:'Hacker News',date:'2026-04-21T22:36:24.000Z',image:'https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:qc6xzgctorfsm35w6i3vdebx/bafkreiddpkqpxwsi42rgzrktvrzurcwjcmwbegqouwd5u3qsz5c5c4drte',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://bsky.app/profile/edzitron.com/post/3mjzxwfx3qs2a" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:qc6xzgctorfsm35w6i3vdebx/bafkreiddpkqpxwsi42rgzrktvrzurcwjcmwbegqouwd5u3qsz5c5c4drte')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 160</span><span class="badge">💬 92</span>
-            </div>
-            <h3 class="card-title">Claude Code no longer included in Pro tier</h3>
-            
           </div>
         </a>
       </div>
@@ -530,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 261</span><span class="badge">💬 238</span>
+              <span class="badge">⬆ 382</span><span class="badge">💬 317</span>
             </div>
             <h3 class="card-title">Meta to start capturing employee mouse movements, keystrokes for AI training</h3>
             <p class="card-desc">Alt link: https:&#x2F;&#x2F;tech.yahoo.com&#x2F;ai&#x2F;meta-ai&#x2F;articles&#x2F;exclusive-meta-st...</p>
@@ -538,46 +538,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="zindex – diagram infrastructure for agents"
-           data-desc=""
+           data-title="i'm sick of ai everything"
+           data-desc="a while back, i stopped using facebook because i just couldn&#x27;t take it anymore. just totally sick of it. i&#x27;m honestly getting there with ai. at this point, i would prefer to have anything ai"
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-21T20:27:37.000Z"
-           data-url="https://zindex.ai/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://zindex.ai/',title:'Zindex – Diagram Infrastructure for Agents',source:'Hacker News',date:'2026-04-21T20:27:37.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://zindex.ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-22T01:19:30.000Z"
+           data-url="https://news.ycombinator.com/item?id=47857461">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.ycombinator.com/item?id=47857461',title:'I\'m Sick of AI Everything',source:'Hacker News',date:'2026-04-22T01:19:30.000Z',image:'',description:'A while back, I stopped using Facebook because I just couldn&#x27;t take it anymore. Just totally sick of it. I&#x27;m honestly getting there with AI.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://news.ycombinator.com/item?id=47857461" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 25</span><span class="badge">💬 10</span>
+              <span class="date">22 de abr. de 2026</span>
+              <span class="badge">⬆ 174</span><span class="badge">💬 76</span>
             </div>
-            <h3 class="card-title">Zindex – Diagram Infrastructure for Agents</h3>
-            
+            <h3 class="card-title">I'm Sick of AI Everything</h3>
+            <p class="card-desc">A while back, I stopped using Facebook because I just couldn&#x27;t take it anymore. Just totally sick of it. I&#x27;m honestly getting there with AI.…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="show hn: gomodel – an open-source ai gateway in go"
-           data-desc="hi, i’m jakub, a solo founder based in warsaw.i’ve been building gomodel since december with a couple of contributors. it&#x27;s an open-source ai gateway that sits between your app and model provider"
-           data-source="hacker news"
+           data-title="redwood materials lays off 10% in restructuring to chase energy storage business"
+           data-desc="the company is restructuring some teams to accommodate a booming energy storage business, according to emails viewed by techcrunch."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-04-21T14:11:53.000Z"
-           data-url="https://github.com/ENTERPILOT/GOModel/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/ENTERPILOT/GOModel/',title:'Show HN: GoModel – an open-source AI gateway in Go',source:'Hacker News',date:'2026-04-21T14:11:53.000Z',image:'',description:'Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/ENTERPILOT/GOModel/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 22 Apr 2026 00:37:33 +0000"
+           data-url="https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/',title:'Redwood Materials lays off 10% in restructuring to chase energy storage business',source:'techcrunch',date:'Wed, 22 Apr 2026 00:37:33 +0000',image:'',description:'The company is restructuring some teams to accommodate a booming energy storage business, according to emails viewed by TechCrunch.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 155</span><span class="badge">💬 61</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">22 de abr. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Show HN: GoModel – an open-source AI gateway in Go</h3>
-            <p class="card-desc">Hi, I’m Jakub, a solo founder based in Warsaw.I’ve been building GoModel since December with a couple of contributors. It&#x27;s an open-source AI gat…</p>
+            <h3 class="card-title">Redwood Materials lays off 10% in restructuring to chase energy storage business</h3>
+            <p class="card-desc">The company is restructuring some teams to accommodate a booming energy storage business, according to emails viewed by TechCrunch.</p>
           </div>
         </a>
       </div>
@@ -622,6 +622,28 @@
             </div>
             <h3 class="card-title">Unauthorized group has gained access to Anthropic&#8217;s exclusive cyber tool Mythos, report claims</h3>
             <p class="card-desc">Anthropic told TechCrunch it is investigating the claims, but maintains that there is no evidence that its systems have been impacted.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="spacex is working with cursor and has an option to buy the startup for $60b"
+           data-desc="the move could shore up weaknesses at each company, but it also reveals them. neither cursor nor xai has proprietary models that can match the leading offerings from anthropic and openai — the same co"
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Tue, 21 Apr 2026 22:58:22 +0000"
+           data-url="https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/',title:'SpaceX is working with Cursor and has an option to buy the startup for $60B',source:'techcrunch',date:'Tue, 21 Apr 2026 22:58:22 +0000',image:'',description:'The move could shore up weaknesses at each company, but it also reveals them. Neither Cursor nor xAI has proprietary models that can match the leading',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">SpaceX is working with Cursor and has an option to buy the startup for $60B</h3>
+            <p class="card-desc">The move could shore up weaknesses at each company, but it also reveals them. Neither Cursor nor xAI has proprietary models that can match the leading…</p>
           </div>
         </a>
       </div>
@@ -934,14 +956,14 @@
         </a>
       </div>
       <div class="card"
-           data-title="deeper-med: advancing deep evidence-based research in medicine through agentic ai"
-           data-desc="arxiv:2604.15456v1 announce type: new abstract: trustworthiness and transparency are essential for the clinical adoption of artificial intelligence (ai) in healthcare and biomedical research. recent d"
+           data-title="governing the agentic enterprise: a governance maturity model for managing ai agent sprawl in business operations"
+           data-desc="arxiv:2604.16338v1 announce type: new abstract: the rapid adoption of agentic ai in enterprise business operations--autonomous systems capable of planning, reasoning, and executing multi-step workflow"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15456">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15456',title:'DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15456v1 Announce Type: new Abstract: Trustworthiness and transparency are essential for the clinical adoption of artificial intelligence (A',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15456" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16338">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16338',title:'Governing the Agentic Enterprise: A Governance Maturity Model for Managing AI Agent Sprawl in Business Operations',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16338v1 Announce Type: new Abstract: The rapid adoption of agentic AI in enterprise business operations--autonomous systems capable of plan',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16338" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -950,20 +972,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI</h3>
-            <p class="card-desc">arXiv:2604.15456v1 Announce Type: new Abstract: Trustworthiness and transparency are essential for the clinical adoption of artificial intelligence (A…</p>
+            <h3 class="card-title">Governing the Agentic Enterprise: A Governance Maturity Model for Managing AI Agent Sprawl in Business Operations</h3>
+            <p class="card-desc">arXiv:2604.16338v1 Announce Type: new Abstract: The rapid adoption of agentic AI in enterprise business operations--autonomous systems capable of plan…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="gist: multimodal knowledge extraction and spatial grounding via intelligent semantic topology"
-           data-desc="arxiv:2604.15495v1 announce type: new abstract: navigating complex, densely packed environments like retail stores, warehouses, and hospitals poses a significant spatial grounding challenge for humans"
+           data-title="semantic consensus: process-aware conflict detection and resolution for enterprise multi-agent llm systems"
+           data-desc="arxiv:2604.16339v1 announce type: new abstract: multi-agent large language model (llm) systems are rapidly emerging as the dominant architecture for enterprise ai automation, yet production deployment"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15495">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15495',title:'GIST: Multimodal Knowledge Extraction and Spatial Grounding via Intelligent Semantic Topology',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15495v1 Announce Type: new Abstract: Navigating complex, densely packed environments like retail stores, warehouses, and hospitals poses a ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15495" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16339">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16339',title:'Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16339v1 Announce Type: new Abstract: Multi-agent large language model (LLM) systems are rapidly emerging as the dominant architecture for e',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16339" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -972,20 +994,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">GIST: Multimodal Knowledge Extraction and Spatial Grounding via Intelligent Semantic Topology</h3>
-            <p class="card-desc">arXiv:2604.15495v1 Announce Type: new Abstract: Navigating complex, densely packed environments like retail stores, warehouses, and hospitals poses a …</p>
+            <h3 class="card-title">Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems</h3>
+            <p class="card-desc">arXiv:2604.16339v1 Announce Type: new Abstract: Multi-agent large language model (LLM) systems are rapidly emerging as the dominant architecture for e…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="bureaucratic silences: what the canadian ai register reveals, omits, and obscures"
-           data-desc="arxiv:2604.15514v1 announce type: new abstract: in november 2025, the government of canada operationalized its commitment to transparency by releasing its first federal ai register. in this paper, we "
+           data-title="computational hermeneutics: evaluating generative ai as a cultural technology"
+           data-desc="arxiv:2604.16403v1 announce type: new abstract: generative ai systems are increasingly recognized as cultural technologies, yet current evaluation frameworks often treat culture as a variable to be me"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15514">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15514',title:'Bureaucratic Silences: What the Canadian AI Register Reveals, Omits, and Obscures',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15514v1 Announce Type: new Abstract: In November 2025, the Government of Canada operationalized its commitment to transparency by releasing',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15514" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16403">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16403',title:'Computational Hermeneutics: Evaluating generative AI as a cultural technology',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16403v1 Announce Type: new Abstract: Generative AI systems are increasingly recognized as cultural technologies, yet current evaluation fra',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16403" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -994,20 +1016,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Bureaucratic Silences: What the Canadian AI Register Reveals, Omits, and Obscures</h3>
-            <p class="card-desc">arXiv:2604.15514v1 Announce Type: new Abstract: In November 2025, the Government of Canada operationalized its commitment to transparency by releasing…</p>
+            <h3 class="card-title">Computational Hermeneutics: Evaluating generative AI as a cultural technology</h3>
+            <p class="card-desc">arXiv:2604.16403v1 Announce Type: new Abstract: Generative AI systems are increasingly recognized as cultural technologies, yet current evaluation fra…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="lace: lattice attention for cross-thread exploration"
-           data-desc="arxiv:2604.15529v1 announce type: new abstract: current large language models reason in isolation. although it is common to sample multiple reasoning paths in parallel, these trajectories do not inter"
+           data-title="healthcare ai for automation or allocation? a transaction cost economics framework"
+           data-desc="arxiv:2604.16465v1 announce type: new abstract: healthcare productivity is shaped not only by clinical complexity but by the costs of coordinating work under uncertainty. transaction-cost economics of"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15529">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15529',title:'LACE: Lattice Attention for Cross-thread Exploration',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15529v1 Announce Type: new Abstract: Current large language models reason in isolation. Although it is common to sample multiple reasoning ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15529" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16465">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16465',title:'Healthcare AI for Automation or Allocation? A Transaction Cost Economics Framework',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16465v1 Announce Type: new Abstract: Healthcare productivity is shaped not only by clinical complexity but by the costs of coordinating wor',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16465" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1016,20 +1038,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">LACE: Lattice Attention for Cross-thread Exploration</h3>
-            <p class="card-desc">arXiv:2604.15529v1 Announce Type: new Abstract: Current large language models reason in isolation. Although it is common to sample multiple reasoning …</p>
+            <h3 class="card-title">Healthcare AI for Automation or Allocation? A Transaction Cost Economics Framework</h3>
+            <p class="card-desc">arXiv:2604.16465v1 Announce Type: new Abstract: Healthcare productivity is shaped not only by clinical complexity but by the costs of coordinating wor…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="preregistered belief revision contracts"
-           data-desc="arxiv:2604.15558v1 announce type: new abstract: deliberative multi-agent systems allow agents to exchange messages and revise beliefs over time. while this interaction is meant to improve performance,"
+           data-title="agentic frameworks for reasoning tasks: an empirical study"
+           data-desc="arxiv:2604.16646v1 announce type: new abstract: recent advances in agentic frameworks have enabled ai agents to perform complex reasoning and decision-making. however, evidence comparing their reasoni"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15558">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15558',title:'Preregistered Belief Revision Contracts',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15558v1 Announce Type: new Abstract: Deliberative multi-agent systems allow agents to exchange messages and revise beliefs over time. While',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15558" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16646">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16646',title:'Agentic Frameworks for Reasoning Tasks: An Empirical Study',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16646v1 Announce Type: new Abstract: Recent advances in agentic frameworks have enabled AI agents to perform complex reasoning and decision',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16646" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1038,20 +1060,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Preregistered Belief Revision Contracts</h3>
-            <p class="card-desc">arXiv:2604.15558v1 Announce Type: new Abstract: Deliberative multi-agent systems allow agents to exchange messages and revise beliefs over time. While…</p>
+            <h3 class="card-title">Agentic Frameworks for Reasoning Tasks: An Empirical Study</h3>
+            <p class="card-desc">arXiv:2604.16646v1 Announce Type: new Abstract: Recent advances in agentic frameworks have enabled AI agents to perform complex reasoning and decision…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="subliminal transfer of unsafe behaviors in ai agent distillation"
-           data-desc="arxiv:2604.15559v1 announce type: new abstract: recent work on subliminal learning demonstrates that language models can transmit semantic traits through data that is semantically unrelated to those t"
+           data-title="from subsumption to satisfiability: llm-assisted active learning for owl ontologies"
+           data-desc="arxiv:2604.16672v1 announce type: new abstract: in active learning, membership queries (mqs) allow a learner to pose questions to a teacher, such as ''is every apple a fruit?'', to which the teacher r"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15559">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15559',title:'Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15559v1 Announce Type: new Abstract: Recent work on subliminal learning demonstrates that language models can transmit semantic traits thro',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15559" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16672">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16672',title:'From Subsumption to Satisfiability: LLM-Assisted Active Learning for OWL Ontologies',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16672v1 Announce Type: new Abstract: In active learning, membership queries (MQs) allow a learner to pose questions to a teacher, such as \'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16672" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1060,20 +1082,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation</h3>
-            <p class="card-desc">arXiv:2604.15559v1 Announce Type: new Abstract: Recent work on subliminal learning demonstrates that language models can transmit semantic traits thro…</p>
+            <h3 class="card-title">From Subsumption to Satisfiability: LLM-Assisted Active Learning for OWL Ontologies</h3>
+            <p class="card-desc">arXiv:2604.16672v1 Announce Type: new Abstract: In active learning, membership queries (MQs) allow a learner to pose questions to a teacher, such as '…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="bilevel optimization of agent skills via monte carlo tree search"
-           data-desc="arxiv:2604.15709v1 announce type: new abstract: agent \texttt{skills} are structured collections of instructions, tools, and supporting resources that help large language model (llm) agents perform pa"
+           data-title="agentic risk-aware set-based engineering design"
+           data-desc="arxiv:2604.16687v1 announce type: new abstract: this paper introduces a multi-agent framework guided by large language models (llms) to assist in the early stages of engineering design, a phase often "
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15709">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15709',title:'Bilevel Optimization of Agent Skills via Monte Carlo Tree Search',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15709v1 Announce Type: new Abstract: Agent \texttt{skills} are structured collections of instructions, tools, and supporting resources that',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15709" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16687">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16687',title:'Agentic Risk-Aware Set-Based Engineering Design',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16687v1 Announce Type: new Abstract: This paper introduces a multi-agent framework guided by Large Language Models (LLMs) to assist in the ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16687" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1082,20 +1104,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Bilevel Optimization of Agent Skills via Monte Carlo Tree Search</h3>
-            <p class="card-desc">arXiv:2604.15709v1 Announce Type: new Abstract: Agent \texttt{skills} are structured collections of instructions, tools, and supporting resources that…</p>
+            <h3 class="card-title">Agentic Risk-Aware Set-Based Engineering Design</h3>
+            <p class="card-desc">arXiv:2604.16687v1 Announce Type: new Abstract: This paper introduces a multi-agent framework guided by Large Language Models (LLMs) to assist in the …</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="the world leaks the future: harness evolution for future prediction agents"
-           data-desc="arxiv:2604.15719v2 announce type: new abstract: many consequential decisions must be made before the relevant outcome is known. such problems are commonly framed as future prediction, where an llm age"
+           data-title="rankguide: tensor-rank-guided routing and steering for efficient reasoning"
+           data-desc="arxiv:2604.16694v1 announce type: new abstract: large reasoning models (lrms) enhance problem-solving capabilities by generating explicit multi-step chains of thought (cot) reasoning; however, they in"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15719">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15719',title:'The World Leaks the Future: Harness Evolution for Future Prediction Agents',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15719v2 Announce Type: new Abstract: Many consequential decisions must be made before the relevant outcome is known. Such problems are comm',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15719" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16694">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16694',title:'RankGuide: Tensor-Rank-Guided Routing and Steering for Efficient Reasoning',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16694v1 Announce Type: new Abstract: Large reasoning models (LRMs) enhance problem-solving capabilities by generating explicit multi-step c',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16694" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1104,20 +1126,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">The World Leaks the Future: Harness Evolution for Future Prediction Agents</h3>
-            <p class="card-desc">arXiv:2604.15719v2 Announce Type: new Abstract: Many consequential decisions must be made before the relevant outcome is known. Such problems are comm…</p>
+            <h3 class="card-title">RankGuide: Tensor-Rank-Guided Routing and Steering for Efficient Reasoning</h3>
+            <p class="card-desc">arXiv:2604.16694v1 Announce Type: new Abstract: Large reasoning models (LRMs) enhance problem-solving capabilities by generating explicit multi-step c…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="llm reasoning is latent, not the chain of thought"
-           data-desc="arxiv:2604.15726v1 announce type: new abstract: this position paper argues that large language model (llm) reasoning should be studied as latent-state trajectory formation rather than as faithful surf"
+           data-title="evaluating tool-using language agents: judge reliability, propagation cascades, and runtime mitigation in agentprop-bench"
+           data-desc="arxiv:2604.16706v1 announce type: new abstract: automated evaluation of tool-using large language model (llm) agents is widely assumed to be reliable, but this assumption has rarely been validated aga"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15726">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15726',title:'LLM Reasoning Is Latent, Not the Chain of Thought',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15726v1 Announce Type: new Abstract: This position paper argues that large language model (LLM) reasoning should be studied as latent-state',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15726" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16706">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16706',title:'Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16706v1 Announce Type: new Abstract: Automated evaluation of tool-using large language model (LLM) agents is widely assumed to be reliable,',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16706" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1126,20 +1148,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">LLM Reasoning Is Latent, Not the Chain of Thought</h3>
-            <p class="card-desc">arXiv:2604.15726v1 Announce Type: new Abstract: This position paper argues that large language model (LLM) reasoning should be studied as latent-state…</p>
+            <h3 class="card-title">Evaluating Tool-Using Language Agents: Judge Reliability, Propagation Cascades, and Runtime Mitigation in AgentProp-Bench</h3>
+            <p class="card-desc">arXiv:2604.16706v1 Announce Type: new Abstract: Automated evaluation of tool-using large language model (LLM) agents is widely assumed to be reliable,…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="structured abductive-deductive-inductive reasoning for llms via algebraic invariants"
-           data-desc="arxiv:2604.15727v1 announce type: new abstract: large language models exhibit systematic limitations in structured logical reasoning: they conflate hypothesis generation with verification, cannot dist"
+           data-title="debate as reward: a multi-agent reward system for scientific ideation via rl post-training"
+           data-desc="arxiv:2604.16723v1 announce type: new abstract: large language models (llms) have demonstrated potential in automating scientific ideation, yet current approaches relying on iterative prompting or com"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15727">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15727',title:'Structured Abductive-Deductive-Inductive Reasoning for LLMs via Algebraic Invariants',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15727v1 Announce Type: new Abstract: Large language models exhibit systematic limitations in structured logical reasoning: they conflate hy',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15727" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16723">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16723',title:'Debate as Reward: A Multi-Agent Reward System for Scientific Ideation via RL Post-Training',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16723v1 Announce Type: new Abstract: Large Language Models (LLMs) have demonstrated potential in automating scientific ideation, yet curren',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16723" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1148,20 +1170,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Structured Abductive-Deductive-Inductive Reasoning for LLMs via Algebraic Invariants</h3>
-            <p class="card-desc">arXiv:2604.15727v1 Announce Type: new Abstract: Large language models exhibit systematic limitations in structured logical reasoning: they conflate hy…</p>
+            <h3 class="card-title">Debate as Reward: A Multi-Agent Reward System for Scientific Ideation via RL Post-Training</h3>
+            <p class="card-desc">arXiv:2604.16723v1 Announce Type: new Abstract: Large Language Models (LLMs) have demonstrated potential in automating scientific ideation, yet curren…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="kwbench: measuring unprompted problem recognition in knowledge work"
-           data-desc="arxiv:2604.15760v1 announce type: new abstract: we introduce the first version of kwbench (knowledge work bench), a benchmark for unprompted problem recognition in large language models: can an llm id"
+           data-title="when agents go quiet: output generation capacity and format-cost separation for llm document synthesis"
+           data-desc="arxiv:2604.16736v1 announce type: new abstract: llm-powered coding agents suffer from a poorly understood failure mode we term output stalling: the agent silently produces empty responses when attempt"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15760">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15760',title:'KWBench: Measuring Unprompted Problem Recognition in Knowledge Work',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15760v1 Announce Type: new Abstract: We introduce the first version of KWBench (Knowledge Work Bench), a benchmark for unprompted problem r',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15760" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16736">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16736',title:'When Agents Go Quiet: Output Generation Capacity and Format-Cost Separation for LLM Document Synthesis',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16736v1 Announce Type: new Abstract: LLM-powered coding agents suffer from a poorly understood failure mode we term output stalling: the ag',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16736" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1170,20 +1192,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">KWBench: Measuring Unprompted Problem Recognition in Knowledge Work</h3>
-            <p class="card-desc">arXiv:2604.15760v1 Announce Type: new Abstract: We introduce the first version of KWBench (Knowledge Work Bench), a benchmark for unprompted problem r…</p>
+            <h3 class="card-title">When Agents Go Quiet: Output Generation Capacity and Format-Cost Separation for LLM Document Synthesis</h3>
+            <p class="card-desc">arXiv:2604.16736v1 Announce Type: new Abstract: LLM-powered coding agents suffer from a poorly understood failure mode we term output stalling: the ag…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="discover and prove: an open-source agentic framework for hard mode automated theorem proving in lean 4"
-           data-desc="arxiv:2604.15839v1 announce type: new abstract: most atp benchmarks embed the final answer within the formal statement -- a convention we call "easy mode" -- a design that simplifies the task relative"
+           data-title="ct open: an open-access, uncontaminated, live platform for the open challenge of clinical trial outcome prediction"
+           data-desc="arxiv:2604.16742v1 announce type: new abstract: scientists have long sought to accurately predict outcomes of real-world events before they happen. can ai systems do so more reliably? we study this qu"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15839">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15839',title:'Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15839v1 Announce Type: new Abstract: Most ATP benchmarks embed the final answer within the formal statement -- a convention we call "Easy M',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15839" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16742">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16742',title:'CT Open: An Open-Access, Uncontaminated, Live Platform for the Open Challenge of Clinical Trial Outcome Prediction',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16742v1 Announce Type: new Abstract: Scientists have long sought to accurately predict outcomes of real-world events before they happen. Ca',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16742" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1192,20 +1214,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4</h3>
-            <p class="card-desc">arXiv:2604.15839v1 Announce Type: new Abstract: Most ATP benchmarks embed the final answer within the formal statement -- a convention we call "Easy M…</p>
+            <h3 class="card-title">CT Open: An Open-Access, Uncontaminated, Live Platform for the Open Challenge of Clinical Trial Outcome Prediction</h3>
+            <p class="card-desc">arXiv:2604.16742v1 Announce Type: new Abstract: Scientists have long sought to accurately predict outcomes of real-world events before they happen. Ca…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="experience compression spectrum: unifying memory, skills, and rules in llm agents"
-           data-desc="arxiv:2604.15877v1 announce type: new abstract: as llm agents scale to long-horizon, multi-session deployments, efficiently managing accumulated experience becomes a critical bottleneck. agent memory "
+           data-title="why training-free token reduction collapses: the inherent instability of pairwise scoring signals"
+           data-desc="arxiv:2604.16745v1 announce type: new abstract: training-free token reduction methods for vision transformers (tome, tofu, pitome, and mctf) employ different scoring mechanisms, yet they share a close"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15877">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15877',title:'Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15877v1 Announce Type: new Abstract: As LLM agents scale to long-horizon, multi-session deployments, efficiently managing accumulated exper',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15877" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16745">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16745',title:'Why Training-Free Token Reduction Collapses: The Inherent Instability of Pairwise Scoring Signals',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16745v1 Announce Type: new Abstract: Training-free token reduction methods for Vision Transformers (ToMe, ToFu, PiToMe, and MCTF) employ di',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16745" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1214,20 +1236,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents</h3>
-            <p class="card-desc">arXiv:2604.15877v1 Announce Type: new Abstract: As LLM agents scale to long-horizon, multi-session deployments, efficiently managing accumulated exper…</p>
+            <h3 class="card-title">Why Training-Free Token Reduction Collapses: The Inherent Instability of Pairwise Scoring Signals</h3>
+            <p class="card-desc">arXiv:2604.16745v1 Announce Type: new Abstract: Training-free token reduction methods for Vision Transformers (ToMe, ToFu, PiToMe, and MCTF) employ di…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="towards rigorous explainability by feature attribution"
-           data-desc="arxiv:2604.15898v1 announce type: new abstract: for around a decade, non-symbolic methods have been the option of choice when explaining complex machine learning (ml) models. unfortunately, such metho"
+           data-title="don't start what you can't finish: a counterfactual audit of support-state triage in llm agents"
+           data-desc="arxiv:2604.16752v1 announce type: new abstract: current agent evaluations largely reward execution on fully specified tasks, while recent work studies clarification [11, 22, 2], capability awareness ["
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15898">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15898',title:'Towards Rigorous Explainability by Feature Attribution',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15898v1 Announce Type: new Abstract: For around a decade, non-symbolic methods have been the option of choice when explaining complex machi',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15898" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16752">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16752',title:'Don\'t Start What You Can\'t Finish: A Counterfactual Audit of Support-State Triage in LLM Agents',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16752v1 Announce Type: new Abstract: Current agent evaluations largely reward execution on fully specified tasks, while recent work studies',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16752" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1236,20 +1258,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Towards Rigorous Explainability by Feature Attribution</h3>
-            <p class="card-desc">arXiv:2604.15898v1 Announce Type: new Abstract: For around a decade, non-symbolic methods have been the option of choice when explaining complex machi…</p>
+            <h3 class="card-title">Don't Start What You Can't Finish: A Counterfactual Audit of Support-State Triage in LLM Agents</h3>
+            <p class="card-desc">arXiv:2604.16752v1 Announce Type: new Abstract: Current agent evaluations largely reward execution on fully specified tasks, while recent work studies…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="integrating graphs, large language models, and agents: reasoning and retrieval"
-           data-desc="arxiv:2604.15951v2 announce type: new abstract: generative ai, particularly large language models, increasingly integrates graph-based representations to enhance reasoning, retrieval, and structured d"
+           data-title="know when to trust the skill: delayed appraisal and epistemic vigilance for single-agent llms"
+           data-desc="arxiv:2604.16753v1 announce type: new abstract: as large language models (llms) transition into autonomous agents integrated with extensive tool ecosystems, traditional routing heuristics increasingly"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15951">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15951',title:'Integrating Graphs, Large Language Models, and Agents: Reasoning and Retrieval',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15951v2 Announce Type: new Abstract: Generative AI, particularly Large Language Models, increasingly integrates graph-based representations',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15951" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16753">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16753',title:'Know When to Trust the Skill: Delayed Appraisal and Epistemic Vigilance for Single-Agent LLMs',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16753v1 Announce Type: new Abstract: As large language models (LLMs) transition into autonomous agents integrated with extensive tool ecosy',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16753" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1258,20 +1280,20 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Integrating Graphs, Large Language Models, and Agents: Reasoning and Retrieval</h3>
-            <p class="card-desc">arXiv:2604.15951v2 Announce Type: new Abstract: Generative AI, particularly Large Language Models, increasingly integrates graph-based representations…</p>
+            <h3 class="card-title">Know When to Trust the Skill: Delayed Appraisal and Epistemic Vigilance for Single-Agent LLMs</h3>
+            <p class="card-desc">arXiv:2604.16753v1 Announce Type: new Abstract: As large language models (LLMs) transition into autonomous agents integrated with extensive tool ecosy…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="weak-link optimization for multi-agent reasoning and collaboration"
-           data-desc="arxiv:2604.15972v1 announce type: new abstract: llm-driven multi-agent frameworks address complex reasoning tasks through multi-role collaboration. however, existing approaches often suffer from reaso"
+           data-title="machine individuality: separating genuine idiosyncrasy from response bias in large language models"
+           data-desc="arxiv:2604.16755v2 announce type: new abstract: as large language models (llms) are increasingly integrated into daily life, in roles ranging from high-stakes decision support to companionship, unders"
            data-source="arxiv"
            data-cat="IA"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15972">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15972',title:'Weak-Link Optimization for Multi-Agent Reasoning and Collaboration',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15972v1 Announce Type: new Abstract: LLM-driven multi-agent frameworks address complex reasoning tasks through multi-role collaboration. Ho',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15972" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16755">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16755',title:'Machine individuality: Separating genuine idiosyncrasy from response bias in large language models',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16755v2 Announce Type: new Abstract: As large language models (LLMs) are increasingly integrated into daily life, in roles ranging from hig',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16755" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1280,20 +1302,24 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Weak-Link Optimization for Multi-Agent Reasoning and Collaboration</h3>
-            <p class="card-desc">arXiv:2604.15972v1 Announce Type: new Abstract: LLM-driven multi-agent frameworks address complex reasoning tasks through multi-role collaboration. Ho…</p>
+            <h3 class="card-title">Machine individuality: Separating genuine idiosyncrasy from response bias in large language models</h3>
+            <p class="card-desc">arXiv:2604.16755v2 Announce Type: new Abstract: As large language models (LLMs) are increasingly integrated into daily life, in roles ranging from hig…</p>
           </div>
         </a>
-      </div>
+      </div></div>
+    </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
       <div class="card"
-           data-title="reactbench: a benchmark for topological reasoning in mllms on chemical reaction diagrams"
-           data-desc="arxiv:2604.15994v1 announce type: new abstract: multimodal large language models (mllms) excel at recognizing individual visual elements and reasoning over simple linear diagrams. however, when faced "
+           data-title="heterogeneous self-play for realistic highway traffic simulation"
+           data-desc="arxiv:2604.16406v1 announce type: new abstract: realistic highway simulation is critical for scalable safety evaluation of autonomous vehicles, particularly for interactions that are too rare to study"
            data-source="arxiv"
-           data-cat="IA"
+           data-cat="Robótica"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15994">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15994',title:'ReactBench: A Benchmark for Topological Reasoning in MLLMs on Chemical Reaction Diagrams',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15994v1 Announce Type: new Abstract: Multimodal Large Language Models (MLLMs) excel at recognizing individual visual elements and reasoning',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15994" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16406">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16406',title:'Heterogeneous Self-Play for Realistic Highway Traffic Simulation',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16406v1 Announce Type: new Abstract: Realistic highway simulation is critical for scalable safety evaluation of autonomous vehicles, partic',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16406" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1302,52 +1328,8 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">ReactBench: A Benchmark for Topological Reasoning in MLLMs on Chemical Reaction Diagrams</h3>
-            <p class="card-desc">arXiv:2604.15994v1 Announce Type: new Abstract: Multimodal Large Language Models (MLLMs) excel at recognizing individual visual elements and reasoning…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="medley-bench: scale buys evaluation but not control in ai metacognition"
-           data-desc="arxiv:2604.16009v1 announce type: new abstract: metacognition, the ability to monitor and regulate one's own reasoning, remains under-evaluated in ai benchmarking. we introduce medley-bench, a benchma"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.16009">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16009',title:'MEDLEY-BENCH: Scale Buys Evaluation but Not Control in AI Metacognition',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16009v1 Announce Type: new Abstract: Metacognition, the ability to monitor and regulate one\'s own reasoning, remains under-evaluated in AI ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.16009" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">MEDLEY-BENCH: Scale Buys Evaluation but Not Control in AI Metacognition</h3>
-            <p class="card-desc">arXiv:2604.16009v1 Announce Type: new Abstract: Metacognition, the ability to monitor and regulate one's own reasoning, remains under-evaluated in AI …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="socialgrid: a benchmark for planning and social reasoning in embodied multi-agent systems"
-           data-desc="arxiv:2604.16022v1 announce type: new abstract: as large language models (llms) transition from text processors to autonomous agents, evaluating their social reasoning in embodied multi-agent settings"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.16022">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16022',title:'SocialGrid: A Benchmark for Planning and Social Reasoning in Embodied Multi-Agent Systems',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16022v1 Announce Type: new Abstract: As Large Language Models (LLMs) transition from text processors to autonomous agents, evaluating their',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.16022" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">SocialGrid: A Benchmark for Planning and Social Reasoning in Embodied Multi-Agent Systems</h3>
-            <p class="card-desc">arXiv:2604.16022v1 Announce Type: new Abstract: As Large Language Models (LLMs) transition from text processors to autonomous agents, evaluating their…</p>
+            <h3 class="card-title">Heterogeneous Self-Play for Realistic Highway Traffic Simulation</h3>
+            <p class="card-desc">arXiv:2604.16406v1 Announce Type: new Abstract: Realistic highway simulation is critical for scalable safety evaluation of autonomous vehicles, partic…</p>
           </div>
         </a>
       </div></div>
@@ -1379,7 +1361,7 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">25</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">27</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="xbox game pass ultimate gets a price cut"
@@ -1410,9 +1392,9 @@
            data-cat="Tecnologia"
            data-date="2026-04-21T16:00:00+00:00"
            data-url="https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Global Growth In Solar \'the Largest Ever Observed For Any Source\'',source:'slashdot',date:'2026-04-21T16:00:00+00:00',image:'https://a.fsdn.com/sd/topics/power_64.png',description:'The IEA says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-f',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Global Growth In Solar \'the Largest Ever Observed For Any Source\'',source:'slashdot',date:'2026-04-21T16:00:00+00:00',image:'',description:'The IEA says 2025 marked a turning point for global energy, with solar posting the largest growth ever seen for any energy source and helping carbon-f',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://hardware.slashdot.org/story/26/04/21/1549243/global-growth-in-solar-the-largest-ever-observed-for-any-source?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/power_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1448,13 +1430,13 @@
         </a>
       </div>
       <div class="card"
-           data-title="spacex and cursor partnership. right to acquire cursor later this year"
-           data-desc=""
+           data-title="spacex says it has agreement to acquire cursor for $60b"
+           data-desc="https:&#x2f;&#x2f;www.reuters.com&#x2f;technology&#x2f;spacex-says-it-has-option...https:&#x2f;&#x2f;www.nytimes.com&#x2f;2026&#x2f;04&#x2f;21&#x2f;business&#x2f;spacex-cursor-de... (https:&#x2f;&#x2f"
            data-source="hacker news"
            data-cat="Tecnologia"
            data-date="2026-04-21T22:13:18.000Z"
            data-url="https://twitter.com/spacex/status/2046713419978453374">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/spacex/status/2046713419978453374',title:'SpaceX and Cursor partnership. Right to acquire Cursor later this year',source:'Hacker News',date:'2026-04-21T22:13:18.000Z',image:'https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_200x200.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/spacex/status/2046713419978453374',title:'SpaceX says it has agreement to acquire Cursor for $60B',source:'Hacker News',date:'2026-04-21T22:13:18.000Z',image:'https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_200x200.jpg',description:'https:&#x2F;&#x2F;www.reuters.com&#x2F;technology&#x2F;spacex-says-it-has-option...https:&#x2F;&#x2F;www.nytimes.com&#x2F;2026&#x2F;04&#x2F;21&#x2F;bu',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://twitter.com/spacex/status/2046713419978453374" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_200x200.jpg')"></div>
           <div class="card-body">
@@ -1462,97 +1444,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 24</span><span class="badge">💬 3</span>
+              <span class="badge">⬆ 365</span><span class="badge">💬 477</span>
             </div>
-            <h3 class="card-title">SpaceX and Cursor partnership. Right to acquire Cursor later this year</h3>
-            
+            <h3 class="card-title">SpaceX says it has agreement to acquire Cursor for $60B</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;www.reuters.com&#x2F;technology&#x2F;spacex-says-it-has-option...https:&#x2F;&#x2F;www.nytimes.com&#x2F;2026&#x2F;04&#x2F;21&#x2F;bu…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="britannica11.org – a structured edition of the 1911 encyclopædia britannica"
+           data-title="san diego rents declined more than 19 of 20 top us markets after surge in supply"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T17:33:50.000Z"
-           data-url="https://britannica11.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://britannica11.org/',title:'Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica',source:'Hacker News',date:'2026-04-21T17:33:50.000Z',image:'https://britannica11.org/title_page.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://britannica11.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://britannica11.org/title_page.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 197</span><span class="badge">💬 85</span>
-            </div>
-            <h3 class="card-title">Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="cal.diy: open-source community edition of cal.com"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-21T17:58:21.000Z"
-           data-url="https://github.com/calcom/cal.diy">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/calcom/cal.diy',title:'Cal.diy: open-source community edition of cal.com',source:'Hacker News',date:'2026-04-21T17:58:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/calcom/cal.diy" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-22T01:21:09.000Z"
+           data-url="https://www.kpbs.org/news/economy/2026/03/27/san-diego-rents-declined-more-than-19-of-nations-top-20-markets-following-surge-in-supply">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.kpbs.org/news/economy/2026/03/27/san-diego-rents-declined-more-than-19-of-nations-top-20-markets-following-surge-in-supply',title:'San Diego rents declined more than 19 of 20 top US markets after surge in supply',source:'Hacker News',date:'2026-04-22T01:21:09.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.kpbs.org/news/economy/2026/03/27/san-diego-rents-declined-more-than-19-of-nations-top-20-markets-following-surge-in-supply" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 138</span><span class="badge">💬 36</span>
+              <span class="date">22 de abr. de 2026</span>
+              <span class="badge">⬆ 134</span><span class="badge">💬 88</span>
             </div>
-            <h3 class="card-title">Cal.diy: open-source community edition of cal.com</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="framework laptop 13 pro"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-21T18:00:34.000Z"
-           data-url="https://frame.work/laptop13pro">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://frame.work/laptop13pro',title:'Framework Laptop 13 Pro',source:'Hacker News',date:'2026-04-21T18:00:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://frame.work/laptop13pro" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 828</span><span class="badge">💬 466</span>
-            </div>
-            <h3 class="card-title">Framework Laptop 13 Pro</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="spacex says it has agreement to acquire cursor for $60b"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-21T22:40:46.000Z"
-           data-url="https://www.bloomberg.com/news/articles/2026-04-21/spacex-says-has-agreement-to-acquire-cursor-for-60-billion">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bloomberg.com/news/articles/2026-04-21/spacex-says-has-agreement-to-acquire-cursor-for-60-billion',title:'SpaceX Says It Has Agreement to Acquire Cursor for $60B',source:'Hacker News',date:'2026-04-21T22:40:46.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-04-21/spacex-says-has-agreement-to-acquire-cursor-for-60-billion" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 102</span><span class="badge">💬 40</span>
-            </div>
-            <h3 class="card-title">SpaceX Says It Has Agreement to Acquire Cursor for $60B</h3>
+            <h3 class="card-title">San Diego rents declined more than 19 of 20 top US markets after surge in supply</h3>
             
           </div>
         </a>
@@ -1572,7 +1488,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 793</span><span class="badge">💬 406</span>
+              <span class="badge">⬆ 867</span><span class="badge">💬 433</span>
             </div>
             <h3 class="card-title">Laws of Software Engineering</h3>
             
@@ -1580,46 +1496,134 @@
         </a>
       </div>
       <div class="card"
-           data-title="spacex strikes deal with cursor for $60b"
+           data-title="britannica11.org – a structured edition of the 1911 encyclopædia britannica"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-21T22:27:17.000Z"
-           data-url="https://www.nytimes.com/2026/04/21/business/spacex-cursor-deal.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nytimes.com/2026/04/21/business/spacex-cursor-deal.html',title:'SpaceX strikes deal with Cursor for $60B',source:'Hacker News',date:'2026-04-21T22:27:17.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.nytimes.com/2026/04/21/business/spacex-cursor-deal.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-21T17:33:50.000Z"
+           data-url="https://britannica11.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://britannica11.org/',title:'Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica',source:'Hacker News',date:'2026-04-21T17:33:50.000Z',image:'https://britannica11.org/title_page.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://britannica11.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://britannica11.org/title_page.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 242</span><span class="badge">💬 92</span>
+            </div>
+            <h3 class="card-title">Britannica11.org – a structured edition of the 1911 Encyclopædia Britannica</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="drunk post: things i've learned as a senior engineer"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T23:53:45.000Z"
+           data-url="https://luminousmen.substack.com/p/drunk-post-things-ive-learned-as">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://luminousmen.substack.com/p/drunk-post-things-ive-learned-as',title:'Drunk Post: Things I\'ve Learned as a Senior Engineer',source:'Hacker News',date:'2026-04-21T23:53:45.000Z',image:'https://substackcdn.com/image/fetch/$s_!V0bv!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a6bc166-fe0b-4925-ba8b-f1246e85634a_2388x1668.jpeg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://luminousmen.substack.com/p/drunk-post-things-ive-learned-as" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://substackcdn.com/image/fetch/$s_!V0bv!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4a6bc166-fe0b-4925-ba8b-f1246e85634a_2388x1668.jpeg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 45</span><span class="badge">💬 11</span>
+            </div>
+            <h3 class="card-title">Drunk Post: Things I've Learned as a Senior Engineer</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="diverse organic molecules on mars revealed by the first sam tmah experiment"
+           data-desc="https:&#x2f;&#x2f;www.nature.com&#x2f;articles&#x2f;s41467-026-70656-0"
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T10:19:49.000Z"
+           data-url="https://www.courthousenews.com/preserved-for-billions-of-years-organic-compounds-found-on-mars/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.courthousenews.com/preserved-for-billions-of-years-organic-compounds-found-on-mars/',title:'Diverse organic molecules on Mars revealed by the first SAM TMAH experiment',source:'Hacker News',date:'2026-04-21T10:19:49.000Z',image:'https://courthousenews.com/wp-content/uploads/2026/04/mars-rover-800x600.jpg',description:'https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41467-026-70656-0',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.courthousenews.com/preserved-for-billions-of-years-organic-compounds-found-on-mars/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://courthousenews.com/wp-content/uploads/2026/04/mars-rover-800x600.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">21 de abr. de 2026</span>
+              <span class="badge">⬆ 6</span>
+            </div>
+            <h3 class="card-title">Diverse organic molecules on Mars revealed by the first SAM TMAH experiment</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;s41467-026-70656-0</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="framework laptop 13 pro"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-21T18:00:34.000Z"
+           data-url="https://frame.work/laptop13pro">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://frame.work/laptop13pro',title:'Framework Laptop 13 Pro',source:'Hacker News',date:'2026-04-21T18:00:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://frame.work/laptop13pro" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              <span class="badge">⬆ 96</span><span class="badge">💬 69</span>
+              <span class="badge">⬆ 1011</span><span class="badge">💬 536</span>
             </div>
-            <h3 class="card-title">SpaceX strikes deal with Cursor for $60B</h3>
+            <h3 class="card-title">Framework Laptop 13 Pro</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="spacex is working with cursor and has an option to buy the startup for $60 billion"
-           data-desc="only elon would do this before an ipo."
-           data-source="techcrunch"
+           data-title="cal.diy: open-source community edition of cal.com"
+           data-desc=""
+           data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="Tue, 21 Apr 2026 22:58:22 +0000"
-           data-url="https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/',title:'SpaceX is working with Cursor and has an option to buy the startup for $60 billion',source:'techcrunch',date:'Tue, 21 Apr 2026 22:58:22 +0000',image:'',description:'Only Elon would do this before an IPO.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+           data-date="2026-04-21T17:58:21.000Z"
+           data-url="https://github.com/calcom/cal.diy">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/calcom/cal.diy',title:'Cal.diy: open-source community edition of cal.com',source:'Hacker News',date:'2026-04-21T17:58:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/calcom/cal.diy" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
               <span class="date">21 de abr. de 2026</span>
-              
+              <span class="badge">⬆ 167</span><span class="badge">💬 43</span>
             </div>
-            <h3 class="card-title">SpaceX is working with Cursor and has an option to buy the startup for $60 billion</h3>
-            <p class="card-desc">Only Elon would do this before an IPO.</p>
+            <h3 class="card-title">Cal.diy: open-source community edition of cal.com</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fbi looks into dead or missing scientists tied to nasa, blue origin, spacex"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-22T02:49:40.000Z"
+           data-url="https://fortune.com/2026/04/21/scientists-disappear-die-nasa-space-blue-origin-spacex/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://fortune.com/2026/04/21/scientists-disappear-die-nasa-space-blue-origin-spacex/',title:'FBI looks into dead or missing scientists tied to NASA, Blue Origin, SpaceX',source:'Hacker News',date:'2026-04-22T02:49:40.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://fortune.com/2026/04/21/scientists-disappear-die-nasa-space-blue-origin-spacex/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">22 de abr. de 2026</span>
+              <span class="badge">⬆ 31</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">FBI looks into dead or missing scientists tied to NASA, Blue Origin, SpaceX</h3>
+            
           </div>
         </a>
       </div>
@@ -1730,28 +1734,6 @@
             </div>
             <h3 class="card-title">With US spy laws set to expire, lawmakers are split over protecting Americans from warrantless surveillance</h3>
             <p class="card-desc">Some lawmakers are calling for widespread reforms following years of surveillance scandals and abuses across successive U.S. administrations. But even…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="what’s the key to better vegan cheese? microbreweries, one startup says."
-           data-desc="aux labs says it has found a better way to make vegan cheese that tastes and feels like the real thing — and costs the same."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 21 Apr 2026 13:00:00 +0000"
-           data-url="https://techcrunch.com/2026/04/21/whats-the-key-to-better-vegan-cheese-microbreweries-one-startup-says/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/21/whats-the-key-to-better-vegan-cheese-microbreweries-one-startup-says/',title:'What’s the key to better vegan cheese? Microbreweries, one startup says.',source:'techcrunch',date:'Tue, 21 Apr 2026 13:00:00 +0000',image:'',description:'AuX Labs says it has found a better way to make vegan cheese that tastes and feels like the real thing — and costs the same.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/21/whats-the-key-to-better-vegan-cheese-microbreweries-one-startup-says/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">21 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">What’s the key to better vegan cheese? Microbreweries, one startup says.</h3>
-            <p class="card-desc">AuX Labs says it has found a better way to make vegan cheese that tastes and feels like the real thing — and costs the same.</p>
           </div>
         </a>
       </div>
@@ -1910,14 +1892,14 @@
         </a>
       </div>
       <div class="card"
-           data-title="stein variational black-box combinatorial optimization"
-           data-desc="arxiv:2604.15837v1 announce type: new abstract: combinatorial black-box optimization in high-dimensional settings demands a careful trade-off between exploiting promising regions of the search space a"
+           data-title="support sufficiency as consequence-sensitive compression in belief arbitration"
+           data-desc="arxiv:2604.16434v1 announce type: new abstract: when a system commits to a hypothesis, much of the evidential structure behind that commitment is lost to compression. standard accounts assume that sel"
            data-source="arxiv"
            data-cat="Tecnologia"
            data-date="Tue, 21 Apr 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2604.15837">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.15837',title:'Stein Variational Black-Box Combinatorial Optimization',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.15837v1 Announce Type: new Abstract: Combinatorial black-box optimization in high-dimensional settings demands a careful trade-off between ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2604.15837" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://arxiv.org/abs/2604.16434">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16434',title:'Support Sufficiency as Consequence-Sensitive Compression in Belief Arbitration',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16434v1 Announce Type: new Abstract: When a system commits to a hypothesis, much of the evidential structure behind that commitment is lost',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16434" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
@@ -1926,8 +1908,52 @@
               <span class="date">21 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Stein Variational Black-Box Combinatorial Optimization</h3>
-            <p class="card-desc">arXiv:2604.15837v1 Announce Type: new Abstract: Combinatorial black-box optimization in high-dimensional settings demands a careful trade-off between …</p>
+            <h3 class="card-title">Support Sufficiency as Consequence-Sensitive Compression in Belief Arbitration</h3>
+            <p class="card-desc">arXiv:2604.16434v1 Announce Type: new Abstract: When a system commits to a hypothesis, much of the evidential structure behind that commitment is lost…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the query channel: information-theoretic limits of masking-based explanations"
+           data-desc="arxiv:2604.16689v1 announce type: new abstract: masking-based post-hoc explanation methods, such as kernelshap and lime, estimate local feature importance by querying a black-box model under randomize"
+           data-source="arxiv"
+           data-cat="Tecnologia"
+           data-date="Tue, 21 Apr 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2604.16689">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16689',title:'The Query Channel: Information-Theoretic Limits of Masking-Based Explanations',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16689v1 Announce Type: new Abstract: Masking-based post-hoc explanation methods, such as KernelSHAP and LIME, estimate local feature import',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16689" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The Query Channel: Information-Theoretic Limits of Masking-Based Explanations</h3>
+            <p class="card-desc">arXiv:2604.16689v1 Announce Type: new Abstract: Masking-based post-hoc explanation methods, such as KernelSHAP and LIME, estimate local feature import…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="save: a generalizable framework for multi-condition single-cell generation with gene block attention"
+           data-desc="arxiv:2604.16776v1 announce type: new abstract: modeling single-cell gene expression across diverse biological and technical conditions is crucial for characterizing cellular states and simulating uns"
+           data-source="arxiv"
+           data-cat="Tecnologia"
+           data-date="Tue, 21 Apr 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2604.16776">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2604.16776',title:'SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention',source:'arxiv',date:'Tue, 21 Apr 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2604.16776v1 Announce Type: new Abstract: Modeling single-cell gene expression across diverse biological and technical conditions is crucial for',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2604.16776" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">21 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention</h3>
+            <p class="card-desc">arXiv:2604.16776v1 Announce Type: new Abstract: Modeling single-cell gene expression across diverse biological and technical conditions is crucial for…</p>
           </div>
         </a>
       </div></div>
