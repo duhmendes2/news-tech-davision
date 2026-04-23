@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 23/04/2026, 17:31:33
+      Atualizado: 23/04/2026, 18:44:44
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">79</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">31</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">80</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">49</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">31</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">49</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="openai released its new gpt-5.5 model today, which the company calls its "smartest and most intuitive to use model yet, and the next step toward a new way of getting work done on a computer." the verg"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-04-23T21:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-23T21:00:00+00:00',image:'',description:'OpenAI released its new GPT-5.5 model today, which the company calls its "smartest and most intuitive to use model yet, and the next step toward a new',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">23 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">OpenAI released its new GPT-5.5 model today, which the company calls its "smartest and most intuitive to use model yet, and the next step toward a new…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="microsoft plans first-ever voluntary employee buyout"
            data-desc="microsoft plans to offer voluntary buyouts for the first time. according to cnbc, "about 7% of u.s. employees are eligible," with the program being "available to u.s. workers at the senior director le"
@@ -450,28 +472,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="google unveils two new ai chips for the 'agentic era'"
-           data-desc="google announced two new tensor processing units (tpus) for the "agentic era," with separate processors dedicated to training and inference. "with the rise of ai agents, we determined the community wo"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-04-22T18:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/04/22/1746252/google-unveils-two-new-ai-chips-for-the-agentic-era?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/04/22/1746252/google-unveils-two-new-ai-chips-for-the-agentic-era?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Google Unveils Two New AI Chips For the \'Agentic Era\'',source:'slashdot',date:'2026-04-22T18:00:00+00:00',image:'https://a.fsdn.com/sd/topics/topicgoogle_fb.gif',description:'Google announced two new tensor processing units (TPUs) for the "agentic era," with separate processors dedicated to training and inference. "With the',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/04/22/1746252/google-unveils-two-new-ai-chips-for-the-agentic-era?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/topicgoogle_fb.gif')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">22 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Google Unveils Two New AI Chips For the 'Agentic Era'</h3>
-            <p class="card-desc">Google announced two new tensor processing units (TPUs) for the "agentic era," with separate processors dedicated to training and inference. "With the…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="gpt-5.5"
            data-desc=""
            data-source="hacker news"
@@ -486,31 +486,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 696</span><span class="badge">💬 322</span>
+              <span class="badge">⬆ 838</span><span class="badge">💬 446</span>
             </div>
             <h3 class="card-title">GPT-5.5</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="an update on recent claude code quality reports"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-04-23T17:48:38.000Z"
-           data-url="https://www.anthropic.com/engineering/april-23-postmortem">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.anthropic.com/engineering/april-23-postmortem',title:'An update on recent Claude Code quality reports',source:'Hacker News',date:'2026-04-23T17:48:38.000Z',image:'https://cdn.sanity.io/images/4zrzovbb/website/3f522820d47355885631ebda60e5d1f3e5c0fbc2-2000x1050.heif',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://cdn.sanity.io/images/4zrzovbb/website/3f522820d47355885631ebda60e5d1f3e5c0fbc2-2000x1050.heif')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 368</span><span class="badge">💬 245</span>
-            </div>
-            <h3 class="card-title">An update on recent Claude Code quality reports</h3>
             
           </div>
         </a>
@@ -530,9 +508,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 481</span><span class="badge">💬 226</span>
+              <span class="badge">⬆ 530</span><span class="badge">💬 251</span>
             </div>
             <h3 class="card-title">Bitwarden CLI compromised in ongoing Checkmarx supply chain campaign</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="an update on recent claude code quality reports"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-04-23T17:48:38.000Z"
+           data-url="https://www.anthropic.com/engineering/april-23-postmortem">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.anthropic.com/engineering/april-23-postmortem',title:'An update on recent Claude Code quality reports',source:'Hacker News',date:'2026-04-23T17:48:38.000Z',image:'https://cdn.sanity.io/images/4zrzovbb/website/3f522820d47355885631ebda60e5d1f3e5c0fbc2-2000x1050.heif',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://cdn.sanity.io/images/4zrzovbb/website/3f522820d47355885631ebda60e5d1f3e5c0fbc2-2000x1050.heif')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de abr. de 2026</span>
+              <span class="badge">⬆ 440</span><span class="badge">💬 309</span>
+            </div>
+            <h3 class="card-title">An update on recent Claude Code quality reports</h3>
             
           </div>
         </a>
@@ -552,7 +552,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 78</span><span class="badge">💬 49</span>
+              <span class="badge">⬆ 105</span><span class="badge">💬 62</span>
             </div>
             <h3 class="card-title">MeshCore development team splits over trademark dispute and AI-generated code</h3>
             
@@ -560,24 +560,68 @@
         </a>
       </div>
       <div class="card"
-           data-title="anthropic's claude desktop app installs undisclosed native messaging bridge"
-           data-desc=""
+           data-title="show hn: agent vault – open-source credential proxy and vault for agents"
+           data-desc="blog post: https:&#x2f;&#x2f;infisical.com&#x2f;blog&#x2f;agent-vault-the-open-source-crede..."
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-04-23T19:43:08.000Z"
-           data-url="https://letsdatascience.com/news/claude-desktop-installs-preauthorized-browser-extension-mani-4064fb1a">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://letsdatascience.com/news/claude-desktop-installs-preauthorized-browser-extension-mani-4064fb1a',title:'Anthropic\'s Claude Desktop App Installs Undisclosed Native Messaging Bridge',source:'Hacker News',date:'2026-04-23T19:43:08.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://letsdatascience.com/news/claude-desktop-installs-preauthorized-browser-extension-mani-4064fb1a" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-22T16:25:28.000Z"
+           data-url="https://github.com/Infisical/agent-vault">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/Infisical/agent-vault',title:'Show HN: Agent Vault – Open-source credential proxy and vault for agents',source:'Hacker News',date:'2026-04-22T16:25:28.000Z',image:'',description:'Blog post: https:&#x2F;&#x2F;infisical.com&#x2F;blog&#x2F;agent-vault-the-open-source-crede...',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://github.com/Infisical/agent-vault" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 18</span><span class="badge">💬 1</span>
+              <span class="date">22 de abr. de 2026</span>
+              <span class="badge">⬆ 19</span><span class="badge">💬 4</span>
             </div>
-            <h3 class="card-title">Anthropic's Claude Desktop App Installs Undisclosed Native Messaging Bridge</h3>
-            
+            <h3 class="card-title">Show HN: Agent Vault – Open-source credential proxy and vault for agents</h3>
+            <p class="card-desc">Blog post: https:&#x2F;&#x2F;infisical.com&#x2F;blog&#x2F;agent-vault-the-open-source-crede...</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="these are the countries moving to ban social media for children"
+           data-desc="australia was the first country to issue a ban in late 2025, aiming to reduce the pressures and risks that young users may face on social media, including cyberbullying, social media addiction, and ex"
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Thu, 23 Apr 2026 21:33:51 +0000"
+           data-url="https://techcrunch.com/2026/04/23/social-media-ban-children-countries-list/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/23/social-media-ban-children-countries-list/',title:'These are the countries moving to ban social media for children',source:'techcrunch',date:'Thu, 23 Apr 2026 21:33:51 +0000',image:'',description:'Australia was the first country to issue a ban in late 2025, aiming to reduce the pressures and risks that young users may face on social media, inclu',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/23/social-media-ban-children-countries-list/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">23 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">These are the countries moving to ban social media for children</h3>
+            <p class="card-desc">Australia was the first country to issue a ban in late 2025, aiming to reduce the pressures and risks that young users may face on social media, inclu…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="bret taylor&#8217;s sierra buys yc-backed ai startup fragment"
+           data-desc="sierra, the ai customer service agent startup founded by technologist bret taylor, announced today that it has acquired the yc-backed french startup fragment."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Thu, 23 Apr 2026 21:00:00 +0000"
+           data-url="https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/',title:'Bret Taylor&#8217;s Sierra buys YC-backed AI startup Fragment',source:'techcrunch',date:'Thu, 23 Apr 2026 21:00:00 +0000',image:'',description:'Sierra, the AI customer service agent startup founded by technologist Bret Taylor, announced today that it has acquired the YC-backed French startup F',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">23 de abr. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Bret Taylor&#8217;s Sierra buys YC-backed AI startup Fragment</h3>
+            <p class="card-desc">Sierra, the AI customer service agent startup founded by technologist Bret Taylor, announced today that it has acquired the YC-backed French startup F…</p>
           </div>
         </a>
       </div>
@@ -776,28 +820,6 @@
             </div>
             <h3 class="card-title">WhatsApp adds prepaid phone recharges in India as its payments usage still lags</h3>
             <p class="card-desc">WhatsApp is rolling out prepaid phone recharges to its 500 million users in India via PayU.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ai galaxy hunters are adding to the global gpu crunch"
-           data-desc="astronomers are turning to gpus to find needles in the galactic haystack."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 23 Apr 2026 13:00:00 +0000"
-           data-url="https://techcrunch.com/2026/04/23/ai-galaxy-hunters-are-adding-to-the-global-gpu-crunch/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/23/ai-galaxy-hunters-are-adding-to-the-global-gpu-crunch/',title:'AI galaxy hunters are adding to the global GPU crunch',source:'techcrunch',date:'Thu, 23 Apr 2026 13:00:00 +0000',image:'',description:'Astronomers are turning to GPUs to find needles in the galactic haystack.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/23/ai-galaxy-hunters-are-adding-to-the-global-gpu-crunch/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">23 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">AI galaxy hunters are adding to the global GPU crunch</h3>
-            <p class="card-desc">Astronomers are turning to GPUs to find needles in the galactic haystack.</p>
           </div>
         </a>
       </div>
@@ -1312,15 +1334,15 @@
       <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">31</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="meta is laying off 10% of its workforce"
            data-desc="meta is reportedly cutting about 10% of its workforce, or roughly 8,000 jobs, while closing thousands of open roles it had intended to fill. "we're doing this as part of our continued effort to run th"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-04-23T20:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-04-23T20:00:00+00:00',image:'',description:'Meta is reportedly cutting about 10% of its workforce, or roughly 8,000 jobs, while closing thousands of open roles it had intended to fill. "We\'re do',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://meta.slashdot.org/story/26/04/23/1917223/meta-is-laying-off-10-of-its-workforce?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://meta.slashdot.org/story/26/04/23/1917223/meta-is-laying-off-10-of-its-workforce?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Meta Is Laying Off 10% of Its Workforce',source:'slashdot',date:'2026-04-23T20:00:00+00:00',image:'https://a.fsdn.com/sd/topics/business_64.png',description:'Meta is reportedly cutting about 10% of its workforce, or roughly 8,000 jobs, while closing thousands of open roles it had intended to fill. "We\'re do',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://meta.slashdot.org/story/26/04/23/1917223/meta-is-laying-off-10-of-its-workforce?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/business_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1328,7 +1350,7 @@
               <span class="date">23 de abr. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Meta Is Laying Off 10% of Its Workforce</h3>
             <p class="card-desc">Meta is reportedly cutting about 10% of its workforce, or roughly 8,000 jobs, while closing thousands of open roles it had intended to fill. "We're do…</p>
           </div>
         </a>
@@ -1422,50 +1444,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="girl, 10, finds rare mexican axolotl under welsh bridge"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-23T19:09:40.000Z"
-           data-url="https://www.bbc.com/news/articles/c9d4zgnqpqeo">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bbc.com/news/articles/c9d4zgnqpqeo',title:'Girl, 10, finds rare Mexican axolotl under Welsh bridge',source:'Hacker News',date:'2026-04-23T19:09:40.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.bbc.com/news/articles/c9d4zgnqpqeo" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 64</span><span class="badge">💬 30</span>
-            </div>
-            <h3 class="card-title">Girl, 10, finds rare Mexican axolotl under Welsh bridge</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="meta to cut 10% of jobs, or 8k employees"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-23T18:55:32.000Z"
-           data-url="https://techcrunch.com/2026/04/23/meta-job-cuts-10-percent-8000-employees/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/23/meta-job-cuts-10-percent-8000-employees/',title:'Meta to cut 10% of jobs, or 8k employees',source:'Hacker News',date:'2026-04-23T18:55:32.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/23/meta-job-cuts-10-percent-8000-employees/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 232</span><span class="badge">💬 168</span>
-            </div>
-            <h3 class="card-title">Meta to cut 10% of jobs, or 8k employees</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="using the internet like it's 1999"
            data-desc=""
            data-source="hacker news"
@@ -1480,9 +1458,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 10</span>
+              <span class="badge">⬆ 44</span><span class="badge">💬 20</span>
             </div>
             <h3 class="card-title">Using the internet like it's 1999</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="girl, 10, finds rare mexican axolotl under welsh bridge"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-23T19:09:40.000Z"
+           data-url="https://www.bbc.com/news/articles/c9d4zgnqpqeo">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bbc.com/news/articles/c9d4zgnqpqeo',title:'Girl, 10, finds rare Mexican axolotl under Welsh bridge',source:'Hacker News',date:'2026-04-23T19:09:40.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.bbc.com/news/articles/c9d4zgnqpqeo" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de abr. de 2026</span>
+              <span class="badge">⬆ 126</span><span class="badge">💬 68</span>
+            </div>
+            <h3 class="card-title">Girl, 10, finds rare Mexican axolotl under Welsh bridge</h3>
             
           </div>
         </a>
@@ -1502,7 +1502,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 139</span><span class="badge">💬 64</span>
+              <span class="badge">⬆ 154</span><span class="badge">💬 77</span>
             </div>
             <h3 class="card-title">Incident with multple GitHub services</h3>
             
@@ -1510,23 +1510,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="palantir employees are starting to wonder if they're the bad guys"
+           data-title="astronomers find the edge of the milky way"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-04-23T17:30:05.000Z"
-           data-url="https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/',title:'Palantir employees are starting to wonder if they\'re the bad guys',source:'Hacker News',date:'2026-04-23T17:30:05.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-04-23T18:11:29.000Z"
+           data-url="https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/',title:'Astronomers find the edge of the Milky Way',source:'Hacker News',date:'2026-04-23T18:11:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 353</span><span class="badge">💬 250</span>
+              <span class="badge">⬆ 47</span><span class="badge">💬 7</span>
             </div>
-            <h3 class="card-title">Palantir employees are starting to wonder if they're the bad guys</h3>
+            <h3 class="card-title">Astronomers find the edge of the Milky Way</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="my phone replaced a brass plug"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-23T16:27:07.000Z"
+           data-url="https://drobinin.com/posts/my-phone-replaced-a-brass-plug/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://drobinin.com/posts/my-phone-replaced-a-brass-plug/',title:'My phone replaced a brass plug',source:'Hacker News',date:'2026-04-23T16:27:07.000Z',image:'https://drobinin.com/assets/previews/my-phone-replaced-a-brass-plug.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://drobinin.com/posts/my-phone-replaced-a-brass-plug/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://drobinin.com/assets/previews/my-phone-replaced-a-brass-plug.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de abr. de 2026</span>
+              <span class="badge">⬆ 22</span><span class="badge">💬 3</span>
+            </div>
+            <h3 class="card-title">My phone replaced a brass plug</h3>
             
           </div>
         </a>
@@ -1546,10 +1568,54 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 909</span><span class="badge">💬 453</span>
+              <span class="badge">⬆ 928</span><span class="badge">💬 458</span>
             </div>
             <h3 class="card-title">I am building a cloud</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="palantir employees are starting to wonder if they're the bad guys"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-23T17:30:05.000Z"
+           data-url="https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/',title:'Palantir employees are starting to wonder if they\'re the bad guys',source:'Hacker News',date:'2026-04-23T17:30:05.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.wired.com/story/palantir-employees-are-starting-to-wonder-if-theyre-the-bad-guys/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de abr. de 2026</span>
+              <span class="badge">⬆ 477</span><span class="badge">💬 361</span>
+            </div>
+            <h3 class="card-title">Palantir employees are starting to wonder if they're the bad guys</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="uk biobank health data keeps ending up on github"
+           data-desc="i&#x27;m a researcher studying privacy, and i started tracking the dmca notices that uk biobank sends to github. i tracked 110 notices filed so far, targeting 197 code repositories by 170 developers a"
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-04-23T13:58:03.000Z"
+           data-url="https://biobank.rocher.lc">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://biobank.rocher.lc',title:'UK Biobank health data keeps ending up on GitHub',source:'Hacker News',date:'2026-04-23T13:58:03.000Z',image:'https://biobank.rocher.lc/og.png',description:'I&#x27;m a researcher studying privacy, and I started tracking the DMCA notices that UK Biobank sends to GitHub. I tracked 110 notices filed so far, t',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://biobank.rocher.lc" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://biobank.rocher.lc/og.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de abr. de 2026</span>
+              <span class="badge">⬆ 18</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">UK Biobank health data keeps ending up on GitHub</h3>
+            <p class="card-desc">I&#x27;m a researcher studying privacy, and I started tracking the DMCA notices that UK Biobank sends to GitHub. I tracked 110 notices filed so far, t…</p>
           </div>
         </a>
       </div>
@@ -1568,31 +1634,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 318</span><span class="badge">💬 109</span>
+              <span class="badge">⬆ 333</span><span class="badge">💬 113</span>
             </div>
             <h3 class="card-title">French government agency confirms breach as hacker offers to sell data</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="astronomers find the edge of the milky way"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-04-23T18:11:29.000Z"
-           data-url="https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/',title:'Astronomers Find the Edge of the Milky Way',source:'Hacker News',date:'2026-04-23T18:11:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 23</span>
-            </div>
-            <h3 class="card-title">Astronomers Find the Edge of the Milky Way</h3>
             
           </div>
         </a>
@@ -1612,7 +1656,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 200</span><span class="badge">💬 38</span>
+              <span class="badge">⬆ 211</span><span class="badge">💬 43</span>
             </div>
             <h3 class="card-title">Show HN: Honker – Postgres NOTIFY/LISTEN Semantics for SQLite</h3>
             
@@ -1634,7 +1678,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de abr. de 2026</span>
-              <span class="badge">⬆ 812</span><span class="badge">💬 180</span>
+              <span class="badge">⬆ 831</span><span class="badge">💬 181</span>
             </div>
             <h3 class="card-title">Apple fixes bug that cops used to extract deleted chat messages from iPhones</h3>
             
@@ -1656,7 +1700,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">23 de abr. de 2026</span>
-              <span class="badge">⬆ 27</span><span class="badge">💬 5</span>
+              <span class="badge">⬆ 36</span><span class="badge">💬 6</span>
             </div>
             <h3 class="card-title">I spent years trying to make CSS states predictable</h3>
             
@@ -1858,28 +1902,6 @@
             </div>
             <h3 class="card-title">Tesla drops Musk&#8217;s $29B &#8216;interim&#8217; award after Delaware court restored larger pay package</h3>
             <p class="card-desc">The company is following through on its promise to not let Musk "double dip" if he won his appeal to restore Tesla's 2018 compensation package, worth …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="surveillance vendors caught abusing access to telcos to track people&#8217;s phone locations, researchers say"
-           data-desc="the citizen lab found two separate surveillance vendors abusing the backbone of cellular networks to spy on several victims across the world."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Thu, 23 Apr 2026 12:01:00 +0000"
-           data-url="https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/',title:'Surveillance vendors caught abusing access to telcos to track people&#8217;s phone locations, researchers say',source:'techcrunch',date:'Thu, 23 Apr 2026 12:01:00 +0000',image:'',description:'The Citizen Lab found two separate surveillance vendors abusing the backbone of cellular networks to spy on several victims across the world.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">23 de abr. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Surveillance vendors caught abusing access to telcos to track people&#8217;s phone locations, researchers say</h3>
-            <p class="card-desc">The Citizen Lab found two separate surveillance vendors abusing the backbone of cellular networks to spy on several victims across the world.</p>
           </div>
         </a>
       </div>
