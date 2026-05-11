@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 11/05/2026, 09:38:11
+      Atualizado: 11/05/2026, 12:54:31
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">61</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">37</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">24</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">66</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">39</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">26</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">37</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">39</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from techcrunch: fictional portrayals of artificial intelligence can have a real effect on ai models, according to anthropic. last year, the company said that durin"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-05-11T15:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-11T15:00:00+00:00',image:'',description:'An anonymous reader quotes a report from TechCrunch: Fictional portrayals of artificial intelligence can have a real effect on AI models, according to',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">11 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from TechCrunch: Fictional portrayals of artificial intelligence can have a real effect on AI models, according to…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="most polymarket users lose money, while top 1% claim 76.5% of gains, study finds"
            data-desc="in polymarket's prediction market, "most people end up losing money," reports the washington post mdash; typically a few bucks. "since polymarket launched in 2022, a few thousand people have lost the "
@@ -384,24 +406,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="'changing of the guard'?  amd, intel, and micron soar while nvidia lags"
-           data-desc="while nvidia has dominated the "infrastructure boom" since 2022's launch of chatgpt and "the generative ai craze," cnbc writes that "this week offered the starkest illustration yet of what mizuho anal"
-           data-source="slashdot"
+           data-title="training an llm in swift, part 1: taking matrix mult from gflop/s to tflop/s"
+           data-desc=""
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-05-10T03:34:00+00:00"
-           data-url="https://hardware.slashdot.org/story/26/05/10/0214232/changing-of-the-guard-amd-intel-and-micron-soar-while-nvidia-lags?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/05/10/0214232/changing-of-the-guard-amd-intel-and-micron-soar-while-nvidia-lags?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'\'Changing of the Guard\'?  AMD, Intel, and Micron Soar While Nvidia Lags',source:'slashdot',date:'2026-05-10T03:34:00+00:00',image:'https://a.fsdn.com/sd/topics/amd_64.png',description:'While Nvidia has dominated the "infrastructure boom" since 2022\'s launch of ChatGPT and "the generative AI craze," CNBC writes that "This week offered',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://hardware.slashdot.org/story/26/05/10/0214232/changing-of-the-guard-amd-intel-and-micron-soar-while-nvidia-lags?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/amd_64.png')"></div>
+           data-date="2026-05-10T17:05:05.000Z"
+           data-url="https://www.cocoawithlove.com/blog/matrix-multiplications-swift.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.cocoawithlove.com/blog/matrix-multiplications-swift.html',title:'Training an LLM in Swift, Part 1: Taking matrix mult from Gflop/s to Tflop/s',source:'Hacker News',date:'2026-05-10T17:05:05.000Z',image:'https://www.cocoawithlove.com/assets/site/touch_heartandcup.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.cocoawithlove.com/blog/matrix-multiplications-swift.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.cocoawithlove.com/assets/site/touch_heartandcup.png')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              
+              <span class="badge">⬆ 71</span><span class="badge">💬 3</span>
             </div>
-            <h3 class="card-title">'Changing of the Guard'?  AMD, Intel, and Micron Soar While Nvidia Lags</h3>
-            <p class="card-desc">While Nvidia has dominated the "infrastructure boom" since 2022's launch of ChatGPT and "the generative AI craze," CNBC writes that "This week offered…</p>
+            <h3 class="card-title">Training an LLM in Swift, Part 1: Taking matrix mult from Gflop/s to Tflop/s</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="gmail registration now requires scanning a qr code and sending a text message"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-11T07:26:54.000Z"
+           data-url="https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082',title:'Gmail registration now requires scanning a QR code and sending a text message',source:'Hacker News',date:'2026-05-11T07:26:54.000Z',image:'https://forum-uploads.privacyguidesusercontent.com/original/3X/9/8/9831576af17cf56f7f57776620c4da4b4af14b7c.jpeg',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://forum-uploads.privacyguidesusercontent.com/original/3X/9/8/9831576af17cf56f7f57776620c4da4b4af14b7c.jpeg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de mai. de 2026</span>
+              <span class="badge">⬆ 220</span><span class="badge">💬 102</span>
+            </div>
+            <h3 class="card-title">Gmail registration now requires scanning a QR code and sending a text message</h3>
+            
           </div>
         </a>
       </div>
@@ -420,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 1311</span><span class="badge">💬 538</span>
+              <span class="badge">⬆ 1546</span><span class="badge">💬 598</span>
             </div>
             <h3 class="card-title">Local AI needs to be the norm</h3>
             
@@ -442,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 218</span><span class="badge">💬 97</span>
+              <span class="badge">⬆ 266</span><span class="badge">💬 143</span>
             </div>
             <h3 class="card-title">The greatest shot in television: James Burke had one chance to nail this scene (2024)</h3>
             
@@ -464,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 213</span><span class="badge">💬 50</span>
+              <span class="badge">⬆ 275</span><span class="badge">💬 82</span>
             </div>
             <h3 class="card-title">An AI coding agent, used to write code, needs to reduce your maintenance costs</h3>
             
@@ -472,68 +516,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="i work in hollywood. everyone who used to make tv is now training ai"
-           data-desc=""
-           data-source="hacker news"
+           data-title="there aren&#8217;t enough rockets for space data centers. cowboy space raised $275 million to build them."
+           data-desc="cowboy space corporation wants to put data centers in orbit. first, it has to build the rockets to get them there."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-05-11T11:05:04.000Z"
-           data-url="https://www.wired.com/story/i-work-in-hollywood-everyone-who-used-to-make-tv-now-training-ai/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.wired.com/story/i-work-in-hollywood-everyone-who-used-to-make-tv-now-training-ai/',title:'I Work in Hollywood. Everyone Who Used to Make TV Is Now Training AI',source:'Hacker News',date:'2026-05-11T11:05:04.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.wired.com/story/i-work-in-hollywood-everyone-who-used-to-make-tv-now-training-ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Mon, 11 May 2026 13:00:00 +0000"
+           data-url="https://techcrunch.com/2026/05/11/there-arent-enough-rockets-for-space-data-centers-cowboy-space-raised-275-million-to-build-them/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/11/there-arent-enough-rockets-for-space-data-centers-cowboy-space-raised-275-million-to-build-them/',title:'There aren&#8217;t enough rockets for space data centers. Cowboy Space raised $275 million to build them.',source:'techcrunch',date:'Mon, 11 May 2026 13:00:00 +0000',image:'',description:'Cowboy Space Corporation wants to put data centers in orbit. First, it has to build the rockets to get them there.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/11/there-arent-enough-rockets-for-space-data-centers-cowboy-space-raised-275-million-to-build-them/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 31</span><span class="badge">💬 12</span>
+              
             </div>
-            <h3 class="card-title">I Work in Hollywood. Everyone Who Used to Make TV Is Now Training AI</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="gmail registration now requires scanning a qr code and sending a text message"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-05-11T07:26:54.000Z"
-           data-url="https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082',title:'Gmail registration now requires scanning a QR code and sending a text message',source:'Hacker News',date:'2026-05-11T07:26:54.000Z',image:'https://forum-uploads.privacyguidesusercontent.com/original/3X/9/8/9831576af17cf56f7f57776620c4da4b4af14b7c.jpeg',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://discuss.privacyguides.net/t/google-account-registration-now-requires-sending-an-sms-via-phone-instead-of-receiving-an-sms/36082" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://forum-uploads.privacyguidesusercontent.com/original/3X/9/8/9831576af17cf56f7f57776620c4da4b4af14b7c.jpeg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 37</span><span class="badge">💬 21</span>
-            </div>
-            <h3 class="card-title">Gmail registration now requires scanning a QR code and sending a text message</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: adamsreview – better multi-agent pr reviews for claude code"
-           data-desc="i built adamsreview, a claude code plugin that runs deeper, multi-stage pr reviews using parallel sub-agents, validation passes, persistent json state, and optional ensemble review via codex cli and p"
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-05-11T02:06:29.000Z"
-           data-url="https://github.com/adamjgmiller/adamsreview">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/adamjgmiller/adamsreview',title:'Show HN: adamsreview – better multi-agent PR reviews for Claude Code',source:'Hacker News',date:'2026-05-11T02:06:29.000Z',image:'',description:'I built adamsreview, a Claude Code plugin that runs deeper, multi-stage PR reviews using parallel sub-agents, validation passes, persistent JSON state',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/adamjgmiller/adamsreview" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 48</span><span class="badge">💬 16</span>
-            </div>
-            <h3 class="card-title">Show HN: adamsreview – better multi-agent PR reviews for Claude Code</h3>
-            <p class="card-desc">I built adamsreview, a Claude Code plugin that runs deeper, multi-stage PR reviews using parallel sub-agents, validation passes, persistent JSON state…</p>
+            <h3 class="card-title">There aren&#8217;t enough rockets for space data centers. Cowboy Space raised $275 million to build them.</h3>
+            <p class="card-desc">Cowboy Space Corporation wants to put data centers in orbit. First, it has to build the rockets to get them there.</p>
           </div>
         </a>
       </div>
@@ -644,6 +644,50 @@
             </div>
             <h3 class="card-title">Voice AI in India is hard. Wispr Flow is betting on it anyway.</h3>
             <p class="card-desc">Wispr Flow says growth accelerated in India after its Hinglish rollout, even as voice AI products continue to face challenges.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fostering breakthrough ai innovation through customer-back engineering"
+           data-desc="despite years of digitization, organizations capture less than one-third of the value expected from digital investments, according to mckinsey research. that’s because most big companies begin with te"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 11 May 2026 13:33:06 +0000"
+           data-url="https://www.technologyreview.com/2026/05/11/1136967/fostering-breakthrough-ai-innovation-through-customer-back-engineering/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/11/1136967/fostering-breakthrough-ai-innovation-through-customer-back-engineering/',title:'Fostering breakthrough AI innovation through customer-back engineering',source:'mit',date:'Mon, 11 May 2026 13:33:06 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/05/Capital-One-iStock-2208464815.jpg?w=1943',description:'Despite years of digitization, organizations capture less than one-third of the value expected from digital investments, according to McKinsey researc',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/05/11/1136967/fostering-breakthrough-ai-innovation-through-customer-back-engineering/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/05/Capital-One-iStock-2208464815.jpg?w=1943')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">11 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Fostering breakthrough AI innovation through customer-back engineering</h3>
+            <p class="card-desc">Despite years of digitization, organizations capture less than one-third of the value expected from digital investments, according to McKinsey researc…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="implementing advanced ai technologies in finance"
+           data-desc="in finance departments that have long been defined by precision and control, ai has arrived less as a neatly managed upgrade than as a quiet insurgency. employees are already using it while leadership"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 11 May 2026 13:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/05/11/1136786/implementing-advanced-ai-technologies-in-finance/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/11/1136786/implementing-advanced-ai-technologies-in-finance/',title:'Implementing advanced AI technologies in finance',source:'mit',date:'Mon, 11 May 2026 13:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/05/NetSuite-social-card.png',description:'In finance departments that have long been defined by precision and control, AI has arrived less as a neatly managed upgrade than as a quiet insurgenc',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/05/11/1136786/implementing-advanced-ai-technologies-in-finance/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/05/NetSuite-social-card.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">11 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Implementing advanced AI technologies in finance</h3>
+            <p class="card-desc">In finance departments that have long been defined by precision and control, AI has arrived less as a neatly managed upgrade than as a quiet insurgenc…</p>
           </div>
         </a>
       </div>
@@ -1066,19 +1110,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="tiktok launches an ad-free subscription plan in the uk"
+           data-desc="users who sign up for the plan won’t see ads on tiktok, and their data won’t be used for advertising purposes."
+           data-source="techcrunch"
+           data-cat="Produção de Conteúdo"
+           data-date="Mon, 11 May 2026 14:05:47 +0000"
+           data-url="https://techcrunch.com/2026/05/11/tiktok-launches-an-ad-free-subscription-plan-in-the-uk/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/11/tiktok-launches-an-ad-free-subscription-plan-in-the-uk/',title:'TikTok launches an ad-free subscription plan in the UK',source:'techcrunch',date:'Mon, 11 May 2026 14:05:47 +0000',image:'',description:'Users who sign up for the plan won’t see ads on TikTok, and their data won’t be used for advertising purposes.',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/11/tiktok-launches-an-ad-free-subscription-plan-in-the-uk/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">11 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">TikTok launches an ad-free subscription plan in the UK</h3>
+            <p class="card-desc">Users who sign up for the plan won’t see ads on TikTok, and their data won’t be used for advertising purposes.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">24</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">26</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="linux kernel starts retiring support for amd's 30-year-old k5 cpus"
            data-desc="linux 7.1 started phasing out support for intel's 37-year-old i486 processor. linux 7.2 removed drivers for the old amd elan 32-bit systems on a chip. and now some i586 and i686 class processors are b"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-05-11T11:34:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-11T11:34:00+00:00',image:'',description:'Linux 7.1 started phasing out support for Intel\'s 37-year-old i486 processor. Linux 7.2 removed drivers for the old AMD Elan 32-bit systems on a chip.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://linux.slashdot.org/story/26/05/11/0315223/linux-kernel-starts-retiring-support-for-amds-30-year-old-k5-cpus?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://linux.slashdot.org/story/26/05/11/0315223/linux-kernel-starts-retiring-support-for-amds-30-year-old-k5-cpus?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Linux Kernel Starts Retiring Support for AMD\'s 30-Year-Old K5 CPUs',source:'slashdot',date:'2026-05-11T11:34:00+00:00',image:'https://a.fsdn.com/sd/topics/amd_64.png',description:'Linux 7.1 started phasing out support for Intel\'s 37-year-old i486 processor. Linux 7.2 removed drivers for the old AMD Elan 32-bit systems on a chip.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://linux.slashdot.org/story/26/05/11/0315223/linux-kernel-starts-retiring-support-for-amds-30-year-old-k5-cpus?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/amd_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1086,7 +1156,7 @@
               <span class="date">11 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Linux Kernel Starts Retiring Support for AMD's 30-Year-Old K5 CPUs</h3>
             <p class="card-desc">Linux 7.1 started phasing out support for Intel's 37-year-old i486 processor. Linux 7.2 removed drivers for the old AMD Elan 32-bit systems on a chip.…</p>
           </div>
         </a>
@@ -1098,9 +1168,9 @@
            data-cat="Tecnologia"
            data-date="2026-05-11T07:34:00+00:00"
            data-url="https://tech.slashdot.org/story/26/05/10/237205/fords-electrified-vehicle-sales-dropped-31-in-april-from-one-year-ago?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/05/10/237205/fords-electrified-vehicle-sales-dropped-31-in-april-from-one-year-ago?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Ford\'s Electrified Vehicle Sales Dropped 31% in April From One Year Ago',source:'slashdot',date:'2026-05-11T07:34:00+00:00',image:'https://a.fsdn.com/sd/topics/transportation_64.png',description:'Ford\'s sales of electrified vehicles mdash; including hybrids and all-electric models mdash; dropped 31% from April 2025, reports Electrek. "Hybrid sa',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/05/10/237205/fords-electrified-vehicle-sales-dropped-31-in-april-from-one-year-ago?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Ford\'s Electrified Vehicle Sales Dropped 31% in April From One Year Ago',source:'slashdot',date:'2026-05-11T07:34:00+00:00',image:'',description:'Ford\'s sales of electrified vehicles mdash; including hybrids and all-electric models mdash; dropped 31% from April 2025, reports Electrek. "Hybrid sa',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://tech.slashdot.org/story/26/05/10/237205/fords-electrified-vehicle-sales-dropped-31-in-april-from-one-year-ago?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/transportation_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1120,9 +1190,9 @@
            data-cat="Tecnologia"
            data-date="2026-05-11T03:34:00+00:00"
            data-url="https://news.slashdot.org/story/26/05/11/0235215/open-source-project-shuts-down-over-legal-threats-from-3d-printer-company-bambu-lab?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/05/11/0235215/open-source-project-shuts-down-over-legal-threats-from-3d-printer-company-bambu-lab?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Open Source Project Shuts Down Over Legal Threats from 3D Printer Company Bambu Lab',source:'slashdot',date:'2026-05-11T03:34:00+00:00',image:'https://a.fsdn.com/sd/topics/opensource_64.png',description:'The free/open source project OrcaSlicer is a popular fork of 3D printer slicing software from Bambu Lab. But Tuesday independent developer Pawel Jarcz',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/05/11/0235215/open-source-project-shuts-down-over-legal-threats-from-3d-printer-company-bambu-lab?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Open Source Project Shuts Down Over Legal Threats from 3D Printer Company Bambu Lab',source:'slashdot',date:'2026-05-11T03:34:00+00:00',image:'',description:'The free/open source project OrcaSlicer is a popular fork of 3D printer slicing software from Bambu Lab. But Tuesday independent developer Pawel Jarcz',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://news.slashdot.org/story/26/05/11/0235215/open-source-project-shuts-down-over-legal-threats-from-3d-printer-company-bambu-lab?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/opensource_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1142,9 +1212,9 @@
            data-cat="Tecnologia"
            data-date="2026-05-10T22:39:00+00:00"
            data-url="https://tech.slashdot.org/story/26/05/10/224222/honda-patents-a-fake-clutch-for-electric-motorcycles?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/05/10/224222/honda-patents-a-fake-clutch-for-electric-motorcycles?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Honda Patents a Fake Clutch for Electric Motorcycles',source:'slashdot',date:'2026-05-10T22:39:00+00:00',image:'https://a.fsdn.com/sd/topics/transportation_64.png',description:'An anonymous reader shared this report from Electrek: A newly revealed Honda patent shows the company developing a simulated electronic clutch system ',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/05/10/224222/honda-patents-a-fake-clutch-for-electric-motorcycles?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Honda Patents a Fake Clutch for Electric Motorcycles',source:'slashdot',date:'2026-05-10T22:39:00+00:00',image:'',description:'An anonymous reader shared this report from Electrek: A newly revealed Honda patent shows the company developing a simulated electronic clutch system ',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://tech.slashdot.org/story/26/05/10/224222/honda-patents-a-fake-clutch-for-electric-motorcycles?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/transportation_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1260,7 +1330,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 128</span><span class="badge">💬 43</span>
+              <span class="badge">⬆ 381</span><span class="badge">💬 132</span>
             </div>
             <h3 class="card-title">Ratty – A terminal emulator with inline 3D graphics</h3>
             
@@ -1282,7 +1352,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 1726</span><span class="badge">💬 570</span>
+              <span class="badge">⬆ 1909</span><span class="badge">💬 635</span>
             </div>
             <h3 class="card-title">Hardware Attestation as Monopoly Enabler</h3>
             
@@ -1304,9 +1374,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 502</span><span class="badge">💬 241</span>
+              <span class="badge">⬆ 699</span><span class="badge">💬 381</span>
             </div>
             <h3 class="card-title">I'm going back to writing code by hand</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="create a 90s geocities style website in seconds (python)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-11T13:10:25.000Z"
+           data-url="https://pypi.org/project/create-geocities-app/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://pypi.org/project/create-geocities-app/',title:'Create a 90s GeoCities style website in seconds (Python)',source:'Hacker News',date:'2026-05-11T13:10:25.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://pypi.org/project/create-geocities-app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de mai. de 2026</span>
+              <span class="badge">⬆ 19</span><span class="badge">💬 5</span>
+            </div>
+            <h3 class="card-title">Create a 90s GeoCities style website in seconds (Python)</h3>
             
           </div>
         </a>
@@ -1326,7 +1418,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 373</span><span class="badge">💬 119</span>
+              <span class="badge">⬆ 455</span><span class="badge">💬 134</span>
             </div>
             <h3 class="card-title">Running local models on an M4 with 24GB memory</h3>
             
@@ -1348,7 +1440,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 253</span><span class="badge">💬 139</span>
+              <span class="badge">⬆ 298</span><span class="badge">💬 170</span>
             </div>
             <h3 class="card-title">Obsidian plugin was abused to deploy a remote access trojan</h3>
             
@@ -1370,7 +1462,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">10 de mai. de 2026</span>
-              <span class="badge">⬆ 574</span><span class="badge">💬 148</span>
+              <span class="badge">⬆ 644</span><span class="badge">💬 155</span>
             </div>
             <h3 class="card-title">Incident Report: CVE-2024-YIKES</h3>
             
@@ -1392,7 +1484,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 268</span><span class="badge">💬 104</span>
+              <span class="badge">⬆ 432</span><span class="badge">💬 190</span>
             </div>
             <h3 class="card-title">Mythos Finds a Curl Vulnerability</h3>
             
@@ -1400,68 +1492,68 @@
         </a>
       </div>
       <div class="card"
-           data-title="the adventure family tree"
+           data-title="european money pours into palantir"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-05-11T08:16:32.000Z"
-           data-url="https://mipmip.org/advfamily/advfamily.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://mipmip.org/advfamily/advfamily.html',title:'The Adventure Family Tree',source:'Hacker News',date:'2026-05-11T08:16:32.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://mipmip.org/advfamily/advfamily.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-05-11T11:27:08.000Z"
+           data-url="https://english.elpais.com/economy-and-business/branded/2026-04-11/european-money-pours-into-palantir-over-100-asset-managers-and-banks-boost-their-investments-in-the-controversial-tech-company.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://english.elpais.com/economy-and-business/branded/2026-04-11/european-money-pours-into-palantir-over-100-asset-managers-and-banks-boost-their-investments-in-the-controversial-tech-company.html',title:'European Money Pours into Palantir',source:'Hacker News',date:'2026-05-11T11:27:08.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://english.elpais.com/economy-and-business/branded/2026-04-11/european-money-pours-into-palantir-over-100-asset-managers-and-banks-boost-their-investments-in-the-controversial-tech-company.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 16</span><span class="badge">💬 1</span>
+              <span class="badge">⬆ 79</span><span class="badge">💬 14</span>
             </div>
-            <h3 class="card-title">The Adventure Family Tree</h3>
+            <h3 class="card-title">European Money Pours into Palantir</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="7 lines of code, 3 minutes: implement a programming language (2010)"
-           data-desc=""
-           data-source="hacker news"
+           data-title="nyt&#8217;s wordle to become a tv game show"
+           data-desc="the popular mobile puzzle game will become a tv game show next year."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-05-11T04:34:40.000Z"
-           data-url="https://matt.might.net/articles/implementing-a-programming-language/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://matt.might.net/articles/implementing-a-programming-language/',title:'7 lines of code, 3 minutes: Implement a programming language (2010)',source:'Hacker News',date:'2026-05-11T04:34:40.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://matt.might.net/articles/implementing-a-programming-language/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Mon, 11 May 2026 14:23:25 +0000"
+           data-url="https://techcrunch.com/2026/05/11/nyts-wordle-to-become-a-tv-game-show/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/11/nyts-wordle-to-become-a-tv-game-show/',title:'NYT&#8217;s Wordle to become a TV game show',source:'techcrunch',date:'Mon, 11 May 2026 14:23:25 +0000',image:'',description:'The popular mobile puzzle game will become a TV game show next year.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/11/nyts-wordle-to-become-a-tv-game-show/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 61</span><span class="badge">💬 18</span>
+              
             </div>
-            <h3 class="card-title">7 lines of code, 3 minutes: Implement a programming language (2010)</h3>
-            
+            <h3 class="card-title">NYT&#8217;s Wordle to become a TV game show</h3>
+            <p class="card-desc">The popular mobile puzzle game will become a TV game show next year.</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="all those a.i. note takers? they're making lawyers nervous"
-           data-desc=""
-           data-source="hacker news"
+           data-title="discord launches nitro rewards, giving subscribers access to the base tier of xbox game pass for no extra cost"
+           data-desc="discord's nitro rewards program will give nitro subscribers access to xbox game pass, and discounts from logitech, steelseries, and other gaming brands."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-05-11T10:04:47.000Z"
-           data-url="https://www.nytimes.com/2026/05/09/business/dealbook/ai-notetakers-legal-risk.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nytimes.com/2026/05/09/business/dealbook/ai-notetakers-legal-risk.html',title:'All Those A.I. Note Takers? They\'re Making Lawyers Nervous',source:'Hacker News',date:'2026-05-11T10:04:47.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.nytimes.com/2026/05/09/business/dealbook/ai-notetakers-legal-risk.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Mon, 11 May 2026 13:00:00 +0000"
+           data-url="https://techcrunch.com/2026/05/11/discord-launches-nitro-rewards-giving-subscribers-access-to-the-base-tier-of-xbox-game-pass-for-no-extra-cost/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/11/discord-launches-nitro-rewards-giving-subscribers-access-to-the-base-tier-of-xbox-game-pass-for-no-extra-cost/',title:'Discord launches Nitro Rewards, giving subscribers access to the base tier of Xbox Game Pass for no extra cost',source:'techcrunch',date:'Mon, 11 May 2026 13:00:00 +0000',image:'',description:'Discord\'s Nitro Rewards program will give Nitro subscribers access to Xbox Game Pass, and discounts from Logitech, SteelSeries, and other gaming brand',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/11/discord-launches-nitro-rewards-giving-subscribers-access-to-the-base-tier-of-xbox-game-pass-for-no-extra-cost/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">11 de mai. de 2026</span>
-              <span class="badge">⬆ 30</span><span class="badge">💬 18</span>
+              
             </div>
-            <h3 class="card-title">All Those A.I. Note Takers? They're Making Lawyers Nervous</h3>
-            
+            <h3 class="card-title">Discord launches Nitro Rewards, giving subscribers access to the base tier of Xbox Game Pass for no extra cost</h3>
+            <p class="card-desc">Discord's Nitro Rewards program will give Nitro subscribers access to Xbox Game Pass, and discounts from Logitech, SteelSeries, and other gaming brand…</p>
           </div>
         </a>
       </div>
@@ -1550,6 +1642,28 @@
             </div>
             <h3 class="card-title">The hottest place for startups to strike a deal? The F1 paddock</h3>
             <p class="card-desc">F1 Grands Prix have emerged as a new place to see and be seen if you are a founder or investor.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="innovation abounds in device charging"
+           data-desc="the changes may be less perceptible than in smartphones, tablets, or wearables, but chargers have also been quietly reinvented over the last decade. at one time a bulky mix of tangled cables and conne"
+           data-source="mit"
+           data-cat="Tecnologia"
+           data-date="Mon, 11 May 2026 13:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/05/11/1136406/innovation-abounds-in-device-charging/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/11/1136406/innovation-abounds-in-device-charging/',title:'Innovation abounds in device charging',source:'mit',date:'Mon, 11 May 2026 13:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/Anker-iStock-2213447337.jpg',description:'The changes may be less perceptible than in smartphones, tablets, or wearables, but chargers have also been quietly reinvented over the last decade. A',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/05/11/1136406/innovation-abounds-in-device-charging/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/Anker-iStock-2213447337.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">11 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Innovation abounds in device charging</h3>
+            <p class="card-desc">The changes may be less perceptible than in smartphones, tablets, or wearables, but chargers have also been quietly reinvented over the last decade. A…</p>
           </div>
         </a>
       </div>
