@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 20/05/2026, 19:51:23
+      Atualizado: 20/05/2026, 21:06:41
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">80</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">57</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">2</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">21</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">72</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">53</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">2</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">16</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">57</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">53</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="intuit is reportedly cutting about 3,000 jobs, or 17% of its workforce, as it restructures around ai and simplifies its corporate organization. techcrunch reports: the layoffs come during a bad year f"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-05-20T23:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-20T23:00:00+00:00',image:'',description:'Intuit is reportedly cutting about 3,000 jobs, or 17% of its workforce, as it restructures around AI and simplifies its corporate organization. TechCr',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">20 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Intuit is reportedly cutting about 3,000 jobs, or 17% of its workforce, as it restructures around AI and simplifies its corporate organization. TechCr…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="rhel 10.2 released with new ai command line assistance"
            data-desc="red hat has released rhel 10.2 and 9.8 with new ai-assisted command-line tools. the releases also add updated developer toolchains such as go 1.26, llvm 21, rust 1.92, python 3.14, and php 8.4. phoron"
@@ -428,72 +450,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="plex triples lifetime subscription cost to $750"
-           data-desc="brianfagioli shares a report from nerds.xyz: plex is raising the price of a new lifetime plex pass from $249.99 to $749.99 on july 1. that's a $500 increase for media server software. plex says it nee"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-05-19T23:00:00+00:00"
-           data-url="https://news.slashdot.org/story/26/05/19/1957248/plex-triples-lifetime-subscription-cost-to-750?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/05/19/1957248/plex-triples-lifetime-subscription-cost-to-750?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Plex Triples Lifetime Subscription Cost To $750',source:'slashdot',date:'2026-05-19T23:00:00+00:00',image:'',description:'BrianFagioli shares a report from NERDS.xyz: Plex is raising the price of a new Lifetime Plex Pass from $249.99 to $749.99 on July 1. That\'s a $500 in',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://news.slashdot.org/story/26/05/19/1957248/plex-triples-lifetime-subscription-cost-to-750?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Plex Triples Lifetime Subscription Cost To $750</h3>
-            <p class="card-desc">BrianFagioli shares a report from NERDS.xyz: Plex is raising the price of a new Lifetime Plex Pass from $249.99 to $749.99 on July 1. That's a $500 in…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="google changes its search box for the first time in 25 years"
-           data-desc="google is giving its iconic search box its first major redesign since 2001. the new design incorporates, you guessed it, artificial intelligence, "getting bigger and more interactive so that people ca"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-05-19T22:00:00+00:00"
-           data-url="https://search.slashdot.org/story/26/05/19/1947215/google-changes-its-search-box-for-the-first-time-in-25-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://search.slashdot.org/story/26/05/19/1947215/google-changes-its-search-box-for-the-first-time-in-25-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Google Changes Its Search Box for the First Time in 25 Years',source:'slashdot',date:'2026-05-19T22:00:00+00:00',image:'',description:'Google is giving its iconic search box its first major redesign since 2001. The new design incorporates, you guessed it, artificial intelligence, "get',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://search.slashdot.org/story/26/05/19/1947215/google-changes-its-search-box-for-the-first-time-in-25-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Google Changes Its Search Box for the First Time in 25 Years</h3>
-            <p class="card-desc">Google is giving its iconic search box its first major redesign since 2001. The new design incorporates, you guessed it, artificial intelligence, "get…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openai co-founder andrej karpathy joins anthropic"
-           data-desc="openai co-founder andrej karpathy has joined rival ai lab anthropic. "the hire is a major coup for anthropic in the high-stakes competition for elite ai talent -- and another sign the company is emerg"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-05-19T20:00:00+00:00"
-           data-url="https://slashdot.org/story/26/05/19/1743231/openai-co-founder-andrej-karpathy-joins-anthropic?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/05/19/1743231/openai-co-founder-andrej-karpathy-joins-anthropic?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'OpenAI Co-Founder Andrej Karpathy Joins Anthropic',source:'slashdot',date:'2026-05-19T20:00:00+00:00',image:'https://a.fsdn.com/sd/topics/business_64.png',description:'OpenAI co-founder Andrej Karpathy has joined rival AI lab Anthropic. "The hire is a major coup for Anthropic in the high-stakes competition for elite ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/story/26/05/19/1743231/openai-co-founder-andrej-karpathy-joins-anthropic?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/business_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">OpenAI Co-Founder Andrej Karpathy Joins Anthropic</h3>
-            <p class="card-desc">OpenAI co-founder Andrej Karpathy has joined rival AI lab Anthropic. "The hire is a major coup for Anthropic in the high-stakes competition for elite …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="an openai model has disproved a central conjecture in discrete geometry"
            data-desc=""
            data-source="hacker news"
@@ -508,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 540</span><span class="badge">💬 361</span>
+              <span class="badge">⬆ 638</span><span class="badge">💬 445</span>
             </div>
             <h3 class="card-title">An OpenAI model has disproved a central conjecture in discrete geometry</h3>
             
@@ -530,31 +486,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 578</span><span class="badge">💬 225</span>
+              <span class="badge">⬆ 594</span><span class="badge">💬 236</span>
             </div>
             <h3 class="card-title">Qwen3.7-Max: The Agent Frontier</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="populora: co-evolving llm populations for reasoning self- play"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-05-20T21:11:55.000Z"
-           data-url="https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play',title:'PopuLoRA: Co-Evolving LLM Populations for Reasoning Self- Play',source:'Hacker News',date:'2026-05-20T21:11:55.000Z',image:'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e5748d60-a03a-489f-9f56-bc6b1c8166cc.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e5748d60-a03a-489f-9f56-bc6b1c8166cc.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 25</span><span class="badge">💬 2</span>
-            </div>
-            <h3 class="card-title">PopuLoRA: Co-Evolving LLM Populations for Reasoning Self- Play</h3>
             
           </div>
         </a>
@@ -574,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 77</span><span class="badge">💬 46</span>
+              <span class="badge">⬆ 96</span><span class="badge">💬 54</span>
             </div>
             <h3 class="card-title">Qian Xuesen: The missile genius America lost and China gained (2025)</h3>
             
@@ -582,46 +516,90 @@
         </a>
       </div>
       <div class="card"
-           data-title="not alive, but not dead: disembodied human brains used for drug testing"
+           data-title="anthropic is expanding to colossus2. will use gb200"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-05-20T19:38:25.000Z"
-           data-url="https://www.science.org/content/article/not-alive-not-dead-disembodied-human-brains-used-drug-testing">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.science.org/content/article/not-alive-not-dead-disembodied-human-brains-used-drug-testing',title:'Not alive, but not dead: disembodied human brains used for drug testing',source:'Hacker News',date:'2026-05-20T19:38:25.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.science.org/content/article/not-alive-not-dead-disembodied-human-brains-used-drug-testing" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-05-20T20:55:52.000Z"
+           data-url="https://xcancel.com/nottombrown/status/2057194829986300375">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://xcancel.com/nottombrown/status/2057194829986300375',title:'Anthropic is expanding to Colossus2. Will use GB200',source:'Hacker News',date:'2026-05-20T20:55:52.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://xcancel.com/nottombrown/status/2057194829986300375" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 101</span><span class="badge">💬 80</span>
+              <span class="badge">⬆ 16</span><span class="badge">💬 6</span>
             </div>
-            <h3 class="card-title">Not alive, but not dead: disembodied human brains used for drug testing</h3>
+            <h3 class="card-title">Anthropic is expanding to Colossus2. Will use GB200</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="google's ai is being manipulated. the search giant is quietly fighting back"
+           data-title="populora: co-evolving llm populations for reasoning self- play"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-05-20T10:57:09.000Z"
-           data-url="https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results',title:'Google\'s AI is being manipulated. The search giant is quietly fighting back',source:'Hacker News',date:'2026-05-20T10:57:09.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-05-20T21:11:55.000Z"
+           data-url="https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play',title:'PopuLoRA: Co-Evolving LLM Populations for Reasoning Self- Play',source:'Hacker News',date:'2026-05-20T21:11:55.000Z',image:'https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e5748d60-a03a-489f-9f56-bc6b1c8166cc.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://vmax.ai/team/populora-co-evolving-llm-populations-for-reasoning-self-play" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://intdev-global.s3.us-west-2.amazonaws.com/public/internet-dev/e5748d60-a03a-489f-9f56-bc6b1c8166cc.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 241</span><span class="badge">💬 168</span>
+              <span class="badge">⬆ 31</span><span class="badge">💬 6</span>
             </div>
-            <h3 class="card-title">Google's AI is being manipulated. The search giant is quietly fighting back</h3>
+            <h3 class="card-title">PopuLoRA: Co-Evolving LLM Populations for Reasoning Self- Play</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="incident report: may 19, 2026 – gcp account suspension"
+           data-desc="previous thread: incident report: railway blocked by google cloud [resolved] - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=48201484"
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-20T08:37:55.000Z"
+           data-url="https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage',title:'Incident Report: May 19, 2026 – GCP Account Suspension',source:'Hacker News',date:'2026-05-20T08:37:55.000Z',image:'https://res.cloudinary.com/railway/image/upload/v1734405679/incident-hero_ri6qfy.png',description:'Previous thread: Incident Report: Railway Blocked by Google Cloud [resolved] - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48201484',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://res.cloudinary.com/railway/image/upload/v1734405679/incident-hero_ri6qfy.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">20 de mai. de 2026</span>
+              <span class="badge">⬆ 370</span><span class="badge">💬 219</span>
+            </div>
+            <h3 class="card-title">Incident Report: May 19, 2026 – GCP Account Suspension</h3>
+            <p class="card-desc">Previous thread: Incident Report: Railway Blocked by Google Cloud [resolved] - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48201484</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the spacex ipo filing is filled with ai bets, starship dreams, and elon musk at the center"
+           data-desc="spacex has finally made the contents of its ipo filing public, weeks ahead of what is expected to be the largest ipo ever and one that will make musk the ceo, cto, and chairman of the board."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 20 May 2026 23:03:02 +0000"
+           data-url="https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-ai-bets-starship-dreams-elon-musk/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-ai-bets-starship-dreams-elon-musk/',title:'The SpaceX IPO filing is filled with AI bets, Starship dreams, and Elon Musk at the center',source:'techcrunch',date:'Wed, 20 May 2026 23:03:02 +0000',image:'',description:'SpaceX has finally made the contents of its IPO filing public, weeks ahead of what is expected to be the largest IPO ever and one that will make Musk ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-ai-bets-starship-dreams-elon-musk/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">20 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The SpaceX IPO filing is filled with AI bets, Starship dreams, and Elon Musk at the center</h3>
+            <p class="card-desc">SpaceX has finally made the contents of its IPO filing public, weeks ahead of what is expected to be the largest IPO ever and one that will make Musk …</p>
           </div>
         </a>
       </div>
@@ -648,13 +626,13 @@
         </a>
       </div>
       <div class="card"
-           data-title="xai burned $6.4b last year. spacex’s ipo filing shows why the spending is far from over"
+           data-title="xai burned $6.4b last year — spacex’s ipo filing shows why the spending is far from over"
            data-desc="spacex's ipo filing reveals xai lost $6.4 billion in 2025 while planning a massive grok expansion — offering the first public look at elon musk's ai financials and more details about his ambitions."
            data-source="techcrunch"
            data-cat="IA"
            data-date="Wed, 20 May 2026 22:26:08 +0000"
            data-url="https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/',title:'xAI burned $6.4B last year. SpaceX’s IPO filing shows why the spending is far from over',source:'techcrunch',date:'Wed, 20 May 2026 22:26:08 +0000',image:'',description:'SpaceX\'s IPO filing reveals xAI lost $6.4 billion in 2025 while planning a massive Grok expansion — offering the first public look at Elon Musk\'s AI f',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/',title:'xAI burned $6.4B last year — SpaceX’s IPO filing shows why the spending is far from over',source:'techcrunch',date:'Wed, 20 May 2026 22:26:08 +0000',image:'',description:'SpaceX\'s IPO filing reveals xAI lost $6.4 billion in 2025 while planning a massive Grok expansion — offering the first public look at Elon Musk\'s AI f',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
@@ -664,7 +642,7 @@
               <span class="date">20 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">xAI burned $6.4B last year. SpaceX’s IPO filing shows why the spending is far from over</h3>
+            <h3 class="card-title">xAI burned $6.4B last year — SpaceX’s IPO filing shows why the spending is far from over</h3>
             <p class="card-desc">SpaceX's IPO filing reveals xAI lost $6.4 billion in 2025 while planning a massive Grok expansion — offering the first public look at Elon Musk's AI f…</p>
           </div>
         </a>
@@ -996,72 +974,6 @@
             </div>
             <h3 class="card-title">The Download: fully artificial chicken eggs and why Musk lost</h3>
             <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Colossal Bio…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="roundtables: inside the musk v. altman trial"
-           data-desc="listen to the session or watch below elon musk lost his suit against openai, in which he alleged ceo sam altman and president greg brockman had deceived him over the company’s non-profit status. watch"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Tue, 19 May 2026 20:15:18 +0000"
-           data-url="https://www.technologyreview.com/2026/05/19/1137454/roundtables-inside-the-musk-v-altman-trial/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/19/1137454/roundtables-inside-the-musk-v-altman-trial/',title:'Roundtables: Inside the Musk v. Altman Trial',source:'mit',date:'Tue, 19 May 2026 20:15:18 +0000',image:'',description:'Listen to the session or watch below Elon Musk lost his suit against OpenAI, in which he alleged CEO Sam Altman and President Greg Brockman had deceiv',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/05/19/1137454/roundtables-inside-the-musk-v-altman-trial/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>M</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Roundtables: Inside the Musk v. Altman Trial</h3>
-            <p class="card-desc">Listen to the session or watch below Elon Musk lost his suit against OpenAI, in which he alleged CEO Sam Altman and President Greg Brockman had deceiv…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the download: musk v. altman, smart glasses for warfare, and google i/o"
-           data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. here’s why elon musk lost his suit against openai elon musk ha"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Tue, 19 May 2026 12:10:00 +0000"
-           data-url="https://www.technologyreview.com/2026/05/19/1137505/the-download-musk-altman-trial-smart-glasses-warfare-google-i-o/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/19/1137505/the-download-musk-altman-trial-smart-glasses-warfare-google-i-o/',title:'The Download: Musk v. Altman, smart glasses for warfare, and Google I/O',source:'mit',date:'Tue, 19 May 2026 12:10:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/05/Screenshot-2026-05-19-at-12.34.42.png?w=1290',description:'This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Here’s why E',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/05/19/1137505/the-download-musk-altman-trial-smart-glasses-warfare-google-i-o/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/05/Screenshot-2026-05-19-at-12.34.42.png?w=1290')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Download: Musk v. Altman, smart glasses for warfare, and Google I/O</h3>
-            <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Here’s why E…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="here’s why elon musk lost his suit against openai"
-           data-desc="on monday, the jury in musk v. altman dealt elon musk a major blow—reaching a unanimous advisory verdict that he had sued openai too late and, as a result, his claims are barred by the applicable stat"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Tue, 19 May 2026 00:53:10 +0000"
-           data-url="https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/',title:'Here’s why Elon Musk lost his suit against OpenAI',source:'mit',date:'Tue, 19 May 2026 00:53:10 +0000',image:'',description:'On Monday, the jury in Musk v. Altman dealt Elon Musk a major blow—reaching a unanimous advisory verdict that he had sued OpenAI too late and, as a re',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>M</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Here’s why Elon Musk lost his suit against OpenAI</h3>
-            <p class="card-desc">On Monday, the jury in Musk v. Altman dealt Elon Musk a major blow—reaching a unanimous advisory verdict that he had sued OpenAI too late and, as a re…</p>
           </div>
         </a>
       </div>
@@ -1510,13 +1422,13 @@
       <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">2</span></h2>
       <div class="cards-grid" id="grid-robtica">
       <div class="card"
-           data-title="nvidia posts another record quarter, reveals $43 billion of holdings in startups"
+           data-title="nvidia posts another record quarter, reveals $43b of holdings in startups"
            data-desc="nvidia announced another record revenue figure after market close on wednesday, but forecasted that revenue growth would slow in the following quarter."
            data-source="techcrunch"
            data-cat="Robótica"
            data-date="Wed, 20 May 2026 22:03:51 +0000"
            data-url="https://techcrunch.com/2026/05/20/nvidia-posts-another-record-quarter-reveals-43-billion-of-holdings-in-startups/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/nvidia-posts-another-record-quarter-reveals-43-billion-of-holdings-in-startups/',title:'Nvidia posts another record quarter, reveals $43 billion of holdings in startups',source:'techcrunch',date:'Wed, 20 May 2026 22:03:51 +0000',image:'',description:'Nvidia announced another record revenue figure after market close on Wednesday, but forecasted that revenue growth would slow in the following quarter',cat:'Robótica'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/nvidia-posts-another-record-quarter-reveals-43-billion-of-holdings-in-startups/',title:'Nvidia posts another record quarter, reveals $43B of holdings in startups',source:'techcrunch',date:'Wed, 20 May 2026 22:03:51 +0000',image:'',description:'Nvidia announced another record revenue figure after market close on Wednesday, but forecasted that revenue growth would slow in the following quarter',cat:'Robótica'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/05/20/nvidia-posts-another-record-quarter-reveals-43-billion-of-holdings-in-startups/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
@@ -1526,7 +1438,7 @@
               <span class="date">20 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">Nvidia posts another record quarter, reveals $43 billion of holdings in startups</h3>
+            <h3 class="card-title">Nvidia posts another record quarter, reveals $43B of holdings in startups</h3>
             <p class="card-desc">Nvidia announced another record revenue figure after market close on Wednesday, but forecasted that revenue growth would slow in the following quarter…</p>
           </div>
         </a>
@@ -1554,19 +1466,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="show hn: cpu-only transcription for youtube, tiktok, x, instagram videos"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-05-20T21:28:28.000Z"
+           data-url="https://github.com/kouhxp/yapsnap">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/kouhxp/yapsnap',title:'Show HN: CPU-only transcription for YouTube, TikTok, X, Instagram videos',source:'Hacker News',date:'2026-05-20T21:28:28.000Z',image:'',description:'',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://github.com/kouhxp/yapsnap" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">20 de mai. de 2026</span>
+              <span class="badge">⬆ 17</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">Show HN: CPU-only transcription for YouTube, TikTok, X, Instagram videos</h3>
+            
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">21</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">16</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="google publishes exploit code threatening millions of chromium users"
            data-desc="an anonymous reader quotes a report from ars technica: google on wednesday published exploit code for an unfixed vulnerability in its chromium browser codebase that threatens millions of people using "
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-05-20T22:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-20T22:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: Google on Wednesday published exploit code for an unfixed vulnerability in its Chromium browser',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://it.slashdot.org/story/26/05/20/2013252/google-publishes-exploit-code-threatening-millions-of-chromium-users?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://it.slashdot.org/story/26/05/20/2013252/google-publishes-exploit-code-threatening-millions-of-chromium-users?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Google Publishes Exploit Code Threatening Millions of Chromium Users',source:'slashdot',date:'2026-05-20T22:00:00+00:00',image:'https://a.fsdn.com/sd/topics/chromium_64.png',description:'An anonymous reader quotes a report from Ars Technica: Google on Wednesday published exploit code for an unfixed vulnerability in its Chromium browser',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://it.slashdot.org/story/26/05/20/2013252/google-publishes-exploit-code-threatening-millions-of-chromium-users?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/chromium_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1574,7 +1512,7 @@
               <span class="date">20 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Google Publishes Exploit Code Threatening Millions of Chromium Users</h3>
             <p class="card-desc">An anonymous reader quotes a report from Ars Technica: Google on Wednesday published exploit code for an unfixed vulnerability in its Chromium browser…</p>
           </div>
         </a>
@@ -1624,28 +1562,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="nextera and dominion's $67 billion mega-merger is all about the data centers"
-           data-desc="an anonymous reader quotes a report from inside climate news: a proposed merger of the largest utility in the country by market value, nextera energy, with the sixth-largest, dominion, would create a "
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-05-19T21:00:00+00:00"
-           data-url="https://hardware.slashdot.org/story/26/05/19/1733219/nextera-and-dominions-67-billion-mega-merger-is-all-about-the-data-centers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/05/19/1733219/nextera-and-dominions-67-billion-mega-merger-is-all-about-the-data-centers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'NextEra and Dominion\'s $67 Billion Mega-Merger Is All About the Data Centers',source:'slashdot',date:'2026-05-19T21:00:00+00:00',image:'https://a.fsdn.com/sd/topics/business_64.png',description:'An anonymous reader quotes a report from Inside Climate News: A proposed merger of the largest utility in the country by market value, NextEra Energy,',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://hardware.slashdot.org/story/26/05/19/1733219/nextera-and-dominions-67-billion-mega-merger-is-all-about-the-data-centers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/business_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">NextEra and Dominion's $67 Billion Mega-Merger Is All About the Data Centers</h3>
-            <p class="card-desc">An anonymous reader quotes a report from Inside Climate News: A proposed merger of the largest utility in the country by market value, NextEra Energy,…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="github confirms breach of 3,800 repos via malicious vscode extension"
            data-desc="previous thread in sequence:github is investigating unauthorized access to their internal repositories - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=48201316 - may 2026 (321 comments)"
            data-source="hacker news"
@@ -1660,7 +1576,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 363</span><span class="badge">💬 121</span>
+              <span class="badge">⬆ 451</span><span class="badge">💬 146</span>
             </div>
             <h3 class="card-title">GitHub confirms breach of 3,800 repos via malicious VSCode extension</h3>
             <p class="card-desc">Previous thread in sequence:GitHub is investigating unauthorized access to their internal repositories - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;i…</p>
@@ -1668,23 +1584,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="starship's twelfth flight test"
+           data-title="dos zone"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-05-20T21:41:54.000Z"
-           data-url="https://www.spacex.com/launches/starship-flight-12">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.spacex.com/launches/starship-flight-12',title:'Starship\'s Twelfth Flight Test',source:'Hacker News',date:'2026-05-20T21:41:54.000Z',image:'https://www.spacex.com/assets/images/share.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.spacex.com/launches/starship-flight-12" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.spacex.com/assets/images/share.jpg')"></div>
+           data-date="2026-05-20T22:53:27.000Z"
+           data-url="https://dos.zone/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://dos.zone/',title:'DOS Zone',source:'Hacker News',date:'2026-05-20T22:53:27.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://dos.zone/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 52</span><span class="badge">💬 30</span>
+              <span class="badge">⬆ 45</span><span class="badge">💬 8</span>
             </div>
-            <h3 class="card-title">Starship's Twelfth Flight Test</h3>
+            <h3 class="card-title">DOS Zone</h3>
             
           </div>
         </a>
@@ -1704,9 +1620,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 177</span><span class="badge">💬 66</span>
+              <span class="badge">⬆ 209</span><span class="badge">💬 77</span>
             </div>
             <h3 class="card-title">Flipper One Tech Specs</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="colorado amended sb051 (age verification bill) to exclude open source projects"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-20T20:28:18.000Z"
+           data-url="https://legiscan.com/CO/bill/SB051/2026">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://legiscan.com/CO/bill/SB051/2026',title:'Colorado Amended SB051 (Age Verification Bill) to Exclude Open Source Projects',source:'Hacker News',date:'2026-05-20T20:28:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://legiscan.com/CO/bill/SB051/2026" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">20 de mai. de 2026</span>
+              <span class="badge">⬆ 56</span><span class="badge">💬 16</span>
+            </div>
+            <h3 class="card-title">Colorado Amended SB051 (Age Verification Bill) to Exclude Open Source Projects</h3>
             
           </div>
         </a>
@@ -1726,7 +1664,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 172</span><span class="badge">💬 69</span>
+              <span class="badge">⬆ 255</span><span class="badge">💬 141</span>
             </div>
             <h3 class="card-title">Google Declaring War on the Web</h3>
             
@@ -1748,31 +1686,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 79</span><span class="badge">💬 24</span>
+              <span class="badge">⬆ 96</span><span class="badge">💬 28</span>
             </div>
             <h3 class="card-title">Why is Inkwell stuck in review</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="colorado amended sb051 (age verification bill) to exclude open source projects"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-20T20:28:18.000Z"
-           data-url="https://legiscan.com/CO/bill/SB051/2026">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://legiscan.com/CO/bill/SB051/2026',title:'Colorado Amended SB051 (Age Verification Bill) to Exclude Open Source Projects',source:'Hacker News',date:'2026-05-20T20:28:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://legiscan.com/CO/bill/SB051/2026" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 23</span><span class="badge">💬 5</span>
-            </div>
-            <h3 class="card-title">Colorado Amended SB051 (Age Verification Bill) to Exclude Open Source Projects</h3>
             
           </div>
         </a>
@@ -1792,7 +1708,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 120</span><span class="badge">💬 80</span>
+              <span class="badge">⬆ 182</span><span class="badge">💬 128</span>
             </div>
             <h3 class="card-title">SpaceX S-1</h3>
             
@@ -1806,7 +1722,7 @@
            data-cat="Tecnologia"
            data-date="2026-05-20T12:01:56.000Z"
            data-url="https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html',title:'Saying Goodbye to Asm.js',source:'Hacker News',date:'2026-05-20T12:01:56.000Z',image:'https://spidermonkey.dev/assets/img/twitter-dark-large.png?1',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html',title:'Saying goodbye to asm.js',source:'Hacker News',date:'2026-05-20T12:01:56.000Z',image:'https://spidermonkey.dev/assets/img/twitter-dark-large.png?1',description:'',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('https://spidermonkey.dev/assets/img/twitter-dark-large.png?1')"></div>
           <div class="card-body">
@@ -1814,9 +1730,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 286</span><span class="badge">💬 124</span>
+              <span class="badge">⬆ 300</span><span class="badge">💬 130</span>
             </div>
-            <h3 class="card-title">Saying Goodbye to Asm.js</h3>
+            <h3 class="card-title">Saying goodbye to asm.js</h3>
             
           </div>
         </a>
@@ -1836,9 +1752,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 379</span><span class="badge">💬 136</span>
+              <span class="badge">⬆ 388</span><span class="badge">💬 140</span>
             </div>
             <h3 class="card-title">Map of Metal</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="starship's twelfth flight test"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-20T21:41:54.000Z"
+           data-url="https://www.spacex.com/launches/starship-flight-12">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.spacex.com/launches/starship-flight-12',title:'Starship\'s Twelfth Flight Test',source:'Hacker News',date:'2026-05-20T21:41:54.000Z',image:'https://www.spacex.com/assets/images/share.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.spacex.com/launches/starship-flight-12" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.spacex.com/assets/images/share.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">20 de mai. de 2026</span>
+              <span class="badge">⬆ 78</span><span class="badge">💬 65</span>
+            </div>
+            <h3 class="card-title">Starship's Twelfth Flight Test</h3>
             
           </div>
         </a>
@@ -1858,76 +1796,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 115</span><span class="badge">💬 7</span>
+              <span class="badge">⬆ 119</span><span class="badge">💬 7</span>
             </div>
             <h3 class="card-title">SBCL: the ultimate assembly code breadboard (2014)</h3>
             
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="github's take on age assurance for developers"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-20T21:14:03.000Z"
-           data-url="https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/',title:'GitHub\'s take on age assurance for developers',source:'Hacker News',date:'2026-05-20T21:14:03.000Z',image:'https://github.blog/wp-content/uploads/2026/01/4ba0cd42388a255e04c78e5143548f22e577d68e0f15f68e6a3c76c18b927981-1920x1080-1.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.blog/news-insights/policy-news-and-insights/why-age-assurance-laws-matter-for-developers/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://github.blog/wp-content/uploads/2026/01/4ba0cd42388a255e04c78e5143548f22e577d68e0f15f68e6a3c76c18b927981-1920x1080-1.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">20 de mai. de 2026</span>
-              <span class="badge">⬆ 11</span><span class="badge">💬 3</span>
-            </div>
-            <h3 class="card-title">GitHub's take on age assurance for developers</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think."
-           data-desc="for a quarter century, the google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. on t"
-           data-source="venturebeat"
-           data-cat="Tecnologia"
-           data-date="Tue, 19 May 2026 17:45:00 GMT"
-           data-url="https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think',title:'Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.',source:'venturebeat',date:'Tue, 19 May 2026 17:45:00 GMT',image:'https://images.ctfassets.net/jdtwqhzvc2n1/1TD0Sl7Zq6nnBSZMK9FXpl/41ce2cc6da055da7647670c71ba8aa6b/Nuneybits_Vector_art_of_an_oversized_white_search_bar_rimmed_in_695cac3f-1536-4438-acc1-51c16e2ff51f.webp?w=300&amp;q=30',description:'For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor,',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://images.ctfassets.net/jdtwqhzvc2n1/1TD0Sl7Zq6nnBSZMK9FXpl/41ce2cc6da055da7647670c71ba8aa6b/Nuneybits_Vector_art_of_an_oversized_white_search_bar_rimmed_in_695cac3f-1536-4438-acc1-51c16e2ff51f.webp?w=300&amp;q=30')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://venturebeat.com/favicon.ico" alt="venturebeat" onerror="this.style.display='none'">
-              <span class="source-name">venturebeat</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.</h3>
-            <p class="card-desc">For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor,…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the spacex ipo filing has arrived"
-           data-desc="spacex has finally made the contents of its ipo filing public, weeks ahead of what is expected to be the largest ipo ever."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Wed, 20 May 2026 20:52:00 +0000"
-           data-url="https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-has-arrived/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-has-arrived/',title:'The SpaceX IPO filing has arrived',source:'techcrunch',date:'Wed, 20 May 2026 20:52:00 +0000',image:'',description:'SpaceX has finally made the contents of its IPO filing public, weeks ahead of what is expected to be the largest IPO ever.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-has-arrived/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">20 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The SpaceX IPO filing has arrived</h3>
-            <p class="card-desc">SpaceX has finally made the contents of its IPO filing public, weeks ahead of what is expected to be the largest IPO ever.</p>
           </div>
         </a>
       </div>
@@ -1972,50 +1844,6 @@
             </div>
             <h3 class="card-title">Global EV market goes K-shaped as the US gets left behind</h3>
             <p class="card-desc">EV sales have surged worldwide in every region but the U.S., posing risks for legacy and startup automakers.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="understanding the modern cybercrime landscape"
-           data-desc="throughout 2025, hpe observed significant changes in how cybercriminals operate. analyzing real-world threats, our hpe threat labs highlighted an industrialization of the cyber criminals’ methods in i"
-           data-source="mit"
-           data-cat="Tecnologia"
-           data-date="Tue, 19 May 2026 13:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/05/19/1136925/understanding-the-modern-cybercrime-landscape/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/19/1136925/understanding-the-modern-cybercrime-landscape/',title:'Understanding the modern cybercrime landscape',source:'mit',date:'Tue, 19 May 2026 13:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/HPE_VL_Backgrounds_HR_1920x1080_E.jpg?w=1920',description:'Throughout 2025, HPE observed significant changes in how cybercriminals operate. Analyzing real-world threats, our HPE Threat Labs highlighted an indu',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/05/19/1136925/understanding-the-modern-cybercrime-landscape/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/HPE_VL_Backgrounds_HR_1920x1080_E.jpg?w=1920')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Understanding the modern cybercrime landscape</h3>
-            <p class="card-desc">Throughout 2025, HPE observed significant changes in how cybercriminals operate. Analyzing real-world threats, our HPE Threat Labs highlighted an indu…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="colossal biosciences is growing chickens in a 3d-printed artificial eggshell"
-           data-desc="the baby chicks were shifting and starting to pip—or trying to hatch. but not from an egg. instead, these chickens were growing inside transparent 3d-printed plastic cups at the dallas headquarters of"
-           data-source="mit"
-           data-cat="Tecnologia"
-           data-date="Tue, 19 May 2026 12:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/',title:'Colossal Biosciences is growing chickens in a 3D-printed artificial eggshell',source:'mit',date:'Tue, 19 May 2026 12:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/05/Device_1.jpg?w=2667',description:'The baby chicks were shifting and starting to pip—or trying to hatch. But not from an egg. Instead, these chickens were growing inside transparent 3D-',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/05/19/1137471/colossal-biosciences-is-growing-chickens-in-a-3d-printed-container/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/05/Device_1.jpg?w=2667')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">19 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Colossal Biosciences is growing chickens in a 3D-printed artificial eggshell</h3>
-            <p class="card-desc">The baby chicks were shifting and starting to pip—or trying to hatch. But not from an egg. Instead, these chickens were growing inside transparent 3D-…</p>
           </div>
         </a>
       </div></div>
