@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 24/05/2026, 12:02:52
+      Atualizado: 24/05/2026, 13:32:31
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">37</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">17</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">18</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">38</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">19</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">16</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">17</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">19</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc=""for months, scammers have been taking advantage of a loophole that allows them to send spammy emails from an internal microsoft email address typically used for sending legitimate account alerts," te"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-05-24T15:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-24T15:34:00+00:00',image:'',description:'"For months, scammers have been taking advantage of a loophole that allows them to send spammy emails from an internal Microsoft email address typical',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">24 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">"For months, scammers have been taking advantage of a loophole that allows them to send spammy emails from an internal Microsoft email address typical…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="'underminr' cdn vulnerability hides malicious traffic behind trusted domains"
            data-desc="slashdot reader wiredmikey writes: threat actors are exploiting a vulnerability in shared content delivery network (cdn) infrastructure to hide connections to malicious domains. researchers say the vu"
@@ -420,7 +442,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 41</span><span class="badge">💬 24</span>
+              <span class="badge">⬆ 122</span><span class="badge">💬 73</span>
             </div>
             <h3 class="card-title">DeepSeek reasonix, DeepSeek native coding agent with high caching and low cost</h3>
             
@@ -442,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 13</span><span class="badge">💬 3</span>
+              <span class="badge">⬆ 46</span><span class="badge">💬 24</span>
             </div>
             <h3 class="card-title">Constraint Decay: The Fragility of LLM Agents in Back End Code Generation</h3>
             
@@ -450,23 +472,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="greg brockman: inside the 72 hours that almost killed openai"
+           data-title="'ai washing': firms are scrambling to rebrand themselves as tech-focused"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-05-24T08:29:38.000Z"
-           data-url="https://fs.blog/knowledge-project-podcast/greg-brockman/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://fs.blog/knowledge-project-podcast/greg-brockman/',title:'Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI',source:'Hacker News',date:'2026-05-24T08:29:38.000Z',image:'https://fs.blog/wp-content/uploads/2026/04/Cover-White-1024x1024.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://fs.blog/knowledge-project-podcast/greg-brockman/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://fs.blog/wp-content/uploads/2026/04/Cover-White-1024x1024.png')"></div>
+           data-date="2026-05-24T15:21:28.000Z"
+           data-url="https://www.theguardian.com/technology/2026/may/24/ai-washing-pr-firms-scrambling-rebrand">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theguardian.com/technology/2026/may/24/ai-washing-pr-firms-scrambling-rebrand',title:'\'AI washing\': firms are scrambling to rebrand themselves as tech-focused',source:'Hacker News',date:'2026-05-24T15:21:28.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.theguardian.com/technology/2026/may/24/ai-washing-pr-firms-scrambling-rebrand" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 124</span><span class="badge">💬 91</span>
+              <span class="badge">⬆ 27</span><span class="badge">💬 18</span>
             </div>
-            <h3 class="card-title">Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI</h3>
+            <h3 class="card-title">'AI washing': firms are scrambling to rebrand themselves as tech-focused</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="deepseek to make permanent 75% discount on flagship ai model"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-24T14:09:33.000Z"
+           data-url="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model',title:'DeepSeek to Make Permanent 75% Discount on Flagship AI Model',source:'Hacker News',date:'2026-05-24T14:09:33.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de mai. de 2026</span>
+              <span class="badge">⬆ 66</span><span class="badge">💬 69</span>
+            </div>
+            <h3 class="card-title">DeepSeek to Make Permanent 75% Discount on Flagship AI Model</h3>
             
           </div>
         </a>
@@ -626,6 +670,32 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="techcrunch mobility: robotaxi reality check"
+           data-desc="welcome back to techcrunch mobility — your central hub for news and insights on the future of transportation."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Sun, 24 May 2026 16:05:00 +0000"
+           data-url="https://techcrunch.com/2026/05/24/techcrunch-mobility-robotaxi-reality-check/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/24/techcrunch-mobility-robotaxi-reality-check/',title:'TechCrunch Mobility: Robotaxi reality check',source:'techcrunch',date:'Sun, 24 May 2026 16:05:00 +0000',image:'',description:'Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/24/techcrunch-mobility-robotaxi-reality-check/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">24 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">TechCrunch Mobility: Robotaxi reality check</h3>
+            <p class="card-desc">Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
@@ -675,18 +745,18 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">18</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">16</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="lenovo, dell, and hp financially support linux vendor firmware service"
            data-desc="the it's foss blog has news about the linux vendor firmware service, which gives hardware vendors a secure portal to upload firmware updates "which can then be downloaded and installed by users throug"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-05-24T14:34:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-24T14:34:00+00:00',image:'',description:'The It\'s FOSS blog has news about the Linux Vendor Firmware Service, which gives hardware vendors a secure portal to upload firmware updates "which ca',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://linux.slashdot.org/story/26/05/24/0522202/lenovo-dell-and-hp-financially-support-linux-vendor-firmware-service?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://linux.slashdot.org/story/26/05/24/0522202/lenovo-dell-and-hp-financially-support-linux-vendor-firmware-service?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Lenovo, Dell, and HP Financially Support Linux Vendor Firmware Service',source:'slashdot',date:'2026-05-24T14:34:00+00:00',image:'https://a.fsdn.com/sd/topics/hp_64.png',description:'The It\'s FOSS blog has news about the Linux Vendor Firmware Service, which gives hardware vendors a secure portal to upload firmware updates "which ca',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://linux.slashdot.org/story/26/05/24/0522202/lenovo-dell-and-hp-financially-support-linux-vendor-firmware-service?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/hp_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -694,7 +764,7 @@
               <span class="date">24 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Lenovo, Dell, and HP Financially Support Linux Vendor Firmware Service</h3>
             <p class="card-desc">The It's FOSS blog has news about the Linux Vendor Firmware Service, which gives hardware vendors a secure portal to upload firmware updates "which ca…</p>
           </div>
         </a>
@@ -810,45 +880,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="caltech could lose control of jpl for first time in decades"
-           data-desc="nasa plans to open competition for the contract to operate jpl for the first time in nearly a century, meaning caltech's historic role managing the iconic deep-space lab could come to an end when its "
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-05-23T07:00:00+00:00"
-           data-url="https://science.slashdot.org/story/26/05/23/038238/caltech-could-lose-control-of-jpl-for-first-time-in-decades?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/05/23/038238/caltech-could-lose-control-of-jpl-for-first-time-in-decades?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Caltech Could Lose Control of JPL For First Time In Decades',source:'slashdot',date:'2026-05-23T07:00:00+00:00',image:'https://a.fsdn.com/sd/topics/nasa_64.png',description:'NASA plans to open competition for the contract to operate JPL for the first time in nearly a century, meaning Caltech\'s historic role managing the ic',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://science.slashdot.org/story/26/05/23/038238/caltech-could-lose-control-of-jpl-for-first-time-in-decades?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/nasa_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">23 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Caltech Could Lose Control of JPL For First Time In Decades</h3>
-            <p class="card-desc">NASA plans to open competition for the contract to operate JPL for the first time in nearly a century, meaning Caltech's historic role managing the ic…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="microsoft's 6502 basic is now open source (2025)"
+           data-title="usborne 1980s computer books"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-05-24T13:16:33.000Z"
-           data-url="https://opensource.microsoft.com/blog/2025/09/03/microsoft-open-source-historic-6502-basic/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://opensource.microsoft.com/blog/2025/09/03/microsoft-open-source-historic-6502-basic/',title:'Microsoft\'s 6502 BASIC is now Open Source (2025)',source:'Hacker News',date:'2026-05-24T13:16:33.000Z',image:'https://opensource.microsoft.com/blog/wp-content/uploads/2025/09/Open-Source-Microsoft-retro-logo.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://opensource.microsoft.com/blog/2025/09/03/microsoft-open-source-historic-6502-basic/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://opensource.microsoft.com/blog/wp-content/uploads/2025/09/Open-Source-Microsoft-retro-logo.png')"></div>
+           data-date="2026-05-24T15:43:00.000Z"
+           data-url="https://usborne.com/us/books/computer-and-coding-books">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://usborne.com/us/books/computer-and-coding-books',title:'Usborne 1980s Computer Books',source:'Hacker News',date:'2026-05-24T15:43:00.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://usborne.com/us/books/computer-and-coding-books" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 38</span><span class="badge">💬 6</span>
+              <span class="badge">⬆ 12</span><span class="badge">💬 4</span>
             </div>
-            <h3 class="card-title">Microsoft's 6502 BASIC is now Open Source (2025)</h3>
+            <h3 class="card-title">Usborne 1980s Computer Books</h3>
             
           </div>
         </a>
@@ -868,9 +916,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 65</span><span class="badge">💬 9</span>
+              <span class="badge">⬆ 83</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">Mastering Dyalog APL</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="omarchy is not a distro"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-24T14:37:21.000Z"
+           data-url="https://abyss.fish/your_dotfiles_are_not_a_distro">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://abyss.fish/your_dotfiles_are_not_a_distro',title:'Omarchy Is Not A Distro',source:'Hacker News',date:'2026-05-24T14:37:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://abyss.fish/your_dotfiles_are_not_a_distro" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de mai. de 2026</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 18</span>
+            </div>
+            <h3 class="card-title">Omarchy Is Not A Distro</h3>
             
           </div>
         </a>
@@ -890,7 +960,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 60</span><span class="badge">💬 30</span>
+              <span class="badge">⬆ 87</span><span class="badge">💬 46</span>
             </div>
             <h3 class="card-title">Childhood Computing</h3>
             
@@ -912,7 +982,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 346</span><span class="badge">💬 107</span>
+              <span class="badge">⬆ 359</span><span class="badge">💬 113</span>
             </div>
             <h3 class="card-title">Microsoft open-sources "the earliest DOS source code discovered to date"</h3>
             <p class="card-desc">https:&#x2F;&#x2F;opensource.microsoft.com&#x2F;blog&#x2F;2026&#x2F;04&#x2F;28&#x2F;continuing-...</p>
@@ -920,23 +990,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="the seed oil panic is hurting my cardiac patients"
+           data-title="perceptual image codec: what matters in practical learned image compression"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-05-24T14:27:26.000Z"
-           data-url="https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health/',title:'The seed oil panic is hurting my cardiac patients',source:'Hacker News',date:'2026-05-24T14:27:26.000Z',image:'https://www.statnews.com/wp-content/uploads/2026/05/AdobeStock_1933838136-1024x576.jpeg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.statnews.com/2026/05/22/seed-oils-healthy-fats-tallow-fact-check-cardiac-health/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.statnews.com/wp-content/uploads/2026/05/AdobeStock_1933838136-1024x576.jpeg')"></div>
+           data-date="2026-05-24T12:01:24.000Z"
+           data-url="https://apple.github.io/ml-pico/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://apple.github.io/ml-pico/',title:'Perceptual Image Codec: What Matters in Practical Learned Image Compression',source:'Hacker News',date:'2026-05-24T12:01:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://apple.github.io/ml-pico/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 53</span><span class="badge">💬 11</span>
+              <span class="badge">⬆ 32</span><span class="badge">💬 7</span>
             </div>
-            <h3 class="card-title">The seed oil panic is hurting my cardiac patients</h3>
+            <h3 class="card-title">Perceptual Image Codec: What Matters in Practical Learned Image Compression</h3>
             
           </div>
         </a>
@@ -956,7 +1026,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 201</span><span class="badge">💬 107</span>
+              <span class="badge">⬆ 212</span><span class="badge">💬 114</span>
             </div>
             <h3 class="card-title">Scammers are abusing an internal Microsoft account to send spam links</h3>
             
@@ -978,31 +1048,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 323</span><span class="badge">💬 24</span>
+              <span class="badge">⬆ 340</span><span class="badge">💬 24</span>
             </div>
             <h3 class="card-title">Wake up! 16b</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="why is vivado 2026.1 dropping linux support for free tier?"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-24T04:14:52.000Z"
-           data-url="https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US',title:'Why is Vivado 2026.1 dropping Linux support for free tier?',source:'Hacker News',date:'2026-05-24T04:14:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 248</span><span class="badge">💬 122</span>
-            </div>
-            <h3 class="card-title">Why is Vivado 2026.1 dropping Linux support for free tier?</h3>
             
           </div>
         </a>
@@ -1022,31 +1070,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 86</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 99</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">The C64 Dead Test Font</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="perceptual image codec: what matters in practical learned image compression"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-24T12:01:24.000Z"
-           data-url="https://apple.github.io/ml-pico/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://apple.github.io/ml-pico/',title:'Perceptual Image Codec: What Matters in Practical Learned Image Compression',source:'Hacker News',date:'2026-05-24T12:01:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://apple.github.io/ml-pico/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 12</span><span class="badge">💬 1</span>
-            </div>
-            <h3 class="card-title">Perceptual Image Codec: What Matters in Practical Learned Image Compression</h3>
             
           </div>
         </a>
@@ -1066,7 +1092,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de mai. de 2026</span>
-              <span class="badge">⬆ 92</span><span class="badge">💬 21</span>
+              <span class="badge">⬆ 99</span><span class="badge">💬 22</span>
             </div>
             <h3 class="card-title">Alexander Grothendieck Revolutionized 20th-Century Mathematics</h3>
             
