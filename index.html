@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 29/05/2026, 05:41:22
+      Atualizado: 29/05/2026, 09:14:57
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">72</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">77</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">54</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,52 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">54</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="a senior cia official, david rush, was arrested after investigators found more than $40 million in gold bars and about $2 million in cash at his virginia home. according to the new york times, "the on"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-05-29T11:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-29T11:00:00+00:00',image:'',description:'A senior CIA official, David Rush, was arrested after investigators found more than $40 million in gold bars and about $2 million in cash at his Virgi',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">29 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">A senior CIA official, David Rush, was arrested after investigators found more than $40 million in gold bars and about $2 million in cash at his Virgi…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="nasa details its plan to build a lunar base at the moon's south pole"
+           data-desc="nasa has outlined a three-phase plan to build a lunar base at the moon's south pole. the first phase, from 2026 to 2029, will focus on robotic missions, landers, rovers, reactors, satellites, and blue"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-05-29T07:00:00+00:00"
+           data-url="https://science.slashdot.org/story/26/05/28/2046259/nasa-details-its-plan-to-build-a-lunar-base-at-the-moons-south-pole?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/05/28/2046259/nasa-details-its-plan-to-build-a-lunar-base-at-the-moons-south-pole?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'NASA Details Its Plan to Build a Lunar Base At the Moon\'s South Pole',source:'slashdot',date:'2026-05-29T07:00:00+00:00',image:'https://a.fsdn.com/sd/topics/moon_64.png',description:'NASA has outlined a three-phase plan to build a lunar base at the moon\'s south pole. The first phase, from 2026 to 2029, will focus on robotic mission',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://science.slashdot.org/story/26/05/28/2046259/nasa-details-its-plan-to-build-a-lunar-base-at-the-moons-south-pole?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/moon_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">29 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">NASA Details Its Plan to Build a Lunar Base At the Moon's South Pole</h3>
+            <p class="card-desc">NASA has outlined a three-phase plan to build a lunar base at the moon's south pole. The first phase, from 2026 to 2029, will focus on robotic mission…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="europe told to cool its datacenter boom before water, power run short"
            data-desc="a new grundfos report warns that europe's datacenter boom could strain water supplies and power grids unless regulators bake water and energy efficiency into planning, reporting, and incentives for ne"
@@ -450,6 +494,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="is ai causing a repeat of front end's lost decade?"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-29T11:09:32.000Z"
+           data-url="https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/',title:'Is AI causing a repeat of Front end\'s Lost Decade?',source:'Hacker News',date:'2026-05-29T11:09:32.000Z',image:'https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/og.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/og.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 9</span>
+            </div>
+            <h3 class="card-title">Is AI causing a repeat of Front end's Lost Decade?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="claude opus 4.8"
            data-desc=""
            data-source="hacker news"
@@ -464,9 +530,53 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 1486</span><span class="badge">💬 1168</span>
+              <span class="badge">⬆ 1592</span><span class="badge">💬 1249</span>
             </div>
             <h3 class="card-title">Claude Opus 4.8</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="is this sustainable?"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-29T10:14:43.000Z"
+           data-url="https://jamiehurst.co.uk/2026-05-24_ai-sustainable">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://jamiehurst.co.uk/2026-05-24_ai-sustainable',title:'Is This Sustainable?',source:'Hacker News',date:'2026-05-29T10:14:43.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://jamiehurst.co.uk/2026-05-24_ai-sustainable" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 25</span><span class="badge">💬 22</span>
+            </div>
+            <h3 class="card-title">Is This Sustainable?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="real-time llm inference on standard gpus: 3k tokens/s per request"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-05-29T09:47:23.000Z"
+           data-url="https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/',title:'Real-time LLM Inference on Standard GPUs: 3k tokens/s per request',source:'Hacker News',date:'2026-05-29T09:47:23.000Z',image:'https://storage.ghost.io/c/07/80/0780d8de-243c-4e4d-9876-7e3ee2a55df5/content/images/size/w1200/2026/05/blog-post-reduced-2.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://blog.kog.ai/real-time-llm-inference-on-standard-gpus-3-000-tokens-s-per-request/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://storage.ghost.io/c/07/80/0780d8de-243c-4e4d-9876-7e3ee2a55df5/content/images/size/w1200/2026/05/blog-post-reduced-2.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 45</span><span class="badge">💬 32</span>
+            </div>
+            <h3 class="card-title">Real-time LLM Inference on Standard GPUs: 3k tokens/s per request</h3>
             
           </div>
         </a>
@@ -486,7 +596,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 64</span><span class="badge">💬 14</span>
+              <span class="badge">⬆ 167</span><span class="badge">💬 32</span>
             </div>
             <h3 class="card-title">Claude Code – Everything You Can Configure That the Docs Don't Tell You</h3>
             
@@ -494,23 +604,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="zot now supports claude opus 4.8"
+           data-title="the $500k ai film that &quot;premiered at cannes&quot; was not in the official festival"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-05-29T05:48:21.000Z"
-           data-url="https://www.zot.sh">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.zot.sh',title:'Zot now supports Claude Opus 4.8',source:'Hacker News',date:'2026-05-29T05:48:21.000Z',image:'https://www.zot.sh/og.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.zot.sh" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.zot.sh/og.png')"></div>
+           data-date="2026-05-29T09:34:37.000Z"
+           data-url="https://firethering.com/hell-grind-ai-film-cannes-premiere-higgsfield/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://firethering.com/hell-grind-ai-film-cannes-premiere-higgsfield/',title:'The $500K AI Film That &quot;Premiered at Cannes&quot; Was Not in the Official Festival',source:'Hacker News',date:'2026-05-29T09:34:37.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://firethering.com/hell-grind-ai-film-cannes-premiere-higgsfield/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 29</span><span class="badge">💬 23</span>
+              <span class="badge">⬆ 43</span><span class="badge">💬 53</span>
             </div>
-            <h3 class="card-title">Zot now supports Claude Opus 4.8</h3>
+            <h3 class="card-title">The $500K AI Film That "Premiered at Cannes" Was Not in the Official Festival</h3>
             
           </div>
         </a>
@@ -530,7 +640,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 309</span><span class="badge">💬 129</span>
+              <span class="badge">⬆ 336</span><span class="badge">💬 136</span>
             </div>
             <h3 class="card-title">Show HN: Continue? Y/N: A 60-second game about AI agent permission fatigue</h3>
             
@@ -538,24 +648,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="the mysterious hy3 llm is topping openrouter model rankings by a large margin"
-           data-desc=""
-           data-source="hacker news"
+           data-title="this chip startup just raised $135m on a bet that ai&#8217;s biggest bottleneck isn&#8217;t compute &#8212; it&#8217;s memory"
+           data-desc="south korean chip startup xcena is betting that ai's real bottleneck is not compute, but memory."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-05-29T00:09:35.000Z"
-           data-url="https://minimaxir.com/2026/05/openrouter-hy3/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://minimaxir.com/2026/05/openrouter-hy3/',title:'The mysterious Hy3 LLM is topping OpenRouter Model Rankings by a large margin',source:'Hacker News',date:'2026-05-29T00:09:35.000Z',image:'https://minimaxir.com/2026/05/openrouter-hy3/featured.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://minimaxir.com/2026/05/openrouter-hy3/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://minimaxir.com/2026/05/openrouter-hy3/featured.png')"></div>
+           data-date="Fri, 29 May 2026 12:00:00 +0000"
+           data-url="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/',title:'This chip startup just raised $135M on a bet that AI&#8217;s biggest bottleneck isn&#8217;t compute &#8212; it&#8217;s memory',source:'techcrunch',date:'Fri, 29 May 2026 12:00:00 +0000',image:'',description:'South Korean chip startup Xcena is betting that AI\'s real bottleneck is not compute, but memory.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 71</span><span class="badge">💬 45</span>
+              
             </div>
-            <h3 class="card-title">The mysterious Hy3 LLM is topping OpenRouter Model Rankings by a large margin</h3>
-            
+            <h3 class="card-title">This chip startup just raised $135M on a bet that AI&#8217;s biggest bottleneck isn&#8217;t compute &#8212; it&#8217;s memory</h3>
+            <p class="card-desc">South Korean chip startup Xcena is betting that AI's real bottleneck is not compute, but memory.</p>
           </div>
         </a>
       </div>
@@ -846,24 +956,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="us says troops were targeted with location data, as senator warns ad industry is a &#8216;national security threat&#8217;"
-           data-desc="one leading privacy lawmaker said it was time to "start treating the adtech industry as a national security threat.""
-           data-source="techcrunch"
+           data-title="the deadly ebola outbreak is proving difficult to control"
+           data-desc="the alert was raised on may 5. four health-care workers in the ituri province of the democratic republic of the congo had died from an unknown illness within four days. rapid response teams were sent "
+           data-source="mit"
            data-cat="IA"
-           data-date="Thu, 28 May 2026 16:21:23 +0000"
-           data-url="https://techcrunch.com/2026/05/28/u-s-says-troops-were-targeted-with-location-data-as-senator-warns-ad-industry-is-a-national-security-threat/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/05/28/u-s-says-troops-were-targeted-with-location-data-as-senator-warns-ad-industry-is-a-national-security-threat/',title:'US says troops were targeted with location data, as senator warns ad industry is a &#8216;national security threat&#8217;',source:'techcrunch',date:'Thu, 28 May 2026 16:21:23 +0000',image:'',description:'One leading privacy lawmaker said it was time to "start treating the adtech industry as a national security threat."',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/05/28/u-s-says-troops-were-targeted-with-location-data-as-senator-warns-ad-industry-is-a-national-security-threat/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+           data-date="Fri, 29 May 2026 11:19:52 +0000"
+           data-url="https://www.technologyreview.com/2026/05/29/1138093/the-deadly-ebola-outbreak-is-proving-difficult-to-control/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/29/1138093/the-deadly-ebola-outbreak-is-proving-difficult-to-control/',title:'The deadly Ebola outbreak is proving difficult to control',source:'mit',date:'Fri, 29 May 2026 11:19:52 +0000',image:'',description:'The alert was raised on May 5. Four health-care workers in the Ituri Province of the Democratic Republic of the Congo had died from an unknown illness',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/05/29/1138093/the-deadly-ebola-outbreak-is-proving-difficult-to-control/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">28 de mai. de 2026</span>
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">29 de mai. de 2026</span>
               
             </div>
-            <h3 class="card-title">US says troops were targeted with location data, as senator warns ad industry is a &#8216;national security threat&#8217;</h3>
-            <p class="card-desc">One leading privacy lawmaker said it was time to "start treating the adtech industry as a national security threat."</p>
+            <h3 class="card-title">The deadly Ebola outbreak is proving difficult to control</h3>
+            <p class="card-desc">The alert was raised on May 5. Four health-care workers in the Ituri Province of the Democratic Republic of the Congo had died from an unknown illness…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="how the pope’s magnifica humanitas offers a template for individuals to meet the ai moment"
+           data-desc="pope leo xiv’s new encyclical on artificial intelligence includes a statement that warrants serious attention from technologists and policymakers: “technology is never neutral.” magnifica humanitas (“"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Fri, 29 May 2026 10:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/',title:'How the Pope’s Magnifica Humanitas offers a template for individuals to meet the AI moment',source:'mit',date:'Fri, 29 May 2026 10:00:00 +0000',image:'',description:'Pope Leo XIV’s new encyclical on artificial intelligence includes a statement that warrants serious attention from technologists and policymakers: “Te',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/05/29/1138107/how-the-popes-magnifica-humanitas-offers-a-template-for-individuals-to-meet-the-ai-moment/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">29 de mai. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">How the Pope’s Magnifica Humanitas offers a template for individuals to meet the AI moment</h3>
+            <p class="card-desc">Pope Leo XIV’s new encyclical on artificial intelligence includes a statement that warrants serious attention from technologists and policymakers: “Te…</p>
           </div>
         </a>
       </div>
@@ -1308,32 +1440,6 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-robtica" data-cat="Robótica">
-      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
-      <div class="cards-grid" id="grid-robtica">
-      <div class="card"
-           data-title="slashdot"
-           data-desc="nasa has outlined a three-phase plan to build a lunar base at the moon's south pole. the first phase, from 2026 to 2029, will focus on robotic missions, landers, rovers, reactors, satellites, and blue"
-           data-source="slashdot"
-           data-cat="Robótica"
-           data-date="2026-05-29T07:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-05-29T07:00:00+00:00',image:'',description:'NASA has outlined a three-phase plan to build a lunar base at the moon\'s south pole. The first phase, from 2026 to 2029, will focus on robotic mission',cat:'Robótica'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">29 de mai. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Slashdot</h3>
-            <p class="card-desc">NASA has outlined a three-phase plan to build a lunar base at the moon's south pole. The first phase, from 2026 to 2029, will focus on robotic mission…</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
       <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">23</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
@@ -1426,28 +1532,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="volkswagen blocks home assistant by requiring client assertion"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-29T05:45:36.000Z"
-           data-url="https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967',title:'Volkswagen blocks Home Assistant by requiring client assertion',source:'Hacker News',date:'2026-05-29T05:45:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 107</span><span class="badge">💬 44</span>
-            </div>
-            <h3 class="card-title">Volkswagen blocks Home Assistant by requiring client assertion</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="bricks and minifigs stole a man's $200k lego collection"
            data-desc=""
            data-source="hacker news"
@@ -1462,7 +1546,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 902</span><span class="badge">💬 411</span>
+              <span class="badge">⬆ 1043</span><span class="badge">💬 483</span>
             </div>
             <h3 class="card-title">Bricks and Minifigs Stole a Man's $200k Lego Collection</h3>
             
@@ -1484,9 +1568,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 369</span><span class="badge">💬 56</span>
+              <span class="badge">⬆ 457</span><span class="badge">💬 69</span>
             </div>
             <h3 class="card-title">I made a million dollar product from my dorm room (2025)</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="volkswagen blocks home assistant by requiring client assertion"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-29T05:45:36.000Z"
+           data-url="https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967',title:'Volkswagen blocks Home Assistant by requiring client assertion',source:'Hacker News',date:'2026-05-29T05:45:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/robinostlund/homeassistant-volkswagencarnet/issues/967" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 231</span><span class="badge">💬 114</span>
+            </div>
+            <h3 class="card-title">Volkswagen blocks Home Assistant by requiring client assertion</h3>
             
           </div>
         </a>
@@ -1506,7 +1612,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 51</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 37</span>
             </div>
             <h3 class="card-title">Italians and Dutch share the same gestural instinct for teaching</h3>
             
@@ -1528,9 +1634,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 305</span><span class="badge">💬 138</span>
+              <span class="badge">⬆ 381</span><span class="badge">💬 183</span>
             </div>
             <h3 class="card-title">Cars collect a startling amount of data about you</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="let's compile quake like it's 1997"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-29T03:07:22.000Z"
+           data-url="https://fabiensanglard.net/compile_like_1997/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://fabiensanglard.net/compile_like_1997/',title:'Let\'s compile Quake like it\'s 1997',source:'Hacker News',date:'2026-05-29T03:07:22.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://fabiensanglard.net/compile_like_1997/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 62</span><span class="badge">💬 26</span>
+            </div>
+            <h3 class="card-title">Let's compile Quake like it's 1997</h3>
             
           </div>
         </a>
@@ -1550,9 +1678,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 241</span><span class="badge">💬 78</span>
+              <span class="badge">⬆ 271</span><span class="badge">💬 91</span>
             </div>
             <h3 class="card-title">Nitpicking the shell history scene in 'Tron: Legacy'</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="heidisql – lightweight mariadb, mysql, sql server, postgresql and sqlite manager"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-05-29T03:14:39.000Z"
+           data-url="https://github.com/HeidiSQL/HeidiSQL">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/HeidiSQL/HeidiSQL',title:'HeidiSQL – Lightweight MariaDB, MySQL, SQL Server, PostgreSQL and SQLite Manager',source:'Hacker News',date:'2026-05-29T03:14:39.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/HeidiSQL/HeidiSQL" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">29 de mai. de 2026</span>
+              <span class="badge">⬆ 45</span><span class="badge">💬 15</span>
+            </div>
+            <h3 class="card-title">HeidiSQL – Lightweight MariaDB, MySQL, SQL Server, PostgreSQL and SQLite Manager</h3>
             
           </div>
         </a>
@@ -1572,54 +1722,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">29 de mai. de 2026</span>
-              <span class="badge">⬆ 265</span><span class="badge">💬 264</span>
+              <span class="badge">⬆ 315</span><span class="badge">💬 315</span>
             </div>
             <h3 class="card-title">Blue Origin's New Glenn blows up during static fire test</h3>
             <p class="card-desc">https:&#x2F;&#x2F;twitter.com&#x2F;nasaspaceflight&#x2F;status&#x2F;20601649284728548...https:&#x2F;&#x2F;xcancel.com&#x2F;nasaspaceflight&#x2F;status…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="garnix (a nix ci) is shutting down"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-28T23:36:41.000Z"
-           data-url="https://discourse.nixos.org/t/garnix-is-shutting-down-not-oc/77895">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://discourse.nixos.org/t/garnix-is-shutting-down-not-oc/77895',title:'Garnix (A Nix CI) is shutting down',source:'Hacker News',date:'2026-05-28T23:36:41.000Z',image:'https://discourse.nixos.org/uploads/default/original/3X/8/9/8958de03bb1d244fada1053258875e6d4bb18156.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://discourse.nixos.org/t/garnix-is-shutting-down-not-oc/77895" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://discourse.nixos.org/uploads/default/original/3X/8/9/8958de03bb1d244fada1053258875e6d4bb18156.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 25</span>
-            </div>
-            <h3 class="card-title">Garnix (A Nix CI) is shutting down</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="github bans security researcher who posted zero-day windows exploits"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-05-28T21:45:54.000Z"
-           data-url="https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation',title:'GitHub bans security researcher who posted zero-day Windows exploits',source:'Hacker News',date:'2026-05-28T21:45:54.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.tomshardware.com/tech-industry/cyber-security/microsofts-github-bans-security-researcher-who-posted-zero-day-windows-exploits-because-company-ruined-their-life-expert-claims-action-is-vindictive-and-promises-further-retaliation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">28 de mai. de 2026</span>
-              <span class="badge">⬆ 365</span><span class="badge">💬 156</span>
-            </div>
-            <h3 class="card-title">GitHub bans security researcher who posted zero-day Windows exploits</h3>
-            
           </div>
         </a>
       </div>
