@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 07/06/2026, 03:23:34
+      Atualizado: 07/06/2026, 06:45:56
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">33</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">15</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">3</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">15</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">32</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">16</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">3</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">13</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,52 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">15</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">16</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="ars technica shares some anecdotes from steve jobs in exile, a new book released last month: [author geoffrey] cain reminds us, in stunning detail, that jobs' "exile" era at next was not only critical"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-07T07:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-07T07:34:00+00:00',image:'',description:'Ars Technica shares some anecdotes from Steve Jobs in Exile, a new book released last month: [Author Geoffrey] Cain reminds us, in stunning detail, th',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">07 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Ars Technica shares some anecdotes from Steve Jobs in Exile, a new book released last month: [Author Geoffrey] Cain reminds us, in stunning detail, th…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="scientists edited human embryo genes. but questions remain"
+           data-desc=""a dna-editing feat involving editing the genes of early stage embryos was announced this week," reports the wall street journal. they describe the feat as "a far cry from designer babies, but neverth"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-07T04:41:00+00:00"
+           data-url="https://science.slashdot.org/story/26/06/07/0358254/scientists-edited-human-embryo-genes-but-questions-remain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/06/07/0358254/scientists-edited-human-embryo-genes-but-questions-remain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Scientists Edited Human Embryo Genes. But Questions Remain',source:'slashdot',date:'2026-06-07T04:41:00+00:00',image:'https://a.fsdn.com/sd/topics/biotech_64.png',description:'"A DNA-editing feat involving editing the genes of early stage embryos was announced this week," reports the Wall Street Journal. They describe the fe',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://science.slashdot.org/story/26/06/07/0358254/scientists-edited-human-embryo-genes-but-questions-remain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/biotech_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">07 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Scientists Edited Human Embryo Genes. But Questions Remain</h3>
+            <p class="card-desc">"A DNA-editing feat involving editing the genes of early stage embryos was announced this week," reports the Wall Street Journal. They describe the fe…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="failing cs grades soar at uc berkeley as professors see greater ai usage"
            data-desc="the university of california at berkeley discovered the percentage of failing grades in multiple cs classes this spring "is significantly higher than past semesters," reports the campus's student news"
@@ -420,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 32</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 154</span><span class="badge">💬 115</span>
             </div>
             <h3 class="card-title">I design with Claude more than Figma now</h3>
             
@@ -442,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 74</span><span class="badge">💬 17</span>
+              <span class="badge">⬆ 103</span><span class="badge">💬 35</span>
             </div>
             <h3 class="card-title">Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering</h3>
             
@@ -464,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 82</span><span class="badge">💬 14</span>
+              <span class="badge">⬆ 120</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">Public Domain Image Archive</h3>
             
@@ -486,31 +530,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 15</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 38</span><span class="badge">💬 8</span>
             </div>
             <h3 class="card-title">Human-Like Neural Nets by Catapulting</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="meta confirms 1000s of instagram accounts were hacked by abusing its ai chatbot"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-06-06T18:35:27.000Z"
-           data-url="https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/',title:'Meta confirms 1000s of Instagram accounts were hacked by abusing its AI chatbot',source:'Hacker News',date:'2026-06-06T18:35:27.000Z',image:'https://storage.ghost.io/c/ed/a2/eda2c6f7-faef-48b4-9ed4-86a4fa4dca68/content/images/size/w1200/2026/06/meta-ai-chatbot-twis-story-2.jpg',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://storage.ghost.io/c/ed/a2/eda2c6f7-faef-48b4-9ed4-86a4fa4dca68/content/images/size/w1200/2026/06/meta-ai-chatbot-twis-story-2.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 530</span><span class="badge">💬 192</span>
-            </div>
-            <h3 class="card-title">Meta confirms 1000s of Instagram accounts were hacked by abusing its AI chatbot</h3>
             
           </div>
         </a>
@@ -622,7 +644,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 316</span><span class="badge">💬 77</span>
+              <span class="badge">⬆ 346</span><span class="badge">💬 92</span>
             </div>
             <h3 class="card-title">Ntsc-rs – open-source video emulation of analog TV and VHS artifacts</h3>
             
@@ -653,30 +675,8 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">15</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">13</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
-      <div class="card"
-           data-title="slashdot"
-           data-desc=""a dna-editing feat involving editing the genes of early stage embryos was announced this week," reports the wall street journal. they describe the feat as "a far cry from designer babies, but neverth"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-06-07T04:41:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-07T04:41:00+00:00',image:'',description:'"A DNA-editing feat involving editing the genes of early stage embryos was announced this week," reports the Wall Street Journal. They describe the fe',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Slashdot</h3>
-            <p class="card-desc">"A DNA-editing feat involving editing the genes of early stage embryos was announced this week," reports the Wall Street Journal. They describe the fe…</p>
-          </div>
-        </a>
-      </div>
       <div class="card"
            data-title="hospital ordered to pay $13m over 2022 death of star trek's nichelle nichols"
            data-desc="the root reports: a new mexico jury has found the gila regional medical center negligent in the death of nichelle nichols, who famously played lieutenant nyota uhura on the hit television series "star"
@@ -788,28 +788,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="valve p2p networking broken for more than 2 months"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-07T03:21:52.000Z"
-           data-url="https://github.com/ValveSoftware/GameNetworkingSockets/issues/398">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/ValveSoftware/GameNetworkingSockets/issues/398',title:'Valve P2P networking broken for more than 2 months',source:'Hacker News',date:'2026-06-07T03:21:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/ValveSoftware/GameNetworkingSockets/issues/398" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 97</span><span class="badge">💬 43</span>
-            </div>
-            <h3 class="card-title">Valve P2P networking broken for more than 2 months</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="the 29th international obfuscated c code contest (ioccc) 2025 winners"
            data-desc=""
            data-source="hacker news"
@@ -824,9 +802,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 13</span>
+              <span class="badge">⬆ 151</span><span class="badge">💬 35</span>
             </div>
             <h3 class="card-title">The 29th International Obfuscated C Code Contest (IOCCC) 2025 Winners</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="valve p2p networking broken for more than 2 months"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-07T03:21:52.000Z"
+           data-url="https://github.com/ValveSoftware/GameNetworkingSockets/issues/398">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/ValveSoftware/GameNetworkingSockets/issues/398',title:'Valve P2P networking broken for more than 2 months',source:'Hacker News',date:'2026-06-07T03:21:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/ValveSoftware/GameNetworkingSockets/issues/398" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de jun. de 2026</span>
+              <span class="badge">⬆ 159</span><span class="badge">💬 76</span>
+            </div>
+            <h3 class="card-title">Valve P2P networking broken for more than 2 months</h3>
             
           </div>
         </a>
@@ -846,7 +846,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 57</span><span class="badge">💬 31</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 41</span>
             </div>
             <h3 class="card-title">Field of clones: How horse replicas came to dominate polo</h3>
             
@@ -868,31 +868,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 34</span><span class="badge">💬 23</span>
+              <span class="badge">⬆ 67</span><span class="badge">💬 37</span>
             </div>
             <h3 class="card-title">How Liminalism Became the Defining Aesthetic of Our Time</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: oproxy – inspect and modify network traffic from the browser"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-07T02:11:29.000Z"
-           data-url="https://github.com/sauravrao637/oproxy">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/sauravrao637/oproxy',title:'Show HN: Oproxy – inspect and modify network traffic from the browser',source:'Hacker News',date:'2026-06-07T02:11:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/sauravrao637/oproxy" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de jun. de 2026</span>
-              <span class="badge">⬆ 29</span><span class="badge">💬 3</span>
-            </div>
-            <h3 class="card-title">Show HN: Oproxy – inspect and modify network traffic from the browser</h3>
             
           </div>
         </a>
@@ -912,9 +890,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 283</span><span class="badge">💬 285</span>
+              <span class="badge">⬆ 300</span><span class="badge">💬 292</span>
             </div>
             <h3 class="card-title">Moving beyond fork() + exec()</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: oproxy – inspect and modify network traffic from the browser"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-07T02:11:29.000Z"
+           data-url="https://github.com/sauravrao637/oproxy">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/sauravrao637/oproxy',title:'Show HN: Oproxy – inspect and modify network traffic from the browser',source:'Hacker News',date:'2026-06-07T02:11:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/sauravrao637/oproxy" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de jun. de 2026</span>
+              <span class="badge">⬆ 47</span><span class="badge">💬 6</span>
+            </div>
+            <h3 class="card-title">Show HN: Oproxy – inspect and modify network traffic from the browser</h3>
             
           </div>
         </a>
@@ -934,31 +934,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 262</span><span class="badge">💬 453</span>
+              <span class="badge">⬆ 282</span><span class="badge">💬 474</span>
             </div>
             <h3 class="card-title">Nvidia is proposing a beast of a CPU system for Windows PCs</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="zeroserve: a zero-config web server you can script with ebpf"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-06T14:59:43.000Z"
-           data-url="https://su3.io/posts/introducing-zeroserve">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://su3.io/posts/introducing-zeroserve',title:'Zeroserve: A zero-config web server you can script with eBPF',source:'Hacker News',date:'2026-06-06T14:59:43.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://su3.io/posts/introducing-zeroserve" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">06 de jun. de 2026</span>
-              <span class="badge">⬆ 216</span><span class="badge">💬 54</span>
-            </div>
-            <h3 class="card-title">Zeroserve: A zero-config web server you can script with eBPF</h3>
             
           </div>
         </a>
