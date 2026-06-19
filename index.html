@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 19/06/2026, 16:50:30
+      Atualizado: 19/06/2026, 18:09:20
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">71</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">53</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">18</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">74</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">56</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">17</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,18 +249,18 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">53</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">56</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
-           data-title="slashdot"
-           data-desc="an anonymous reader quotes a report from wired: a report from canada's transportation safety board has highlighted regulatory failures that allowed oceangate's unregistered, unflagged, and uncertified"
+           data-title="hyundai takes full control of boston dynamics as softbank exits for $325 million"
+           data-desc="hyundai motor group is acquiring softbank's remaining 9.65% stake in boston dynamics for $325 million, "closing out softbank's last piece of boston dynamics and turning the waltham, massachusetts robo"
            data-source="slashdot"
            data-cat="IA"
-           data-date="2026-06-19T19:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-19T19:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Wired: A report from Canada\'s Transportation Safety Board has highlighted regulatory failures that allowed Oc',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-date="2026-06-19T20:00:00+00:00"
+           data-url="https://hardware.slashdot.org/story/26/06/19/198218/hyundai-takes-full-control-of-boston-dynamics-as-softbank-exits-for-325-million?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/06/19/198218/hyundai-takes-full-control-of-boston-dynamics-as-softbank-exits-for-325-million?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Hyundai Takes Full Control of Boston Dynamics As SoftBank Exits For $325 Million',source:'slashdot',date:'2026-06-19T20:00:00+00:00',image:'https://a.fsdn.com/sd/topics/robot_64.png',description:'Hyundai Motor Group is acquiring SoftBank\'s remaining 9.65% stake in Boston Dynamics for $325 million, "closing out SoftBank\'s last piece of Boston Dy',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/06/19/198218/hyundai-takes-full-control-of-boston-dynamics-as-softbank-exits-for-325-million?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/robot_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +268,29 @@
               <span class="date">19 de jun. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Hyundai Takes Full Control of Boston Dynamics As SoftBank Exits For $325 Million</h3>
+            <p class="card-desc">Hyundai Motor Group is acquiring SoftBank's remaining 9.65% stake in Boston Dynamics for $325 million, "closing out SoftBank's last piece of Boston Dy…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="canada missed chances to inspect oceangate's titan before fatal implosion"
+           data-desc="an anonymous reader quotes a report from wired: a report from canada's transportation safety board has highlighted regulatory failures that allowed oceangate's unregistered, unflagged, and uncertified"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-19T19:00:00+00:00"
+           data-url="https://news.slashdot.org/story/26/06/19/1743202/canada-missed-chances-to-inspect-oceangates-titan-before-fatal-implosion?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/06/19/1743202/canada-missed-chances-to-inspect-oceangates-titan-before-fatal-implosion?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Canada Missed Chances To Inspect OceanGate\'s Titan Before Fatal Implosion',source:'slashdot',date:'2026-06-19T19:00:00+00:00',image:'https://a.fsdn.com/sd/topics/canada_64.png',description:'An anonymous reader quotes a report from Wired: A report from Canada\'s Transportation Safety Board has highlighted regulatory failures that allowed Oc',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://news.slashdot.org/story/26/06/19/1743202/canada-missed-chances-to-inspect-oceangates-titan-before-fatal-implosion?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/canada_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">19 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Canada Missed Chances To Inspect OceanGate's Titan Before Fatal Implosion</h3>
             <p class="card-desc">An anonymous reader quotes a report from Wired: A report from Canada's Transportation Safety Board has highlighted regulatory failures that allowed Oc…</p>
           </div>
         </a>
@@ -442,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 325</span><span class="badge">💬 157</span>
+              <span class="badge">⬆ 452</span><span class="badge">💬 226</span>
             </div>
             <h3 class="card-title">Hyundai buys Boston Dynamics</h3>
             
@@ -464,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 486</span><span class="badge">💬 280</span>
+              <span class="badge">⬆ 506</span><span class="badge">💬 299</span>
             </div>
             <h3 class="card-title">Project Valhalla, Explained: How a Decade of Work Arrives in JDK 28</h3>
             
@@ -486,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 112</span><span class="badge">💬 54</span>
+              <span class="badge">⬆ 161</span><span class="badge">💬 87</span>
             </div>
             <h3 class="card-title">A new bill takes aim at government pressure to silence lawful online speech</h3>
             
@@ -494,24 +516,68 @@
         </a>
       </div>
       <div class="card"
-           data-title="is ai ruining our skills? early results are in – and they're not good"
+           data-title="john jumper to join anthropic"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-06-19T18:00:48.000Z"
-           data-url="https://www.nature.com/articles/d41586-026-01947-1">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nature.com/articles/d41586-026-01947-1',title:'Is AI ruining our skills? Early results are in – and they\'re not good',source:'Hacker News',date:'2026-06-19T18:00:48.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.nature.com/articles/d41586-026-01947-1" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-06-19T17:53:00.000Z"
+           data-url="https://twitter.com/JohnJumperSci/status/2068001285173834106">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/JohnJumperSci/status/2068001285173834106',title:'John Jumper to join Anthropic',source:'Hacker News',date:'2026-06-19T17:53:00.000Z',image:'https://pbs.twimg.com/profile_images/1920152152657342464/4Cv3m4qx_200x200.jpg',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://twitter.com/JohnJumperSci/status/2068001285173834106" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://pbs.twimg.com/profile_images/1920152152657342464/4Cv3m4qx_200x200.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">19 de jun. de 2026</span>
+              <span class="badge">⬆ 41</span><span class="badge">💬 30</span>
+            </div>
+            <h3 class="card-title">John Jumper to join Anthropic</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="amazon drops sam altman movie after announcing openai partnership"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-06-19T20:03:16.000Z"
+           data-url="https://www.the-independent.com/arts-entertainment/films/news/sam-altman-biopic-amazon-openai-deal-b2999321.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.the-independent.com/arts-entertainment/films/news/sam-altman-biopic-amazon-openai-deal-b2999321.html',title:'Amazon drops Sam Altman movie after announcing OpenAI partnership',source:'Hacker News',date:'2026-06-19T20:03:16.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.the-independent.com/arts-entertainment/films/news/sam-altman-biopic-amazon-openai-deal-b2999321.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 134</span><span class="badge">💬 143</span>
+              <span class="badge">⬆ 91</span><span class="badge">💬 22</span>
             </div>
-            <h3 class="card-title">Is AI ruining our skills? Early results are in – and they're not good</h3>
+            <h3 class="card-title">Amazon drops Sam Altman movie after announcing OpenAI partnership</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="companies rein in ai usage as costs strain budgets"
+           data-desc="https:&#x2f;&#x2f;archive.ph&#x2f;z24oe"
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-06-19T19:57:18.000Z"
+           data-url="https://www.ft.com/content/1d37cc08-e0aa-45a4-a45d-4ad282529314">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.ft.com/content/1d37cc08-e0aa-45a4-a45d-4ad282529314',title:'Companies rein in AI usage as costs strain budgets',source:'Hacker News',date:'2026-06-19T19:57:18.000Z',image:'',description:'https:&#x2F;&#x2F;archive.ph&#x2F;z24oE',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.ft.com/content/1d37cc08-e0aa-45a4-a45d-4ad282529314" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">19 de jun. de 2026</span>
+              <span class="badge">⬆ 29</span><span class="badge">💬 10</span>
+            </div>
+            <h3 class="card-title">Companies rein in AI usage as costs strain budgets</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;archive.ph&#x2F;z24oE</p>
           </div>
         </a>
       </div>
@@ -1418,8 +1484,34 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="video game composer and sound designer bobby prince has died at age 81 following an illness. developer id software shared the news. engadget reports: prince was perhaps best known for his pioneering w"
+           data-source="slashdot"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-06-19T21:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-19T21:00:00+00:00',image:'',description:'Video game composer and sound designer Bobby Prince has died at age 81 following an illness. Developer id software shared the news. Engadget reports: ',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">19 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Video game composer and sound designer Bobby Prince has died at age 81 following an illness. Developer id software shared the news. Engadget reports: …</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">18</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">17</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="new unpatchable exploit targets apple devices with a12 and a13 chips"
@@ -1532,79 +1624,13 @@
         </a>
       </div>
       <div class="card"
-           data-title="android 17 drops for pixel phones and watch"
-           data-desc="google has begun rolling out android 17, the june pixel feature drop, and wear os 7 simultaneously across supported pixel phones and watches. highlights include floating app bubbles, improved foldable"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-06-18T18:00:00+00:00"
-           data-url="https://mobile.slashdot.org/story/26/06/18/1733258/android-17-drops-for-pixel-phones-and-watch?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://mobile.slashdot.org/story/26/06/18/1733258/android-17-drops-for-pixel-phones-and-watch?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Android 17 Drops For Pixel Phones and Watch',source:'slashdot',date:'2026-06-18T18:00:00+00:00',image:'https://a.fsdn.com/sd/topics/android_64.png',description:'Google has begun rolling out Android 17, the June Pixel Feature Drop, and Wear OS 7 simultaneously across supported Pixel phones and watches. Highligh',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://mobile.slashdot.org/story/26/06/18/1733258/android-17-drops-for-pixel-phones-and-watch?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/android_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">18 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Android 17 Drops For Pixel Phones and Watch</h3>
-            <p class="card-desc">Google has begun rolling out Android 17, the June Pixel Feature Drop, and Wear OS 7 simultaneously across supported Pixel phones and watches. Highligh…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="google told researcher 'nice catch!' then denied bug bounty for flaw it still hasn't fixed"
-           data-desc="security researcher justin o'leary says google initially accepted his config connector privilege-escalation report as a high-priority, high-severity bug, then denied a bounty by declaring the behavior"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-06-18T17:00:00+00:00"
-           data-url="https://it.slashdot.org/story/26/06/18/1656252/google-told-researcher-nice-catch-then-denied-bug-bounty-for-flaw-it-still-hasnt-fixed?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://it.slashdot.org/story/26/06/18/1656252/google-told-researcher-nice-catch-then-denied-bug-bounty-for-flaw-it-still-hasnt-fixed?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Google Told Researcher \'Nice Catch!\' Then Denied Bug Bounty For Flaw It Still Hasn\'t Fixed',source:'slashdot',date:'2026-06-18T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/bug_64.png',description:'Security researcher Justin O\'Leary says Google initially accepted his Config Connector privilege-escalation report as a high-priority, high-severity b',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://it.slashdot.org/story/26/06/18/1656252/google-told-researcher-nice-catch-then-denied-bug-bounty-for-flaw-it-still-hasnt-fixed?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/bug_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">18 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Google Told Researcher 'Nice Catch!' Then Denied Bug Bounty For Flaw It Still Hasn't Fixed</h3>
-            <p class="card-desc">Security researcher Justin O'Leary says Google initially accepted his Config Connector privilege-escalation report as a high-priority, high-severity b…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="amateur may have cracked linear a, a 120-year-old puzzle"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-19T16:04:42.000Z"
-           data-url="https://aiclambake.com/clamtakes/linear-a/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://aiclambake.com/clamtakes/linear-a/',title:'Amateur may have cracked Linear A, a 120-year-old puzzle',source:'Hacker News',date:'2026-06-19T16:04:42.000Z',image:'https://aiclambake.com/images/og-default.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://aiclambake.com/clamtakes/linear-a/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://aiclambake.com/images/og-default.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 242</span><span class="badge">💬 105</span>
-            </div>
-            <h3 class="card-title">Amateur may have cracked Linear A, a 120-year-old puzzle</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="there are no instances in atproto"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
            data-date="2026-06-19T15:10:02.000Z"
            data-url="https://overreacted.io/there-are-no-instances-in-atproto/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://overreacted.io/there-are-no-instances-in-atproto/',title:'There Are No Instances in ATProto',source:'Hacker News',date:'2026-06-19T15:10:02.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://overreacted.io/there-are-no-instances-in-atproto/',title:'There are no instances in ATProto',source:'Hacker News',date:'2026-06-19T15:10:02.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://overreacted.io/there-are-no-instances-in-atproto/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -1612,9 +1638,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 193</span><span class="badge">💬 124</span>
+              <span class="badge">⬆ 234</span><span class="badge">💬 145</span>
             </div>
-            <h3 class="card-title">There Are No Instances in ATProto</h3>
+            <h3 class="card-title">There are no instances in ATProto</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="how many of the 170k english words do you know?"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-19T13:51:36.000Z"
+           data-url="https://vocabowl-870366514258.us-west1.run.app/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vocabowl-870366514258.us-west1.run.app/',title:'How many of the 170k English words do you know?',source:'Hacker News',date:'2026-06-19T13:51:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://vocabowl-870366514258.us-west1.run.app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">19 de jun. de 2026</span>
+              <span class="badge">⬆ 127</span><span class="badge">💬 221</span>
+            </div>
+            <h3 class="card-title">How many of the 170k English words do you know?</h3>
             
           </div>
         </a>
@@ -1634,31 +1682,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 221</span><span class="badge">💬 75</span>
+              <span class="badge">⬆ 288</span><span class="badge">💬 102</span>
             </div>
             <h3 class="card-title">Google workspace threatening to block Firefox access</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="i found 10k github repositories distributing trojan malware"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-18T11:45:43.000Z"
-           data-url="https://orchidfiles.com/github-repositories-distributing-malware/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://orchidfiles.com/github-repositories-distributing-malware/',title:'I found 10k GitHub repositories distributing Trojan malware',source:'Hacker News',date:'2026-06-18T11:45:43.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://orchidfiles.com/github-repositories-distributing-malware/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de jun. de 2026</span>
-              <span class="badge">⬆ 914</span><span class="badge">💬 239</span>
-            </div>
-            <h3 class="card-title">I found 10k GitHub repositories distributing Trojan malware</h3>
             
           </div>
         </a>
@@ -1678,10 +1704,76 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">19 de jun. de 2026</span>
-              <span class="badge">⬆ 32</span><span class="badge">💬 18</span>
+              <span class="badge">⬆ 83</span><span class="badge">💬 44</span>
             </div>
             <h3 class="card-title">Giant Banana Pulled over in Montana Driver Says Cops Have Stopped Him 100s Times</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="amateur may have cracked linear a"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-19T16:04:42.000Z"
+           data-url="https://aiclambake.com/clamtakes/linear-a/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://aiclambake.com/clamtakes/linear-a/',title:'Amateur may have cracked Linear A',source:'Hacker News',date:'2026-06-19T16:04:42.000Z',image:'https://aiclambake.com/images/og-default.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://aiclambake.com/clamtakes/linear-a/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://aiclambake.com/images/og-default.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">19 de jun. de 2026</span>
+              <span class="badge">⬆ 342</span><span class="badge">💬 131</span>
+            </div>
+            <h3 class="card-title">Amateur may have cracked Linear A</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="court records should be free"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-19T17:34:18.000Z"
+           data-url="https://www.eff.org/deeplinks/2026/06/court-records-should-be-free">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.eff.org/deeplinks/2026/06/court-records-should-be-free',title:'Court Records Should Be Free',source:'Hacker News',date:'2026-06-19T17:34:18.000Z',image:'https://www.eff.org/files/banner_library/supreme-court-3b.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.eff.org/deeplinks/2026/06/court-records-should-be-free" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.eff.org/files/banner_library/supreme-court-3b.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">19 de jun. de 2026</span>
+              <span class="badge">⬆ 78</span><span class="badge">💬 13</span>
+            </div>
+            <h3 class="card-title">Court Records Should Be Free</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="aura&#8217;s impressive e-ink photo frame doesn&#8217;t even look digital"
+           data-desc="what s the most cliche possible gift you can give a relative? a digital photo frame, displaying a rotating slideshow of family photos. now aura has completely refreshed this product space with its gor"
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Fri, 19 Jun 2026 21:00:34 +0000"
+           data-url="https://techcrunch.com/2026/06/19/auras-impressive-e-ink-photo-frame-doesnt-even-look-digital/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/19/auras-impressive-e-ink-photo-frame-doesnt-even-look-digital/',title:'Aura&#8217;s impressive e-ink photo frame doesn&#8217;t even look digital',source:'techcrunch',date:'Fri, 19 Jun 2026 21:00:34 +0000',image:'',description:'What s the most cliche possible gift you can give a relative? A digital photo frame, displaying a rotating slideshow of family photos. Now Aura has co',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/19/auras-impressive-e-ink-photo-frame-doesnt-even-look-digital/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">19 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Aura&#8217;s impressive e-ink photo frame doesn&#8217;t even look digital</h3>
+            <p class="card-desc">What s the most cliche possible gift you can give a relative? A digital photo frame, displaying a rotating slideshow of family photos. Now Aura has co…</p>
           </div>
         </a>
       </div>
@@ -1748,28 +1840,6 @@
             </div>
             <h3 class="card-title">Texas government data breach allowed hackers to steal 3 million driver&#8217;s licenses and passports</h3>
             <p class="card-desc">A data breach involving government-issued ID documents affects over 3 million people in Texas.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="apple opens up app store to new competition in brazil"
-           data-desc="apple’s grip on iphone app distribution is loosening in another major market: brazil."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Thu, 18 Jun 2026 15:48:08 +0000"
-           data-url="https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/',title:'Apple opens up App Store to new competition in Brazil',source:'techcrunch',date:'Thu, 18 Jun 2026 15:48:08 +0000',image:'',description:'Apple’s grip on iPhone app distribution is loosening in another major market: Brazil.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">18 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Apple opens up App Store to new competition in Brazil</h3>
-            <p class="card-desc">Apple’s grip on iPhone app distribution is loosening in another major market: Brazil.</p>
           </div>
         </a>
       </div>
