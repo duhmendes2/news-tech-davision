@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 25/06/2026, 13:22:43
+      Atualizado: 25/06/2026, 15:32:02
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">83</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">54</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">28</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">79</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">53</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">24</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,52 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">54</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">53</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from ars technica: anthropic has accused the chinese firm alibaba of launching the largest attack yet attempting to clone claude, as china races to match the capabi"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-25T18:12:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-25T18:12:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: Anthropic has accused the Chinese firm Alibaba of launching the largest attack yet attempting t',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">25 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from Ars Technica: Anthropic has accused the Chinese firm Alibaba of launching the largest attack yet attempting t…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ford rehires 350 engineers after ai fails to preserve expertise or train juniors"
+           data-desc="after ford's automated quality-control systems and ai tools fell short, the automaker hired 350 veteran engineers over the past three years to mentor younger staff and reprogram the underperforming te"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-25T17:00:00+00:00"
+           data-url="https://slashdot.org/story/26/06/25/1624241/ford-rehires-350-engineers-after-ai-fails-to-preserve-expertise-or-train-juniors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/06/25/1624241/ford-rehires-350-engineers-after-ai-fails-to-preserve-expertise-or-train-juniors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Ford Rehires 350 Engineers After AI Fails To Preserve Expertise or Train Juniors',source:'slashdot',date:'2026-06-25T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'After Ford\'s automated quality-control systems and AI tools fell short, the automaker hired 350 veteran engineers over the past three years to mentor ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/story/26/06/25/1624241/ford-rehires-350-engineers-after-ai-fails-to-preserve-expertise-or-train-juniors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">25 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Ford Rehires 350 Engineers After AI Fails To Preserve Expertise or Train Juniors</h3>
+            <p class="card-desc">After Ford's automated quality-control systems and AI tools fell short, the automaker hired 350 veteran engineers over the past three years to mentor …</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="google starts lowering play store fees, making good on epic games settlement"
            data-desc="an anonymous reader quotes a report from ars technica: google spent the last few years locked in a legal grudge match with epic games, which claimed that google's stewardship of the play store was ant"
@@ -412,9 +456,9 @@
            data-cat="IA"
            data-date="2026-06-24T17:00:00+00:00"
            data-url="https://developers.slashdot.org/story/26/06/24/1644216/boffin-claims-microsofts-quantum-leap-is-invalid-due-to-basic-python-errors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developers.slashdot.org/story/26/06/24/1644216/boffin-claims-microsofts-quantum-leap-is-invalid-due-to-basic-python-errors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Boffin Claims Microsoft\'s \'Quantum Leap\' Is Invalid Due To \'Basic Python Errors\'',source:'slashdot',date:'2026-06-24T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/python_64.png',description:'A peer-reviewed Nature critique argues that Microsoft\'s 2025 Majorana quantum-computing breakthrough -- and its claim that it could enable "a truly me',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developers.slashdot.org/story/26/06/24/1644216/boffin-claims-microsofts-quantum-leap-is-invalid-due-to-basic-python-errors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Boffin Claims Microsoft\'s \'Quantum Leap\' Is Invalid Due To \'Basic Python Errors\'',source:'slashdot',date:'2026-06-24T17:00:00+00:00',image:'',description:'A peer-reviewed Nature critique argues that Microsoft\'s 2025 Majorana quantum-computing breakthrough -- and its claim that it could enable "a truly me',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://developers.slashdot.org/story/26/06/24/1644216/boffin-claims-microsofts-quantum-leap-is-invalid-due-to-basic-python-errors?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/python_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -428,46 +472,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="mushroom behind 'tiny human' visions lacks genes for known psychedelics"
-           data-desc="alternative_right shares a report from sciencealert: if you consumed a wild mushroom and suddenly started seeing tiny people around you, you might reasonably assume it contained a familiar psychedelic"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-06-24T11:00:00+00:00"
-           data-url="https://science.slashdot.org/story/26/06/24/0624256/mushroom-behind-tiny-human-visions-lacks-genes-for-known-psychedelics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/06/24/0624256/mushroom-behind-tiny-human-visions-lacks-genes-for-known-psychedelics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Mushroom Behind \'Tiny Human\' Visions Lacks Genes For Known Psychedelics',source:'slashdot',date:'2026-06-24T11:00:00+00:00',image:'',description:'alternative_right shares a report from ScienceAlert: If you consumed a wild mushroom and suddenly started seeing tiny people around you, you might rea',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://science.slashdot.org/story/26/06/24/0624256/mushroom-behind-tiny-human-visions-lacks-genes-for-known-psychedelics?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">24 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Mushroom Behind 'Tiny Human' Visions Lacks Genes For Known Psychedelics</h3>
-            <p class="card-desc">alternative_right shares a report from ScienceAlert: If you consumed a wild mushroom and suddenly started seeing tiny people around you, you might rea…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ford rehires 350 engineers after ai fails to preserve expertise or train juniors"
-           data-desc=""
+           data-title="apple raises prices of macbooks, ipads"
+           data-desc="https:&#x2f;&#x2f;9to5mac.com&#x2f;2026&#x2f;06&#x2f;25&#x2f;apple-price-increases-mac-ipa..."
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-06-25T14:58:50.000Z"
-           data-url="https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short',title:'Ford rehires 350 engineers after AI fails to preserve expertise or train juniors',source:'Hacker News',date:'2026-06-25T14:58:50.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-06-25/ford-has-been-rehiring-quality-inspectors-after-ai-fell-short" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-06-25T13:02:56.000Z"
+           data-url="https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/',title:'Apple raises prices of MacBooks, iPads',source:'Hacker News',date:'2026-06-25T13:02:56.000Z',image:'',description:'https:&#x2F;&#x2F;9to5mac.com&#x2F;2026&#x2F;06&#x2F;25&#x2F;apple-price-increases-mac-ipa...',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.reuters.com/world/asia-pacific/apple-raises-prices-macbooks-ipads-memory-costs-skyrocket-2026-06-25/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 278</span><span class="badge">💬 134</span>
+              <span class="badge">⬆ 338</span><span class="badge">💬 547</span>
             </div>
-            <h3 class="card-title">Ford rehires 350 engineers after AI fails to preserve expertise or train juniors</h3>
-            
+            <h3 class="card-title">Apple raises prices of MacBooks, iPads</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;9to5mac.com&#x2F;2026&#x2F;06&#x2F;25&#x2F;apple-price-increases-mac-ipa...</p>
           </div>
         </a>
       </div>
@@ -486,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 664</span><span class="badge">💬 1087</span>
+              <span class="badge">⬆ 715</span><span class="badge">💬 1157</span>
             </div>
             <h3 class="card-title">Anthropic says Alibaba illicitly extracted Claude AI model capabilities</h3>
             
@@ -494,58 +516,14 @@
         </a>
       </div>
       <div class="card"
-           data-title="openai unveils its first custom chip, built by broadcom"
-           data-desc="announcement: https:&#x2f;&#x2f;openai.com&#x2f;index&#x2f;openai-broadcom-jalapeno-inference-...https:&#x2f;&#x2f;decrypt.co&#x2f;371971&#x2f;openai-broadcom-jalapeno-first-cus...https:&#x2f;&#x2f;ww"
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-06-24T17:47:00.000Z"
-           data-url="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/',title:'OpenAI unveils its first custom chip, built by Broadcom',source:'Hacker News',date:'2026-06-24T17:47:00.000Z',image:'',description:'Announcement: https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;openai-broadcom-jalapeno-inference-...https:&#x2F;&#x2F;decrypt.co&#x2F;371971&#x2F;openai-',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 777</span><span class="badge">💬 447</span>
-            </div>
-            <h3 class="card-title">OpenAI unveils its first custom chip, built by Broadcom</h3>
-            <p class="card-desc">Announcement: https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;openai-broadcom-jalapeno-inference-...https:&#x2F;&#x2F;decrypt.co&#x2F;371971&#x2F;openai-…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="wikipedia workers in britain set global first by seeking union recognition"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-06-25T07:02:37.000Z"
-           data-url="https://utaw.tech/news/wikipedia-recognition">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://utaw.tech/news/wikipedia-recognition',title:'Wikipedia Workers in Britain set global first by seeking union recognition',source:'Hacker News',date:'2026-06-25T07:02:37.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://utaw.tech/news/wikipedia-recognition" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 185</span><span class="badge">💬 171</span>
-            </div>
-            <h3 class="card-title">Wikipedia Workers in Britain set global first by seeking union recognition</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="from fortnite to robots: general intuition raises $2.3b on bet that video games can train ai agents for the real world"
-           data-desc="general intuition has raised $320 million to scale ai trained on millions of hours of gameplay, betting action data can help ai develop something closer to human intuition."
+           data-title="anthropic&#8217;s claude is winning over paid consumers, a market owned by chatgpt"
+           data-desc="despite chatgpt's commanding market lead, consumers who pay for ai have been increasingly choosing anthropic's claude, data shows."
            data-source="techcrunch"
            data-cat="IA"
-           data-date="Thu, 25 Jun 2026 16:00:00 +0000"
-           data-url="https://techcrunch.com/2026/06/25/from-fortnite-to-robots-general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/from-fortnite-to-robots-general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/',title:'From Fortnite to robots: General Intuition raises $2.3B on bet that video games can train AI agents for the real world',source:'techcrunch',date:'Thu, 25 Jun 2026 16:00:00 +0000',image:'',description:'General Intuition has raised $320 million to scale AI trained on millions of hours of gameplay, betting action data can help AI develop something clos',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/25/from-fortnite-to-robots-general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Thu, 25 Jun 2026 17:38:27 +0000"
+           data-url="https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/',title:'Anthropic&#8217;s Claude is winning over paid consumers, a market owned by ChatGPT',source:'techcrunch',date:'Thu, 25 Jun 2026 17:38:27 +0000',image:'',description:'Despite ChatGPT\'s commanding market lead, consumers who pay for AI have been increasingly choosing Anthropic\'s Claude, data shows.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
@@ -554,19 +532,63 @@
               <span class="date">25 de jun. de 2026</span>
               
             </div>
-            <h3 class="card-title">From Fortnite to robots: General Intuition raises $2.3B on bet that video games can train AI agents for the real world</h3>
+            <h3 class="card-title">Anthropic&#8217;s Claude is winning over paid consumers, a market owned by ChatGPT</h3>
+            <p class="card-desc">Despite ChatGPT's commanding market lead, consumers who pay for AI have been increasingly choosing Anthropic's Claude, data shows.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="general intuition&#8217;s $2.3b bet that video games can train ai agents for the real world"
+           data-desc="general intuition has raised $320 million to scale ai trained on millions of hours of gameplay, betting action data can help ai develop something closer to human intuition."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Thu, 25 Jun 2026 16:55:00 +0000"
+           data-url="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/',title:'General Intuition&#8217;s $2.3B bet that video games can train AI agents for the real world',source:'techcrunch',date:'Thu, 25 Jun 2026 16:55:00 +0000',image:'',description:'General Intuition has raised $320 million to scale AI trained on millions of hours of gameplay, betting action data can help AI develop something clos',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">25 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">General Intuition&#8217;s $2.3B bet that video games can train AI agents for the real world</h3>
             <p class="card-desc">General Intuition has raised $320 million to scale AI trained on millions of hours of gameplay, betting action data can help AI develop something clos…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="parker conrad knows which employees are worth their ai spend and says rippling can help you, too"
+           data-title="databricks’ former ai chief thinks he can cut ai’s power bill by 1,000x"
+           data-desc="un-0 is an image-generation system tool that shows for the first time how the company's technology can replicate conventional ai systems."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Thu, 25 Jun 2026 16:48:11 +0000"
+           data-url="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/',title:'Databricks’ former AI chief thinks he can cut AI’s power bill by 1,000x',source:'techcrunch',date:'Thu, 25 Jun 2026 16:48:11 +0000',image:'',description:'Un-0 is an image-generation system tool that shows for the first time how the company\'s technology can replicate conventional AI systems.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">25 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Databricks’ former AI chief thinks he can cut AI’s power bill by 1,000x</h3>
+            <p class="card-desc">Un-0 is an image-generation system tool that shows for the first time how the company's technology can replicate conventional AI systems.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="rippling now wants to be your entire data stack"
            data-desc=""there were employees doing things like, 'claude is so helpful for me — it analyzes my calendar and my email and puts together a plan for me,'" he says. "that person was spending at a run rate of $30,"
            data-source="techcrunch"
            data-cat="IA"
            data-date="Thu, 25 Jun 2026 16:00:00 +0000"
            data-url="https://techcrunch.com/2026/06/25/parker-conrad-knows-which-employees-are-worth-their-ai-spend-and-says-rippling-can-help-you-too/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/parker-conrad-knows-which-employees-are-worth-their-ai-spend-and-says-rippling-can-help-you-too/',title:'Parker Conrad knows which employees are worth their AI spend and says Rippling can help you, too',source:'techcrunch',date:'Thu, 25 Jun 2026 16:00:00 +0000',image:'',description:'"There were employees doing things like, \'Claude is so helpful for me — it analyzes my calendar and my email and puts together a plan for me,\'" he say',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/parker-conrad-knows-which-employees-are-worth-their-ai-spend-and-says-rippling-can-help-you-too/',title:'Rippling now wants to be your entire data stack',source:'techcrunch',date:'Thu, 25 Jun 2026 16:00:00 +0000',image:'',description:'"There were employees doing things like, \'Claude is so helpful for me — it analyzes my calendar and my email and puts together a plan for me,\'" he say',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/06/25/parker-conrad-knows-which-employees-are-worth-their-ai-spend-and-says-rippling-can-help-you-too/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
@@ -576,7 +598,7 @@
               <span class="date">25 de jun. de 2026</span>
               
             </div>
-            <h3 class="card-title">Parker Conrad knows which employees are worth their AI spend and says Rippling can help you, too</h3>
+            <h3 class="card-title">Rippling now wants to be your entire data stack</h3>
             <p class="card-desc">"There were employees doing things like, 'Claude is so helpful for me — it analyzes my calendar and my email and puts together a plan for me,'" he say…</p>
           </div>
         </a>
@@ -798,50 +820,6 @@
             </div>
             <h3 class="card-title">AI was supposed to kill engineering jobs, but new data suggests they&#8217;re the most resilient</h3>
             <p class="card-desc">While AI dominates the layoff narrative, engineers are actually making up a larger share of new hires, according to SignalFire data.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ai researchers continue to leave google for its rivals"
-           data-desc="top ai researchers jonas adler and alexander pritzel are leaving google for anthropic, following departures from top scientists noam shazeer and john jumper."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 24 Jun 2026 21:42:07 +0000"
-           data-url="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/',title:'AI researchers continue to leave Google for its rivals',source:'techcrunch',date:'Wed, 24 Jun 2026 21:42:07 +0000',image:'',description:'Top AI researchers Jonas Adler and Alexander Pritzel are leaving Google for Anthropic, following departures from top scientists Noam Shazeer and John ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">24 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">AI researchers continue to leave Google for its rivals</h3>
-            <p class="card-desc">Top AI researchers Jonas Adler and Alexander Pritzel are leaving Google for Anthropic, following departures from top scientists Noam Shazeer and John …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="companies are scrambling to stop employees from maxing out ai budgets with small tasks"
-           data-desc="the tokenmaxxing era was brief. we now appear to be entering the era of token rationing."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 24 Jun 2026 20:09:45 +0000"
-           data-url="https://techcrunch.com/2026/06/24/companies-are-scrambling-to-stop-employees-from-maxing-out-ai-budgets-with-small-tasks/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/24/companies-are-scrambling-to-stop-employees-from-maxing-out-ai-budgets-with-small-tasks/',title:'Companies are scrambling to stop employees from maxing out AI budgets with small tasks',source:'techcrunch',date:'Wed, 24 Jun 2026 20:09:45 +0000',image:'',description:'The tokenmaxxing era was brief. We now appear to be entering the era of token rationing.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/24/companies-are-scrambling-to-stop-employees-from-maxing-out-ai-budgets-with-small-tasks/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">24 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Companies are scrambling to stop employees from maxing out AI budgets with small tasks</h3>
-            <p class="card-desc">The tokenmaxxing era was brief. We now appear to be entering the era of token rationing.</p>
           </div>
         </a>
       </div>
@@ -1445,12 +1423,12 @@
       <div class="cards-grid" id="grid-robtica">
       <div class="card"
            data-title="2 days left to save up to $190: join 1,000+ founders and investors at techcrunch founder summit"
-           data-desc="2 days left to lock in your spot at techcrunch founder summit 2026 and save up to $190 before early bird rates expire on june 26 at 11:59 p.m. pt. register here."
+           data-desc="two days left to lock in your spot at techcrunch founder summit 2026 and save up to $190 before early bird rates expire on june 26 at 11:59 p.m. pt. register today."
            data-source="techcrunch"
            data-cat="Robótica"
            data-date="Thu, 25 Jun 2026 14:00:00 +0000"
            data-url="https://techcrunch.com/2026/06/25/2-days-left-to-save-up-to-190-join-1000-founders-and-investors-at-techcrunch-founder-summit/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/2-days-left-to-save-up-to-190-join-1000-founders-and-investors-at-techcrunch-founder-summit/',title:'2 days left to save up to $190: Join 1,000+ founders and investors at TechCrunch Founder Summit',source:'techcrunch',date:'Thu, 25 Jun 2026 14:00:00 +0000',image:'',description:'2 days left to lock in your spot at TechCrunch Founder Summit 2026 and save up to $190 before Early Bird rates expire on June 26 at 11:59 p.m. PT. Reg',cat:'Robótica'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/2-days-left-to-save-up-to-190-join-1000-founders-and-investors-at-techcrunch-founder-summit/',title:'2 days left to save up to $190: Join 1,000+ founders and investors at TechCrunch Founder Summit',source:'techcrunch',date:'Thu, 25 Jun 2026 14:00:00 +0000',image:'',description:'Two days left to lock in your spot at TechCrunch Founder Summit 2026 and save up to $190 before Early Bird rates expire on June 26 at 11:59 p.m. PT. R',cat:'Robótica'})">⭐</button>
         <a class="card-link" href="https://techcrunch.com/2026/06/25/2-days-left-to-save-up-to-190-join-1000-founders-and-investors-at-techcrunch-founder-summit/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
@@ -1461,24 +1439,50 @@
               
             </div>
             <h3 class="card-title">2 days left to save up to $190: Join 1,000+ founders and investors at TechCrunch Founder Summit</h3>
-            <p class="card-desc">2 days left to lock in your spot at TechCrunch Founder Summit 2026 and save up to $190 before Early Bird rates expire on June 26 at 11:59 p.m. PT. Reg…</p>
+            <p class="card-desc">Two days left to lock in your spot at TechCrunch Founder Summit 2026 and save up to $190 before Early Bird rates expire on June 26 at 11:59 p.m. PT. R…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="how to get your first customers [video]"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-06-24T18:24:44.000Z"
+           data-url="https://www.ycombinator.com/library/SF-how-to-get-your-first-10-customers">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.ycombinator.com/library/SF-how-to-get-your-first-10-customers',title:'How to get your first customers [video]',source:'Hacker News',date:'2026-06-24T18:24:44.000Z',image:'https://img.youtube.com/vi/_FBivfgOvuE/maxresdefault.jpg',description:'',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://www.ycombinator.com/library/SF-how-to-get-your-first-10-customers" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://img.youtube.com/vi/_FBivfgOvuE/maxresdefault.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de jun. de 2026</span>
+              <span class="badge">⬆ 42</span><span class="badge">💬 12</span>
+            </div>
+            <h3 class="card-title">How to get your first customers [video]</h3>
+            
           </div>
         </a>
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">28</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">24</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="micron locks in historically high memory prices for five years"
            data-desc="micron has signed 16 "strategic customer agreements" (scas) that include a floor price the company says comes with "a very robust gross margin for micron, well above our peak quarterly margins in any "
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-06-25T16:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-25T16:00:00+00:00',image:'',description:'Micron has signed 16 "strategic customer agreements" (SCAs) that include a floor price the company says comes with "a very robust gross margin for Mic',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://hardware.slashdot.org/story/26/06/25/0559247/micron-locks-in-historically-high-memory-prices-for-five-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/06/25/0559247/micron-locks-in-historically-high-memory-prices-for-five-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Micron Locks In Historically High Memory Prices For Five Years',source:'slashdot',date:'2026-06-25T16:00:00+00:00',image:'https://a.fsdn.com/sd/topics/hardware_64.png',description:'Micron has signed 16 "strategic customer agreements" (SCAs) that include a floor price the company says comes with "a very robust gross margin for Mic',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/06/25/0559247/micron-locks-in-historically-high-memory-prices-for-five-years?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/hardware_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1486,7 +1490,7 @@
               <span class="date">25 de jun. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Micron Locks In Historically High Memory Prices For Five Years</h3>
             <p class="card-desc">Micron has signed 16 "strategic customer agreements" (SCAs) that include a floor price the company says comes with "a very robust gross margin for Mic…</p>
           </div>
         </a>
@@ -1580,45 +1584,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="a 25-year-old blog looks back at 40 years of computing"
-           data-desc="ancient slashdot reader mark round writes: longtime reader here (since mid-1999 -- hot grits! oog the caveman! beowulf clusters!), and i can still remember posting back on slashdot's own 5th anniversa"
-           data-source="slashdot"
+           data-title="a herculaneum scroll has been read for the first time"
+           data-desc=""
+           data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-06-24T15:00:00+00:00"
-           data-url="https://hardware.slashdot.org/story/26/06/24/0616251/a-25-year-old-blog-looks-back-at-40-years-of-computing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/06/24/0616251/a-25-year-old-blog-looks-back-at-40-years-of-computing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'A 25-Year-Old Blog Looks Back At 40 Years of Computing',source:'slashdot',date:'2026-06-24T15:00:00+00:00',image:'https://a.fsdn.com/sd/topics/hardware_64.png',description:'Ancient Slashdot reader Mark Round writes: Longtime reader here (since mid-1999 -- Hot Grits! Oog the Caveman! Beowulf clusters!), and I can still rem',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://hardware.slashdot.org/story/26/06/24/0616251/a-25-year-old-blog-looks-back-at-40-years-of-computing?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/hardware_64.png')"></div>
+           data-date="2026-06-25T15:48:07.000Z"
+           data-url="https://scrollprize.org/firstscroll">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://scrollprize.org/firstscroll',title:'A Herculaneum scroll has been read for the first time',source:'Hacker News',date:'2026-06-25T15:48:07.000Z',image:'https://scrollprize.org/img/firstscroll/og.webp',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://scrollprize.org/firstscroll" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://scrollprize.org/img/firstscroll/og.webp')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">24 de jun. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">25 de jun. de 2026</span>
+              <span class="badge">⬆ 226</span><span class="badge">💬 65</span>
             </div>
-            <h3 class="card-title">A 25-Year-Old Blog Looks Back At 40 Years of Computing</h3>
-            <p class="card-desc">Ancient Slashdot reader Mark Round writes: Longtime reader here (since mid-1999 -- Hot Grits! Oog the Caveman! Beowulf clusters!), and I can still rem…</p>
+            <h3 class="card-title">A Herculaneum scroll has been read for the first time</h3>
+            
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="show hn: i made google trends for hacker news by indexing 18 years of comments"
+           data-title="ibm debuts sub-1 nanometer chip technology"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-06-25T14:08:55.000Z"
-           data-url="https://hackernewstrends.com">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hackernewstrends.com',title:'Show HN: I made Google Trends for Hacker News by indexing 18 years of comments',source:'Hacker News',date:'2026-06-25T14:08:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://hackernewstrends.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-06-25T15:33:37.000Z"
+           data-url="https://newsroom.ibm.com/2026-06-25-ibm-debuts-worlds-first-sub-1-nanometer-chip-technology">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://newsroom.ibm.com/2026-06-25-ibm-debuts-worlds-first-sub-1-nanometer-chip-technology',title:'IBM debuts sub-1 nanometer chip technology',source:'Hacker News',date:'2026-06-25T15:33:37.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://newsroom.ibm.com/2026-06-25-ibm-debuts-worlds-first-sub-1-nanometer-chip-technology" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 227</span><span class="badge">💬 62</span>
+              <span class="badge">⬆ 88</span><span class="badge">💬 55</span>
             </div>
-            <h3 class="card-title">Show HN: I made Google Trends for Hacker News by indexing 18 years of comments</h3>
+            <h3 class="card-title">IBM debuts sub-1 nanometer chip technology</h3>
             
           </div>
         </a>
@@ -1630,7 +1634,7 @@
            data-cat="Tecnologia"
            data-date="2026-06-25T14:19:28.000Z"
            data-url="https://ziglang.org/devlog/2026/#2026-06-25">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ziglang.org/devlog/2026/#2026-06-25',title:'Zig\'s New BitCast Semantics and LLVM Back End Improvements',source:'Hacker News',date:'2026-06-25T14:19:28.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ziglang.org/devlog/2026/#2026-06-25',title:'Zig\'s new bitCast semantics and LLVM back end improvements',source:'Hacker News',date:'2026-06-25T14:19:28.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://ziglang.org/devlog/2026/#2026-06-25" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -1638,9 +1642,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 65</span><span class="badge">💬 14</span>
+              <span class="badge">⬆ 142</span><span class="badge">💬 40</span>
             </div>
-            <h3 class="card-title">Zig's New BitCast Semantics and LLVM Back End Improvements</h3>
+            <h3 class="card-title">Zig's new bitCast semantics and LLVM back end improvements</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="os9map"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-25T15:01:06.000Z"
+           data-url="https://yllan.org/software/OS9Map/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yllan.org/software/OS9Map/',title:'OS9Map',source:'Hacker News',date:'2026-06-25T15:01:06.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://yllan.org/software/OS9Map/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">25 de jun. de 2026</span>
+              <span class="badge">⬆ 67</span><span class="badge">💬 7</span>
+            </div>
+            <h3 class="card-title">OS9Map</h3>
             
           </div>
         </a>
@@ -1660,7 +1686,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 150</span><span class="badge">💬 62</span>
+              <span class="badge">⬆ 195</span><span class="badge">💬 79</span>
             </div>
             <h3 class="card-title">You can't unit test for taste</h3>
             
@@ -1668,23 +1694,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="apple increases macbook and ipad prices by 20%"
+           data-title="show hn: i made google trends for hacker news by indexing 18 years of comments"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-06-25T14:37:15.000Z"
-           data-url="https://www.ft.com/content/0f067265-2baf-4b6e-8fb2-ed56daef6f3c">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.ft.com/content/0f067265-2baf-4b6e-8fb2-ed56daef6f3c',title:'Apple increases MacBook and iPad prices by 20%',source:'Hacker News',date:'2026-06-25T14:37:15.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.ft.com/content/0f067265-2baf-4b6e-8fb2-ed56daef6f3c" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-06-25T14:08:55.000Z"
+           data-url="https://hackernewstrends.com">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hackernewstrends.com',title:'Show HN: I made Google Trends for Hacker News by indexing 18 years of comments',source:'Hacker News',date:'2026-06-25T14:08:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hackernewstrends.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 120</span><span class="badge">💬 85</span>
+              <span class="badge">⬆ 461</span><span class="badge">💬 120</span>
             </div>
-            <h3 class="card-title">Apple increases MacBook and iPad prices by 20%</h3>
+            <h3 class="card-title">Show HN: I made Google Trends for Hacker News by indexing 18 years of comments</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="windows 10 quietly gets one more year of support and updates"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-25T15:59:54.000Z"
+           data-url="https://www.neowin.net/news/windows-10-quietly-gets-one-more-year-of-support-and-updates/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.neowin.net/news/windows-10-quietly-gets-one-more-year-of-support-and-updates/',title:'Windows 10 quietly gets one more year of support and updates',source:'Hacker News',date:'2026-06-25T15:59:54.000Z',image:'https://cdn.neowin.com/news/images/uploaded/2025/06/1750766875_windows_10_story.webp',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.neowin.net/news/windows-10-quietly-gets-one-more-year-of-support-and-updates/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://cdn.neowin.com/news/images/uploaded/2025/06/1750766875_windows_10_story.webp')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">25 de jun. de 2026</span>
+              <span class="badge">⬆ 109</span><span class="badge">💬 73</span>
+            </div>
+            <h3 class="card-title">Windows 10 quietly gets one more year of support and updates</h3>
             
           </div>
         </a>
@@ -1704,9 +1752,53 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 518</span><span class="badge">💬 213</span>
+              <span class="badge">⬆ 575</span><span class="badge">💬 231</span>
             </div>
             <h3 class="card-title">Half-Life 2 in a Browser</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="physicists track and trap the elusive neutrino"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-25T15:11:48.000Z"
+           data-url="https://www.quantamagazine.org/how-physicists-track-and-trap-the-elusive-neutrino-20260624/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.quantamagazine.org/how-physicists-track-and-trap-the-elusive-neutrino-20260624/',title:'Physicists Track and Trap the Elusive Neutrino',source:'Hacker News',date:'2026-06-25T15:11:48.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.quantamagazine.org/how-physicists-track-and-trap-the-elusive-neutrino-20260624/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">25 de jun. de 2026</span>
+              <span class="badge">⬆ 23</span><span class="badge">💬 3</span>
+            </div>
+            <h3 class="card-title">Physicists Track and Trap the Elusive Neutrino</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="52-hertz whale"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-24T20:17:33.000Z"
+           data-url="https://en.wikipedia.org/wiki/52-hertz_whale">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://en.wikipedia.org/wiki/52-hertz_whale',title:'52-hertz whale',source:'Hacker News',date:'2026-06-24T20:17:33.000Z',image:'https://upload.wikimedia.org/wikipedia/commons/f/f7/Akblue52a_256_064c.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://en.wikipedia.org/wiki/52-hertz_whale" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/f/f7/Akblue52a_256_064c.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de jun. de 2026</span>
+              <span class="badge">⬆ 43</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">52-hertz whale</h3>
             
           </div>
         </a>
@@ -1726,7 +1818,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 40</span><span class="badge">💬 21</span>
+              <span class="badge">⬆ 59</span><span class="badge">💬 26</span>
             </div>
             <h3 class="card-title">Show HN: Turn native language audio into flashcards and shadowing practice</h3>
             <p class="card-desc">Here is a tool I built initially for myself to help with my German and Greek language studies. It started as a hack for creating Anki cards from nativ…</p>
@@ -1734,178 +1826,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="lastpass notifies users of yet another data breach"
-           data-desc=""
-           data-source="hacker news"
+           data-title="a16z-backed base power is offering cheaper electricity to the power grid that needs it most"
+           data-desc="base power is skipping the pjm's troubled interconnection queue by placing its batteries at people's homes, offering backup services in exchange."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-06-25T10:28:16.000Z"
-           data-url="https://9to5mac.com/2026/06/23/lastpass-notifies-users-of-yet-another-data-breach/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://9to5mac.com/2026/06/23/lastpass-notifies-users-of-yet-another-data-breach/',title:'LastPass notifies users of yet another data breach',source:'Hacker News',date:'2026-06-25T10:28:16.000Z',image:'https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/03/lastpass-outage.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://9to5mac.com/2026/06/23/lastpass-notifies-users-of-yet-another-data-breach/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://i0.wp.com/9to5mac.com/wp-content/uploads/sites/6/2024/03/lastpass-outage.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1')"></div>
+           data-date="Thu, 25 Jun 2026 17:52:05 +0000"
+           data-url="https://techcrunch.com/2026/06/25/a16z-backed-base-power-is-offering-cheaper-electricity-to-the-power-grid-that-needs-it-most/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/a16z-backed-base-power-is-offering-cheaper-electricity-to-the-power-grid-that-needs-it-most/',title:'a16z-backed Base Power is offering cheaper electricity to the power grid that needs it most',source:'techcrunch',date:'Thu, 25 Jun 2026 17:52:05 +0000',image:'',description:'Base Power is skipping the PJM\'s troubled interconnection queue by placing its batteries at people\'s homes, offering backup services in exchange.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/25/a16z-backed-base-power-is-offering-cheaper-electricity-to-the-power-grid-that-needs-it-most/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 301</span><span class="badge">💬 137</span>
+              
             </div>
-            <h3 class="card-title">LastPass notifies users of yet another data breach</h3>
-            
+            <h3 class="card-title">a16z-backed Base Power is offering cheaper electricity to the power grid that needs it most</h3>
+            <p class="card-desc">Base Power is skipping the PJM's troubled interconnection queue by placing its batteries at people's homes, offering backup services in exchange.</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="puzzling success of overparameterization: lottery tickets or escape dimensions?"
-           data-desc=""
-           data-source="hacker news"
+           data-title="hacked klue says criminals are deleting stolen customer data, but now other hackers are making threats"
+           data-desc="market research company klue told customers that it believes the hacking group that stole their data is now deleting it. the company, however, warned about a second group of hackers wanting ransom."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-06-24T09:50:58.000Z"
-           data-url="https://infoscience.epfl.ch/entities/publication/9a49779b-f9f8-448d-b3d1-737c78455309">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://infoscience.epfl.ch/entities/publication/9a49779b-f9f8-448d-b3d1-737c78455309',title:'Puzzling Success of Overparameterization: Lottery Tickets or Escape Dimensions?',source:'Hacker News',date:'2026-06-24T09:50:58.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://infoscience.epfl.ch/entities/publication/9a49779b-f9f8-448d-b3d1-737c78455309" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Thu, 25 Jun 2026 16:40:15 +0000"
+           data-url="https://techcrunch.com/2026/06/25/hacked-klue-says-criminals-are-deleting-stolen-customer-data-but-now-other-hackers-are-making-threats/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/25/hacked-klue-says-criminals-are-deleting-stolen-customer-data-but-now-other-hackers-are-making-threats/',title:'Hacked Klue says criminals are deleting stolen customer data, but now other hackers are making threats',source:'techcrunch',date:'Thu, 25 Jun 2026 16:40:15 +0000',image:'',description:'Market research company Klue told customers that it believes the hacking group that stole their data is now deleting it. The company, however, warned ',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/25/hacked-klue-says-criminals-are-deleting-stolen-customer-data-but-now-other-hackers-are-making-threats/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 37</span><span class="badge">💬 7</span>
-            </div>
-            <h3 class="card-title">Puzzling Success of Overparameterization: Lottery Tickets or Escape Dimensions?</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="cloudflare launched self-managed oauth for all"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-25T02:18:10.000Z"
-           data-url="https://blog.cloudflare.com/oauth-for-all/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.cloudflare.com/oauth-for-all/',title:'Cloudflare launched self-managed OAuth for all',source:'Hacker News',date:'2026-06-25T02:18:10.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blog.cloudflare.com/oauth-for-all/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 287</span><span class="badge">💬 125</span>
+              
             </div>
-            <h3 class="card-title">Cloudflare launched self-managed OAuth for all</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="blogging can just be stating the obvious"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-24T23:46:37.000Z"
-           data-url="https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/',title:'Blogging can just be stating the obvious',source:'Hacker News',date:'2026-06-24T23:46:37.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 373</span><span class="badge">💬 112</span>
-            </div>
-            <h3 class="card-title">Blogging can just be stating the obvious</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="softbank 2026 agm [pdf]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-25T12:42:55.000Z"
-           data-url="https://group.softbank/media/Project/sbg/sbg/pdf/ir/investors/shareholders/2026/shareholders-meeting_46_05_en.pdf">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://group.softbank/media/Project/sbg/sbg/pdf/ir/investors/shareholders/2026/shareholders-meeting_46_05_en.pdf',title:'SoftBank 2026 AGM [pdf]',source:'Hacker News',date:'2026-06-25T12:42:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://group.softbank/media/Project/sbg/sbg/pdf/ir/investors/shareholders/2026/shareholders-meeting_46_05_en.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 22</span><span class="badge">💬 7</span>
-            </div>
-            <h3 class="card-title">SoftBank 2026 AGM [pdf]</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="lianda and the long march"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-24T03:46:48.000Z"
-           data-url="https://blog.georeactor.com/books-06-26b">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.georeactor.com/books-06-26b',title:'Lianda and the Long March',source:'Hacker News',date:'2026-06-24T03:46:48.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blog.georeactor.com/books-06-26b" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 8</span>
-            </div>
-            <h3 class="card-title">Lianda and the Long March</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="luajit 3.0 proposed syntax extensions"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-25T00:41:43.000Z"
-           data-url="https://github.com/LuaJIT/LuaJIT/issues/1475">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/LuaJIT/LuaJIT/issues/1475',title:'LuaJIT 3.0 proposed syntax extensions',source:'Hacker News',date:'2026-06-25T00:41:43.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/LuaJIT/LuaJIT/issues/1475" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">25 de jun. de 2026</span>
-              <span class="badge">⬆ 204</span><span class="badge">💬 125</span>
-            </div>
-            <h3 class="card-title">LuaJIT 3.0 proposed syntax extensions</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="45°c cooling design cuts data center water use to near zero"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-24T14:10:11.000Z"
-           data-url="https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/',title:'45°C cooling design cuts data center water use to near zero',source:'Hacker News',date:'2026-06-24T14:10:11.000Z',image:'https://blogs.nvidia.com/wp-content/uploads/2026/06/45CLiquidCooling.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://blogs.nvidia.com/wp-content/uploads/2026/06/45CLiquidCooling.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jun. de 2026</span>
-              <span class="badge">⬆ 435</span><span class="badge">💬 371</span>
-            </div>
-            <h3 class="card-title">45°C cooling design cuts data center water use to near zero</h3>
-            
+            <h3 class="card-title">Hacked Klue says criminals are deleting stolen customer data, but now other hackers are making threats</h3>
+            <p class="card-desc">Market research company Klue told customers that it believes the hacking group that stole their data is now deleting it. The company, however, warned …</p>
           </div>
         </a>
       </div>
@@ -1972,50 +1932,6 @@
             </div>
             <h3 class="card-title">Europe is pushing back on Washington&#8217;s chip war</h3>
             <p class="card-desc">As ASML CEO Christophe Fouquet told TechCrunch in May, what China can currently buy are older-generation deep ultraviolet tools — gear first shipped a…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the memory chip crunch is paying off for this us company"
-           data-desc="revenue quadrupled to $41.45 billion compared with the same period a year ago. the company's profit, meanwhile, rose from $1.88 billion to an incredible $28.2 billion year-over-year."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Wed, 24 Jun 2026 21:30:55 +0000"
-           data-url="https://techcrunch.com/2026/06/24/the-memory-chip-crunch-is-paying-off-for-this-u-s-company/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/24/the-memory-chip-crunch-is-paying-off-for-this-u-s-company/',title:'The memory chip crunch is paying off for this US company',source:'techcrunch',date:'Wed, 24 Jun 2026 21:30:55 +0000',image:'',description:'Revenue quadrupled to $41.45 billion compared with the same period a year ago. The company\'s profit, meanwhile, rose from $1.88 billion to an incredib',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/24/the-memory-chip-crunch-is-paying-off-for-this-u-s-company/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">24 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The memory chip crunch is paying off for this US company</h3>
-            <p class="card-desc">Revenue quadrupled to $41.45 billion compared with the same period a year ago. The company's profit, meanwhile, rose from $1.88 billion to an incredib…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="new website names and shames companies that still don&#8217;t offer passkeys to users"
-           data-desc="according to a new site, 24% of the most popular websites in the world don't offer support for passkeys, which are considered the most secure way to log in to apps and services."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Wed, 24 Jun 2026 21:04:04 +0000"
-           data-url="https://techcrunch.com/2026/06/24/new-website-names-and-shames-companies-that-still-dont-offer-passkeys-to-users/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/24/new-website-names-and-shames-companies-that-still-dont-offer-passkeys-to-users/',title:'New website names and shames companies that still don&#8217;t offer passkeys to users',source:'techcrunch',date:'Wed, 24 Jun 2026 21:04:04 +0000',image:'',description:'According to a new site, 24% of the most popular websites in the world don\'t offer support for passkeys, which are considered the most secure way to l',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/06/24/new-website-names-and-shames-companies-that-still-dont-offer-passkeys-to-users/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">24 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">New website names and shames companies that still don&#8217;t offer passkeys to users</h3>
-            <p class="card-desc">According to a new site, 24% of the most popular websites in the world don't offer support for passkeys, which are considered the most secure way to l…</p>
           </div>
         </a>
       </div>
