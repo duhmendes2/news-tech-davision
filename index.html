@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 26/06/2026, 21:05:54
+      Atualizado: 27/06/2026, 01:34:18
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">54</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">36</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">16</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">36</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">21</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">13</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">36</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">21</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc=""the us government has allowed anthropic to release its powerful mythos ai model to select companies and organizations," reports cnn, "revising license requirements after ordering an export block earl"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-06-27T02:09:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-27T02:09:00+00:00',image:'',description:'"The US government has allowed Anthropic to release its powerful Mythos AI model to select companies and organizations," reports CNN, "revising licens',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">27 de jun. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">"The US government has allowed Anthropic to release its powerful Mythos AI model to select companies and organizations," reports CNN, "revising licens…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="airbus is ordered to inspect 16 jets after cracks are found in wings"
            data-desc="schwit1 shares a report from the wall street journal: the european union aviation safety agency has ordered (pdf) urgent inspections of 16 airbus a380 planes operated by emirates and qantas, after cra"
@@ -332,7 +354,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 774</span><span class="badge">💬 477</span>
+              <span class="badge">⬆ 900</span><span class="badge">💬 545</span>
             </div>
             <h3 class="card-title">Previewing GPT‑5.6 Sol: a next-generation model</h3>
             <p class="card-desc">System card: https:&#x2F;&#x2F;deploymentsafety.openai.com&#x2F;gpt-5-6-preview</p>
@@ -340,23 +362,67 @@
         </a>
       </div>
       <div class="card"
-           data-title="us allows anthropic to release mythos to 'trusted partners'"
-           data-desc=""
+           data-title="u.s. allows anthropic to release mythos ai to ‘trusted’ us organizations"
+           data-desc="https:&#x2f;&#x2f;archive.md&#x2f;arxufhttps:&#x2f;&#x2f;www.nbcnews.com&#x2f;tech&#x2f;tech-news&#x2f;us-government-gives-a..."
            data-source="hacker news"
            data-cat="IA"
            data-date="2026-06-26T22:48:28.000Z"
-           data-url="https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/',title:'US allows Anthropic to release Mythos to \'trusted partners\'',source:'Hacker News',date:'2026-06-26T22:48:28.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.reuters.com/technology/us-releases-anthropic-model-mythos-some-us-companies-semafor-reports-2026-06-26/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-url="https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies',title:'U.S. allows Anthropic to release Mythos AI to ‘trusted’ US organizations',source:'Hacker News',date:'2026-06-26T22:48:28.000Z',image:'https://img.semafor.com/50a98e4cab1aadfa340671d35d9027ed27e6899b-740x493.png?rect=0,53,740,389&amp;w=1200&amp;h=630&amp;q=75&amp;auto=format',description:'https:&#x2F;&#x2F;archive.md&#x2F;ArXuFhttps:&#x2F;&#x2F;www.nbcnews.com&#x2F;tech&#x2F;tech-news&#x2F;us-government-gives-a...',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://img.semafor.com/50a98e4cab1aadfa340671d35d9027ed27e6899b-740x493.png?rect=0,53,740,389&amp;w=1200&amp;h=630&amp;q=75&amp;auto=format')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">26 de jun. de 2026</span>
+              <span class="badge">⬆ 302</span><span class="badge">💬 305</span>
+            </div>
+            <h3 class="card-title">U.S. allows Anthropic to release Mythos AI to ‘trusted’ US organizations</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;archive.md&#x2F;ArXuFhttps:&#x2F;&#x2F;www.nbcnews.com&#x2F;tech&#x2F;tech-news&#x2F;us-government-gives-a...</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: hacker news on a train station-style flip board"
+           data-desc="although the page itself is more just fun to have made and look at (i like the flip sound), the fun part is how i made it to verify the (and i hate to say it) vibe host service i&#x27;ve been working "
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-06-27T00:43:39.000Z"
+           data-url="https://popflame.quickish.space/hn-flipboard/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://popflame.quickish.space/hn-flipboard/',title:'Show HN: Hacker News on a train station-style flip board',source:'Hacker News',date:'2026-06-27T00:43:39.000Z',image:'',description:'Although the page itself is more just fun to have made and look at (I like the flip sound), the fun part is how I made it to verify the (and I hate to',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://popflame.quickish.space/hn-flipboard/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jun. de 2026</span>
+              <span class="badge">⬆ 33</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">Show HN: Hacker News on a train station-style flip board</h3>
+            <p class="card-desc">Although the page itself is more just fun to have made and look at (I like the flip sound), the fun part is how I made it to verify the (and I hate to…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ai in mathematics is forcing big questions"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-06-26T22:36:51.000Z"
+           data-url="https://spectrum.ieee.org/ai-in-mathematics">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spectrum.ieee.org/ai-in-mathematics',title:'AI in mathematics is forcing big questions',source:'Hacker News',date:'2026-06-26T22:36:51.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://spectrum.ieee.org/ai-in-mathematics" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 108</span><span class="badge">💬 51</span>
+              <span class="badge">⬆ 77</span><span class="badge">💬 38</span>
             </div>
-            <h3 class="card-title">US allows Anthropic to release Mythos to 'trusted partners'</h3>
+            <h3 class="card-title">AI in mathematics is forcing big questions</h3>
             
           </div>
         </a>
@@ -376,7 +442,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 746</span><span class="badge">💬 863</span>
+              <span class="badge">⬆ 904</span><span class="badge">💬 978</span>
             </div>
             <h3 class="card-title">U.S. government will decide who gets to use GPT-5.6</h3>
             <p class="card-desc">https:&#x2F;&#x2F;archive.ph&#x2F;PCQQl</p>
@@ -398,9 +464,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 90</span><span class="badge">💬 74</span>
+              <span class="badge">⬆ 151</span><span class="badge">💬 122</span>
             </div>
             <h3 class="card-title">The gap between open weights LLMs and closed source LLMs</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ultrasound imaging of the brain"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-06-26T11:51:11.000Z"
+           data-url="https://alephneuro.com/blog/ultrasound-brain">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://alephneuro.com/blog/ultrasound-brain',title:'Ultrasound imaging of the brain',source:'Hacker News',date:'2026-06-26T11:51:11.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://alephneuro.com/blog/ultrasound-brain" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">26 de jun. de 2026</span>
+              <span class="badge">⬆ 256</span><span class="badge">💬 103</span>
+            </div>
+            <h3 class="card-title">Ultrasound imaging of the brain</h3>
             
           </div>
         </a>
@@ -420,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 133</span><span class="badge">💬 86</span>
+              <span class="badge">⬆ 156</span><span class="badge">💬 91</span>
             </div>
             <h3 class="card-title">Show HN: Smart model routing directly in Claude, Codex and Cursor</h3>
             <p class="card-desc">We built a model router that plugs into coding agents (e.g. Claude Code, Codex, Cursor, etc.) and intelligently sends requests to the best model to se…</p>
@@ -428,46 +516,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="ultrasound imaging of the brain"
-           data-desc=""
-           data-source="hacker news"
+           data-title="trump admin releases anthropic  mythos to be used by more than 100 us companies, agencies"
+           data-desc="over 100 companies and government agencies are reportedly authorized to use mythos 5, including their non-american employees."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-06-26T11:51:11.000Z"
-           data-url="https://alephneuro.com/blog/ultrasound-brain">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://alephneuro.com/blog/ultrasound-brain',title:'Ultrasound imaging of the brain',source:'Hacker News',date:'2026-06-26T11:51:11.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://alephneuro.com/blog/ultrasound-brain" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Sat, 27 Jun 2026 01:01:37 +0000"
+           data-url="https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/',title:'Trump Admin releases Anthropic  Mythos to be used by more than 100 US companies, agencies',source:'techcrunch',date:'Sat, 27 Jun 2026 01:01:37 +0000',image:'',description:'Over 100 companies and government agencies are reportedly authorized to use Mythos 5, including their non-American employees.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 223</span><span class="badge">💬 92</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">27 de jun. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Ultrasound imaging of the brain</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ai in mathematics is forcing big questions"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-06-26T22:36:51.000Z"
-           data-url="https://spectrum.ieee.org/ai-in-mathematics">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spectrum.ieee.org/ai-in-mathematics',title:'AI in mathematics is forcing big questions',source:'Hacker News',date:'2026-06-26T22:36:51.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://spectrum.ieee.org/ai-in-mathematics" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 10</span><span class="badge">💬 4</span>
-            </div>
-            <h3 class="card-title">AI in mathematics is forcing big questions</h3>
-            
+            <h3 class="card-title">Trump Admin releases Anthropic  Mythos to be used by more than 100 US companies, agencies</h3>
+            <p class="card-desc">Over 100 companies and government agencies are reportedly authorized to use Mythos 5, including their non-American employees.</p>
           </div>
         </a>
       </div>
@@ -646,402 +712,6 @@
             <p class="card-desc">It’s been hot in London this week. Really hot. A dangerous heat wave has hit Western Europe. Yesterday, the UK recorded its highest ever June temperat…</p>
           </div>
         </a>
-      </div>
-      <div class="card"
-           data-title="detecting and controlling sycophancy with cascading linear features"
-           data-desc="arxiv:2606.26155v1 announce type: new abstract: interpreting and controlling model behaviors through activation steering methods requires many pairs of contrastive samples that clearly exhibit desired"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26155">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26155',title:'Detecting and Controlling Sycophancy with Cascading Linear Features',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26155v1 Announce Type: new Abstract: Interpreting and controlling model behaviors through activation steering methods requires many pairs o',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26155" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Detecting and Controlling Sycophancy with Cascading Linear Features</h3>
-            <p class="card-desc">arXiv:2606.26155v1 Announce Type: new Abstract: Interpreting and controlling model behaviors through activation steering methods requires many pairs o…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="refusal lives downstream of persona in chat models"
-           data-desc="arxiv:2606.26161v1 announce type: new abstract: linear directions in activation space have been identified for both refusal and persona traits in instruction-tuned chat models, but the two have been s"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26161">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26161',title:'Refusal Lives Downstream of Persona in Chat Models',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26161v1 Announce Type: new Abstract: Linear directions in activation space have been identified for both refusal and persona traits in inst',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26161" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Refusal Lives Downstream of Persona in Chat Models</h3>
-            <p class="card-desc">arXiv:2606.26161v1 Announce Type: new Abstract: Linear directions in activation space have been identified for both refusal and persona traits in inst…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="algoevolve: llm-driven meta-evolution of algorithmic trading programs"
-           data-desc="arxiv:2606.26173v1 announce type: new abstract: recent work shows that large language models (llms) can act as semantic mutation operators for the evolutionary discovery of programs and proofs. most c"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26173">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26173',title:'AlgoEvolve: LLM-driven Meta-evolution of Algorithmic Trading Programs',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26173v1 Announce Type: new Abstract: Recent work shows that Large Language Models (LLMs) can act as semantic mutation operators for the evo',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26173" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">AlgoEvolve: LLM-driven Meta-evolution of Algorithmic Trading Programs</h3>
-            <p class="card-desc">arXiv:2606.26173v1 Announce Type: new Abstract: Recent work shows that Large Language Models (LLMs) can act as semantic mutation operators for the evo…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="agentic analysis for agentic infrastructure: an llm-powered pipeline for comparative governance of dao and corporate ai protocols"
-           data-desc="arxiv:2606.26203v1 announce type: new abstract: as ai agent protocols proliferate, the governance structures shaping their interoperability standards remain empirically underexamined. we introduce an "
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26203">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26203',title:'Agentic Analysis for Agentic Infrastructure: An LLM-Powered Pipeline for Comparative Governance of DAO and Corporate AI Protocols',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26203v1 Announce Type: new Abstract: As AI agent protocols proliferate, the governance structures shaping their interoperability standards ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26203" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Agentic Analysis for Agentic Infrastructure: An LLM-Powered Pipeline for Comparative Governance of DAO and Corporate AI Protocols</h3>
-            <p class="card-desc">arXiv:2606.26203v1 Announce Type: new Abstract: As AI agent protocols proliferate, the governance structures shaping their interoperability standards …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="knowledge-augmented agentic ai for mental health medication information seeking"
-           data-desc="arxiv:2606.26205v1 announce type: new abstract: patients increasingly seek medication information online, yet safety knowledge for psychiatric drugs is split between regulatory adverse-event records, "
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26205">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26205',title:'Knowledge-augmented Agentic AI for Mental Health Medication Information Seeking',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26205v1 Announce Type: new Abstract: Patients increasingly seek medication information online, yet safety knowledge for psychiatric drugs i',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26205" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Knowledge-augmented Agentic AI for Mental Health Medication Information Seeking</h3>
-            <p class="card-desc">arXiv:2606.26205v1 Announce Type: new Abstract: Patients increasingly seek medication information online, yet safety knowledge for psychiatric drugs i…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="governing actions, not agents: institutional attestation as a governance model for autonomous ai systems"
-           data-desc="arxiv:2606.26298v1 announce type: new abstract: autonomous ai agents may begin to perform consequential, irreversible actions such as clinical prescribing and production software deployment. this pape"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26298">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26298',title:'Governing Actions, Not Agents: Institutional Attestation as a Governance Model for Autonomous AI Systems',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26298v1 Announce Type: new Abstract: Autonomous AI agents may begin to perform consequential, irreversible actions such as clinical prescri',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26298" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Governing Actions, Not Agents: Institutional Attestation as a Governance Model for Autonomous AI Systems</h3>
-            <p class="card-desc">arXiv:2606.26298v1 Announce Type: new Abstract: Autonomous AI agents may begin to perform consequential, irreversible actions such as clinical prescri…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="corigami: an ai pipeline for co-designing flat-foldable visually recognisable origami"
-           data-desc="arxiv:2606.26299v1 announce type: new abstract: while generative ai has achieved remarkable success in solving problems with verifiable solutions, generating physical art that satisfies both strict ge"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26299">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26299',title:'COrigami: An AI Pipeline for Co-Designing Flat-Foldable Visually Recognisable Origami',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26299v1 Announce Type: new Abstract: While generative AI has achieved remarkable success in solving problems with verifiable solutions, gen',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26299" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">COrigami: An AI Pipeline for Co-Designing Flat-Foldable Visually Recognisable Origami</h3>
-            <p class="card-desc">arXiv:2606.26299v1 Announce Type: new Abstract: While generative AI has achieved remarkable success in solving problems with verifiable solutions, gen…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the verification horizon: no silver bullet for coding agent rewards"
-           data-desc="arxiv:2606.26300v1 announce type: new abstract: a classical intuition holds that verifying a solution is easier than producing one. for today's coding agents, this intuition is being inverted: as foun"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26300">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26300',title:'The Verification Horizon: No Silver Bullet for Coding Agent Rewards',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26300v1 Announce Type: new Abstract: A classical intuition holds that verifying a solution is easier than producing one. For today\'s coding',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26300" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Verification Horizon: No Silver Bullet for Coding Agent Rewards</h3>
-            <p class="card-desc">arXiv:2606.26300v1 Announce Type: new Abstract: A classical intuition holds that verifying a solution is easier than producing one. For today's coding…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="how do tool-augmented llm agents perform on real-world energy analytics tasks?"
-           data-desc="arxiv:2606.26346v1 announce type: new abstract: agentic benchmarks have emerged across general-purpose and domain-specific settings, including finance, coding, law, and drug discovery, yet energy-doma"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26346">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26346',title:'How Do Tool-Augmented LLM Agents Perform on Real-World Energy Analytics Tasks?',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26346v1 Announce Type: new Abstract: Agentic benchmarks have emerged across general-purpose and domain-specific settings, including finance',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26346" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">How Do Tool-Augmented LLM Agents Perform on Real-World Energy Analytics Tasks?</h3>
-            <p class="card-desc">arXiv:2606.26346v1 Announce Type: new Abstract: Agentic benchmarks have emerged across general-purpose and domain-specific settings, including finance…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="what we are missing in multimodal llm evaluation?"
-           data-desc="arxiv:2606.26348v1 announce type: new abstract: multimodal large language models (mllms) can process diverse inputs, e.g., text, images, audio, and video, and generate textual responses. while their c"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26348">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26348',title:'What We are Missing in Multimodal LLM Evaluation?',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26348v1 Announce Type: new Abstract: Multimodal large language models (MLLMs) can process diverse inputs, e.g., text, images, audio, and vi',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26348" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">What We are Missing in Multimodal LLM Evaluation?</h3>
-            <p class="card-desc">arXiv:2606.26348v1 Announce Type: new Abstract: Multimodal large language models (MLLMs) can process diverse inputs, e.g., text, images, audio, and vi…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openfingym: a verifiable multi-task gym environment for evaluating quant agents"
-           data-desc="arxiv:2606.26350v1 announce type: new abstract: although large language model agents are increasingly applied to quantitative-finance workflows, their evaluation remains fragmented across isolated tas"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26350">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26350',title:'OpenFinGym: A Verifiable Multi-Task Gym Environment for Evaluating Quant Agents',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26350v1 Announce Type: new Abstract: Although large language model agents are increasingly applied to quantitative-finance workflows, their',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26350" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">OpenFinGym: A Verifiable Multi-Task Gym Environment for Evaluating Quant Agents</h3>
-            <p class="card-desc">arXiv:2606.26350v1 Announce Type: new Abstract: Although large language model agents are increasingly applied to quantitative-finance workflows, their…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="instruction bleed: cross-module interference in prompt-composed agentic systems"
-           data-desc="arxiv:2606.26356v1 announce type: new abstract: practitioners of prompt-composed agentic systems report a recurring failure mode: editing one prompt module silently shifts the behavior of others despi"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26356">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26356',title:'Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26356v1 Announce Type: new Abstract: Practitioners of prompt-composed agentic systems report a recurring failure mode: editing one prompt m',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26356" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems</h3>
-            <p class="card-desc">arXiv:2606.26356v1 Announce Type: new Abstract: Practitioners of prompt-composed agentic systems report a recurring failure mode: editing one prompt m…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="accelerating returns and the qualitative engine for science"
-           data-desc="arxiv:2606.26359v1 announce type: new abstract: ray kurzweil described a thesis of accelerating returns, which is the most influential narratives in discussions of technological progress. its central "
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26359">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26359',title:'Accelerating Returns and the Qualitative Engine for Science',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26359v1 Announce Type: new Abstract: Ray Kurzweil described a thesis of accelerating returns, which is the most influential narratives in d',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26359" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Accelerating Returns and the Qualitative Engine for Science</h3>
-            <p class="card-desc">arXiv:2606.26359v1 Announce Type: new Abstract: Ray Kurzweil described a thesis of accelerating returns, which is the most influential narratives in d…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="narration-of-thought: inference-time scaffolding for defeasible ethical reasoning in large language models"
-           data-desc="arxiv:2606.26366v1 announce type: new abstract: standard chain-of-thought on moral dilemmas exhibits two failure modes: stakeholder collapse (the trace names at most one party with a stake in the outc"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26366">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26366',title:'Narration-of-Thought: Inference-Time Scaffolding for Defeasible Ethical Reasoning in Large Language Models',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26366v1 Announce Type: new Abstract: Standard chain-of-thought on moral dilemmas exhibits two failure modes: stakeholder collapse (the trac',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26366" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Narration-of-Thought: Inference-Time Scaffolding for Defeasible Ethical Reasoning in Large Language Models</h3>
-            <p class="card-desc">arXiv:2606.26366v1 Announce Type: new Abstract: Standard chain-of-thought on moral dilemmas exhibits two failure modes: stakeholder collapse (the trac…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="geometry-aware mcts for extremal problems in combinatorial geometry"
-           data-desc="arxiv:2606.26399v1 announce type: new abstract: we study certain extremal problems in combinatorial geometry that ask about configurations of points in an $n \times n$ grid that satisfy strict, global"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26399">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26399',title:'Geometry-Aware MCTS for Extremal Problems in Combinatorial Geometry',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26399v1 Announce Type: new Abstract: We study certain extremal problems in combinatorial geometry that ask about configurations of points i',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26399" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Geometry-Aware MCTS for Extremal Problems in Combinatorial Geometry</h3>
-            <p class="card-desc">arXiv:2606.26399v1 Announce Type: new Abstract: We study certain extremal problems in combinatorial geometry that ask about configurations of points i…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="when agents meet electric bus fleet operations: pricing behavior, trade-offs, and policy implications in an aggregator framework"
-           data-desc="arxiv:2606.26400v1 announce type: new abstract: agentic systems are changing how complex operational tasks are coordinated, introducing a new paradigm for connecting heterogeneous data sources and aut"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26400">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26400',title:'When Agents Meet Electric Bus Fleet Operations: Pricing Behavior, Trade-offs, and Policy Implications in an Aggregator Framework',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26400v1 Announce Type: new Abstract: Agentic systems are changing how complex operational tasks are coordinated, introducing a new paradigm',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26400" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">When Agents Meet Electric Bus Fleet Operations: Pricing Behavior, Trade-offs, and Policy Implications in an Aggregator Framework</h3>
-            <p class="card-desc">arXiv:2606.26400v1 Announce Type: new Abstract: Agentic systems are changing how complex operational tasks are coordinated, introducing a new paradigm…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="unbiased canonical set-valued oracles via lattice theory"
-           data-desc="arxiv:2606.26418v1 announce type: new abstract: a non-agentic "oracle" ai that estimates probabilities of future events faces a self-reference problem: once its answer is learned and acted upon, it ca"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26418">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26418',title:'Unbiased Canonical Set-Valued Oracles Via Lattice Theory',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26418v1 Announce Type: new Abstract: A non-agentic "oracle" AI that estimates probabilities of future events faces a self-reference problem',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26418" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Unbiased Canonical Set-Valued Oracles Via Lattice Theory</h3>
-            <p class="card-desc">arXiv:2606.26418v1 Announce Type: new Abstract: A non-agentic "oracle" AI that estimates probabilities of future events faces a self-reference problem…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="estimating uncertainty in classifier performance with applications to large language models and nested data"
-           data-desc="arxiv:2606.26422v1 announce type: new abstract: researchers increasingly use text classification--supervised models or large language models--to measure constructs from natural language, providing met"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26422">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26422',title:'Estimating Uncertainty in Classifier Performance with Applications to Large Language Models and Nested Data',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26422v1 Announce Type: new Abstract: Researchers increasingly use text classification--supervised models or large language models--to measu',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26422" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Estimating Uncertainty in Classifier Performance with Applications to Large Language Models and Nested Data</h3>
-            <p class="card-desc">arXiv:2606.26422v1 Announce Type: new Abstract: Researchers increasingly use text classification--supervised models or large language models--to measu…</p>
-          </div>
-        </a>
       </div></div>
     </section>
     <section class="category" id="sec-robtica" data-cat="Robótica">
@@ -1097,18 +767,18 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">16</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">13</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="microsoft adds another year to windows 10 extended update program"
            data-desc="microsoft has quietly extended free windows 10 security updates for consumers by another year, pushing the extended security updates (esu) program's end date from october 12, 2026, to october 12, 2027"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-06-26T20:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-06-26T20:00:00+00:00',image:'',description:'Microsoft has quietly extended free Windows 10 security updates for consumers by another year, pushing the Extended Security Updates (ESU) program\'s e',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://tech.slashdot.org/story/26/06/26/0029235/microsoft-adds-another-year-to-windows-10-extended-update-program?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/06/26/0029235/microsoft-adds-another-year-to-windows-10-extended-update-program?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Microsoft Adds Another Year To Windows 10 Extended Update Program',source:'slashdot',date:'2026-06-26T20:00:00+00:00',image:'https://a.fsdn.com/sd/topics/microsoft_64100.png',description:'Microsoft has quietly extended free Windows 10 security updates for consumers by another year, pushing the Extended Security Updates (ESU) program\'s e',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://tech.slashdot.org/story/26/06/26/0029235/microsoft-adds-another-year-to-windows-10-extended-update-program?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/microsoft_64100.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1116,7 +786,7 @@
               <span class="date">26 de jun. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Microsoft Adds Another Year To Windows 10 Extended Update Program</h3>
             <p class="card-desc">Microsoft has quietly extended free Windows 10 security updates for consumers by another year, pushing the Extended Security Updates (ESU) program's e…</p>
           </div>
         </a>
@@ -1144,6 +814,50 @@
         </a>
       </div>
       <div class="card"
+           data-title="why does kinetic energy increase quadratically, not linearly, with speed? (2011)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-26T22:43:29.000Z"
+           data-url="https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed',title:'Why does kinetic energy increase quadratically, not linearly, with speed? (2011)',source:'Hacker News',date:'2026-06-26T22:43:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">26 de jun. de 2026</span>
+              <span class="badge">⬆ 147</span><span class="badge">💬 64</span>
+            </div>
+            <h3 class="card-title">Why does kinetic energy increase quadratically, not linearly, with speed? (2011)</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="wordstar: a writer's word processor (1996)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-27T03:30:01.000Z"
+           data-url="https://www.sfwriter.com/wordstar.htm">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.sfwriter.com/wordstar.htm',title:'WordStar: A Writer\'s Word Processor (1996)',source:'Hacker News',date:'2026-06-27T03:30:01.000Z',image:'https://sfwriter.com/rjs-og.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.sfwriter.com/wordstar.htm" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://sfwriter.com/rjs-og.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jun. de 2026</span>
+              <span class="badge">⬆ 10</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">WordStar: A Writer's Word Processor (1996)</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="a c++ implementation of a fast hash map and hash set using hopscotch hashing"
            data-desc=""
            data-source="hacker news"
@@ -1158,10 +872,32 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 49</span><span class="badge">💬 6</span>
+              <span class="badge">⬆ 76</span><span class="badge">💬 12</span>
             </div>
             <h3 class="card-title">A C++ implementation of a fast hash map and hash set using hopscotch hashing</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="om"
+           data-desc="related: om malik has died - https:&#x2f;&#x2f;news.ycombinator.com&#x2f;item?id=48678852 - june 2026 (161 comments)"
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-06-26T23:33:46.000Z"
+           data-url="https://daringfireball.net/2026/06/om">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://daringfireball.net/2026/06/om',title:'Om',source:'Hacker News',date:'2026-06-26T23:33:46.000Z',image:'https://daringfireball.net/graphics/df-wide-card.png',description:'Related: Om Malik has died - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48678852 - June 2026 (161 comments)',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://daringfireball.net/2026/06/om" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://daringfireball.net/graphics/df-wide-card.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">26 de jun. de 2026</span>
+              <span class="badge">⬆ 209</span><span class="badge">💬 13</span>
+            </div>
+            <h3 class="card-title">Om</h3>
+            <p class="card-desc">Related: Om Malik has died - https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=48678852 - June 2026 (161 comments)</p>
           </div>
         </a>
       </div>
@@ -1180,98 +916,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 144</span><span class="badge">💬 24</span>
+              <span class="badge">⬆ 290</span><span class="badge">💬 105</span>
             </div>
             <h3 class="card-title">We can still stop California's 3D printer surveillance scheme</h3>
             
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="why does kinetic energy increase quadratically, not linearly, with speed? (2011)"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-26T22:43:29.000Z"
-           data-url="https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed',title:'Why does kinetic energy increase quadratically, not linearly, with speed? (2011)',source:'Hacker News',date:'2026-06-26T22:43:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 11</span>
-            </div>
-            <h3 class="card-title">Why does kinetic energy increase quadratically, not linearly, with speed? (2011)</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="what is a nomogram and why would it interest me?"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-26T17:24:25.000Z"
-           data-url="https://lefakkomies.github.io/pynomo-doc/introduction/introduction.html#what-is-a-nomogram-and-why-would-it-interest-me">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lefakkomies.github.io/pynomo-doc/introduction/introduction.html#what-is-a-nomogram-and-why-would-it-interest-me',title:'What Is a Nomogram and Why Would It Interest Me?',source:'Hacker News',date:'2026-06-26T17:24:25.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://lefakkomies.github.io/pynomo-doc/introduction/introduction.html#what-is-a-nomogram-and-why-would-it-interest-me" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 71</span><span class="badge">💬 14</span>
-            </div>
-            <h3 class="card-title">What Is a Nomogram and Why Would It Interest Me?</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="playstation is deleting 551 movies from customers' accounts"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-26T20:07:18.000Z"
-           data-url="https://kotaku.com/playstation-store-movies-digital-studio-canal-terminator-2000711013">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://kotaku.com/playstation-store-movies-digital-studio-canal-terminator-2000711013',title:'PlayStation Is Deleting 551 Movies from Customers\' Accounts',source:'Hacker News',date:'2026-06-26T20:07:18.000Z',image:'https://kotaku.com/app/uploads/2026/06/terminator-2-1200x675.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://kotaku.com/playstation-store-movies-digital-studio-canal-terminator-2000711013" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://kotaku.com/app/uploads/2026/06/terminator-2-1200x675.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 126</span><span class="badge">💬 71</span>
-            </div>
-            <h3 class="card-title">PlayStation Is Deleting 551 Movies from Customers' Accounts</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the open source docx editor submitted to hn a few weeks ago has been deleted"
-           data-desc="the github repo under eigenpal is gone. the web site at docx-editor is 503. no idea what&#x27;s going on."
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-06-26T21:54:59.000Z"
-           data-url="https://news.ycombinator.com/item?id=48692474">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.ycombinator.com/item?id=48692474',title:'The open source DOCX editor submitted to HN a few weeks ago has been deleted',source:'Hacker News',date:'2026-06-26T21:54:59.000Z',image:'',description:'The github repo under eigenpal is gone. The web site at docx-editor is 503. No idea what&#x27;s going on.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://news.ycombinator.com/item?id=48692474" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 36</span><span class="badge">💬 29</span>
-            </div>
-            <h3 class="card-title">The open source DOCX editor submitted to HN a few weeks ago has been deleted</h3>
-            <p class="card-desc">The github repo under eigenpal is gone. The web site at docx-editor is 503. No idea what&#x27;s going on.</p>
           </div>
         </a>
       </div>
@@ -1290,7 +938,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 39</span><span class="badge">💬 17</span>
+              <span class="badge">⬆ 70</span><span class="badge">💬 29</span>
             </div>
             <h3 class="card-title">Long Wave radio era set to end with Droitwich switch-off</h3>
             
@@ -1298,24 +946,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="gossamer: a rust-flavoured language with real goroutines and pause-free memory"
-           data-desc=""
-           data-source="hacker news"
+           data-title="ftc gives musk the ok to acquire spacex alumni startup mesh"
+           data-desc="mesh came out of stealth in february with a $50 million series a."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-06-26T18:32:22.000Z"
-           data-url="https://gossamer-lang.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://gossamer-lang.org/',title:'Gossamer: a Rust-flavoured language with real goroutines and pause-free memory',source:'Hacker News',date:'2026-06-26T18:32:22.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://gossamer-lang.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Sat, 27 Jun 2026 00:38:34 +0000"
+           data-url="https://techcrunch.com/2026/06/26/ftc-gives-musk-the-ok-to-acquire-spacex-alumni-startup-mesh/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/06/26/ftc-gives-musk-the-ok-to-acquire-spacex-alumni-startup-mesh/',title:'FTC gives Musk the OK to acquire SpaceX alumni startup Mesh',source:'techcrunch',date:'Sat, 27 Jun 2026 00:38:34 +0000',image:'',description:'Mesh came out of stealth in February with a $50 million Series A.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/06/26/ftc-gives-musk-the-ok-to-acquire-spacex-alumni-startup-mesh/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jun. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 50</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">27 de jun. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Gossamer: a Rust-flavoured language with real goroutines and pause-free memory</h3>
-            
+            <h3 class="card-title">FTC gives Musk the OK to acquire SpaceX alumni startup Mesh</h3>
+            <p class="card-desc">Mesh came out of stealth in February with a $50 million Series A.</p>
           </div>
         </a>
       </div>
@@ -1404,50 +1052,6 @@
             </div>
             <h3 class="card-title">Early Bird pricing ends tonight for TechCrunch Founder Summit</h3>
             <p class="card-desc">Save up to $190 on your pass to TechCrunch Founder Summit 2026. Early Bird pricing ends today, at 11:59 p.m. PT, after which rates increase. Register …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="life after benchmark saturation: a case study of core-bench"
-           data-desc="arxiv:2606.26158v1 announce type: new abstract: when a benchmark's accuracy saturates, it is often retired and replaced with a more challenging version. we show that this approach privileges accuracy "
-           data-source="arxiv"
-           data-cat="Tecnologia"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26158">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26158',title:'Life After Benchmark Saturation: A Case Study of CORE-Bench',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26158v1 Announce Type: new Abstract: When a benchmark\'s accuracy saturates, it is often retired and replaced with a more challenging versio',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26158" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Life After Benchmark Saturation: A Case Study of CORE-Bench</h3>
-            <p class="card-desc">arXiv:2606.26158v1 Announce Type: new Abstract: When a benchmark's accuracy saturates, it is often retired and replaced with a more challenging versio…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="accelerating skill assessment in chess: a drift-diffusion-enhanced elo rating system"
-           data-desc="arxiv:2606.26267v1 announce type: new abstract: rating systems such as elo serve as the gold standard for matchmaking in competitive chess. however, they inherently suffer from response lag due to the"
-           data-source="arxiv"
-           data-cat="Tecnologia"
-           data-date="Fri, 26 Jun 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2606.26267">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2606.26267',title:'Accelerating Skill Assessment in Chess: A Drift-Diffusion-Enhanced Elo Rating System',source:'arxiv',date:'Fri, 26 Jun 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2606.26267v1 Announce Type: new Abstract: Rating systems such as Elo serve as the gold standard for matchmaking in competitive chess. However, t',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2606.26267" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">26 de jun. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Accelerating Skill Assessment in Chess: A Drift-Diffusion-Enhanced Elo Rating System</h3>
-            <p class="card-desc">arXiv:2606.26267v1 Announce Type: new Abstract: Rating systems such as Elo serve as the gold standard for matchmaking in competitive chess. However, t…</p>
           </div>
         </a>
       </div></div>
