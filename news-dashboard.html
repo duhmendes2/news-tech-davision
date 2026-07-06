@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 06/07/2026, 02:55:12
+      Atualizado: 06/07/2026, 07:17:47
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">35</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">16</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">17</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">39</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">18</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">19</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">16</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">18</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc=""a year ago, the message from many business leaders was that ai was going to wipe out jobs," remembers the wall street journal.but "for the past month or so, tech ceos have been striking a more optimi"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-06T07:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-06T07:34:00+00:00',image:'',description:'"A year ago, the message from many business leaders was that AI was going to wipe out jobs," remembers the Wall Street Journal.But "For the past month',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">06 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">"A year ago, the message from many business leaders was that AI was going to wipe out jobs," remembers the Wall Street Journal.But "For the past month…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="hundreds support legal defense for engineer charged with destroying flock surveillance cameras"
            data-desc=""hundreds of freedom lovers are rallying behind a us air force engineer" who's been accused of damaging over a dozen ai-integrated surveillance cameras last year and even knocking down their poles. lo"
@@ -472,6 +494,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="real-time map of great britain's rail network"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-06T09:38:36.000Z"
+           data-url="https://www.map.signalbox.io">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.map.signalbox.io',title:'Real-time map of Great Britain\'s rail network',source:'Hacker News',date:'2026-07-06T09:38:36.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.map.signalbox.io" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">06 de jul. de 2026</span>
+              <span class="badge">⬆ 32</span><span class="badge">💬 9</span>
+            </div>
+            <h3 class="card-title">Real-time map of Great Britain's rail network</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="gpt-5.6 sol ultra will be in codex"
            data-desc="https:&#x2f;&#x2f;x.com&#x2f;haider1&#x2f;status&#x2f;2073695124220006575, https:&#x2f;&#x2f;xcancel.com&#x2f;haider1&#x2f;status&#x2f;2073695124220006575"
            data-source="hacker news"
@@ -486,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jul. de 2026</span>
-              <span class="badge">⬆ 178</span><span class="badge">💬 116</span>
+              <span class="badge">⬆ 294</span><span class="badge">💬 227</span>
             </div>
             <h3 class="card-title">GPT-5.6 Sol Ultra will be in Codex</h3>
             <p class="card-desc">https:&#x2F;&#x2F;x.com&#x2F;haider1&#x2F;status&#x2F;2073695124220006575, https:&#x2F;&#x2F;xcancel.com&#x2F;haider1&#x2F;status&#x2F;207369512422000…</p>
@@ -508,7 +552,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 79</span><span class="badge">💬 40</span>
+              <span class="badge">⬆ 127</span><span class="badge">💬 70</span>
             </div>
             <h3 class="card-title">Does code cleanliness affect coding agents? A controlled minimal-pair study</h3>
             
@@ -516,46 +560,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="new ai tutor achieves 0.71-1.30 sd effect size in dartmouth course [pdf]"
+           data-title="when ai costs more than the engineer"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-07-05T18:47:43.000Z"
-           data-url="https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf',title:'New AI tutor achieves 0.71-1.30 SD effect size in Dartmouth course [pdf]',source:'Hacker News',date:'2026-07-05T18:47:43.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-07-06T07:05:25.000Z"
+           data-url="https://tomtunguz.com/ai-spend-breakeven-2029/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tomtunguz.com/ai-spend-breakeven-2029/',title:'When AI Costs More Than the Engineer',source:'Hacker News',date:'2026-07-06T07:05:25.000Z',image:'https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/v1782758517/odtjqwtlphmuix5rxxi1.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://tomtunguz.com/ai-spend-breakeven-2029/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://res.cloudinary.com/dzawgnnlr/image/upload/q_auto/f_auto/w_auto/v1782758517/odtjqwtlphmuix5rxxi1.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 149</span><span class="badge">💬 90</span>
+              <span class="date">06 de jul. de 2026</span>
+              <span class="badge">⬆ 86</span><span class="badge">💬 73</span>
             </div>
-            <h3 class="card-title">New AI tutor achieves 0.71-1.30 SD effect size in Dartmouth course [pdf]</h3>
+            <h3 class="card-title">When AI Costs More Than the Engineer</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="delta flight hit by firework while landing at midway airport on fourth of july"
-           data-desc=""
-           data-source="hacker news"
+           data-title="smart glasses maker even realities hits $1b valuation with $150m funding led by meituan, tencent"
+           data-desc="even realities, an ex-apple team building camera-free smart glasses, raised $150m from meituan and tencent at a $1b valuation."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-07-05T19:22:51.000Z"
-           data-url="https://www.nbcchicago.com/news/local/delta-flight-hit-by-firework-while-landing-at-midway-airport-on-fourth-of-july/3957451/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.nbcchicago.com/news/local/delta-flight-hit-by-firework-while-landing-at-midway-airport-on-fourth-of-july/3957451/',title:'Delta flight hit by firework while landing at Midway Airport on Fourth of July',source:'Hacker News',date:'2026-07-05T19:22:51.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.nbcchicago.com/news/local/delta-flight-hit-by-firework-while-landing-at-midway-airport-on-fourth-of-july/3957451/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Mon, 06 Jul 2026 09:00:00 +0000"
+           data-url="https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/',title:'Smart glasses maker Even Realities hits $1B valuation with $150M funding led by Meituan, Tencent',source:'techcrunch',date:'Mon, 06 Jul 2026 09:00:00 +0000',image:'',description:'Even Realities, an ex-Apple team building camera-free smart glasses, raised $150M from Meituan and Tencent at a $1B valuation.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 105</span><span class="badge">💬 146</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">06 de jul. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Delta flight hit by firework while landing at Midway Airport on Fourth of July</h3>
-            
+            <h3 class="card-title">Smart glasses maker Even Realities hits $1B valuation with $150M funding led by Meituan, Tencent</h3>
+            <p class="card-desc">Even Realities, an ex-Apple team building camera-free smart glasses, raised $150M from Meituan and Tencent at a $1B valuation.</p>
           </div>
         </a>
       </div>
@@ -604,8 +648,34 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="this humanoid robotics company is going public, but its ceo isn&#8217;t promising a robot in your home anytime soon"
+           data-desc="while other humanoid startups chase sky-high valuations, agility robotics is betting its future on execution — and a spac."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Mon, 06 Jul 2026 06:05:29 +0000"
+           data-url="https://techcrunch.com/2026/07/05/this-humanoid-robotics-company-is-going-public-but-its-ceo-isnt-promising-a-robot-in-your-home-anytime-soon/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/05/this-humanoid-robotics-company-is-going-public-but-its-ceo-isnt-promising-a-robot-in-your-home-anytime-soon/',title:'This humanoid robotics company is going public, but its CEO isn&#8217;t promising a robot in your home anytime soon',source:'techcrunch',date:'Mon, 06 Jul 2026 06:05:29 +0000',image:'',description:'While other humanoid startups chase sky-high valuations, Agility Robotics is betting its future on execution — and a SPAC.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/05/this-humanoid-robotics-company-is-going-public-but-its-ceo-isnt-promising-a-robot-in-your-home-anytime-soon/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">06 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">This humanoid robotics company is going public, but its CEO isn&#8217;t promising a robot in your home anytime soon</h3>
+            <p class="card-desc">While other humanoid startups chase sky-high valuations, Agility Robotics is betting its future on execution — and a SPAC.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
       <div class="card"
            data-title="go-based typescript 7.0 finally reaches release candidate stage"
@@ -628,43 +698,21 @@
             <p class="card-desc">It was more than two years ago that TypeScript's creator Anders Hejlsberg announced plans to rewrite its compiler in Go. This week Microsoft announced…</p>
           </div>
         </a>
-      </div>
-      <div class="card"
-           data-title="composite video on the nes: why's it so wobbly?"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-07-05T21:45:17.000Z"
-           data-url="https://nicole.express/2026/phase-altering-by-line.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://nicole.express/2026/phase-altering-by-line.html',title:'Composite Video on the NES: Why\'s it so wobbly?',source:'Hacker News',date:'2026-07-05T21:45:17.000Z',image:'https://nicole.express/assets/img/wobbly/frames.gif',description:'',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://nicole.express/2026/phase-altering-by-line.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://nicole.express/assets/img/wobbly/frames.gif')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 77</span><span class="badge">💬 7</span>
-            </div>
-            <h3 class="card-title">Composite Video on the NES: Why's it so wobbly?</h3>
-            
-          </div>
-        </a>
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">17</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">19</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="how tech scammers conned four people out of $673,000 in three days"
            data-desc="usa today reports on a facebook post from a washington state sheriff's office: four residents of clallam county, a coastal region west of seattle along northern washington's peninsula, lost more than "
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-07-06T04:49:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-06T04:49:00+00:00',image:'',description:'USA Today reports on a Facebook post from a Washington state sheriff\'s office: Four residents of Clallam County, a coastal region west of Seattle alon',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://yro.slashdot.org/story/26/07/06/0446207/how-tech-scammers-conned-four-people-out-of-673000-in-three-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/07/06/0446207/how-tech-scammers-conned-four-people-out-of-673000-in-three-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'How Tech Scammers Conned Four People Out of $673,000 in Three Days',source:'slashdot',date:'2026-07-06T04:49:00+00:00',image:'https://a.fsdn.com/sd/topics/crime_64.png',description:'USA Today reports on a Facebook post from a Washington state sheriff\'s office: Four residents of Clallam County, a coastal region west of Seattle alon',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://yro.slashdot.org/story/26/07/06/0446207/how-tech-scammers-conned-four-people-out-of-673000-in-three-days?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/crime_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -672,7 +720,7 @@
               <span class="date">06 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">How Tech Scammers Conned Four People Out of $673,000 in Three Days</h3>
             <p class="card-desc">USA Today reports on a Facebook post from a Washington state sheriff's office: Four residents of Clallam County, a coastal region west of Seattle alon…</p>
           </div>
         </a>
@@ -722,28 +770,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="openprinter"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-05T21:03:06.000Z"
-           data-url="https://www.opentools.studio/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.opentools.studio/',title:'OpenPrinter',source:'Hacker News',date:'2026-07-05T21:03:06.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.opentools.studio/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 623</span><span class="badge">💬 152</span>
-            </div>
-            <h3 class="card-title">OpenPrinter</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="has_not_been_viewed_much"
            data-desc=""
            data-source="hacker news"
@@ -758,7 +784,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 169</span><span class="badge">💬 43</span>
+              <span class="badge">⬆ 308</span><span class="badge">💬 81</span>
             </div>
             <h3 class="card-title">Has_not_been_viewed_much</h3>
             
@@ -780,9 +806,53 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 878</span><span class="badge">💬 258</span>
+              <span class="badge">⬆ 1001</span><span class="badge">💬 306</span>
             </div>
             <h3 class="card-title">Organic Maps</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="generate parametric, manufacturable 3d models in seconds"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-06T07:04:33.000Z"
+           data-url="https://kyrall.com/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://kyrall.com/',title:'Generate parametric, manufacturable 3D models in seconds',source:'Hacker News',date:'2026-07-06T07:04:33.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://kyrall.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">06 de jul. de 2026</span>
+              <span class="badge">⬆ 30</span><span class="badge">💬 19</span>
+            </div>
+            <h3 class="card-title">Generate parametric, manufacturable 3D models in seconds</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="it's not about physical vs. digital games, it's about ownership"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-05T14:56:15.000Z"
+           data-url="https://popcar.bearblog.dev/its-about-ownership/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://popcar.bearblog.dev/its-about-ownership/',title:'It\'s not about physical vs. digital games, it\'s about ownership',source:'Hacker News',date:'2026-07-05T14:56:15.000Z',image:'/static/og-image.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://popcar.bearblog.dev/its-about-ownership/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/og-image.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de jul. de 2026</span>
+              <span class="badge">⬆ 504</span><span class="badge">💬 374</span>
+            </div>
+            <h3 class="card-title">It's not about physical vs. digital games, it's about ownership</h3>
             
           </div>
         </a>
@@ -802,9 +872,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de jul. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 32</span>
+              <span class="badge">⬆ 137</span><span class="badge">💬 82</span>
             </div>
             <h3 class="card-title">Building relationships with customers through support didn't turn out as hoped</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="openprinter"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-05T21:03:06.000Z"
+           data-url="https://www.opentools.studio/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.opentools.studio/',title:'OpenPrinter',source:'Hacker News',date:'2026-07-05T21:03:06.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.opentools.studio/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de jul. de 2026</span>
+              <span class="badge">⬆ 870</span><span class="badge">💬 216</span>
+            </div>
+            <h3 class="card-title">OpenPrinter</h3>
             
           </div>
         </a>
@@ -824,7 +916,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 123</span><span class="badge">💬 35</span>
+              <span class="badge">⬆ 183</span><span class="badge">💬 44</span>
             </div>
             <h3 class="card-title">Show HN: Homegames. An open-source game platform I've been making for 8 years</h3>
             <p class="card-desc">I&#x27;m making a platform for simple open source games you can play anywhere.Games are all just JavaScript classes and you can read the source of eve…</p>
@@ -846,53 +938,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 156</span><span class="badge">💬 109</span>
+              <span class="badge">⬆ 214</span><span class="badge">💬 130</span>
             </div>
             <h3 class="card-title">Completing a computer science degree on Coursera</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="it's not about physical vs. digital games, it's about ownership"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-05T14:56:15.000Z"
-           data-url="https://popcar.bearblog.dev/its-about-ownership/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://popcar.bearblog.dev/its-about-ownership/',title:'It\'s not about physical vs. digital games, it\'s about ownership',source:'Hacker News',date:'2026-07-05T14:56:15.000Z',image:'/static/og-image.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://popcar.bearblog.dev/its-about-ownership/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/og-image.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 382</span><span class="badge">💬 279</span>
-            </div>
-            <h3 class="card-title">It's not about physical vs. digital games, it's about ownership</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the future of flipper zero development"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-05T18:22:00.000Z"
-           data-url="https://blog.flipper.net/future-of-flipper-zero-development/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.flipper.net/future-of-flipper-zero-development/',title:'The future of Flipper Zero development',source:'Hacker News',date:'2026-07-05T18:22:00.000Z',image:'https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blog.flipper.net/future-of-flipper-zero-development/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 277</span><span class="badge">💬 113</span>
-            </div>
-            <h3 class="card-title">The future of Flipper Zero development</h3>
             
           </div>
         </a>
@@ -912,9 +960,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 190</span><span class="badge">💬 44</span>
+              <span class="badge">⬆ 232</span><span class="badge">💬 51</span>
             </div>
             <h3 class="card-title">Starring the Computer</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the future of flipper zero development"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-05T18:22:00.000Z"
+           data-url="https://blog.flipper.net/future-of-flipper-zero-development/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.flipper.net/future-of-flipper-zero-development/',title:'The future of Flipper Zero development',source:'Hacker News',date:'2026-07-05T18:22:00.000Z',image:'https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://blog.flipper.net/future-of-flipper-zero-development/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://blog.flipper.net/content/images/size/w1200/2026/07/Flipper-Zero-Development.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de jul. de 2026</span>
+              <span class="badge">⬆ 334</span><span class="badge">💬 145</span>
+            </div>
+            <h3 class="card-title">The future of Flipper Zero development</h3>
             
           </div>
         </a>
@@ -934,7 +1004,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de jul. de 2026</span>
-              <span class="badge">⬆ 68</span><span class="badge">💬 33</span>
+              <span class="badge">⬆ 111</span><span class="badge">💬 57</span>
             </div>
             <h3 class="card-title">The Private Capture of Public Genius</h3>
             
@@ -1026,6 +1096,28 @@
             </div>
             <h3 class="card-title">5 desk gadgets that can make your workday better</h3>
             <p class="card-desc">The right desk gadgets can help you reduce clutter, stay focused, and add a little extra convenience to your day.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="south korea’s hottest new bachelors are chip workers"
+           data-desc="baek, a 35-year-old manager at the south korean semiconductor titan sk hynix, was enrolled in sunoo, a matchmaking company based in seoul, a year ago. in a move typical of anxious south korean parents"
+           data-source="mit"
+           data-cat="Tecnologia"
+           data-date="Mon, 06 Jul 2026 09:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/07/06/1140000/south-korea-bachelors-samsung-skhynix-chip-workers/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/07/06/1140000/south-korea-bachelors-samsung-skhynix-chip-workers/',title:'South Korea’s hottest new bachelors are chip workers',source:'mit',date:'Mon, 06 Jul 2026 09:00:00 +0000',image:'',description:'Baek, a 35-year-old manager at the South Korean semiconductor titan SK Hynix, was enrolled in Sunoo, a matchmaking company based in Seoul, a year ago.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/07/06/1140000/south-korea-bachelors-samsung-skhynix-chip-workers/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">06 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">South Korea’s hottest new bachelors are chip workers</h3>
+            <p class="card-desc">Baek, a 35-year-old manager at the South Korean semiconductor titan SK Hynix, was enrolled in Sunoo, a matchmaking company based in Seoul, a year ago.…</p>
           </div>
         </a>
       </div></div>
