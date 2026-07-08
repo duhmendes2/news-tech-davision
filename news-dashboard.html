@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 08/07/2026, 13:14:12
+      Atualizado: 08/07/2026, 14:59:18
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">73</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">75</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">51</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">24</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">51</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="europe's general court dismissed apple's challenge to the eu's designation of its app stores and ios as "gatekeepers" under the digital markets act. the ruling means apple remains subject to dma oblig"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-08T17:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-08T17:00:00+00:00',image:'',description:'Europe\'s General Court dismissed Apple\'s challenge to the EU\'s designation of its App Stores and iOS as "gatekeepers" under the Digital Markets Act. T',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Europe's General Court dismissed Apple's challenge to the EU's designation of its App Stores and iOS as "gatekeepers" under the Digital Markets Act. T…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="meta now lets anyone use your instagram photos in ai images"
            data-desc="an anonymous reader quotes a report from wired: meta launched its inaugural ai image model from the meta superintelligence labs on tuesday, its effort to compete with the likes of openai's gpt images "
@@ -362,24 +384,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="us cyber agency is using anthropic's mythos to audit government code"
-           data-desc="cisa is reportedly using anthropic's mythos model to scan government code repositories for security vulnerabilities, with sources saying the audits have already found numerous bugs. reuters reports: t"
-           data-source="slashdot"
+           data-title="gpt‑live"
+           data-desc=""
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-07-07T11:00:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/07/07/0036203/us-cyber-agency-is-using-anthropics-mythos-to-audit-government-code?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/07/07/0036203/us-cyber-agency-is-using-anthropics-mythos-to-audit-government-code?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'US Cyber Agency Is Using Anthropic\'s Mythos To Audit Government Code',source:'slashdot',date:'2026-07-07T11:00:00+00:00',image:'https://a.fsdn.com/sd/topics/government_64.png',description:'CISA is reportedly using Anthropic\'s Mythos model to scan government code repositories for security vulnerabilities, with sources saying the audits ha',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/07/07/0036203/us-cyber-agency-is-using-anthropics-mythos-to-audit-government-code?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/government_64.png')"></div>
+           data-date="2026-07-08T17:03:19.000Z"
+           data-url="https://openai.com/index/introducing-gpt-live/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://openai.com/index/introducing-gpt-live/',title:'GPT‑Live',source:'Hacker News',date:'2026-07-08T17:03:19.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://openai.com/index/introducing-gpt-live/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de jul. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 191</span><span class="badge">💬 112</span>
             </div>
-            <h3 class="card-title">US Cyber Agency Is Using Anthropic's Mythos To Audit Government Code</h3>
-            <p class="card-desc">CISA is reportedly using Anthropic's Mythos model to scan government code repositories for security vulnerabilities, with sources saying the audits ha…</p>
+            <h3 class="card-title">GPT‑Live</h3>
+            
           </div>
         </a>
       </div>
@@ -398,9 +420,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 151</span><span class="badge">💬 28</span>
+              <span class="badge">⬆ 254</span><span class="badge">💬 59</span>
             </div>
             <h3 class="card-title">Mistral's Robostral Navigate: a state of the art robotics navigation model</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="swe-1.7 reach near gpt 5.5 and opus intelligence"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-08T16:19:36.000Z"
+           data-url="https://cognition.com/blog/swe-1-7">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://cognition.com/blog/swe-1-7',title:'SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence',source:'Hacker News',date:'2026-07-08T16:19:36.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://cognition.com/blog/swe-1-7" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 95</span><span class="badge">💬 64</span>
+            </div>
+            <h3 class="card-title">SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence</h3>
             
           </div>
         </a>
@@ -420,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 393</span><span class="badge">💬 157</span>
+              <span class="badge">⬆ 442</span><span class="badge">💬 171</span>
             </div>
             <h3 class="card-title">GitLost: We Tricked GitHub's AI Agent into Leaking Private Repos</h3>
             
@@ -442,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 9</span><span class="badge">💬 7</span>
+              <span class="badge">⬆ 24</span><span class="badge">💬 13</span>
             </div>
             <h3 class="card-title">Show HN: Kastor – Terraform-style specs for AI agents</h3>
             
@@ -464,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 80</span><span class="badge">💬 11</span>
+              <span class="badge">⬆ 101</span><span class="badge">💬 13</span>
             </div>
             <h3 class="card-title">Geosql: A Claude/Codex skill for geospatial data</h3>
             
@@ -486,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 295</span><span class="badge">💬 102</span>
+              <span class="badge">⬆ 316</span><span class="badge">💬 110</span>
             </div>
             <h3 class="card-title">Tenda firmware (multiple versions) contains hidden authentication backdoor</h3>
             
@@ -494,46 +538,112 @@
         </a>
       </div>
       <div class="card"
-           data-title="chat control 1.0 and 2.0 explained"
-           data-desc=""
-           data-source="hacker news"
+           data-title="why this ceo thinks video games make better training data than the internet"
+           data-desc="when it comes to achieving artificial general intelligence (agi), large language models just don’t have what it takes. models like chatgpt and claude are great at text, but they re less skilled at und"
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-07-07T14:23:15.000Z"
-           data-url="https://fightchatcontrol.eu/chat-control-overview">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://fightchatcontrol.eu/chat-control-overview',title:'Chat Control 1.0 and 2.0 Explained',source:'Hacker News',date:'2026-07-07T14:23:15.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://fightchatcontrol.eu/chat-control-overview" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 08 Jul 2026 17:47:55 +0000"
+           data-url="https://techcrunch.com/video/why-this-ceo-thinks-video-games-make-better-training-data-than-the-internet/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/video/why-this-ceo-thinks-video-games-make-better-training-data-than-the-internet/',title:'Why this CEO thinks video games make better training data than the internet',source:'techcrunch',date:'Wed, 08 Jul 2026 17:47:55 +0000',image:'',description:'When it comes to achieving artificial general intelligence (AGI), large language models just don’t have what it takes. Models like ChatGPT and Claude ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/video/why-this-ceo-thinks-video-games-make-better-training-data-than-the-internet/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de jul. de 2026</span>
-              <span class="badge">⬆ 832</span><span class="badge">💬 314</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Chat Control 1.0 and 2.0 Explained</h3>
-            
+            <h3 class="card-title">Why this CEO thinks video games make better training data than the internet</h3>
+            <p class="card-desc">When it comes to achieving artificial general intelligence (AGI), large language models just don’t have what it takes. Models like ChatGPT and Claude …</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="copy that floppy – cambridge guide for preserving data from fragile floppy disks"
-           data-desc=""
-           data-source="hacker news"
+           data-title="meta wants its ai glasses to seem less creepy. its ai strategy says otherwise."
+           data-desc="meta is adding a new safeguard to stop people from secretly recording others with its ai glasses. but the update comes as the company continues to expand how much personal data its ai products collect"
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-07-08T03:22:31.000Z"
-           data-url="https://www.digipres.org/the-floppy-guide/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.digipres.org/the-floppy-guide/',title:'Copy That Floppy – Cambridge guide for preserving data from fragile floppy disks',source:'Hacker News',date:'2026-07-08T03:22:31.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.digipres.org/the-floppy-guide/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 08 Jul 2026 17:11:18 +0000"
+           data-url="https://techcrunch.com/2026/07/08/meta-wants-its-ai-glasses-to-seem-less-creepy-its-ai-strategy-says-otherwise/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/meta-wants-its-ai-glasses-to-seem-less-creepy-its-ai-strategy-says-otherwise/',title:'Meta wants its AI glasses to seem less creepy. Its AI strategy says otherwise.',source:'techcrunch',date:'Wed, 08 Jul 2026 17:11:18 +0000',image:'',description:'Meta is adding a new safeguard to stop people from secretly recording others with its AI glasses. But the update comes as the company continues to exp',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/meta-wants-its-ai-glasses-to-seem-less-creepy-its-ai-strategy-says-otherwise/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 141</span><span class="badge">💬 51</span>
+              
             </div>
-            <h3 class="card-title">Copy That Floppy – Cambridge guide for preserving data from fragile floppy disks</h3>
-            
+            <h3 class="card-title">Meta wants its AI glasses to seem less creepy. Its AI strategy says otherwise.</h3>
+            <p class="card-desc">Meta is adding a new safeguard to stop people from secretly recording others with its AI glasses. But the update comes as the company continues to exp…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="openai releases new voice models for more natural live conversations"
+           data-desc="openai says its new voice mode can speak and listen at the same time, a key ability for live translation."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Jul 2026 17:00:00 +0000"
+           data-url="https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/',title:'OpenAI releases new voice models for more natural live conversations',source:'techcrunch',date:'Wed, 08 Jul 2026 17:00:00 +0000',image:'',description:'OpenAI says its new voice mode can speak and listen at the same time, a key ability for live translation.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">OpenAI releases new voice models for more natural live conversations</h3>
+            <p class="card-desc">OpenAI says its new voice mode can speak and listen at the same time, a key ability for live translation.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="crypto vc firm paradigm raises $1.2b to invest in &#8216;technical frontier&#8217; startups"
+           data-desc="for paradigm, the technical frontier will stretch beyond its cryptocurrency investment roots. this fund is expected to expand its investment focus to include robotics and ai."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Jul 2026 16:29:35 +0000"
+           data-url="https://techcrunch.com/2026/07/08/crypto-vc-firm-paradigm-raises-1-2b-to-invest-in-technical-frontier-startups/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/crypto-vc-firm-paradigm-raises-1-2b-to-invest-in-technical-frontier-startups/',title:'Crypto VC firm Paradigm raises $1.2B to invest in &#8216;technical frontier&#8217; startups',source:'techcrunch',date:'Wed, 08 Jul 2026 16:29:35 +0000',image:'',description:'For Paradigm, the technical frontier will stretch beyond its cryptocurrency investment roots. This fund is expected to expand its investment focus to ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/crypto-vc-firm-paradigm-raises-1-2b-to-invest-in-technical-frontier-startups/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Crypto VC firm Paradigm raises $1.2B to invest in &#8216;technical frontier&#8217; startups</h3>
+            <p class="card-desc">For Paradigm, the technical frontier will stretch beyond its cryptocurrency investment roots. This fund is expected to expand its investment focus to …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="prime intellect raises $130m series a to help enterprises build their own ai agents"
+           data-desc="founded in 2024, prime intellect’s goal is to give organizations capabilities to train their own agentic systems without relying on frontier ai labs."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Jul 2026 16:22:38 +0000"
+           data-url="https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/',title:'Prime Intellect raises $130M Series A to help enterprises build their own AI agents',source:'techcrunch',date:'Wed, 08 Jul 2026 16:22:38 +0000',image:'',description:'Founded in 2024, Prime Intellect’s goal is to give organizations capabilities to train their own agentic systems without relying on frontier AI labs.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Prime Intellect raises $130M Series A to help enterprises build their own AI agents</h3>
+            <p class="card-desc">Founded in 2024, Prime Intellect’s goal is to give organizations capabilities to train their own agentic systems without relying on frontier AI labs.</p>
           </div>
         </a>
       </div>
@@ -780,68 +890,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="figma acquires team behind a vibe-coding app"
-           data-desc="the y combinator-backed company started a vibe-coding platform and later built an agent-creation product."
-           data-source="techcrunch"
+           data-title="emtech ai 2026: the rise of the ai platform"
+           data-desc=""
+           data-source="mit"
            data-cat="IA"
-           data-date="Tue, 07 Jul 2026 18:37:01 +0000"
-           data-url="https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/',title:'Figma acquires team behind a vibe-coding app',source:'techcrunch',date:'Tue, 07 Jul 2026 18:37:01 +0000',image:'',description:'The Y Combinator-backed company started a vibe-coding platform and later built an agent-creation product.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
+           data-date="Wed, 08 Jul 2026 16:26:10 +0000"
+           data-url="https://www.technologyreview.com/2026/07/08/1140223/emtech-ai-2026-the-rise-of-the-ai-platform/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/07/08/1140223/emtech-ai-2026-the-rise-of-the-ai-platform/',title:'EmTech AI 2026: The Rise of the AI Platform',source:'mit',date:'Wed, 08 Jul 2026 16:26:10 +0000',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/07/08/1140223/emtech-ai-2026-the-rise-of-the-ai-platform/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">08 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Figma acquires team behind a vibe-coding app</h3>
-            <p class="card-desc">The Y Combinator-backed company started a vibe-coding platform and later built an agent-creation product.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="claude cowork expands to mobile and web"
-           data-desc="with this update, users can start a task from their desk, get status updates on their phone, and pick up the finished output later — even if their laptop is closed."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 07 Jul 2026 16:27:18 +0000"
-           data-url="https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/',title:'Claude Cowork expands to mobile and web',source:'techcrunch',date:'Tue, 07 Jul 2026 16:27:18 +0000',image:'',description:'With this update, users can start a task from their desk, get status updates on their phone, and pick up the finished output later — even if their lap',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Claude Cowork expands to mobile and web</h3>
-            <p class="card-desc">With this update, users can start a task from their desk, get status updates on their phone, and pick up the finished output later — even if their lap…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="x adds a video editor to encourage creators to post original content, not stolen reposts"
-           data-desc="x is rolling out a new video editor and recorder for ios with multilingual captions, green-screen effects, and other editing tools."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 07 Jul 2026 15:19:33 +0000"
-           data-url="https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-content-not-stolen-reposts/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-content-not-stolen-reposts/',title:'X adds a video editor to encourage creators to post original content, not stolen reposts',source:'techcrunch',date:'Tue, 07 Jul 2026 15:19:33 +0000',image:'',description:'X is rolling out a new video editor and recorder for iOS with multilingual captions, green-screen effects, and other editing tools.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/x-adds-a-video-editor-to-encourage-creators-to-post-original-content-not-stolen-reposts/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">X adds a video editor to encourage creators to post original content, not stolen reposts</h3>
-            <p class="card-desc">X is rolling out a new video editor and recorder for iOS with multilingual captions, green-screen effects, and other editing tools.</p>
+            <h3 class="card-title">EmTech AI 2026: The Rise of the AI Platform</h3>
+            
           </div>
         </a>
       </div>
@@ -1308,67 +1374,19 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
-      <div class="cards-grid" id="grid-produo-de-contedo">
-      <div class="card"
-           data-title="structure and interpretation of computer programs video lectures (1986)"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-07-07T23:57:29.000Z"
-           data-url="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video_galleries/video-lectures/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video_galleries/video-lectures/',title:'Structure and Interpretation of Computer Programs Video Lectures (1986)',source:'Hacker News',date:'2026-07-07T23:57:29.000Z',image:'https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/ad40b7bc2fd8fcd95f535c77aeeafde3_6-001s05.jpg',description:'',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video_galleries/video-lectures/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/ad40b7bc2fd8fcd95f535c77aeeafde3_6-001s05.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de jul. de 2026</span>
-              <span class="badge">⬆ 273</span><span class="badge">💬 37</span>
-            </div>
-            <h3 class="card-title">Structure and Interpretation of Computer Programs Video Lectures (1986)</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="netflix dabbles in shorter video content with its new set of publisher deals with variety, others"
-           data-desc="netflix is bringing 2- to 20-minute videos to its platform through new partnerships with digital publishers, including rolling stone and variety."
-           data-source="techcrunch"
-           data-cat="Produção de Conteúdo"
-           data-date="Tue, 07 Jul 2026 17:24:35 +0000"
-           data-url="https://techcrunch.com/2026/07/07/netflix-dabbles-in-shorter-video-content-with-its-new-set-of-publisher-deals-with-variety-others/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/netflix-dabbles-in-shorter-video-content-with-its-new-set-of-publisher-deals-with-variety-others/',title:'Netflix dabbles in shorter video content with its new set of publisher deals with Variety, others',source:'techcrunch',date:'Tue, 07 Jul 2026 17:24:35 +0000',image:'',description:'Netflix is bringing 2- to 20-minute videos to its platform through new partnerships with digital publishers, including Rolling Stone and Variety.',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/netflix-dabbles-in-shorter-video-content-with-its-new-set-of-publisher-deals-with-variety-others/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Netflix dabbles in shorter video content with its new set of publisher deals with Variety, others</h3>
-            <p class="card-desc">Netflix is bringing 2- to 20-minute videos to its platform through new partnerships with digital publishers, including Rolling Stone and Variety.</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">23</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">24</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="valve releases proton 11 with huge linux gaming improvements"
            data-desc="brianfagioli writes: valve has released proton 11.0-1, a major update to its windows compatibility layer for linux that makes more games playable while fixing a long list of bugs affecting existing ti"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-07-08T16:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-08T16:00:00+00:00',image:'',description:'BrianFagioli writes: Valve has released Proton 11.0-1, a major update to its Windows compatibility layer for Linux that makes more games playable whil',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://games.slashdot.org/story/26/07/08/0713204/valve-releases-proton-11-with-huge-linux-gaming-improvements?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://games.slashdot.org/story/26/07/08/0713204/valve-releases-proton-11-with-huge-linux-gaming-improvements?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Valve Releases Proton 11 With Huge Linux Gaming Improvements',source:'slashdot',date:'2026-07-08T16:00:00+00:00',image:'https://a.fsdn.com/sd/topics/os_64.png',description:'BrianFagioli writes: Valve has released Proton 11.0-1, a major update to its Windows compatibility layer for Linux that makes more games playable whil',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://games.slashdot.org/story/26/07/08/0713204/valve-releases-proton-11-with-huge-linux-gaming-improvements?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/os_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1376,7 +1394,7 @@
               <span class="date">08 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Valve Releases Proton 11 With Huge Linux Gaming Improvements</h3>
             <p class="card-desc">BrianFagioli writes: Valve has released Proton 11.0-1, a major update to its Windows compatibility layer for Linux that makes more games playable whil…</p>
           </div>
         </a>
@@ -1572,7 +1590,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 75</span><span class="badge">💬 12</span>
+              <span class="badge">⬆ 277</span><span class="badge">💬 56</span>
             </div>
             <h3 class="card-title">Chatto is now Open Source</h3>
             
@@ -1594,7 +1612,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 933</span><span class="badge">💬 166</span>
+              <span class="badge">⬆ 1052</span><span class="badge">💬 179</span>
             </div>
             <h3 class="card-title">Decoding the obfuscated bash script on a Uniqlo t-shirt</h3>
             
@@ -1616,9 +1634,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 90</span><span class="badge">💬 16</span>
+              <span class="badge">⬆ 141</span><span class="badge">💬 26</span>
             </div>
             <h3 class="card-title">Cloudflare Meerkat - Globally distributed consensus</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="eu now one step away from reviving private message scanning rules"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T16:53:06.000Z"
+           data-url="https://cyberinsider.com/eu-now-one-step-away-from-reviving-private-message-scanning-rules/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://cyberinsider.com/eu-now-one-step-away-from-reviving-private-message-scanning-rules/',title:'EU now one step away from reviving private message scanning rules',source:'Hacker News',date:'2026-07-08T16:53:06.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://cyberinsider.com/eu-now-one-step-away-from-reviving-private-message-scanning-rules/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">EU now one step away from reviving private message scanning rules</h3>
             
           </div>
         </a>
@@ -1638,7 +1678,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 105</span><span class="badge">💬 40</span>
+              <span class="badge">⬆ 140</span><span class="badge">💬 71</span>
             </div>
             <h3 class="card-title">OpenBSD has a use-after-free allowing local privilege escalation to root</h3>
             
@@ -1660,9 +1700,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 197</span><span class="badge">💬 151</span>
+              <span class="badge">⬆ 236</span><span class="badge">💬 184</span>
             </div>
             <h3 class="card-title">Apple to increase spend with Broadcom to produce billions more U.S. chips</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="typescript 7"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T16:06:35.000Z"
+           data-url="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/',title:'TypeScript 7',source:'Hacker News',date:'2026-07-08T16:06:35.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 84</span><span class="badge">💬 12</span>
+            </div>
+            <h3 class="card-title">TypeScript 7</h3>
             
           </div>
         </a>
@@ -1682,10 +1744,32 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 281</span><span class="badge">💬 196</span>
+              <span class="badge">⬆ 301</span><span class="badge">💬 207</span>
             </div>
             <h3 class="card-title">How to Build a Minimal ZFS NAS Without Synology, QNAP, TrueNAS (2024)</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="another massive data breach exposed millions of driver&#8217;s license numbers"
+           data-desc="the cyberattack targeting a u.s. insurance giant is the largest known breach of driver's license numbers so far in 2026."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Wed, 08 Jul 2026 16:14:49 +0000"
+           data-url="https://techcrunch.com/2026/07/08/another-massive-data-breach-exposed-millions-of-drivers-license-numbers/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/another-massive-data-breach-exposed-millions-of-drivers-license-numbers/',title:'Another massive data breach exposed millions of driver&#8217;s license numbers',source:'techcrunch',date:'Wed, 08 Jul 2026 16:14:49 +0000',image:'',description:'The cyberattack targeting a U.S. insurance giant is the largest known breach of driver\'s license numbers so far in 2026.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/another-massive-data-breach-exposed-millions-of-drivers-license-numbers/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Another massive data breach exposed millions of driver&#8217;s license numbers</h3>
+            <p class="card-desc">The cyberattack targeting a U.S. insurance giant is the largest known breach of driver's license numbers so far in 2026.</p>
           </div>
         </a>
       </div>
@@ -1752,50 +1836,6 @@
             </div>
             <h3 class="card-title">Final extension: Startup Battlefield Australia applications now close July 20</h3>
             <p class="card-desc">If you're building something ambitious, this is a fast track to the people who can move your startup forward.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="google’s pixel event is set for august 12"
-           data-desc="google's upcoming event in august will introduce new pixel devices."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 07 Jul 2026 18:38:29 +0000"
-           data-url="https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/',title:'Google’s Pixel event is set for August 12',source:'techcrunch',date:'Tue, 07 Jul 2026 18:38:29 +0000',image:'',description:'Google\'s upcoming event in August will introduce new Pixel devices.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/googles-pixel-event-is-set-for-august-12/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Google’s Pixel event is set for August 12</h3>
-            <p class="card-desc">Google's upcoming event in August will introduce new Pixel devices.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="hacked, leaked, and held for ransom: the worst breaches of 2026 so far"
-           data-desc="from a massive doge data breach and the hacking of critical energy and water systems to the hack of an fbi surveillance system, here are the most damaging security incidents and data breaches of 2026."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 07 Jul 2026 16:45:00 +0000"
-           data-url="https://techcrunch.com/2026/07/07/the-worst-hacks-and-breaches-of-2026-so-far/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/07/the-worst-hacks-and-breaches-of-2026-so-far/',title:'Hacked, leaked, and held for ransom: The worst breaches of 2026 so far',source:'techcrunch',date:'Tue, 07 Jul 2026 16:45:00 +0000',image:'',description:'From a massive DOGE data breach and the hacking of critical energy and water systems to the hack of an FBI surveillance system, here are the most dama',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/07/the-worst-hacks-and-breaches-of-2026-so-far/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Hacked, leaked, and held for ransom: The worst breaches of 2026 so far</h3>
-            <p class="card-desc">From a massive DOGE data breach and the hacking of critical energy and water systems to the hack of an FBI surveillance system, here are the most dama…</p>
           </div>
         </a>
       </div>
