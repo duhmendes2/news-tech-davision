@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 08/07/2026, 16:47:16
+      Atualizado: 08/07/2026, 18:06:02
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">75</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">27</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">78</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">29</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -251,6 +251,28 @@
     <section class="category" id="sec-ia" data-cat="IA">
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="apple says it will spend $30 billion to design us-made broadcom wireless connectivity chips, part of its broader push to diversify its supply chain and support domestic chip production. cnn reports: t"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-08T20:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-08T20:00:00+00:00',image:'',description:'Apple says it will spend $30 billion to design US-made Broadcom wireless connectivity chips, part of its broader push to diversify its supply chain an',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Apple says it will spend $30 billion to design US-made Broadcom wireless connectivity chips, part of its broader push to diversify its supply chain an…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="apple loses eu fight over app store gatekeeper label"
            data-desc="europe's general court dismissed apple's challenge to the eu's designation of its app stores and ios as "gatekeepers" under the digital markets act. the ruling means apple remains subject to dma oblig"
@@ -340,24 +362,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="microsoft can track users via a windows device id"
-           data-desc="a criminal complaint against alleged scattered spider member peter stokes revealed that microsoft can associate windows activity with a persistent "global device id," which investigators used to link "
-           data-source="slashdot"
+           data-title="swe-1.7 reach near gpt 5.5 and opus intelligence"
+           data-desc=""
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-07-07T17:00:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/07/07/1650237/microsoft-can-track-users-via-a-windows-device-id?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/07/07/1650237/microsoft-can-track-users-via-a-windows-device-id?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Microsoft Can Track Users Via a Windows Device ID',source:'slashdot',date:'2026-07-07T17:00:00+00:00',image:'https://a.fsdn.com/sd/topics/privacy_64.png',description:'A criminal complaint against alleged Scattered Spider member Peter Stokes revealed that Microsoft can associate Windows activity with a persistent "Gl',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/07/07/1650237/microsoft-can-track-users-via-a-windows-device-id?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/privacy_64.png')"></div>
+           data-date="2026-07-08T16:19:36.000Z"
+           data-url="https://cognition.com/blog/swe-1-7">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://cognition.com/blog/swe-1-7',title:'SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence',source:'Hacker News',date:'2026-07-08T16:19:36.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://cognition.com/blog/swe-1-7" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de jul. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 203</span><span class="badge">💬 108</span>
             </div>
-            <h3 class="card-title">Microsoft Can Track Users Via a Windows Device ID</h3>
-            <p class="card-desc">A criminal complaint against alleged Scattered Spider member Peter Stokes revealed that Microsoft can associate Windows activity with a persistent "Gl…</p>
+            <h3 class="card-title">SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence</h3>
+            
           </div>
         </a>
       </div>
@@ -376,31 +398,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 320</span><span class="badge">💬 75</span>
+              <span class="badge">⬆ 351</span><span class="badge">💬 82</span>
             </div>
             <h3 class="card-title">Mistral's Robostral Navigate: a state of the art robotics navigation model</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="swe-1.7 reach near gpt 5.5 and opus intelligence"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-07-08T16:19:36.000Z"
-           data-url="https://cognition.com/blog/swe-1-7">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://cognition.com/blog/swe-1-7',title:'SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence',source:'Hacker News',date:'2026-07-08T16:19:36.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://cognition.com/blog/swe-1-7" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 162</span><span class="badge">💬 92</span>
-            </div>
-            <h3 class="card-title">SWE-1.7 Reach Near GPT 5.5 and Opus Intelligence</h3>
             
           </div>
         </a>
@@ -420,7 +420,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 78</span><span class="badge">💬 31</span>
+              <span class="badge">⬆ 110</span><span class="badge">💬 46</span>
             </div>
             <h3 class="card-title">Show HN: Microsoft releases Flint, a visualization language for AI agents</h3>
             <p class="card-desc">Data visualizations are the bridge between user and data.But building AI agents that can generate visualizations reliably can be very tricky:- simple …</p>
@@ -442,9 +442,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 398</span><span class="badge">💬 268</span>
+              <span class="badge">⬆ 476</span><span class="badge">💬 333</span>
             </div>
             <h3 class="card-title">GPT‑Live</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: onboard-cli, a llm powered and ast-based tool to visualize codebase"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-08T20:09:03.000Z"
+           data-url="https://github.com/animesh-94/Onboard-CLI">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/animesh-94/Onboard-CLI',title:'Show HN: Onboard-CLI, a LLM powered and AST-based tool to visualize codebase',source:'Hacker News',date:'2026-07-08T20:09:03.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://github.com/animesh-94/Onboard-CLI" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 5</span>
+            </div>
+            <h3 class="card-title">Show HN: Onboard-CLI, a LLM powered and AST-based tool to visualize codebase</h3>
             
           </div>
         </a>
@@ -464,10 +486,54 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 470</span><span class="badge">💬 180</span>
+              <span class="badge">⬆ 484</span><span class="badge">💬 184</span>
             </div>
             <h3 class="card-title">GitLost: We Tricked GitHub's AI Agent into Leaking Private Repos</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="google&#8217;s deepfake detector system used to debunk mcconnell hoax pic"
+           data-desc="earlier this week, a picture that seemed to show kentucky senator mitch mcconnell covered in tubes in a hospital bed in a state of extreme distress. it turned out to be an ai-generated fake."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Jul 2026 20:37:03 +0000"
+           data-url="https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/',title:'Google&#8217;s deepfake detector system used to debunk McConnell hoax pic',source:'techcrunch',date:'Wed, 08 Jul 2026 20:37:03 +0000',image:'',description:'Earlier this week, a picture that seemed to show Kentucky Senator Mitch McConnell covered in tubes in a hospital bed in a state of extreme distress. I',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Google&#8217;s deepfake detector system used to debunk McConnell hoax pic</h3>
+            <p class="card-desc">Earlier this week, a picture that seemed to show Kentucky Senator Mitch McConnell covered in tubes in a hospital bed in a state of extreme distress. I…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="with eu backing, quantumdiamonds aims to speed up chip manufacturing"
+           data-desc="like its u.s. counterpart, the european chips act aims to foster the semiconductor industry — in part thanks to state subsidies. one of the beneficiaries is quantumdiamonds, a german startup that appl"
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 08 Jul 2026 20:29:50 +0000"
+           data-url="https://techcrunch.com/2026/07/08/with-eu-backing-quantumdiamonds-aims-to-speed-up-chip-manufacturing/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/with-eu-backing-quantumdiamonds-aims-to-speed-up-chip-manufacturing/',title:'With EU backing, QuantumDiamonds aims to speed up chip manufacturing',source:'techcrunch',date:'Wed, 08 Jul 2026 20:29:50 +0000',image:'',description:'Like its U.S. counterpart, the European Chips Act aims to foster the semiconductor industry — in part thanks to state subsidies. One of the beneficiar',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/with-eu-backing-quantumdiamonds-aims-to-speed-up-chip-manufacturing/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">With EU backing, QuantumDiamonds aims to speed up chip manufacturing</h3>
+            <p class="card-desc">Like its U.S. counterpart, the European Chips Act aims to foster the semiconductor industry — in part thanks to state subsidies. One of the beneficiar…</p>
           </div>
         </a>
       </div>
@@ -754,72 +820,6 @@
             </div>
             <h3 class="card-title">Blue Origin reportedly raising $10B at $130B valuation</h3>
             <p class="card-desc">Blue Origin is raising $10 billion at a $130 billion pre-money valuation from Coatue Asset Management, Bezos himself, and other big-name investors, Th…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="former openai exec kevin weil is now on the board of stoke space"
-           data-desc="kevin weil's new role at stoke space suggests reusable rockets are the next hot thing in silicon valley."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 08 Jul 2026 12:00:00 +0000"
-           data-url="https://techcrunch.com/2026/07/08/former-openai-exec-kevin-weil-is-now-on-the-board-of-stoke-space/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/former-openai-exec-kevin-weil-is-now-on-the-board-of-stoke-space/',title:'Former OpenAI exec Kevin Weil is now on the board of Stoke Space',source:'techcrunch',date:'Wed, 08 Jul 2026 12:00:00 +0000',image:'',description:'Kevin Weil\'s new role at Stoke Space suggests reusable rockets are the next hot thing in Silicon Valley.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/08/former-openai-exec-kevin-weil-is-now-on-the-board-of-stoke-space/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">08 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Former OpenAI exec Kevin Weil is now on the board of Stoke Space</h3>
-            <p class="card-desc">Kevin Weil's new role at Stoke Space suggests reusable rockets are the next hot thing in Silicon Valley.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="hot french startup zml releases free product to speed inference across lots of ai chips"
-           data-desc="zml, a hot french ai startup endorsed by turing award winner yann lecun, has now released zml/llmd, software that could make running ai less costly."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 08 Jul 2026 08:00:00 +0000"
-           data-url="https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/',title:'Hot French startup ZML releases free product to speed inference across lots of AI chips',source:'techcrunch',date:'Wed, 08 Jul 2026 08:00:00 +0000',image:'',description:'ZML, a hot French AI startup endorsed by Turing Award winner Yann LeCun, has now released ZML/LLMD, software that could make running AI less costly.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">08 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Hot French startup ZML releases free product to speed inference across lots of AI chips</h3>
-            <p class="card-desc">ZML, a hot French AI startup endorsed by Turing Award winner Yann LeCun, has now released ZML/LLMD, software that could make running AI less costly.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ai chip maker sambanova raises $1b at $11b valuation, 5 months after last mega round"
-           data-desc="ai chip maker sambanova has raised at an $11 billion valuation months after intel was rumored to be trying to buy it for about $1.6 billion."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 08 Jul 2026 07:16:00 +0000"
-           data-url="https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/',title:'AI chip maker SambaNova raises $1B at $11B valuation, 5 months after last mega round',source:'techcrunch',date:'Wed, 08 Jul 2026 07:16:00 +0000',image:'',description:'AI chip maker SambaNova has raised at an $11 billion valuation months after Intel was rumored to be trying to buy it for about $1.6 billion.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">08 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">AI chip maker SambaNova raises $1B at $11B valuation, 5 months after last mega round</h3>
-            <p class="card-desc">AI chip maker SambaNova has raised at an $11 billion valuation months after Intel was rumored to be trying to buy it for about $1.6 billion.</p>
           </div>
         </a>
       </div>
@@ -1308,19 +1308,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="autonomous drone delivery startup manna plots major us expansion"
+           data-desc="manna is launching a u.s. operations and manufacturing facility in tulsa, oklahoma, that will eventually employ 1,000 people."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Wed, 08 Jul 2026 20:06:54 +0000"
+           data-url="https://techcrunch.com/2026/07/08/autonomous-drone-delivery-startup-manna-plots-major-u-s-expansion/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/08/autonomous-drone-delivery-startup-manna-plots-major-u-s-expansion/',title:'Autonomous drone delivery startup Manna plots major US expansion',source:'techcrunch',date:'Wed, 08 Jul 2026 20:06:54 +0000',image:'',description:'Manna is launching a U.S. operations and manufacturing facility in Tulsa, Oklahoma, that will eventually employ 1,000 people.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/08/autonomous-drone-delivery-startup-manna-plots-major-u-s-expansion/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Autonomous drone delivery startup Manna plots major US expansion</h3>
+            <p class="card-desc">Manna is launching a U.S. operations and manufacturing facility in Tulsa, Oklahoma, that will eventually employ 1,000 people.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">27</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">29</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="windows drops under 60% in global desktop os share"
            data-desc="statcounter's june 2026 data shows windows made up 56.55% of global desktop os usage, dropping microsoft's share below 60% for the first time in years. linux, meanwhile, reached 4.39%, "one of its str"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-07-08T19:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-08T19:00:00+00:00',image:'',description:'StatCounter\'s June 2026 data shows Windows made up 56.55% of global desktop OS usage, dropping Microsoft\'s share below 60% for the first time in years',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://tech.slashdot.org/story/26/07/08/1728229/windows-drops-under-60-in-global-desktop-os-share?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/07/08/1728229/windows-drops-under-60-in-global-desktop-os-share?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Windows Drops Under 60% in Global Desktop OS Share',source:'slashdot',date:'2026-07-08T19:00:00+00:00',image:'https://a.fsdn.com/sd/topics/windows_64.png',description:'StatCounter\'s June 2026 data shows Windows made up 56.55% of global desktop OS usage, dropping Microsoft\'s share below 60% for the first time in years',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://tech.slashdot.org/story/26/07/08/1728229/windows-drops-under-60-in-global-desktop-os-share?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/windows_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1328,7 +1354,7 @@
               <span class="date">08 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Windows Drops Under 60% in Global Desktop OS Share</h3>
             <p class="card-desc">StatCounter's June 2026 data shows Windows made up 56.55% of global desktop OS usage, dropping Microsoft's share below 60% for the first time in years…</p>
           </div>
         </a>
@@ -1532,23 +1558,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="what do we know about the microplastics inside us?"
+           data-title="fable is not a useful model"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-07-08T17:43:37.000Z"
-           data-url="https://e360.yale.edu/features/cassandra-rauert-interview">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://e360.yale.edu/features/cassandra-rauert-interview',title:'What Do We Know About the Microplastics Inside Us?',source:'Hacker News',date:'2026-07-08T17:43:37.000Z',image:'https://yale-threesixty.transforms.svdcdn.com/production/Plastic-Fingertips_Getty-HEADER.jpg?w=1200&amp;q=60&amp;auto=format&amp;fit=max&amp;dm=1783439743&amp;s=6ae88795970a9e9a134849ba859c0c1a',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://e360.yale.edu/features/cassandra-rauert-interview" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://yale-threesixty.transforms.svdcdn.com/production/Plastic-Fingertips_Getty-HEADER.jpg?w=1200&amp;q=60&amp;auto=format&amp;fit=max&amp;dm=1783439743&amp;s=6ae88795970a9e9a134849ba859c0c1a')"></div>
+           data-date="2026-07-08T20:41:33.000Z"
+           data-url="https://combine-lab.github.io/blog/2026/07/07/fable-is-not-a-useful-model.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://combine-lab.github.io/blog/2026/07/07/fable-is-not-a-useful-model.html',title:'Fable is not a useful model',source:'Hacker News',date:'2026-07-08T20:41:33.000Z',image:'/icons/share-thumbnail.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://combine-lab.github.io/blog/2026/07/07/fable-is-not-a-useful-model.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/icons/share-thumbnail.jpg')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 104</span><span class="badge">💬 34</span>
+              <span class="badge">⬆ 65</span><span class="badge">💬 36</span>
             </div>
-            <h3 class="card-title">What Do We Know About the Microplastics Inside Us?</h3>
+            <h3 class="card-title">Fable is not a useful model</h3>
             
           </div>
         </a>
@@ -1568,7 +1594,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 432</span><span class="badge">💬 120</span>
+              <span class="badge">⬆ 531</span><span class="badge">💬 143</span>
             </div>
             <h3 class="card-title">Chatto is now Open Source</h3>
             
@@ -1590,9 +1616,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 1139</span><span class="badge">💬 189</span>
+              <span class="badge">⬆ 1190</span><span class="badge">💬 191</span>
             </div>
             <h3 class="card-title">Decoding the obfuscated bash script on a Uniqlo t-shirt</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="cloudflare drop"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T19:18:26.000Z"
+           data-url="https://www.cloudflare.com/drop/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.cloudflare.com/drop/',title:'Cloudflare Drop',source:'Hacker News',date:'2026-07-08T19:18:26.000Z',image:'https://www.cloudflare.com/_summon/og-image.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.cloudflare.com/drop/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.cloudflare.com/_summon/og-image.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 71</span><span class="badge">💬 41</span>
+            </div>
+            <h3 class="card-title">Cloudflare Drop</h3>
             
           </div>
         </a>
@@ -1612,53 +1660,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 11</span><span class="badge">💬 3</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">A bug which affected only left handed users</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="grok 4.5"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-08T18:00:32.000Z"
-           data-url="https://x.ai/news/grok-4-5">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://x.ai/news/grok-4-5',title:'Grok 4.5',source:'Hacker News',date:'2026-07-08T18:00:32.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://x.ai/news/grok-4-5" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 249</span><span class="badge">💬 167</span>
-            </div>
-            <h3 class="card-title">Grok 4.5</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="cloudflare meerkat - globally distributed consensus"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-08T13:18:03.000Z"
-           data-url="https://blog.cloudflare.com/meerkat-introduction/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.cloudflare.com/meerkat-introduction/',title:'Cloudflare Meerkat - Globally distributed consensus',source:'Hacker News',date:'2026-07-08T13:18:03.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://blog.cloudflare.com/meerkat-introduction/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 166</span><span class="badge">💬 36</span>
-            </div>
-            <h3 class="card-title">Cloudflare Meerkat - Globally distributed consensus</h3>
             
           </div>
         </a>
@@ -1678,9 +1682,53 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 13</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 37</span><span class="badge">💬 6</span>
             </div>
             <h3 class="card-title">OpenMandriva: Statement regarding attempted distribution sabotage</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="faang simulator"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T20:05:42.000Z"
+           data-url="https://www.abeyk.com/escape-the-rat-race/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.abeyk.com/escape-the-rat-race/',title:'FAANG Simulator',source:'Hacker News',date:'2026-07-08T20:05:42.000Z',image:'https://www.abeyk.com/escape-the-rat-race/og.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.abeyk.com/escape-the-rat-race/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.abeyk.com/escape-the-rat-race/og.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 17</span><span class="badge">💬 3</span>
+            </div>
+            <h3 class="card-title">FAANG Simulator</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="cloudflare meerkat - globally distributed consensus"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T13:18:03.000Z"
+           data-url="https://blog.cloudflare.com/meerkat-introduction/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.cloudflare.com/meerkat-introduction/',title:'Cloudflare Meerkat - Globally distributed consensus',source:'Hacker News',date:'2026-07-08T13:18:03.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://blog.cloudflare.com/meerkat-introduction/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 184</span><span class="badge">💬 39</span>
+            </div>
+            <h3 class="card-title">Cloudflare Meerkat - Globally distributed consensus</h3>
             
           </div>
         </a>
@@ -1700,7 +1748,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 191</span><span class="badge">💬 75</span>
+              <span class="badge">⬆ 247</span><span class="badge">💬 115</span>
             </div>
             <h3 class="card-title">EU now one step away from reviving private message scanning rules</h3>
             
@@ -1722,9 +1770,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 203</span><span class="badge">💬 93</span>
+              <span class="badge">⬆ 220</span><span class="badge">💬 102</span>
             </div>
             <h3 class="card-title">OpenBSD has a use-after-free allowing local privilege escalation to root</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="turning a pile of documents into a searchable useable knowledge base"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-08T20:37:29.000Z"
+           data-url="https://github.com/linuxrebel/DocuBrowser">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/linuxrebel/DocuBrowser',title:'Turning a pile of documents into a searchable useable knowledge base',source:'Hacker News',date:'2026-07-08T20:37:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/linuxrebel/DocuBrowser" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de jul. de 2026</span>
+              <span class="badge">⬆ 4</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">Turning a pile of documents into a searchable useable knowledge base</h3>
             
           </div>
         </a>
@@ -1744,7 +1814,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de jul. de 2026</span>
-              <span class="badge">⬆ 248</span><span class="badge">💬 82</span>
+              <span class="badge">⬆ 331</span><span class="badge">💬 124</span>
             </div>
             <h3 class="card-title">TypeScript 7</h3>
             
