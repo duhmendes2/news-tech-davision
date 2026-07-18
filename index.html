@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 18/07/2026, 16:05:28
+      Atualizado: 18/07/2026, 17:12:01
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -241,7 +241,7 @@
   <main>
     <div class="stats" id="statsBar">
       <div class="stat"><div class="stat-value" id="statTotal">54</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">31</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">22</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">31</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">21</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -251,6 +251,28 @@
     <section class="category" id="sec-ia" data-cat="IA">
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">31</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc=""approximately half of gen z and millennials who have purchased a cd do not own a cd player," according to midyear sales statistics from entertainment data company luminate. it's driven in part by "co"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-18T19:50:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-18T19:50:00+00:00',image:'',description:'"Approximately half of Gen Z and millennials who have purchased a CD do not own a CD player," according to midyear sales statistics from entertainment',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">18 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">"Approximately half of Gen Z and millennials who have purchased a CD do not own a CD player," according to midyear sales statistics from entertainment…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="cnbc's jim cramer says he needs 'cold hard' proof ai is paying off"
            data-desc="in a sign of our times, cnbc's jim cramer "said wednesday that it's time for companies to prove artificial intelligence is paying off," reports cnbc: "i need cold hard return facts," the "mad money" h"
@@ -472,28 +494,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="meta in talks to lease computing power to anthropic in potential $10 billion deal"
-           data-desc="anthropic is reportedly in very early talks to lease computing power from meta in a potential deal worth around $10 billion. the discussions follow anthropic's recent compute deal with spacex and come"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-07-17T17:33:00+00:00"
-           data-url="https://hardware.slashdot.org/story/26/07/17/1732212/meta-in-talks-to-lease-computing-power-to-anthropic-in-potential-10-billion-deal?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/07/17/1732212/meta-in-talks-to-lease-computing-power-to-anthropic-in-potential-10-billion-deal?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Meta In Talks To Lease Computing Power To Anthropic In Potential $10 Billion Deal',source:'slashdot',date:'2026-07-17T17:33:00+00:00',image:'https://a.fsdn.com/sd/topics/power_64.png',description:'Anthropic is reportedly in very early talks to lease computing power from Meta in a potential deal worth around $10 billion. The discussions follow An',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://hardware.slashdot.org/story/26/07/17/1732212/meta-in-talks-to-lease-computing-power-to-anthropic-in-potential-10-billion-deal?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/power_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">17 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Meta In Talks To Lease Computing Power To Anthropic In Potential $10 Billion Deal</h3>
-            <p class="card-desc">Anthropic is reportedly in very early talks to lease computing power from Meta in a potential deal worth around $10 billion. The discussions follow An…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="gpt-5.6 used a prompt to close a 30-year gap in convex optimization"
            data-desc=""
            data-source="hacker news"
@@ -508,31 +508,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 362</span><span class="badge">💬 213</span>
+              <span class="badge">⬆ 407</span><span class="badge">💬 247</span>
             </div>
             <h3 class="card-title">GPT-5.6 used a prompt to close a 30-year gap in convex optimization</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="setting up your spare mac for claude code to control, a step-by-step guide"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-07-18T16:12:08.000Z"
-           data-url="https://ykdojo.github.io/claude-controls-mac/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ykdojo.github.io/claude-controls-mac/',title:'Setting up your spare Mac for Claude Code to control, a step-by-step guide',source:'Hacker News',date:'2026-07-18T16:12:08.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://ykdojo.github.io/claude-controls-mac/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 93</span><span class="badge">💬 65</span>
-            </div>
-            <h3 class="card-title">Setting up your spare Mac for Claude Code to control, a step-by-step guide</h3>
             
           </div>
         </a>
@@ -552,9 +530,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 165</span><span class="badge">💬 83</span>
+              <span class="badge">⬆ 177</span><span class="badge">💬 88</span>
             </div>
             <h3 class="card-title">Fable 5 vs. GPT-5.6 Sol on an NP-Hard Problem: Does /goal help?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="setting up your spare mac for claude code to control, a step-by-step guide"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-18T16:12:08.000Z"
+           data-url="https://ykdojo.github.io/claude-controls-mac/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ykdojo.github.io/claude-controls-mac/',title:'Setting up your spare Mac for Claude Code to control, a step-by-step guide',source:'Hacker News',date:'2026-07-18T16:12:08.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://ykdojo.github.io/claude-controls-mac/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de jul. de 2026</span>
+              <span class="badge">⬆ 110</span><span class="badge">💬 82</span>
+            </div>
+            <h3 class="card-title">Setting up your spare Mac for Claude Code to control, a step-by-step guide</h3>
             
           </div>
         </a>
@@ -574,7 +574,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 32</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 37</span><span class="badge">💬 8</span>
             </div>
             <h3 class="card-title">Show HN: Q3Edit – Edit and play Quake 3 maps in the browser</h3>
             <p class="card-desc">I&#x27;ve been building a level editor for Quake 3 that runs entirely in the browser: Radiant-style layout, brush and patch editing, CSG, terrain scul…</p>
@@ -596,7 +596,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 296</span><span class="badge">💬 341</span>
+              <span class="badge">⬆ 319</span><span class="badge">💬 368</span>
             </div>
             <h3 class="card-title">What AI did to stackoverflow in a graph</h3>
             
@@ -934,6 +934,32 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="waymo says san francisco service has resumed after one-hour pause"
+           data-desc="this isn’t the first time power outages have caused issues for waymo."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Sat, 18 Jul 2026 19:30:23 +0000"
+           data-url="https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/',title:'Waymo says San Francisco service has resumed after one-hour pause',source:'techcrunch',date:'Sat, 18 Jul 2026 19:30:23 +0000',image:'',description:'This isn’t the first time power outages have caused issues for Waymo.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/18/waymo-appears-to-pause-san-francisco-service-amidst-power-outage/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">18 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Waymo says San Francisco service has resumed after one-hour pause</h3>
+            <p class="card-desc">This isn’t the first time power outages have caused issues for Waymo.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
@@ -961,18 +987,18 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">22</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">21</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="nextbsd returns to port apple source onto freebsd"
            data-desc=""one of the most interesting bsd variants of the 2010s, nextbsd, has come back to life under new management," reports the register: aside from the homepage, there's a github repository mdash; but bewa"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-07-18T18:46:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-18T18:46:00+00:00',image:'',description:'"One of the most interesting BSD variants of the 2010s, NextBSD, has come back to life under new management," reports The Register: Aside from the hom',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://bsd.slashdot.org/story/26/07/18/1843243/nextbsd-returns-to-port-apple-source-onto-freebsd?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://bsd.slashdot.org/story/26/07/18/1843243/nextbsd-returns-to-port-apple-source-onto-freebsd?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'NextBSD Returns to Port Apple Source Onto FreeBSD',source:'slashdot',date:'2026-07-18T18:46:00+00:00',image:'https://a.fsdn.com/sd/topics/opensource_64.png',description:'"One of the most interesting BSD variants of the 2010s, NextBSD, has come back to life under new management," reports The Register: Aside from the hom',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://bsd.slashdot.org/story/26/07/18/1843243/nextbsd-returns-to-port-apple-source-onto-freebsd?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/opensource_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -980,7 +1006,7 @@
               <span class="date">18 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">NextBSD Returns to Port Apple Source Onto FreeBSD</h3>
             <p class="card-desc">"One of the most interesting BSD variants of the 2010s, NextBSD, has come back to life under new management," reports The Register: Aside from the hom…</p>
           </div>
         </a>
@@ -1052,45 +1078,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="goodbye, and thanks for all the bikesheds"
+           data-title="the kimi k3 moment"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-07-18T17:27:24.000Z"
-           data-url="https://queue.acm.org/detail.cfm?id=3818307">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://queue.acm.org/detail.cfm?id=3818307',title:'Goodbye, and Thanks for All the Bikesheds',source:'Hacker News',date:'2026-07-18T17:27:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://queue.acm.org/detail.cfm?id=3818307" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-07-18T17:32:40.000Z"
+           data-url="https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/',title:'The Kimi K3 Moment',source:'Hacker News',date:'2026-07-18T17:32:40.000Z',image:'https://stephen.bochinski.dev/assets/posts/2026-07-18-the-kimi-k3-moment.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://stephen.bochinski.dev/assets/posts/2026-07-18-the-kimi-k3-moment.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 84</span><span class="badge">💬 60</span>
+              <span class="badge">⬆ 112</span><span class="badge">💬 80</span>
             </div>
-            <h3 class="card-title">Goodbye, and Thanks for All the Bikesheds</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="reo trucks i4 4wd pickup truck starts at $21,500"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-18T18:13:05.000Z"
-           data-url="https://reotrucks.com">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://reotrucks.com',title:'REO Trucks I4 4WD Pickup Truck Starts at $21,500',source:'Hacker News',date:'2026-07-18T18:13:05.000Z',image:'https://reotrucks.com/opengraph-image?2c37889503466c53',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://reotrucks.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://reotrucks.com/opengraph-image?2c37889503466c53')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 29</span><span class="badge">💬 24</span>
-            </div>
-            <h3 class="card-title">REO Trucks I4 4WD Pickup Truck Starts at $21,500</h3>
+            <h3 class="card-title">The Kimi K3 Moment</h3>
             
           </div>
         </a>
@@ -1110,31 +1114,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 113</span><span class="badge">💬 65</span>
+              <span class="badge">⬆ 132</span><span class="badge">💬 76</span>
             </div>
             <h3 class="card-title">Gleam Is Now on Tangled</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the kimi k3 moment"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-18T17:32:40.000Z"
-           data-url="https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/',title:'The Kimi K3 Moment',source:'Hacker News',date:'2026-07-18T17:32:40.000Z',image:'https://stephen.bochinski.dev/assets/posts/2026-07-18-the-kimi-k3-moment.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://stephen.bochinski.dev/blog/2026/07/18/the-kimi-k3-moment/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://stephen.bochinski.dev/assets/posts/2026-07-18-the-kimi-k3-moment.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 22</span><span class="badge">💬 8</span>
-            </div>
-            <h3 class="card-title">The Kimi K3 Moment</h3>
             
           </div>
         </a>
@@ -1154,9 +1136,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 76</span><span class="badge">💬 25</span>
+              <span class="badge">⬆ 114</span><span class="badge">💬 37</span>
             </div>
             <h3 class="card-title">If You Build It, They Will Come</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="goodbye, and thanks for all the bikesheds"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-18T17:27:24.000Z"
+           data-url="https://queue.acm.org/detail.cfm?id=3818307">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://queue.acm.org/detail.cfm?id=3818307',title:'Goodbye, and Thanks for All the Bikesheds',source:'Hacker News',date:'2026-07-18T17:27:24.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://queue.acm.org/detail.cfm?id=3818307" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de jul. de 2026</span>
+              <span class="badge">⬆ 131</span><span class="badge">💬 117</span>
+            </div>
+            <h3 class="card-title">Goodbye, and Thanks for All the Bikesheds</h3>
             
           </div>
         </a>
@@ -1176,7 +1180,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 91</span><span class="badge">💬 57</span>
+              <span class="badge">⬆ 110</span><span class="badge">💬 71</span>
             </div>
             <h3 class="card-title">Elixir-lang.org has a new design</h3>
             
@@ -1198,9 +1202,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 32</span><span class="badge">💬 17</span>
+              <span class="badge">⬆ 41</span><span class="badge">💬 19</span>
             </div>
             <h3 class="card-title">Our Approach to Bioresilience: Isomorphic Labs and Google DeepMind</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="show hn: get alerts for good seats at 70mm imax showings of the odyssey"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-18T18:06:23.000Z"
+           data-url="https://imaxxing.io/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://imaxxing.io/',title:'Show HN: Get alerts for good seats at 70mm IMAX showings of The Odyssey',source:'Hacker News',date:'2026-07-18T18:06:23.000Z',image:'https://imaxxing.io/og.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://imaxxing.io/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://imaxxing.io/og.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de jul. de 2026</span>
+              <span class="badge">⬆ 20</span><span class="badge">💬 20</span>
+            </div>
+            <h3 class="card-title">Show HN: Get alerts for good seats at 70mm IMAX showings of The Odyssey</h3>
             
           </div>
         </a>
@@ -1220,9 +1246,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 586</span><span class="badge">💬 62</span>
+              <span class="badge">⬆ 605</span><span class="badge">💬 62</span>
             </div>
             <h3 class="card-title">Regressive JPEGs</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="typing speed test, but for developers"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-18T19:38:21.000Z"
+           data-url="https://haxxorwpm.0s.is/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://haxxorwpm.0s.is/',title:'Typing Speed Test, but for Developers',source:'Hacker News',date:'2026-07-18T19:38:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://haxxorwpm.0s.is/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">18 de jul. de 2026</span>
+              <span class="badge">⬆ 6</span><span class="badge">💬 4</span>
+            </div>
+            <h3 class="card-title">Typing Speed Test, but for Developers</h3>
             
           </div>
         </a>
@@ -1242,7 +1290,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 789</span><span class="badge">💬 393</span>
+              <span class="badge">⬆ 838</span><span class="badge">💬 427</span>
             </div>
             <h3 class="card-title">LG monitors silently install software through Windows Update without consent</h3>
             
@@ -1264,31 +1312,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">17 de jul. de 2026</span>
-              <span class="badge">⬆ 44</span><span class="badge">💬 6</span>
+              <span class="badge">⬆ 47</span><span class="badge">💬 8</span>
             </div>
             <h3 class="card-title">Tech note: making your own V-I plots at home</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: get alerts for good seats at 70mm imax showings of the odyssey"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-18T18:06:23.000Z"
-           data-url="https://imaxxing.io/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://imaxxing.io/',title:'Show HN: Get alerts for good seats at 70mm IMAX showings of The Odyssey',source:'Hacker News',date:'2026-07-18T18:06:23.000Z',image:'https://imaxxing.io/og.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://imaxxing.io/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://imaxxing.io/og.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">18 de jul. de 2026</span>
-              <span class="badge">⬆ 13</span><span class="badge">💬 8</span>
-            </div>
-            <h3 class="card-title">Show HN: Get alerts for good seats at 70mm IMAX showings of The Odyssey</h3>
             
           </div>
         </a>
@@ -1422,28 +1448,6 @@
             </div>
             <h3 class="card-title">Parents want safer phones for kids. These companies are answering the call.</h3>
             <p class="card-desc">As parents look for alternatives to unrestricted smartphones, a growing number of companies are building phones designed specifically for kids, from f…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="remarkable&#8217;s new paper pure is good. that&#8217;s why i wrote this review on it."
-           data-desc="remarkable's paper pure replaces remarkable 2, and it is quite good."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Fri, 17 Jul 2026 14:47:27 +0000"
-           data-url="https://techcrunch.com/2026/07/17/remarkables-new-paper-pure-is-good-thats-why-i-wrote-this-review-on-it/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/17/remarkables-new-paper-pure-is-good-thats-why-i-wrote-this-review-on-it/',title:'reMarkable&#8217;s new Paper Pure is good. That&#8217;s why I wrote this review on it.',source:'techcrunch',date:'Fri, 17 Jul 2026 14:47:27 +0000',image:'',description:'Remarkable\'s Paper Pure replaces Remarkable 2, and it is quite good.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/17/remarkables-new-paper-pure-is-good-thats-why-i-wrote-this-review-on-it/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">17 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">reMarkable&#8217;s new Paper Pure is good. That&#8217;s why I wrote this review on it.</h3>
-            <p class="card-desc">Remarkable's Paper Pure replaces Remarkable 2, and it is quite good.</p>
           </div>
         </a>
       </div></div>
