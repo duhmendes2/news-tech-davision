@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 24/07/2026, 16:54:26
+      Atualizado: 24/07/2026, 18:01:59
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">78</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">50</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">5</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">77</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">48</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">5</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,16 +249,16 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">50</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">48</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="slashdot"
-           data-desc="anthropic has released opus 5, a new claude model that it says comes close to its higher-end fable 5 model at half the price while improving on opus 4.8 in knowledge work, coding, and scientific resea"
+           data-desc="nvidia, microsoft, meta, palantir, and more than 20 other tech companies signed an open letter urging policymakers not to impose "premature restrictions" on open-weight ai models, warning that broad l"
            data-source="slashdot"
            data-cat="IA"
-           data-date="2026-07-24T19:00:00+00:00"
+           data-date="2026-07-24T20:00:00+00:00"
            data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-24T19:00:00+00:00',image:'',description:'Anthropic has released Opus 5, a new Claude model that it says comes close to its higher-end Fable 5 model at half the price while improving on Opus 4',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-24T20:00:00+00:00',image:'',description:'Nvidia, Microsoft, Meta, Palantir, and more than 20 other tech companies signed an open letter urging policymakers not to impose "premature restrictio',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
@@ -269,6 +269,28 @@
               
             </div>
             <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Nvidia, Microsoft, Meta, Palantir, and more than 20 other tech companies signed an open letter urging policymakers not to impose "premature restrictio…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="anthropic's new opus 5 model rivals fable 5 for half the price"
+           data-desc="anthropic has released opus 5, a new claude model that it says comes close to its higher-end fable 5 model at half the price while improving on opus 4.8 in knowledge work, coding, and scientific resea"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-24T19:00:00+00:00"
+           data-url="https://slashdot.org/story/26/07/24/1853236/anthropics-new-opus-5-model-rivals-fable-5-for-half-the-price?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/07/24/1853236/anthropics-new-opus-5-model-rivals-fable-5-for-half-the-price?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Anthropic\'s New Opus 5 Model Rivals Fable 5 For Half the Price',source:'slashdot',date:'2026-07-24T19:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'Anthropic has released Opus 5, a new Claude model that it says comes close to its higher-end Fable 5 model at half the price while improving on Opus 4',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/story/26/07/24/1853236/anthropics-new-opus-5-model-rivals-fable-5-for-half-the-price?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">24 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic's New Opus 5 Model Rivals Fable 5 For Half the Price</h3>
             <p class="card-desc">Anthropic has released Opus 5, a new Claude model that it says comes close to its higher-end Fable 5 model at half the price while improving on Opus 4…</p>
           </div>
         </a>
@@ -362,28 +384,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="startup founders urge trump not to shut off chinese open weight ai"
-           data-desc="nearly 200 silicon valley companies, including proton and y combinator, are urging the trump administration not to block u.s. access to chinese open-weight ai models or risk crippling the next generat"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-07-23T16:00:00+00:00"
-           data-url="https://slashdot.org/story/26/07/23/0623233/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/07/23/0623233/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Startup Founders Urge Trump Not to Shut Off Chinese Open Weight AI',source:'slashdot',date:'2026-07-23T16:00:00+00:00',image:'',description:'Nearly 200 Silicon Valley companies, including Proton and Y Combinator, are urging the Trump administration not to block U.S. access to Chinese open-w',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/story/26/07/23/0623233/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">23 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Startup Founders Urge Trump Not to Shut Off Chinese Open Weight AI</h3>
-            <p class="card-desc">Nearly 200 Silicon Valley companies, including Proton and Y Combinator, are urging the Trump administration not to block U.S. access to Chinese open-w…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="claude opus 5"
            data-desc="https:&#x2f;&#x2f;www.anthropic.com&#x2f;claude-opus-5-system-card"
            data-source="hacker news"
@@ -398,7 +398,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 826</span><span class="badge">💬 462</span>
+              <span class="badge">⬆ 966</span><span class="badge">💬 524</span>
             </div>
             <h3 class="card-title">Claude Opus 5</h3>
             <p class="card-desc">https:&#x2F;&#x2F;www.anthropic.com&#x2F;claude-opus-5-system-card</p>
@@ -420,7 +420,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 225</span><span class="badge">💬 141</span>
+              <span class="badge">⬆ 321</span><span class="badge">💬 174</span>
             </div>
             <h3 class="card-title">Nvidia, Microsoft, Meta warn against overregulating open-weight models</h3>
             <p class="card-desc">Letter: https:&#x2F;&#x2F;images.nvidia.com&#x2F;pdf&#x2F;Open-Weights-and-American-AI-L... [pdf]https:&#x2F;&#x2F;x.com&#x2F;JensenHuang&#x2F;status&…</p>
@@ -442,7 +442,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 203</span><span class="badge">💬 31</span>
+              <span class="badge">⬆ 222</span><span class="badge">💬 39</span>
             </div>
             <h3 class="card-title">Half-Life 2 running natively on HaikuOS</h3>
             
@@ -464,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 258</span><span class="badge">💬 114</span>
+              <span class="badge">⬆ 311</span><span class="badge">💬 162</span>
             </div>
             <h3 class="card-title">Be skeptical of OpenAI's rogue hacker agent story</h3>
             
@@ -820,50 +820,6 @@
             </div>
             <h3 class="card-title">AMD takes on Nvidia with its Helios AI rack-scale system</h3>
             <p class="card-desc">AMD is challenging its chipmaker rival with a new rack-scale system that will start shipping to customers later this year.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="patreon lays off 20% of its workforce"
-           data-desc="in a memo to staff that was posted online, conte said the company's core business is strong, but the platform has to respond to market changes and adjust its cost structure to remain stable."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 23 Jul 2026 20:30:07 +0000"
-           data-url="https://techcrunch.com/2026/07/23/patreon-lays-off-off-20-of-its-workforce/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/23/patreon-lays-off-off-20-of-its-workforce/',title:'Patreon lays off 20% of its workforce',source:'techcrunch',date:'Thu, 23 Jul 2026 20:30:07 +0000',image:'',description:'In a memo to staff that was posted online, Conte said the company\'s core business is strong, but the platform has to respond to market changes and adj',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/23/patreon-lays-off-off-20-of-its-workforce/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">23 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Patreon lays off 20% of its workforce</h3>
-            <p class="card-desc">In a memo to staff that was posted online, Conte said the company's core business is strong, but the platform has to respond to market changes and adj…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="insurance startup corgi reportedly raised more money at $4b — its third round in 8 weeks"
-           data-desc="in the ai-funding frenzy, many startups are raising back-to-back rounds at ever-increasing valuations — but even by those standards, corgi stands out."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 23 Jul 2026 20:13:24 +0000"
-           data-url="https://techcrunch.com/2026/07/23/insurance-startup-corgi-reportedly-raised-more-money-at-4b-its-third-round-in-eight-weeks/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/23/insurance-startup-corgi-reportedly-raised-more-money-at-4b-its-third-round-in-eight-weeks/',title:'Insurance startup Corgi reportedly raised more money at $4B — its third round in 8 weeks',source:'techcrunch',date:'Thu, 23 Jul 2026 20:13:24 +0000',image:'',description:'In the AI-funding frenzy, many startups are raising back-to-back rounds at ever-increasing valuations — but even by those standards, Corgi stands out.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/07/23/insurance-startup-corgi-reportedly-raised-more-money-at-4b-its-third-round-in-eight-weeks/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">23 de jul. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Insurance startup Corgi reportedly raised more money at $4B — its third round in 8 weeks</h3>
-            <p class="card-desc">In the AI-funding frenzy, many startups are raising back-to-back rounds at ever-increasing valuations — but even by those standards, Corgi stands out.</p>
           </div>
         </a>
       </div>
@@ -1352,6 +1308,32 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="waymo reportedly mulling a breakup with uber"
+           data-desc="the contract between the two companies ends in may 2028, uber told techcrunch."
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Fri, 24 Jul 2026 20:43:35 +0000"
+           data-url="https://techcrunch.com/2026/07/24/waymo-reportedly-mulling-a-breakup-with-uber/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/24/waymo-reportedly-mulling-a-breakup-with-uber/',title:'Waymo reportedly mulling a breakup with Uber',source:'techcrunch',date:'Fri, 24 Jul 2026 20:43:35 +0000',image:'',description:'The contract between the two companies ends in May 2028, Uber told TechCrunch.',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/24/waymo-reportedly-mulling-a-breakup-with-uber/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">24 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Waymo reportedly mulling a breakup with Uber</h3>
+            <p class="card-desc">The contract between the two companies ends in May 2028, Uber told TechCrunch.</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">5</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
@@ -1400,28 +1382,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="fil-c: garbage in, memory safety out [video]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-07-23T19:37:37.000Z"
-           data-url="https://www.youtube.com/watch?v=5F-2Y1LPRek">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=5F-2Y1LPRek',title:'Fil-C: Garbage In, Memory Safety Out [video]',source:'Hacker News',date:'2026-07-23T19:37:37.000Z',image:'',description:'',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://www.youtube.com/watch?v=5F-2Y1LPRek" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">23 de jul. de 2026</span>
-              <span class="badge">⬆ 35</span><span class="badge">💬 17</span>
-            </div>
-            <h3 class="card-title">Fil-C: Garbage In, Memory Safety Out [video]</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="don't take the black pill [video]"
            data-desc=""
            data-source="hacker news"
@@ -1436,9 +1396,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 36</span><span class="badge">💬 17</span>
+              <span class="badge">⬆ 71</span><span class="badge">💬 34</span>
             </div>
             <h3 class="card-title">Don't Take the Black Pill [video]</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fil-c: garbage in, memory safety out [video]"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-07-23T19:37:37.000Z"
+           data-url="https://www.youtube.com/watch?v=5F-2Y1LPRek">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=5F-2Y1LPRek',title:'Fil-C: Garbage In, Memory Safety Out [video]',source:'Hacker News',date:'2026-07-23T19:37:37.000Z',image:'',description:'',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://www.youtube.com/watch?v=5F-2Y1LPRek" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de jul. de 2026</span>
+              <span class="badge">⬆ 57</span><span class="badge">💬 34</span>
+            </div>
+            <h3 class="card-title">Fil-C: Garbage In, Memory Safety Out [video]</h3>
             
           </div>
         </a>
@@ -1458,7 +1440,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 289</span><span class="badge">💬 47</span>
+              <span class="badge">⬆ 296</span><span class="badge">💬 47</span>
             </div>
             <h3 class="card-title">Flux 3 X Mimic: The Next Generation of Video-Action Models</h3>
             
@@ -1638,7 +1620,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 41</span><span class="badge">💬 6</span>
+              <span class="badge">⬆ 95</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">Postgres LISTEN/NOTIFY actually scales</h3>
             
@@ -1660,31 +1642,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 410</span><span class="badge">💬 151</span>
+              <span class="badge">⬆ 431</span><span class="badge">💬 154</span>
             </div>
             <h3 class="card-title">My security camera shipped a GitHub admin token in its login page</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="i got into yc (startup school) by hacking it"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-24T18:03:22.000Z"
-           data-url="https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html',title:'I got into YC (Startup School) by hacking it',source:'Hacker News',date:'2026-07-24T18:03:22.000Z',image:'https://obaid.wtf/assets/yc-post-og.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://obaid.wtf/assets/yc-post-og.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 66</span><span class="badge">💬 34</span>
-            </div>
-            <h3 class="card-title">I got into YC (Startup School) by hacking it</h3>
             
           </div>
         </a>
@@ -1704,9 +1664,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 22</span>
+              <span class="badge">⬆ 38</span><span class="badge">💬 3</span>
             </div>
             <h3 class="card-title">Gsxui – Shadcn-style components for Go</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="i got into yc startup school by hacking it"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-24T18:03:22.000Z"
+           data-url="https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html',title:'I got into YC Startup School by hacking it',source:'Hacker News',date:'2026-07-24T18:03:22.000Z',image:'https://obaid.wtf/assets/yc-post-og.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://obaid.wtf/jotbook/2026/07/18/how-i-got-into-yc-by-hacking-it.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://obaid.wtf/assets/yc-post-og.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de jul. de 2026</span>
+              <span class="badge">⬆ 74</span><span class="badge">💬 44</span>
+            </div>
+            <h3 class="card-title">I got into YC Startup School by hacking it</h3>
             
           </div>
         </a>
@@ -1726,7 +1708,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 27</span><span class="badge">💬 5</span>
+              <span class="badge">⬆ 35</span><span class="badge">💬 9</span>
             </div>
             <h3 class="card-title">The hardest way to make a GIF</h3>
             
@@ -1734,67 +1716,67 @@
         </a>
       </div>
       <div class="card"
-           data-title="the small, real, original web"
+           data-title="government orders github to remove bluetooth-based chat app bitchat: jack dorsey"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-07-24T17:28:59.000Z"
-           data-url="https://spacetimetech.wordpress.com/2026/07/19/the-small-real-original-web/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://spacetimetech.wordpress.com/2026/07/19/the-small-real-original-web/',title:'The small, real, original web',source:'Hacker News',date:'2026-07-24T17:28:59.000Z',image:'https://spacetimetech.wordpress.com/wp-content/uploads/2026/07/internet-sign.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://spacetimetech.wordpress.com/2026/07/19/the-small-real-original-web/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://spacetimetech.wordpress.com/wp-content/uploads/2026/07/internet-sign.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 21</span><span class="badge">💬 1</span>
-            </div>
-            <h3 class="card-title">The small, real, original web</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the front end framework for correctness: built on effect, architected like elm"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-24T15:24:00.000Z"
-           data-url="https://foldkit.dev/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://foldkit.dev/',title:'The front end framework for correctness: built on Effect, architected like Elm',source:'Hacker News',date:'2026-07-24T15:24:00.000Z',image:'https://foldkit.dev/og/home.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://foldkit.dev/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://foldkit.dev/og/home.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 57</span><span class="badge">💬 32</span>
-            </div>
-            <h3 class="card-title">The front end framework for correctness: built on Effect, architected like Elm</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="duckpgq – a duckdb community extension for graph workloads"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-24T17:00:23.000Z"
-           data-url="https://duckpgq.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://duckpgq.org/',title:'DuckPGQ – A DuckDB community extension for graph workloads',source:'Hacker News',date:'2026-07-24T17:00:23.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://duckpgq.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-07-24T14:41:59.000Z"
+           data-url="https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece',title:'Government orders GitHub to remove Bluetooth-based chat app Bitchat: Jack Dorsey',source:'Hacker News',date:'2026-07-24T14:41:59.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 28</span><span class="badge">💬 4</span>
+              <span class="badge">⬆ 289</span><span class="badge">💬 214</span>
             </div>
-            <h3 class="card-title">DuckPGQ – A DuckDB community extension for graph workloads</h3>
+            <h3 class="card-title">Government orders GitHub to remove Bluetooth-based chat app Bitchat: Jack Dorsey</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="if coding has been solved, why does software keep getting worse?"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-24T09:08:17.000Z"
+           data-url="https://ptrchm.com/posts/nothing-works-and-everyone-is-euphoric/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ptrchm.com/posts/nothing-works-and-everyone-is-euphoric/',title:'If coding has been solved, why does software keep getting worse?',source:'Hacker News',date:'2026-07-24T09:08:17.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://ptrchm.com/posts/nothing-works-and-everyone-is-euphoric/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de jul. de 2026</span>
+              <span class="badge">⬆ 294</span><span class="badge">💬 246</span>
+            </div>
+            <h3 class="card-title">If coding has been solved, why does software keep getting worse?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="unitree as2-w"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-24T16:32:52.000Z"
+           data-url="https://www.unitree.com/As2-W/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.unitree.com/As2-W/',title:'Unitree As2-W',source:'Hacker News',date:'2026-07-24T16:32:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.unitree.com/As2-W/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">24 de jul. de 2026</span>
+              <span class="badge">⬆ 62</span><span class="badge">💬 27</span>
+            </div>
+            <h3 class="card-title">Unitree As2-W</h3>
             
           </div>
         </a>
@@ -1814,7 +1796,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 631</span><span class="badge">💬 356</span>
+              <span class="badge">⬆ 660</span><span class="badge">💬 373</span>
             </div>
             <h3 class="card-title">It's getting harder to focus every day</h3>
             
@@ -1822,24 +1804,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="the rise and fall of language diversity through the holocene"
-           data-desc=""
-           data-source="hacker news"
+           data-title="volkswagen engineers charged with insider trading tied to rivian joint venture"
+           data-desc="the indictment, which was unsealed friday, alleges the volkswagen engineers used confidential insider information to buy stock in rivian."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-07-24T16:40:49.000Z"
-           data-url="https://www.science.org/doi/10.1126/science.adx4343">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.science.org/doi/10.1126/science.adx4343',title:'The rise and fall of language diversity through the Holocene',source:'Hacker News',date:'2026-07-24T16:40:49.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.science.org/doi/10.1126/science.adx4343" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Fri, 24 Jul 2026 19:56:23 +0000"
+           data-url="https://techcrunch.com/2026/07/24/volkswagen-engineers-charged-with-insider-trading-tied-to-rivian-joint-venture/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/24/volkswagen-engineers-charged-with-insider-trading-tied-to-rivian-joint-venture/',title:'Volkswagen engineers charged with insider trading tied to Rivian joint venture',source:'techcrunch',date:'Fri, 24 Jul 2026 19:56:23 +0000',image:'',description:'The indictment, which was unsealed Friday, alleges the Volkswagen engineers used confidential insider information to buy stock in Rivian.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/24/volkswagen-engineers-charged-with-insider-trading-tied-to-rivian-joint-venture/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">24 de jul. de 2026</span>
-              <span class="badge">⬆ 42</span><span class="badge">💬 3</span>
+              
             </div>
-            <h3 class="card-title">The rise and fall of language diversity through the Holocene</h3>
-            
+            <h3 class="card-title">Volkswagen engineers charged with insider trading tied to Rivian joint venture</h3>
+            <p class="card-desc">The indictment, which was unsealed Friday, alleges the Volkswagen engineers used confidential insider information to buy stock in Rivian.</p>
           </div>
         </a>
       </div>
