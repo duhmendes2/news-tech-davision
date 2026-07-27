@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 27/07/2026, 05:53:57
+      Atualizado: 27/07/2026, 09:21:25
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">57</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">31</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">24</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">63</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">37</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">2</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">31</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">37</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="an anonymous reader shared this report from phoronix: a patch series that appears destined for the upcoming linux 7.3 merge window is what's dubbed the "kvm chainsaw" as a major code clean-up in deali"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-07-27T11:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-27T11:34:00+00:00',image:'',description:'An anonymous reader shared this report from Phoronix: A patch series that appears destined for the upcoming Linux 7.3 merge window is what\'s dubbed th',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">27 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader shared this report from Phoronix: A patch series that appears destined for the upcoming Linux 7.3 merge window is what's dubbed th…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="'inside the dystopian world of germany's free speech crackdown'"
            data-desc="thousands of germans have been threatened with fines or prison sentences for social media posts, reports the telegraph, calling the country's political speech laws "unusually stringent for an eu membe"
@@ -258,9 +280,9 @@
            data-cat="IA"
            data-date="2026-07-27T01:34:00+00:00"
            data-url="https://yro.slashdot.org/story/26/07/27/0037219/inside-the-dystopian-world-of-germanys-free-speech-crackdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/07/27/0037219/inside-the-dystopian-world-of-germanys-free-speech-crackdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'\'Inside the Dystopian World of Germany\'s Free Speech Crackdown\'',source:'slashdot',date:'2026-07-27T01:34:00+00:00',image:'https://a.fsdn.com/sd/topics/eu_64.png',description:'Thousands of Germans have been threatened with fines or prison sentences for social media posts, reports The Telegraph, calling the country\'s politica',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/07/27/0037219/inside-the-dystopian-world-of-germanys-free-speech-crackdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'\'Inside the Dystopian World of Germany\'s Free Speech Crackdown\'',source:'slashdot',date:'2026-07-27T01:34:00+00:00',image:'',description:'Thousands of Germans have been threatened with fines or prison sentences for social media posts, reports The Telegraph, calling the country\'s politica',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://yro.slashdot.org/story/26/07/27/0037219/inside-the-dystopian-world-of-germanys-free-speech-crackdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/eu_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -384,24 +406,68 @@
         </a>
       </div>
       <div class="card"
-           data-title="firefox's new tab page will get widgets - including an ai-powered daily crossword"
-           data-desc="in a sign of the times, firefox's new tab page could soon include a crossword puzzle from ai-powered news platform particle. the blog omg ubuntu reports: the mini crossword game is updated daily, with"
-           data-source="slashdot"
+           data-title="elevated errors on claude opus 5"
+           data-desc=""
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-07-26T01:34:00+00:00"
-           data-url="https://news.slashdot.org/story/26/07/25/1944229/firefoxs-new-tab-page-will-get-widgets---including-an-ai-powered-daily-crossword?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/07/25/1944229/firefoxs-new-tab-page-will-get-widgets---including-an-ai-powered-daily-crossword?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Firefox\'s New Tab Page Will Get Widgets - Including an AI-Powered Daily Crossword',source:'slashdot',date:'2026-07-26T01:34:00+00:00',image:'https://a.fsdn.com/sd/topics/firefox_64.png',description:'In a sign of the times, Firefox\'s New Tab page could soon include a crossword puzzle from AI-powered news platform Particle. The blog OMG Ubuntu repor',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://news.slashdot.org/story/26/07/25/1944229/firefoxs-new-tab-page-will-get-widgets---including-an-ai-powered-daily-crossword?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/firefox_64.png')"></div>
+           data-date="2026-07-27T11:32:32.000Z"
+           data-url="https://status.claude.com/incidents/mfdtrknpxghq">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://status.claude.com/incidents/mfdtrknpxghq',title:'Elevated errors on Claude Opus 5',source:'Hacker News',date:'2026-07-27T11:32:32.000Z',image:'https://dka575ofm4ao0.cloudfront.net/assets/logos/favicon-2b86ed00cfa6258307d4a3d0c482fd733c7973f82de213143b24fc062c540367.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://status.claude.com/incidents/mfdtrknpxghq" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://dka575ofm4ao0.cloudfront.net/assets/logos/favicon-2b86ed00cfa6258307d4a3d0c482fd733c7973f82de213143b24fc062c540367.png')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">26 de jul. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 7</span><span class="badge">💬 3</span>
             </div>
-            <h3 class="card-title">Firefox's New Tab Page Will Get Widgets - Including an AI-Powered Daily Crossword</h3>
-            <p class="card-desc">In a sign of the times, Firefox's New Tab page could soon include a crossword puzzle from AI-powered news platform Particle. The blog OMG Ubuntu repor…</p>
+            <h3 class="card-title">Elevated errors on Claude Opus 5</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="elevated errors on claude opus 5"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-27T08:20:06.000Z"
+           data-url="https://status.claude.com/incidents/lhqp09kxq7pb">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://status.claude.com/incidents/lhqp09kxq7pb',title:'Elevated errors on Claude Opus 5',source:'Hacker News',date:'2026-07-27T08:20:06.000Z',image:'https://dka575ofm4ao0.cloudfront.net/assets/logos/favicon-2b86ed00cfa6258307d4a3d0c482fd733c7973f82de213143b24fc062c540367.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://status.claude.com/incidents/lhqp09kxq7pb" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://dka575ofm4ao0.cloudfront.net/assets/logos/favicon-2b86ed00cfa6258307d4a3d0c482fd733c7973f82de213143b24fc062c540367.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 23</span><span class="badge">💬 8</span>
+            </div>
+            <h3 class="card-title">Elevated errors on Claude Opus 5</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="modern email can be built from borrowed parts"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-07-27T08:27:21.000Z"
+           data-url="https://en.andros.dev/blog/d7ed8b07/modern-email-can-be-built-from-borrowed-parts/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://en.andros.dev/blog/d7ed8b07/modern-email-can-be-built-from-borrowed-parts/',title:'Modern email can be built from borrowed parts',source:'Hacker News',date:'2026-07-27T08:27:21.000Z',image:'https://img.andros.dev/6A_ACb4GAjMHuPelfFnMUuM8KS4=/600x0/filters:format(avif):quality(85)/https://andros.dev/media/thumbnails/kristina-tripkovic-8Zs5H6CnYJo-unsplash.jpg',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://en.andros.dev/blog/d7ed8b07/modern-email-can-be-built-from-borrowed-parts/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://img.andros.dev/6A_ACb4GAjMHuPelfFnMUuM8KS4=/600x0/filters:format(avif):quality(85)/https://andros.dev/media/thumbnails/kristina-tripkovic-8Zs5H6CnYJo-unsplash.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 30</span><span class="badge">💬 6</span>
+            </div>
+            <h3 class="card-title">Modern email can be built from borrowed parts</h3>
+            
           </div>
         </a>
       </div>
@@ -420,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 698</span><span class="badge">💬 503</span>
+              <span class="badge">⬆ 893</span><span class="badge">💬 686</span>
             </div>
             <h3 class="card-title">US citizen charged after GrapheneOS phone wipes during airport search</h3>
             
@@ -534,6 +600,72 @@
             </div>
             <h3 class="card-title">Monday.com is the latest tech company to blame AI for layoffs — here are 20 others</h3>
             <p class="card-desc">A running look — in reverse chronological order — at the bigger tech companies that have announced significant layoffs this year with AI as a stated f…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the path to artificial superintelligence"
+           data-desc="imagine a healthcare system made up of multiple ai agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth pharmacy. each is an expert in its domain. but they "
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 27 Jul 2026 12:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/',title:'The path to artificial superintelligence',source:'mit',date:'Mon, 27 Jul 2026 12:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/07/CREA-1571-MIT-tech-review-Misc-1200x675-option-2.png',description:'Imagine a healthcare system made up of multiple AI agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth ph',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/07/27/1140724/the-path-to-artificial-superintelligence/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/07/CREA-1571-MIT-tech-review-Misc-1200x675-option-2.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">27 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The path to artificial superintelligence</h3>
+            <p class="card-desc">Imagine a healthcare system made up of multiple AI agents: one that manages symptom assessment, another scheduling, a third insurance, and a fourth ph…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="closing the data loop in ai-driven drug discovery"
+           data-desc="drug discovery is a high-cost, high-risk endeavor that is under growing pressure from a market increasingly defined by first-mover advantage. since the 1950s, the cost of developing new pharmaceutical"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 27 Jul 2026 11:40:16 +0000"
+           data-url="https://www.technologyreview.com/2026/07/27/1139667/closing-the-data-loop-in-ai-driven-drug-discovery/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/07/27/1139667/closing-the-data-loop-in-ai-driven-drug-discovery/',title:'Closing the data loop in AI-driven drug discovery',source:'mit',date:'Mon, 27 Jul 2026 11:40:16 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/06/iStock-2247435323_f6bf40.jpg',description:'Drug discovery is a high-cost, high-risk endeavor that is under growing pressure from a market increasingly defined by first-mover advantage. Since th',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/07/27/1139667/closing-the-data-loop-in-ai-driven-drug-discovery/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/06/iStock-2247435323_f6bf40.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">27 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Closing the data loop in AI-driven drug discovery</h3>
+            <p class="card-desc">Drug discovery is a high-cost, high-risk endeavor that is under growing pressure from a market increasingly defined by first-mover advantage. Since th…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="building the enterprise environment for agentic ai"
+           data-desc="for the enterprise, the promise of agentic ai is much more than just a better chatbot. it is software agents that execute business tasks end-to-end across people, business workflows, data, and systems"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 27 Jul 2026 11:32:58 +0000"
+           data-url="https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/',title:'Building the enterprise environment for agentic AI',source:'mit',date:'Mon, 27 Jul 2026 11:32:58 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/07/Intel-image-contributed-article.png',description:'For the enterprise, the promise of agentic AI is much more than just a better chatbot. It is software agents that execute business tasks end-to-end ac',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/07/Intel-image-contributed-article.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">27 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Building the enterprise environment for agentic AI</h3>
+            <p class="card-desc">For the enterprise, the promise of agentic AI is much more than just a better chatbot. It is software agents that execute business tasks end-to-end ac…</p>
           </div>
         </a>
       </div>
@@ -934,19 +1066,45 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="europe got its own tbpn-style live show, and everyone’s angling for a guest spot"
+           data-desc="on monday, the network announced a $1.6 million seed round from top players in the media ecosystem, including powerhouse capital, axel springer se (which owns business insider and politico), the popul"
+           data-source="techcrunch"
+           data-cat="Robótica"
+           data-date="Mon, 27 Jul 2026 10:00:00 +0000"
+           data-url="https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/',title:'Europe got its own TBPN-style live show, and everyone’s angling for a guest spot',source:'techcrunch',date:'Mon, 27 Jul 2026 10:00:00 +0000',image:'',description:'On Monday, the network announced a $1.6 million seed round from top players in the media ecosystem, including Powerhouse Capital, Axel Springer SE (wh',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/07/27/europe-got-its-own-tbpn-style-live-show-and-its-already-a-hot-spot-on-a-press-tour/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">27 de jul. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Europe got its own TBPN-style live show, and everyone’s angling for a guest spot</h3>
+            <p class="card-desc">On Monday, the network announced a $1.6 million seed round from top players in the media ecosystem, including Powerhouse Capital, Axel Springer SE (wh…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
       <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">2</span></h2>
       <div class="cards-grid" id="grid-produo-de-contedo">
       <div class="card"
-           data-title="slashdot"
+           data-title="a new middle class of content creators is quietly quitting the 9-to-5"
            data-desc=""the rise of tiktok, instagram reels and amazon storefronts has created a new kind of white-collar exit strategy," reports bloomberg. workers ditch office jobs not to become celebrities, necessarily, "
            data-source="slashdot"
            data-cat="Produção de Conteúdo"
            data-date="2026-07-27T07:34:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-07-27T07:34:00+00:00',image:'',description:'"The rise of TikTok, Instagram Reels and Amazon storefronts has created a new kind of white-collar exit strategy," reports Bloomberg. Workers ditch of',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://tech.slashdot.org/story/26/07/27/0238219/a-new-middle-class-of-content-creators-is-quietly-quitting-the-9-to-5?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/07/27/0238219/a-new-middle-class-of-content-creators-is-quietly-quitting-the-9-to-5?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'A New Middle Class of Content Creators Is Quietly Quitting the 9-to-5',source:'slashdot',date:'2026-07-27T07:34:00+00:00',image:'https://a.fsdn.com/sd/topics/social_64.png',description:'"The rise of TikTok, Instagram Reels and Amazon storefronts has created a new kind of white-collar exit strategy," reports Bloomberg. Workers ditch of',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://tech.slashdot.org/story/26/07/27/0238219/a-new-middle-class-of-content-creators-is-quietly-quitting-the-9-to-5?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/social_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -954,7 +1112,7 @@
               <span class="date">27 de jul. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">A New Middle Class of Content Creators Is Quietly Quitting the 9-to-5</h3>
             <p class="card-desc">"The rise of TikTok, Instagram Reels and Amazon storefronts has created a new kind of white-collar exit strategy," reports Bloomberg. Workers ditch of…</p>
           </div>
         </a>
@@ -983,7 +1141,7 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">24</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">23</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="2.1 million people view leaked 'odyssey' bootleg on x"
@@ -1118,6 +1276,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="how is the bun rewrite in rust going?"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T11:12:26.000Z"
+           data-url="https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html',title:'How is the Bun Rewrite in Rust going?',source:'Hacker News',date:'2026-07-27T11:12:26.000Z',image:'https://lockwood.dev/assets/img/rust_rewrite/slop.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://lockwood.dev/ai/2026/07/27/how-is-the-bun-rewrite-in-rust-going.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://lockwood.dev/assets/img/rust_rewrite/slop.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 69</span><span class="badge">💬 31</span>
+            </div>
+            <h3 class="card-title">How is the Bun Rewrite in Rust going?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="kimi-k3 releases on huggingface 7/27"
            data-desc=""
            data-source="hacker news"
@@ -1132,9 +1312,53 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">27 de jul. de 2026</span>
-              <span class="badge">⬆ 195</span><span class="badge">💬 69</span>
+              <span class="badge">⬆ 488</span><span class="badge">💬 228</span>
             </div>
             <h3 class="card-title">Kimi-K3 Releases on HuggingFace 7/27</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the birth of the american 12-string guitar"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T10:52:21.000Z"
+           data-url="https://www.harpguitars.net/history/grunewald/12-string.htm">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.harpguitars.net/history/grunewald/12-string.htm',title:'The Birth of the American 12-string Guitar',source:'Hacker News',date:'2026-07-27T10:52:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.harpguitars.net/history/grunewald/12-string.htm" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 20</span><span class="badge">💬 8</span>
+            </div>
+            <h3 class="card-title">The Birth of the American 12-string Guitar</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="if digital computers are conscious, they are conscious at the hardware level"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T10:33:25.000Z"
+           data-url="https://smoothbrains.net/posts/2026-05-09-digital-consciousness.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://smoothbrains.net/posts/2026-05-09-digital-consciousness.html',title:'If digital computers are conscious, they are conscious at the hardware level',source:'Hacker News',date:'2026-07-27T10:33:25.000Z',image:'https://smoothbrains.net/images/previews/smoothbrains_banner.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://smoothbrains.net/posts/2026-05-09-digital-consciousness.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://smoothbrains.net/images/previews/smoothbrains_banner.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 23</span><span class="badge">💬 16</span>
+            </div>
+            <h3 class="card-title">If digital computers are conscious, they are conscious at the hardware level</h3>
             
           </div>
         </a>
@@ -1154,9 +1378,75 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">27 de jul. de 2026</span>
-              <span class="badge">⬆ 547</span><span class="badge">💬 56</span>
+              <span class="badge">⬆ 694</span><span class="badge">💬 66</span>
             </div>
             <h3 class="card-title">PGSimCity - How PostgreSQL Works</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="vlc for unity now supported on linux"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T09:06:34.000Z"
+           data-url="https://code.videolan.org/videolan/vlc-unity">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://code.videolan.org/videolan/vlc-unity',title:'VLC for Unity now supported on Linux',source:'Hacker News',date:'2026-07-27T09:06:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://code.videolan.org/videolan/vlc-unity" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 42</span><span class="badge">💬 7</span>
+            </div>
+            <h3 class="card-title">VLC for Unity now supported on Linux</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="libsm64: mario 64 as a library for use in external game engines"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T10:04:48.000Z"
+           data-url="https://github.com/libsm64/libsm64">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/libsm64/libsm64',title:'Libsm64: Mario 64 as a library for use in external game engines',source:'Hacker News',date:'2026-07-27T10:04:48.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/libsm64/libsm64" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 7</span>
+            </div>
+            <h3 class="card-title">Libsm64: Mario 64 as a library for use in external game engines</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="shay locomotives"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T09:23:29.000Z"
+           data-url="https://www.shaylocomotives.com/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.shaylocomotives.com/',title:'Shay Locomotives',source:'Hacker News',date:'2026-07-27T09:23:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.shaylocomotives.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 15</span><span class="badge">💬 1</span>
+            </div>
+            <h3 class="card-title">Shay Locomotives</h3>
             
           </div>
         </a>
@@ -1176,7 +1466,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 149</span><span class="badge">💬 78</span>
+              <span class="badge">⬆ 213</span><span class="badge">💬 107</span>
             </div>
             <h3 class="card-title">Scriptc by Vercel: TypeScript-to-Native compiler, no JavaScript engine in binary</h3>
             
@@ -1184,23 +1474,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="french firefighters face 'pyrocumulonimbus' for first time"
+           data-title="removing react.js from the codebase and adapting htmx for ui interactivity"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-07-26T17:49:44.000Z"
-           data-url="https://www.france24.com/en/live-news/20260726-french-firefighters-face-pyrocumulonimbus-for-first-time">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.france24.com/en/live-news/20260726-french-firefighters-face-pyrocumulonimbus-for-first-time',title:'French firefighters face \'pyrocumulonimbus\' for first time',source:'Hacker News',date:'2026-07-26T17:49:44.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.france24.com/en/live-news/20260726-french-firefighters-face-pyrocumulonimbus-for-first-time" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-07-27T09:58:50.000Z"
+           data-url="https://misago-project.org/t/removing-reactjs-from-the-codebase-and-adapting-htmx-for-ui-interactivity/1267/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://misago-project.org/t/removing-reactjs-from-the-codebase-and-adapting-htmx-for-ui-interactivity/1267/',title:'Removing React.js from the codebase and adapting Htmx for UI interactivity',source:'Hacker News',date:'2026-07-27T09:58:50.000Z',image:'https://misago-project.org/media/avatars/2c/b5/7f4HE2zUBHuuSEmwcSKWk9P0Hc0x15SR/Hdw6wmL06bw6dEsnowVXPshMFiNq79Cz.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://misago-project.org/t/removing-reactjs-from-the-codebase-and-adapting-htmx-for-ui-interactivity/1267/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://misago-project.org/media/avatars/2c/b5/7f4HE2zUBHuuSEmwcSKWk9P0Hc0x15SR/Hdw6wmL06bw6dEsnowVXPshMFiNq79Cz.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 13</span><span class="badge">💬 3</span>
+            </div>
+            <h3 class="card-title">Removing React.js from the codebase and adapting Htmx for UI interactivity</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="chinese chipmaker shares surge 470%"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-07-27T09:11:59.000Z"
+           data-url="https://www.bbc.com/news/articles/c9q9w3x9qn2o">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.bbc.com/news/articles/c9q9w3x9qn2o',title:'Chinese chipmaker shares surge 470%',source:'Hacker News',date:'2026-07-27T09:11:59.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.bbc.com/news/articles/c9q9w3x9qn2o" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 346</span><span class="badge">💬 223</span>
+              <span class="date">27 de jul. de 2026</span>
+              <span class="badge">⬆ 94</span><span class="badge">💬 81</span>
             </div>
-            <h3 class="card-title">French firefighters face 'pyrocumulonimbus' for first time</h3>
+            <h3 class="card-title">Chinese chipmaker shares surge 470%</h3>
             
           </div>
         </a>
@@ -1220,7 +1532,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 304</span><span class="badge">💬 74</span>
+              <span class="badge">⬆ 332</span><span class="badge">💬 76</span>
             </div>
             <h3 class="card-title">Decker, a platform that builds on the legacy of Hypercard and classic macOS</h3>
             
@@ -1242,185 +1554,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 160</span><span class="badge">💬 47</span>
+              <span class="badge">⬆ 187</span><span class="badge">💬 71</span>
             </div>
             <h3 class="card-title">We have proof automation now</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="htmx 4.0, the first javascript library to release exclusively on the game boy"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T12:00:11.000Z"
-           data-url="https://swag.htmx.org/en-cad/products/htmx-4-the-game">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://swag.htmx.org/en-cad/products/htmx-4-the-game',title:'Htmx 4.0, the first JavaScript library to release exclusively on the Game Boy',source:'Hacker News',date:'2026-07-26T12:00:11.000Z',image:'https://imgproxy.fourthwall.dev/fFacE7iRN78e36VJLwizpILfnQcPu0ke2aIoxlQ7jc0/w:1200/sm:1/enc/EwYqh2EzXPAU7H04/BMXqquHCApkGKbGh/LoFc40D31bsD6gv4/lJ5EIYZduCxm8qAG/13LlpWyyziWbLs7D/Xi4TfM5SZiC5kSsq/f-tOQtISSQdUx14H/3kaNrBbOOijmZBov/fuUJOdCo4m-eyLcf/7A97CwuTeNBI_GsD/K81ThuM9c3cS1p--/oRP_PAY7b_W4O2kr/rRJzjKSc6clktadC/XRtwNg.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://swag.htmx.org/en-cad/products/htmx-4-the-game" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://imgproxy.fourthwall.dev/fFacE7iRN78e36VJLwizpILfnQcPu0ke2aIoxlQ7jc0/w:1200/sm:1/enc/EwYqh2EzXPAU7H04/BMXqquHCApkGKbGh/LoFc40D31bsD6gv4/lJ5EIYZduCxm8qAG/13LlpWyyziWbLs7D/Xi4TfM5SZiC5kSsq/f-tOQtISSQdUx14H/3kaNrBbOOijmZBov/fuUJOdCo4m-eyLcf/7A97CwuTeNBI_GsD/K81ThuM9c3cS1p--/oRP_PAY7b_W4O2kr/rRJzjKSc6clktadC/XRtwNg.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 437</span><span class="badge">💬 146</span>
-            </div>
-            <h3 class="card-title">Htmx 4.0, the first JavaScript library to release exclusively on the Game Boy</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="introduction to data-oriented design [pdf]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T18:11:16.000Z"
-           data-url="https://www.gamedevs.org/uploads/introduction-to-data-oriented-design.pdf">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.gamedevs.org/uploads/introduction-to-data-oriented-design.pdf',title:'Introduction to Data-Oriented Design [pdf]',source:'Hacker News',date:'2026-07-26T18:11:16.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.gamedevs.org/uploads/introduction-to-data-oriented-design.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 165</span><span class="badge">💬 44</span>
-            </div>
-            <h3 class="card-title">Introduction to Data-Oriented Design [pdf]</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="fonts in use – find out where a font is used"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T23:45:09.000Z"
-           data-url="https://fontsinuse.com/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://fontsinuse.com/',title:'Fonts In Use – Find out where a font is used',source:'Hacker News',date:'2026-07-26T23:45:09.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://fontsinuse.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 61</span><span class="badge">💬 4</span>
-            </div>
-            <h3 class="card-title">Fonts In Use – Find out where a font is used</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="simulate cassette tape audio profiles using ffmpeg"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T20:02:15.000Z"
-           data-url="https://github.com/AARomanov1985/Audio-Cassette-Simulation">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/AARomanov1985/Audio-Cassette-Simulation',title:'Simulate cassette tape audio profiles using FFmpeg',source:'Hacker News',date:'2026-07-26T20:02:15.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/AARomanov1985/Audio-Cassette-Simulation" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 124</span><span class="badge">💬 51</span>
-            </div>
-            <h3 class="card-title">Simulate cassette tape audio profiles using FFmpeg</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="design is compromise"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T15:51:12.000Z"
-           data-url="https://stephango.com/design-is-compromise">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://stephango.com/design-is-compromise',title:'Design is compromise',source:'Hacker News',date:'2026-07-26T15:51:12.000Z',image:'https://stephango.com/assets/covers/design-is-compromise.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://stephango.com/design-is-compromise" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://stephango.com/assets/covers/design-is-compromise.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 246</span><span class="badge">💬 81</span>
-            </div>
-            <h3 class="card-title">Design is compromise</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: cheapsecurity – lightweight, self-hosted cctv for linux sbcs"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T15:53:55.000Z"
-           data-url="https://github.com/gmrandazzo/CheapSecurity">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/gmrandazzo/CheapSecurity',title:'Show HN: CheapSecurity – Lightweight, Self-Hosted CCTV for Linux SBCs',source:'Hacker News',date:'2026-07-26T15:53:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/gmrandazzo/CheapSecurity" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 128</span><span class="badge">💬 26</span>
-            </div>
-            <h3 class="card-title">Show HN: CheapSecurity – Lightweight, Self-Hosted CCTV for Linux SBCs</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: reverse minesweeper"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T12:51:03.000Z"
-           data-url="https://sunflowersgame.com/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://sunflowersgame.com/',title:'Show HN: Reverse Minesweeper',source:'Hacker News',date:'2026-07-26T12:51:03.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://sunflowersgame.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 214</span><span class="badge">💬 69</span>
-            </div>
-            <h3 class="card-title">Show HN: Reverse Minesweeper</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="go analysis framework: modular static analysis by go team"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-07-26T12:21:26.000Z"
-           data-url="https://pkg.go.dev/golang.org/x/tools/go/analysis">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://pkg.go.dev/golang.org/x/tools/go/analysis',title:'Go Analysis Framework: modular static analysis by go team',source:'Hacker News',date:'2026-07-26T12:21:26.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://pkg.go.dev/golang.org/x/tools/go/analysis" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">26 de jul. de 2026</span>
-              <span class="badge">⬆ 204</span><span class="badge">💬 64</span>
-            </div>
-            <h3 class="card-title">Go Analysis Framework: modular static analysis by go team</h3>
             
           </div>
         </a>
