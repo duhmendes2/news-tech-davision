@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 07/08/2026, 19:05:43
+      Atualizado: 07/08/2026, 20:05:30
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">76</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">46</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">30</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">75</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">46</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">29</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -251,6 +251,28 @@
     <section class="category" id="sec-ia" data-cat="IA">
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">46</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="longtime slashdot reader schwit1 shares an opinion piece from the washington post, written by virginia governor abigail spanberger: nextera energy, a florida-based utility company, has filed paperwork"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-08-07T23:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-08-07T23:00:00+00:00',image:'',description:'Longtime Slashdot reader schwit1 shares an opinion piece from the Washington Post, written by Virginia Governor Abigail Spanberger: NextEra Energy, a ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">07 de ago. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Longtime Slashdot reader schwit1 shares an opinion piece from the Washington Post, written by Virginia Governor Abigail Spanberger: NextEra Energy, a …</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="'asimov was right' about rules for robots, says ex-us cyber director"
            data-desc="former u.s. national cyber director chris inglis says the biggest ai risk isn't sentience but autonomy. "what i'm worried about is that they get to choose what and where they do something, and under w"
@@ -368,9 +390,9 @@
            data-cat="IA"
            data-date="2026-08-07T11:00:00+00:00"
            data-url="https://science.slashdot.org/story/26/08/07/0059221/radical-study-suggests-life-on-earth-arose-twice?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/08/07/0059221/radical-study-suggests-life-on-earth-arose-twice?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Radical Study Suggests Life on Earth Arose Twice',source:'slashdot',date:'2026-08-07T11:00:00+00:00',image:'https://a.fsdn.com/sd/topics/earth_64.png',description:'A new study argues that life may have emerged twice on Earth. "Two of the main lineages of life -- bacteria and archaea -- may have independently figu',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/08/07/0059221/radical-study-suggests-life-on-earth-arose-twice?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Radical Study Suggests Life on Earth Arose Twice',source:'slashdot',date:'2026-08-07T11:00:00+00:00',image:'',description:'A new study argues that life may have emerged twice on Earth. "Two of the main lineages of life -- bacteria and archaea -- may have independently figu',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://science.slashdot.org/story/26/08/07/0059221/radical-study-suggests-life-on-earth-arose-twice?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/earth_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -472,28 +494,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="azure cto pastes doom into paint one frame at a time"
-           data-desc="microsoft azure cto mark russinovich used claude to build a gloriously impractical setup that runs doom in the background and pastes each rendered frame into microsoft paint through the windows clipbo"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-08-06T21:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/08/06/1840242/azure-cto-pastes-doom-into-paint-one-frame-at-a-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/08/06/1840242/azure-cto-pastes-doom-into-paint-one-frame-at-a-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Azure CTO Pastes Doom Into Paint One Frame At a Time',source:'slashdot',date:'2026-08-06T21:00:00+00:00',image:'https://a.fsdn.com/sd/topics/graphics_64.png',description:'Microsoft Azure CTO Mark Russinovich used Claude to build a gloriously impractical setup that runs Doom in the background and pastes each rendered fra',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/08/06/1840242/azure-cto-pastes-doom-into-paint-one-frame-at-a-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/graphics_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">06 de ago. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Azure CTO Pastes Doom Into Paint One Frame At a Time</h3>
-            <p class="card-desc">Microsoft Azure CTO Mark Russinovich used Claude to build a gloriously impractical setup that runs Doom in the background and pastes each rendered fra…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="what happens if an entire class of workers loses faith in their careers"
            data-desc=""
            data-source="hacker news"
@@ -508,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 260</span><span class="badge">💬 396</span>
+              <span class="badge">⬆ 316</span><span class="badge">💬 450</span>
             </div>
             <h3 class="card-title">What happens if an entire class of workers loses faith in their careers</h3>
             
@@ -530,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 310</span><span class="badge">💬 220</span>
+              <span class="badge">⬆ 340</span><span class="badge">💬 233</span>
             </div>
             <h3 class="card-title">Oracle bans AI-generated code from OpenJDK</h3>
             
@@ -552,7 +552,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 132</span><span class="badge">💬 37</span>
+              <span class="badge">⬆ 143</span><span class="badge">💬 41</span>
             </div>
             <h3 class="card-title">Kitesurf: Agent-first browser that runs in V8 isolates</h3>
             
@@ -560,24 +560,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="databricks drove down ai coding spend 70%"
-           data-desc=""
-           data-source="hacker news"
+           data-title="openai says it slowed astra model development over security concerns"
+           data-desc="openai said it has suspended work on some aspects of its upcoming model astra over concerns about its cybersecurity prowess."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-08-07T18:25:17.000Z"
-           data-url="https://www.databricks.com/blog/managing-ai-coding-costs-scale">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.databricks.com/blog/managing-ai-coding-costs-scale',title:'Databricks drove down AI coding spend 70%',source:'Hacker News',date:'2026-08-07T18:25:17.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.databricks.com/blog/managing-ai-coding-costs-scale" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Fri, 07 Aug 2026 22:48:24 +0000"
+           data-url="https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/',title:'OpenAI says it slowed Astra model development over security concerns',source:'techcrunch',date:'Fri, 07 Aug 2026 22:48:24 +0000',image:'',description:'OpenAI said it has suspended work on some aspects of its upcoming model Astra over concerns about its cybersecurity prowess.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 133</span><span class="badge">💬 116</span>
+              
             </div>
-            <h3 class="card-title">Databricks drove down AI coding spend 70%</h3>
-            
+            <h3 class="card-title">OpenAI says it slowed Astra model development over security concerns</h3>
+            <p class="card-desc">OpenAI said it has suspended work on some aspects of its upcoming model Astra over concerns about its cybersecurity prowess.</p>
           </div>
         </a>
       </div>
@@ -1265,18 +1265,18 @@
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">30</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">29</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="water utilities group partners with def con offshoot for water watch center"
            data-desc="the national rural water association has partnered with def con franklin to launch the water watch center, which will provide threat intelligence and cybersecurity services to smaller u.s. water utili"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-08-07T22:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-08-07T22:00:00+00:00',image:'',description:'The National Rural Water Association has partnered with DEF CON Franklin to launch the Water Watch Center, which will provide threat intelligence and ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://it.slashdot.org/story/26/08/07/2137206/water-utilities-group-partners-with-def-con-offshoot-for-water-watch-center?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://it.slashdot.org/story/26/08/07/2137206/water-utilities-group-partners-with-def-con-offshoot-for-water-watch-center?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Water Utilities Group Partners With DEF CON Offshoot For Water Watch Center',source:'slashdot',date:'2026-08-07T22:00:00+00:00',image:'https://a.fsdn.com/sd/topics/security_64.png',description:'The National Rural Water Association has partnered with DEF CON Franklin to launch the Water Watch Center, which will provide threat intelligence and ',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://it.slashdot.org/story/26/08/07/2137206/water-utilities-group-partners-with-def-con-offshoot-for-water-watch-center?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/security_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1284,7 +1284,7 @@
               <span class="date">07 de ago. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Water Utilities Group Partners With DEF CON Offshoot For Water Watch Center</h3>
             <p class="card-desc">The National Rural Water Association has partnered with DEF CON Franklin to launch the Water Watch Center, which will provide threat intelligence and …</p>
           </div>
         </a>
@@ -1370,7 +1370,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 322</span><span class="badge">💬 198</span>
+              <span class="badge">⬆ 367</span><span class="badge">💬 227</span>
             </div>
             <h3 class="card-title">DeepSeek V4 Flash 0731</h3>
             
@@ -1392,7 +1392,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 171</span><span class="badge">💬 34</span>
+              <span class="badge">⬆ 206</span><span class="badge">💬 45</span>
             </div>
             <h3 class="card-title">Assembly Hall of Shame</h3>
             
@@ -1414,7 +1414,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 86</span><span class="badge">💬 28</span>
+              <span class="badge">⬆ 109</span><span class="badge">💬 39</span>
             </div>
             <h3 class="card-title">Ancient Library – 1,060 Greek/Latin texts, click any word to parse it</h3>
             
@@ -1436,7 +1436,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 128</span><span class="badge">💬 143</span>
+              <span class="badge">⬆ 136</span><span class="badge">💬 155</span>
             </div>
             <h3 class="card-title">Responding to the next frontier of critical cyber capabilities</h3>
             
@@ -1458,9 +1458,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 115</span><span class="badge">💬 31</span>
+              <span class="badge">⬆ 126</span><span class="badge">💬 33</span>
             </div>
             <h3 class="card-title">An all-sky map of half a million supermassive black holes</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="water system controllers don't belong on the internet, says ex-nsa chief"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-08-07T21:19:57.000Z"
+           data-url="https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070',title:'Water system controllers don\'t belong on the internet, says ex-NSA chief',source:'Hacker News',date:'2026-08-07T21:19:57.000Z',image:'https://image.theregister.com/5285090.jpg?imageId=5285090&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://image.theregister.com/5285090.jpg?imageId=5285090&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de ago. de 2026</span>
+              <span class="badge">⬆ 63</span><span class="badge">💬 33</span>
+            </div>
+            <h3 class="card-title">Water system controllers don't belong on the internet, says ex-NSA chief</h3>
             
           </div>
         </a>
@@ -1480,7 +1502,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 29</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 37</span><span class="badge">💬 2</span>
             </div>
             <h3 class="card-title">Psychological Warfare in Reverse Engineering (2015)</h3>
             
@@ -1502,31 +1524,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 188</span><span class="badge">💬 85</span>
+              <span class="badge">⬆ 225</span><span class="badge">💬 125</span>
             </div>
             <h3 class="card-title">App Store Rejection of the Week: Dark Hours</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="water system controllers don't belong on the internet, says ex-nsa chief"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-08-07T21:19:57.000Z"
-           data-url="https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070',title:'Water system controllers don\'t belong on the internet, says ex-NSA chief',source:'Hacker News',date:'2026-08-07T21:19:57.000Z',image:'https://image.theregister.com/5285090.jpg?imageId=5285090&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.theregister.com/security/2026/08/07/water-system-controllers-dont-belong-on-the-internet-says-ex-nsa-chief-after-suspected-iran-attacks/5285070" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://image.theregister.com/5285090.jpg?imageId=5285090&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 24</span><span class="badge">💬 6</span>
-            </div>
-            <h3 class="card-title">Water system controllers don't belong on the internet, says ex-NSA chief</h3>
             
           </div>
         </a>
@@ -1546,7 +1546,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 215</span><span class="badge">💬 95</span>
+              <span class="badge">⬆ 223</span><span class="badge">💬 100</span>
             </div>
             <h3 class="card-title">Making Postgres 300x faster for analytics: batching, operator fusion, and SIMD</h3>
             
@@ -1568,31 +1568,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 165</span><span class="badge">💬 145</span>
+              <span class="badge">⬆ 192</span><span class="badge">💬 171</span>
             </div>
             <h3 class="card-title">2027 memory capacity is reportedly sold out</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="a year of fighting scrapers on my 1.5 million-page website"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-08-07T14:51:57.000Z"
-           data-url="https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/',title:'A year of fighting scrapers on my 1.5 million-page website',source:'Hacker News',date:'2026-08-07T14:51:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 344</span><span class="badge">💬 325</span>
-            </div>
-            <h3 class="card-title">A year of fighting scrapers on my 1.5 million-page website</h3>
             
           </div>
         </a>
@@ -1612,7 +1590,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 68</span><span class="badge">💬 72</span>
+              <span class="badge">⬆ 75</span><span class="badge">💬 75</span>
             </div>
             <h3 class="card-title">Radical Study Suggests Life on Earth Arose Twice</h3>
             
@@ -1634,7 +1612,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 119</span><span class="badge">💬 51</span>
+              <span class="badge">⬆ 123</span><span class="badge">💬 55</span>
             </div>
             <h3 class="card-title">Show HN: textlog – A quiet, text-only microblogging platform, open-source, no JS</h3>
             
@@ -1656,9 +1634,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de ago. de 2026</span>
-              <span class="badge">⬆ 45</span><span class="badge">💬 4</span>
+              <span class="badge">⬆ 49</span><span class="badge">💬 5</span>
             </div>
             <h3 class="card-title">Möbius-Strip Crosswords</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="a year of fighting scrapers on my 1.5 million-page website"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-08-07T14:51:57.000Z"
+           data-url="https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/',title:'A year of fighting scrapers on my 1.5 million-page website',source:'Hacker News',date:'2026-08-07T14:51:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de ago. de 2026</span>
+              <span class="badge">⬆ 351</span><span class="badge">💬 333</span>
+            </div>
+            <h3 class="card-title">A year of fighting scrapers on my 1.5 million-page website</h3>
             
           </div>
         </a>
@@ -1858,28 +1858,6 @@
             </div>
             <h3 class="card-title">China-linked LightSpy spyware caught targeting victims in 13 countries, including the US</h3>
             <p class="card-desc">Researchers linked the latest malicious activity to a Chinese company, after one of the spyware's operators placed an order with KFC using their real …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ford needs another taurus, and the $30k fathom ev pickup isn’t it"
-           data-desc="ford's ceo has described the new ford fathom as a "model t moment" for the company. but the ev pickup is unlikely to live up to lofty expectations, and maybe it doesn't have to."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Thu, 06 Aug 2026 17:41:56 +0000"
-           data-url="https://techcrunch.com/2026/08/06/ford-needs-another-taurus-and-the-30k-fathom-ev-pickup-isnt-it/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/08/06/ford-needs-another-taurus-and-the-30k-fathom-ev-pickup-isnt-it/',title:'Ford needs another Taurus, and the $30K Fathom EV pickup isn’t it',source:'techcrunch',date:'Thu, 06 Aug 2026 17:41:56 +0000',image:'',description:'Ford\'s CEO has described the new Ford Fathom as a "Model T moment" for the company. But the EV pickup is unlikely to live up to lofty expectations, an',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/08/06/ford-needs-another-taurus-and-the-30k-fathom-ev-pickup-isnt-it/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de ago. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Ford needs another Taurus, and the $30K Fathom EV pickup isn’t it</h3>
-            <p class="card-desc">Ford's CEO has described the new Ford Fathom as a "Model T moment" for the company. But the EV pickup is unlikely to live up to lofty expectations, an…</p>
           </div>
         </a>
       </div>
