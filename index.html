@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 11/09/2026, 20:52:46
+      Atualizado: 12/09/2026, 00:12:50
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">79</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">52</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">25</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">59</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">39</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">19</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,18 +249,40 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">52</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">39</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="slashdot"
+           data-desc="last week, google announced that it managed to produce a detailed 3d reconstruction of an adult male fruit fly's brain and central nervous system. a few days later a software engineer at coinbase said"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-09-12T01:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-12T01:00:00+00:00',image:'',description:'Last week, Google announced that it managed to produce a detailed 3D reconstruction of an adult male fruit fly\'s brain and central nervous system. A f',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">12 de set. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Last week, Google announced that it managed to produce a detailed 3D reconstruction of an adult male fruit fly's brain and central nervous system. A f…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="playstation ditched hideo kojima's 'physint' on budget concerns, missed deadlines"
            data-desc="sony reportedly pulled playstation funding from hideo kojima's upcoming espionage game physint over concerns about its ballooning budget, missed deadlines, profitability, and the fact that it would no"
            data-source="slashdot"
            data-cat="IA"
            data-date="2026-09-11T22:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-11T22:00:00+00:00',image:'',description:'Sony reportedly pulled PlayStation funding from Hideo Kojima\'s upcoming espionage game Physint over concerns about its ballooning budget, missed deadl',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://games.slashdot.org/story/26/09/11/2012215/playstation-ditched-hideo-kojimas-physint-on-budget-concerns-missed-deadlines?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://games.slashdot.org/story/26/09/11/2012215/playstation-ditched-hideo-kojimas-physint-on-budget-concerns-missed-deadlines?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'PlayStation Ditched Hideo Kojima\'s \'Physint\' on Budget Concerns, Missed Deadlines',source:'slashdot',date:'2026-09-11T22:00:00+00:00',image:'https://a.fsdn.com/sd/topics/playstation_64.png',description:'Sony reportedly pulled PlayStation funding from Hideo Kojima\'s upcoming espionage game Physint over concerns about its ballooning budget, missed deadl',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://games.slashdot.org/story/26/09/11/2012215/playstation-ditched-hideo-kojimas-physint-on-budget-concerns-missed-deadlines?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/playstation_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +290,7 @@
               <span class="date">11 de set. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">PlayStation Ditched Hideo Kojima's 'Physint' on Budget Concerns, Missed Deadlines</h3>
             <p class="card-desc">Sony reportedly pulled PlayStation funding from Hideo Kojima's upcoming espionage game Physint over concerns about its ballooning budget, missed deadl…</p>
           </div>
         </a>
@@ -384,72 +406,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="anthropic says it blocked possible efforts to build biological weapons"
-           data-desc="anthropic says it has disrupted several cases this year in which scientists used claude for biological research that could potentially aid bioweapons development. "in a report describing misuses of it"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-09-10T22:00:00+00:00"
-           data-url="https://slashdot.org/story/26/09/10/2138203/anthropic-says-it-blocked-possible-efforts-to-build-biological-weapons?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/10/2138203/anthropic-says-it-blocked-possible-efforts-to-build-biological-weapons?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Anthropic Says It Blocked Possible Efforts to Build Biological Weapons',source:'slashdot',date:'2026-09-10T22:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'Anthropic says it has disrupted several cases this year in which scientists used Claude for biological research that could potentially aid bioweapons ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/story/26/09/10/2138203/anthropic-says-it-blocked-possible-efforts-to-build-biological-weapons?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Anthropic Says It Blocked Possible Efforts to Build Biological Weapons</h3>
-            <p class="card-desc">Anthropic says it has disrupted several cases this year in which scientists used Claude for biological research that could potentially aid bioweapons …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="abc show won't air interview with democrat because of fcc threats"
-           data-desc="an anonymous reader quotes a report from ars technica: abc's jimmy kimmel said he will be interviewing a democratic candidate for senate tonight, but the interview will be on youtube only and not broa"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-09-10T20:00:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/09/10/1914225/abc-show-wont-air-interview-with-democrat-because-of-fcc-threats?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/09/10/1914225/abc-show-wont-air-interview-with-democrat-because-of-fcc-threats?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'ABC Show Won\'t Air Interview With Democrat Because of FCC Threats',source:'slashdot',date:'2026-09-10T20:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: ABC\'s Jimmy Kimmel said he will be interviewing a Democratic candidate for Senate tonight, but ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/09/10/1914225/abc-show-wont-air-interview-with-democrat-because-of-fcc-threats?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">ABC Show Won't Air Interview With Democrat Because of FCC Threats</h3>
-            <p class="card-desc">An anonymous reader quotes a report from Ars Technica: ABC's Jimmy Kimmel said he will be interviewing a Democratic candidate for Senate tonight, but …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openai targets work of wall street junior bankers"
-           data-desc="openai has launched chatgpt for financial services, a wall street-focused version of chatgpt work developed with morgan stanley and evercore that can research companies, analyze financial data, and bu"
-           data-source="slashdot"
-           data-cat="IA"
-           data-date="2026-09-10T19:02:00+00:00"
-           data-url="https://news.slashdot.org/story/26/09/10/191248/openai-targets-work-of-wall-street-junior-bankers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/09/10/191248/openai-targets-work-of-wall-street-junior-bankers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'OpenAI Targets Work of Wall Street Junior Bankers',source:'slashdot',date:'2026-09-10T19:02:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'OpenAI has launched ChatGPT for Financial Services, a Wall Street-focused version of ChatGPT Work developed with Morgan Stanley and Evercore that can ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://news.slashdot.org/story/26/09/10/191248/openai-targets-work-of-wall-street-junior-bankers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">OpenAI Targets Work of Wall Street Junior Bankers</h3>
-            <p class="card-desc">OpenAI has launched ChatGPT for Financial Services, a Wall Street-focused version of ChatGPT Work developed with Morgan Stanley and Evercore that can …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="a misalignment of ai in mathematics"
            data-desc="https:&#x2f;&#x2f;terrytao.wordpress.com&#x2f;2026&#x2f;09&#x2f;11&#x2f;a-severe-misalignm...https:&#x2f;&#x2f;www.economist.com&#x2f;science-and-technology&#x2f;2026&#x2f;09&#x2f;11&#x2f;..., https:&"
            data-source="hacker news"
@@ -464,7 +420,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 554</span><span class="badge">💬 614</span>
+              <span class="badge">⬆ 704</span><span class="badge">💬 737</span>
             </div>
             <h3 class="card-title">A misalignment of AI in mathematics</h3>
             <p class="card-desc">https:&#x2F;&#x2F;terrytao.wordpress.com&#x2F;2026&#x2F;09&#x2F;11&#x2F;a-severe-misalignm...https:&#x2F;&#x2F;www.economist.com&#x2F;science-and-tech…</p>
@@ -486,9 +442,31 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 34</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 410</span><span class="badge">💬 238</span>
             </div>
             <h3 class="card-title">OpenAI agents carried out an undisclosed attack on RubyGems</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ai researchers debate how close we are to recursive self-improvement"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-09-11T21:35:29.000Z"
+           data-url="https://www.dwarkesh.com/p/john-beren-charlie">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.dwarkesh.com/p/john-beren-charlie',title:'AI researchers debate how close we are to recursive self-improvement',source:'Hacker News',date:'2026-09-11T21:35:29.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.dwarkesh.com/p/john-beren-charlie" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de set. de 2026</span>
+              <span class="badge">⬆ 61</span><span class="badge">💬 42</span>
+            </div>
+            <h3 class="card-title">AI researchers debate how close we are to recursive self-improvement</h3>
             
           </div>
         </a>
@@ -508,32 +486,10 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 83</span><span class="badge">💬 34</span>
+              <span class="badge">⬆ 104</span><span class="badge">💬 39</span>
             </div>
             <h3 class="card-title">Litelm: LiteLLM Without the Bloat</h3>
             
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: godot and rust based multiplexer (terminal panes and more)"
-           data-desc="i wanted to share my side-project: gpty. started off as an idea to combine godot and rust in a project (two stacks i wanted to use more to learn more). the base inspiration was tmux - simply allow spa"
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-09-11T16:03:05.000Z"
-           data-url="https://github.com/godot-pty/gpty">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/godot-pty/gpty',title:'Show HN: Godot and Rust based multiplexer (terminal panes and more)',source:'Hacker News',date:'2026-09-11T16:03:05.000Z',image:'',description:'I wanted to share my side-project: gPTY. Started off as an idea to combine Godot and Rust in a project (two stacks I wanted to use more to learn more)',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/godot-pty/gpty" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 75</span><span class="badge">💬 41</span>
-            </div>
-            <h3 class="card-title">Show HN: Godot and Rust based multiplexer (terminal panes and more)</h3>
-            <p class="card-desc">I wanted to share my side-project: gPTY. Started off as an idea to combine Godot and Rust in a project (two stacks I wanted to use more to learn more)…</p>
           </div>
         </a>
       </div>
@@ -736,138 +692,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="thrive capital led vcs into pro sports ownership; collaborative fund just upped that play"
-           data-desc="collaborative fund just bought into d.c. united and its stadium, with firm founder craig shapiro pitching it as a way to showcase for the firm's startups."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 22:30:00 +0000"
-           data-url="https://techcrunch.com/2026/09/10/thrive-capital-showed-vcs-the-way-into-pro-sports-ownership-collaborative-fund-is-now-trying-its-own-version-of-the-same-play/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/thrive-capital-showed-vcs-the-way-into-pro-sports-ownership-collaborative-fund-is-now-trying-its-own-version-of-the-same-play/',title:'Thrive Capital led VCs into pro sports ownership; Collaborative Fund just upped that play',source:'techcrunch',date:'Thu, 10 Sep 2026 22:30:00 +0000',image:'',description:'Collaborative Fund just bought into D.C. United and its stadium, with firm founder Craig Shapiro pitching it as a way to showcase for the firm\'s start',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/thrive-capital-showed-vcs-the-way-into-pro-sports-ownership-collaborative-fund-is-now-trying-its-own-version-of-the-same-play/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Thrive Capital led VCs into pro sports ownership; Collaborative Fund just upped that play</h3>
-            <p class="card-desc">Collaborative Fund just bought into D.C. United and its stadium, with firm founder Craig Shapiro pitching it as a way to showcase for the firm's start…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="jensen huang explains why nvidia will grow an astounding 70% next year"
-           data-desc="nvidia has its finger in every pie, and sees another year of plenty in its future, jensen huang says. but, he insists, its deals are not circular."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 21:51:59 +0000"
-           data-url="https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/',title:'Jensen Huang explains why Nvidia will grow an astounding 70% next year',source:'techcrunch',date:'Thu, 10 Sep 2026 21:51:59 +0000',image:'',description:'Nvidia has its finger in every pie, and sees another year of plenty in its future, Jensen Huang says. But, he insists, its deals are not circular.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Jensen Huang explains why Nvidia will grow an astounding 70% next year</h3>
-            <p class="card-desc">Nvidia has its finger in every pie, and sees another year of plenty in its future, Jensen Huang says. But, he insists, its deals are not circular.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="openai puts pro subscriptions on hold due to astra demand"
-           data-desc="the company said pro subscriptions put the most strain on its systems, so it's pausing sign-ups while adding more capacity."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 20:59:51 +0000"
-           data-url="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/',title:'OpenAI puts Pro subscriptions on hold due to Astra demand',source:'techcrunch',date:'Thu, 10 Sep 2026 20:59:51 +0000',image:'',description:'The company said Pro subscriptions put the most strain on its systems, so it\'s pausing sign-ups while adding more capacity.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">OpenAI puts Pro subscriptions on hold due to Astra demand</h3>
-            <p class="card-desc">The company said Pro subscriptions put the most strain on its systems, so it's pausing sign-ups while adding more capacity.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="anthropic details distillation campaigns from alibaba, moonshot ai, and deepseek"
-           data-desc="a new report released thursday by anthropic alleges persistent distillation attacks by china-based ai companies, which have escalated in recent months as competition in the space has intensified."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 20:57:30 +0000"
-           data-url="https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/',title:'Anthropic details distillation campaigns from Alibaba, Moonshot AI, and DeepSeek',source:'techcrunch',date:'Thu, 10 Sep 2026 20:57:30 +0000',image:'',description:'A new report released Thursday by Anthropic alleges persistent distillation attacks by China-based AI companies, which have escalated in recent months',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Anthropic details distillation campaigns from Alibaba, Moonshot AI, and DeepSeek</h3>
-            <p class="card-desc">A new report released Thursday by Anthropic alleges persistent distillation attacks by China-based AI companies, which have escalated in recent months…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="meta&#8217;s ai agent muse is now the no. 2 app in the us"
-           data-desc="meta's newest app muse is off to a slower start than the company's other apps, like meta ai or threads."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 19:50:04 +0000"
-           data-url="https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/',title:'Meta&#8217;s AI agent Muse is now the No. 2 app in the US',source:'techcrunch',date:'Thu, 10 Sep 2026 19:50:04 +0000',image:'',description:'Meta\'s newest app Muse is off to a slower start than the company\'s other apps, like Meta AI or Threads.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/metas-ai-agent-muse-is-now-the-no-2-app-in-the-us/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Meta&#8217;s AI agent Muse is now the No. 2 app in the US</h3>
-            <p class="card-desc">Meta's newest app Muse is off to a slower start than the company's other apps, like Meta AI or Threads.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="proxima fusion bets €140m on a critical fusion ingredient dominated by asian suppliers"
-           data-desc="proxima fusion said wednesday it plans to build a €140 million ($162.6 million) factory to produce fusion-grade high-temperature superconducting (hts) tape, which will provide the startup with key com"
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 18:38:00 +0000"
-           data-url="https://techcrunch.com/2026/09/10/proxima-fusion-bets-e140m-on-a-critical-fusion-ingredient-dominated-by-asian-suppliers/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/proxima-fusion-bets-e140m-on-a-critical-fusion-ingredient-dominated-by-asian-suppliers/',title:'Proxima Fusion bets €140M on a critical fusion ingredient dominated by Asian suppliers',source:'techcrunch',date:'Thu, 10 Sep 2026 18:38:00 +0000',image:'',description:'Proxima Fusion said Wednesday it plans to build a €140 million ($162.6 million) factory to produce fusion-grade high-temperature superconducting (HTS)',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/proxima-fusion-bets-e140m-on-a-critical-fusion-ingredient-dominated-by-asian-suppliers/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Proxima Fusion bets €140M on a critical fusion ingredient dominated by Asian suppliers</h3>
-            <p class="card-desc">Proxima Fusion said Wednesday it plans to build a €140 million ($162.6 million) factory to produce fusion-grade high-temperature superconducting (HTS)…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="roundtables: ai’s apocalypse crisis"
            data-desc="employees at the world s leading ai labs are saying there s a real possibility that advanced ai could destroy humanity. are they right? or is this more scaremongering and hype? join mit technology rev"
            data-source="mit"
@@ -908,116 +732,6 @@
             </div>
             <h3 class="card-title">The Download: biotech&#8217;s future and cheaper, cleaner steel</h3>
             <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. Meet the und…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the download: a &#8220;god-driven&#8221; cryptocurrency and a solar engineering roadmap"
-           data-desc="this is today s edition of the download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. god told them to sell crypto. their investors lost everything."
-           data-source="mit"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 12:10:00 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1143828/the-download-christian-cryptocurrency-scandal-solar-engineering-roadmap/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1143828/the-download-christian-cryptocurrency-scandal-solar-engineering-roadmap/',title:'The Download: a &#8220;God-driven&#8221; cryptocurrency and a solar engineering roadmap',source:'mit',date:'Thu, 10 Sep 2026 12:10:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/04/North_Pole_Expedition_MIT_Tech_Rev_TimK_002top.jpg?fit=1920,1280',description:'This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. God told the',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1143828/the-download-christian-cryptocurrency-scandal-solar-engineering-roadmap/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/04/North_Pole_Expedition_MIT_Tech_Rev_TimK_002top.jpg?fit=1920,1280')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Download: a &#8220;God-driven&#8221; cryptocurrency and a solar engineering roadmap</h3>
-            <p class="card-desc">This is today s edition of The Download, our weekday newsletter that provides a daily dose of what s going on in the world of technology. God told the…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="powering ai is an architecture problem"
-           data-desc="on july 22, 2026, a transmission line fault in ashburn, virginia—the heart of the world s largest data center cluster—knocked more than 3 gigawatts of load off the grid in seconds. and it wasn t the f"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 11:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1141649/powering-ai-is-an-architecture-problem/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1141649/powering-ai-is-an-architecture-problem/',title:'Powering AI is an architecture problem',source:'mit',date:'Thu, 10 Sep 2026 11:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/08/ON-contributed-image.jpg?w=840',description:'On July 22, 2026, a transmission line fault in Ashburn, Virginia—the heart of the world s largest data center cluster—knocked more than 3 gigawatts of',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1141649/powering-ai-is-an-architecture-problem/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/08/ON-contributed-image.jpg?w=840')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Powering AI is an architecture problem</h3>
-            <p class="card-desc">On July 22, 2026, a transmission line fault in Ashburn, Virginia—the heart of the world s largest data center cluster—knocked more than 3 gigawatts of…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="this road map could help us decide whether to deploy solar geoengineering"
-           data-desc="a san francisco nonprofit has published a detailed road map of the experiments, studies, and infrastructure that it says would be needed to make informed decisions about the use of solar geoengineerin"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 11:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1143804/this-road-map-could-help-us-decide-whether-to-deploy-solar-geoengineering/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1143804/this-road-map-could-help-us-decide-whether-to-deploy-solar-geoengineering/',title:'This road map could help us decide whether to deploy solar geoengineering',source:'mit',date:'Thu, 10 Sep 2026 11:00:00 +0000',image:'',description:'A San Francisco nonprofit has published a detailed road map of the experiments, studies, and infrastructure that it says would be needed to make infor',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1143804/this-road-map-could-help-us-decide-whether-to-deploy-solar-geoengineering/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>M</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">This road map could help us decide whether to deploy solar geoengineering</h3>
-            <p class="card-desc">A San Francisco nonprofit has published a detailed road map of the experiments, studies, and infrastructure that it says would be needed to make infor…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="can the us battery market untangle from china?"
-           data-desc="the us is hitting records for the rapid growth of its energy storage market. that’ll go a long way to shoring up the grid, increasing reliability and also cutting emissions, since batteries can help s"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 10:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1143791/us-china-batteries/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1143791/us-china-batteries/',title:'Can the US battery market untangle from China?',source:'mit',date:'Thu, 10 Sep 2026 10:00:00 +0000',image:'',description:'The US is hitting records for the rapid growth of its energy storage market. That’ll go a long way to shoring up the grid, increasing reliability and ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1143791/us-china-batteries/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>M</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Can the US battery market untangle from China?</h3>
-            <p class="card-desc">The US is hitting records for the rapid growth of its energy storage market. That’ll go a long way to shoring up the grid, increasing reliability and …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="healthcare ai’s next test is integration"
-           data-desc="the entrance of major ai companies into healthcare is a meaningful and welcome development, accelerating the technical foundation available to the industry. their models are increasingly capable of pr"
-           data-source="mit"
-           data-cat="IA"
-           data-date="Thu, 10 Sep 2026 08:58:01 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1141421/healthcare-ais-next-test-is-integration/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1141421/healthcare-ais-next-test-is-integration/',title:'Healthcare AI’s next test is integration',source:'mit',date:'Thu, 10 Sep 2026 08:58:01 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/08/Ensemble-contributed-iStock-2263561985.jpg?w=840',description:'The entrance of major AI companies into healthcare is a meaningful and welcome development, accelerating the technical foundation available to the ind',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1141421/healthcare-ais-next-test-is-integration/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/08/Ensemble-contributed-iStock-2263561985.jpg?w=840')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Healthcare AI’s next test is integration</h3>
-            <p class="card-desc">The entrance of major AI companies into healthcare is a meaningful and welcome development, accelerating the technical foundation available to the ind…</p>
           </div>
         </a>
       </div>
@@ -1414,7 +1128,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 232</span><span class="badge">💬 122</span>
+              <span class="badge">⬆ 350</span><span class="badge">💬 182</span>
             </div>
             <h3 class="card-title">I spent $220 on Google app ads and 60% of the installs were robots</h3>
             
@@ -1422,34 +1136,8 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
-      <div class="cards-grid" id="grid-produo-de-contedo">
-      <div class="card"
-           data-title="imdb adds 'digital creator' profiles for the first time"
-           data-desc="imdb is introducing "digital creator" as a new professional category on imdb and imdbpro, giving streamers, vloggers, influencers, video essayists, and other online creators a "dedicated way to repres"
-           data-source="slashdot"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-09-10T18:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/09/10/1750233/imdb-adds-digital-creator-profiles-for-the-first-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/09/10/1750233/imdb-adds-digital-creator-profiles-for-the-first-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'IMDb Adds \'Digital Creator\' Profiles For the First Time',source:'slashdot',date:'2026-09-10T18:00:00+00:00',image:'https://a.fsdn.com/sd/topics/internet_64.png',description:'IMDb is introducing "Digital Creator" as a new professional category on IMDb and IMDbPro, giving streamers, vloggers, influencers, video essayists, an',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/09/10/1750233/imdb-adds-digital-creator-profiles-for-the-first-time?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/internet_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">IMDb Adds 'Digital Creator' Profiles For the First Time</h3>
-            <p class="card-desc">IMDb is introducing "Digital Creator" as a new professional category on IMDb and IMDbPro, giving streamers, vloggers, influencers, video essayists, an…</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">25</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">19</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="boy developed 'toasted skin' condition from using a laptop every day"
@@ -1518,46 +1206,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="latest apple watch can grab snippets of conversation without both speakers' consent"
-           data-desc="apple's new audio intelligence features for the apple watch series 12 are drawing privacy concerns because they can process nearby conversations without explicit consent from everyone involved. "live "
-           data-source="slashdot"
+           data-title="pandas should go extinct"
+           data-desc=""
+           data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-10T23:00:00+00:00"
-           data-url="https://apple.slashdot.org/story/26/09/10/2221244/latest-apple-watch-can-grab-snippets-of-conversation-without-both-speakers-consent?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://apple.slashdot.org/story/26/09/10/2221244/latest-apple-watch-can-grab-snippets-of-conversation-without-both-speakers-consent?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Latest Apple Watch Can Grab Snippets of Conversation Without Both Speakers\' Consent',source:'slashdot',date:'2026-09-10T23:00:00+00:00',image:'https://a.fsdn.com/sd/topics/privacy_64.png',description:'Apple\'s new Audio Intelligence features for the Apple Watch Series 12 are drawing privacy concerns because they can process nearby conversations witho',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://apple.slashdot.org/story/26/09/10/2221244/latest-apple-watch-can-grab-snippets-of-conversation-without-both-speakers-consent?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/privacy_64.png')"></div>
+           data-date="2026-09-12T02:42:08.000Z"
+           data-url="https://eddie.codes/posts/pandas-should-go-extinct/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://eddie.codes/posts/pandas-should-go-extinct/',title:'Pandas Should Go Extinct',source:'Hacker News',date:'2026-09-12T02:42:08.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://eddie.codes/posts/pandas-should-go-extinct/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">12 de set. de 2026</span>
+              <span class="badge">⬆ 6</span>
             </div>
-            <h3 class="card-title">Latest Apple Watch Can Grab Snippets of Conversation Without Both Speakers' Consent</h3>
-            <p class="card-desc">Apple's new Audio Intelligence features for the Apple Watch Series 12 are drawing privacy concerns because they can process nearby conversations witho…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="android rolling out passkey transfers between password managers"
-           data-desc="android is rolling out a system-level way to securely transfer passwords and passkeys between credential managers, eliminating the need to export passwords as unencrypted text files or manually recrea"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-09-10T21:00:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/09/10/1922227/android-rolling-out-passkey-transfers-between-password-managers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/09/10/1922227/android-rolling-out-passkey-transfers-between-password-managers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Android Rolling Out Passkey Transfers Between Password Managers',source:'slashdot',date:'2026-09-10T21:00:00+00:00',image:'https://a.fsdn.com/sd/topics/privacy_64.png',description:'Android is rolling out a system-level way to securely transfer passwords and passkeys between credential managers, eliminating the need to export pass',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/09/10/1922227/android-rolling-out-passkey-transfers-between-password-managers?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/privacy_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Android Rolling Out Passkey Transfers Between Password Managers</h3>
-            <p class="card-desc">Android is rolling out a system-level way to securely transfer passwords and passkeys between credential managers, eliminating the need to export pass…</p>
+            <h3 class="card-title">Pandas Should Go Extinct</h3>
+            
           </div>
         </a>
       </div>
@@ -1576,31 +1242,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 171</span><span class="badge">💬 98</span>
+              <span class="badge">⬆ 216</span><span class="badge">💬 133</span>
             </div>
             <h3 class="card-title">GrapheneOS' rewritten Messages app is released</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="decloudflare"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-11T22:59:09.000Z"
-           data-url="https://0xacab.org/dCF/deCloudflare/-/blob/master/README.md">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://0xacab.org/dCF/deCloudflare/-/blob/master/README.md',title:'DeCloudflare',source:'Hacker News',date:'2026-09-11T22:59:09.000Z',image:'https://0xacab.org/uploads/-/system/project/avatar/4682/avatar.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://0xacab.org/dCF/deCloudflare/-/blob/master/README.md" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://0xacab.org/uploads/-/system/project/avatar/4682/avatar.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 27</span><span class="badge">💬 39</span>
-            </div>
-            <h3 class="card-title">DeCloudflare</h3>
             
           </div>
         </a>
@@ -1620,7 +1264,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 27</span><span class="badge">💬 12</span>
+              <span class="badge">⬆ 57</span><span class="badge">💬 24</span>
             </div>
             <h3 class="card-title">Project Blinkenlights</h3>
             
@@ -1642,119 +1286,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 18</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 36</span><span class="badge">💬 12</span>
             </div>
             <h3 class="card-title">Show HN: ResolveHQ – A Helpdesk Built on Cloudflare Workers, D1, R2 and Queues</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="λ snap – an inviting programming language for kids and adults for cs study"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-11T17:36:11.000Z"
-           data-url="https://snap.berkeley.edu/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://snap.berkeley.edu/',title:'Λ Snap – An inviting programming language for kids and adults for CS study',source:'Hacker News',date:'2026-09-11T17:36:11.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://snap.berkeley.edu/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 100</span><span class="badge">💬 53</span>
-            </div>
-            <h3 class="card-title">Λ Snap – An inviting programming language for kids and adults for CS study</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="hepburn romanization: how to read japanese in the latin alphabet"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-10T09:13:48.000Z"
-           data-url="https://www.fink-translate.com/blog/hepburn-romanization.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.fink-translate.com/blog/hepburn-romanization.html',title:'Hepburn Romanization: How to Read Japanese in the Latin Alphabet',source:'Hacker News',date:'2026-09-10T09:13:48.000Z',image:'https://www.fink-translate.com/assets/blog/hepburn-romanization/header.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.fink-translate.com/blog/hepburn-romanization.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.fink-translate.com/assets/blog/hepburn-romanization/header.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">10 de set. de 2026</span>
-              <span class="badge">⬆ 11</span><span class="badge">💬 2</span>
-            </div>
-            <h3 class="card-title">Hepburn Romanization: How to Read Japanese in the Latin Alphabet</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="rune is now open source"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-11T15:31:47.000Z"
-           data-url="https://rune.build/blog/rune-is-now-open-source">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://rune.build/blog/rune-is-now-open-source',title:'Rune is now open source',source:'Hacker News',date:'2026-09-11T15:31:47.000Z',image:'https://rune.build/images/og4.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://rune.build/blog/rune-is-now-open-source" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://rune.build/images/og4.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 129</span><span class="badge">💬 52</span>
-            </div>
-            <h3 class="card-title">Rune is now open source</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="querybrew: system-agnostic sql-to-sql query optimization [pdf]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-11T22:16:15.000Z"
-           data-url="https://www.vldb.org/pvldb/vol19/p4494-schmidt.pdf">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.vldb.org/pvldb/vol19/p4494-schmidt.pdf',title:'QueryBrew: System-Agnostic SQL-to-SQL Query Optimization [pdf]',source:'Hacker News',date:'2026-09-11T22:16:15.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.vldb.org/pvldb/vol19/p4494-schmidt.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 9</span>
-            </div>
-            <h3 class="card-title">QueryBrew: System-Agnostic SQL-to-SQL Query Optimization [pdf]</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the epa is planning to scrap public review rules for data center pollution"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-11T18:05:21.000Z"
-           data-url="https://capitalbnews.org/data-centers-permit-rules-epa/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://capitalbnews.org/data-centers-permit-rules-epa/',title:'The EPA is planning to scrap public review rules for data center pollution',source:'Hacker News',date:'2026-09-11T18:05:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://capitalbnews.org/data-centers-permit-rules-epa/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 311</span><span class="badge">💬 211</span>
-            </div>
-            <h3 class="card-title">The EPA is planning to scrap public review rules for data center pollution</h3>
             
           </div>
         </a>
@@ -1774,9 +1308,97 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">11 de set. de 2026</span>
-              <span class="badge">⬆ 85</span><span class="badge">💬 65</span>
+              <span class="badge">⬆ 112</span><span class="badge">💬 80</span>
             </div>
             <h3 class="card-title">Mind-altering drugs played key role in rise of Andean civilization</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="λ snap – an inviting programming language for kids and adults for cs study"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-11T17:36:11.000Z"
+           data-url="https://snap.berkeley.edu/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://snap.berkeley.edu/',title:'Λ Snap – An inviting programming language for kids and adults for CS study',source:'Hacker News',date:'2026-09-11T17:36:11.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://snap.berkeley.edu/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de set. de 2026</span>
+              <span class="badge">⬆ 120</span><span class="badge">💬 62</span>
+            </div>
+            <h3 class="card-title">Λ Snap – An inviting programming language for kids and adults for CS study</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="starlink signal leakage threatens radio astronomy's most critical frequencies"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-12T00:40:32.000Z"
+           data-url="https://www.gadgetreview.com/starlinks-signal-leakage-is-threatening-radio-astronomys-most-critical-frequencies">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.gadgetreview.com/starlinks-signal-leakage-is-threatening-radio-astronomys-most-critical-frequencies',title:'Starlink Signal Leakage Threatens Radio Astronomy\'s Most Critical Frequencies',source:'Hacker News',date:'2026-09-12T00:40:32.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.gadgetreview.com/starlinks-signal-leakage-is-threatening-radio-astronomys-most-critical-frequencies" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">12 de set. de 2026</span>
+              <span class="badge">⬆ 51</span><span class="badge">💬 22</span>
+            </div>
+            <h3 class="card-title">Starlink Signal Leakage Threatens Radio Astronomy's Most Critical Frequencies</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="rune is now open source"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-11T15:31:47.000Z"
+           data-url="https://rune.build/blog/rune-is-now-open-source">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://rune.build/blog/rune-is-now-open-source',title:'Rune is now open source',source:'Hacker News',date:'2026-09-11T15:31:47.000Z',image:'https://rune.build/images/og4.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://rune.build/blog/rune-is-now-open-source" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://rune.build/images/og4.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de set. de 2026</span>
+              <span class="badge">⬆ 153</span><span class="badge">💬 55</span>
+            </div>
+            <h3 class="card-title">Rune is now open source</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the epa is planning to scrap public review rules for data center pollution"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-11T18:05:21.000Z"
+           data-url="https://capitalbnews.org/data-centers-permit-rules-epa/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://capitalbnews.org/data-centers-permit-rules-epa/',title:'The EPA is planning to scrap public review rules for data center pollution',source:'Hacker News',date:'2026-09-11T18:05:21.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://capitalbnews.org/data-centers-permit-rules-epa/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">11 de set. de 2026</span>
+              <span class="badge">⬆ 379</span><span class="badge">💬 264</span>
+            </div>
+            <h3 class="card-title">The EPA is planning to scrap public review rules for data center pollution</h3>
             
           </div>
         </a>
@@ -1848,50 +1470,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="mark wahlberg is coming to techcrunch disrupt 2026, and he wants to talk about your work, not his"
-           data-desc="mark wahlberg joins bruce k. lee at disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Thu, 10 Sep 2026 21:35:00 +0000"
-           data-url="https://techcrunch.com/2026/09/10/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026/',title:'Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his',source:'techcrunch',date:'Thu, 10 Sep 2026 21:35:00 +0000',image:'',description:'Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/mark-wahlberg-is-coming-to-techcrunch-disrupt-2026/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Mark Wahlberg is coming to TechCrunch Disrupt 2026, and he wants to talk about your work, not his</h3>
-            <p class="card-desc">Mark Wahlberg joins Bruce K. Lee at Disrupt to discuss investing, entrepreneurship, healthcare, wellness, and building businesses.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="furo&#8217;s founders left silicon valley — and it&#8217;s paying off"
-           data-desc="the three 28-year-old founders behind energy startup furo moved from silicon valley and back to germany, and yet secured $4 million in funding from mostly u.s. backers."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Thu, 10 Sep 2026 20:48:00 +0000"
-           data-url="https://techcrunch.com/2026/09/10/furos-founders-left-silicon-valley-and-its-paying-off/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/10/furos-founders-left-silicon-valley-and-its-paying-off/',title:'Furo&#8217;s founders left Silicon Valley — and it&#8217;s paying off',source:'techcrunch',date:'Thu, 10 Sep 2026 20:48:00 +0000',image:'',description:'The three 28-year-old founders behind energy startup Furo moved from Silicon Valley and back to Germany, and yet secured $4 million in funding from mo',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/09/10/furos-founders-left-silicon-valley-and-its-paying-off/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Furo&#8217;s founders left Silicon Valley — and it&#8217;s paying off</h3>
-            <p class="card-desc">The three 28-year-old founders behind energy startup Furo moved from Silicon Valley and back to Germany, and yet secured $4 million in funding from mo…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="meet the under-35s shaping the future of biotech"
            data-desc="every year, mit technology review puts together a list of some of the brightest and best young minds working across science and technology. our 35 innovators under 35 are the ones to watch—people whos"
            data-source="mit"
@@ -1910,28 +1488,6 @@
             </div>
             <h3 class="card-title">Meet the under-35s shaping the future of biotech</h3>
             <p class="card-desc">Every year, MIT Technology Review puts together a list of some of the brightest and best young minds working across science and technology. Our 35 Inn…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="god told them to sell crypto. their investors lost everything."
-           data-desc="this article was produced in partnership with type investigations and with support from the fund for investigative journalism. when eli regalado first heard god speak to him, he wondered whether he wa"
-           data-source="mit"
-           data-cat="Tecnologia"
-           data-date="Thu, 10 Sep 2026 09:00:00 +0000"
-           data-url="https://www.technologyreview.com/2026/09/10/1143588/indxcoin-god-regalados-sell-crypto-investors-lost-everything/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/09/10/1143588/indxcoin-god-regalados-sell-crypto-investors-lost-everything/',title:'God told them to sell crypto. Their investors lost everything.',source:'mit',date:'Thu, 10 Sep 2026 09:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/09/Eli_DSF7416.jpg',description:'This article was produced in partnership with Type Investigations and with support from the Fund for Investigative Journalism. When Eli Regalado first',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.technologyreview.com/2026/09/10/1143588/indxcoin-god-regalados-sell-crypto-investors-lost-everything/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/09/Eli_DSF7416.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
-              <span class="source-name">mit</span>
-              <span class="date">10 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">God told them to sell crypto. Their investors lost everything.</h3>
-            <p class="card-desc">This article was produced in partnership with Type Investigations and with support from the Fund for Investigative Journalism. When Eli Regalado first…</p>
           </div>
         </a>
       </div>
