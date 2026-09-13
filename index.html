@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 13/09/2026, 08:07:26
+      Atualizado: 13/09/2026, 11:58:17
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">26</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">15</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">11</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">30</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">15</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">14</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -252,15 +252,15 @@
       <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">15</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
-           data-title="slashdot"
+           data-title="malicious openai agents linked to rubygems campaign that gained rce on rubydoc servers in may"
            data-desc="a swarm of openai agents launched a "major malicious attack" against rubygems last may, according to a new report. that coordinated attack hit ruby's package manager "with hundreds of junk gems, promp"
            data-source="slashdot"
            data-cat="IA"
            data-date="2026-09-13T09:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-13T09:00:00+00:00',image:'',description:'A swarm of OpenAI agents launched a "major malicious attack" against RubyGems last May, according to a new report. That coordinated attack hit Ruby\'s ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://slashdot.org/story/26/09/12/2318204/malicious-openai-agents-linked-to-rubygems-campaign-that-gained-rce-on-rubydoc-servers-in-may?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/12/2318204/malicious-openai-agents-linked-to-rubygems-campaign-that-gained-rce-on-rubydoc-servers-in-may?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Malicious OpenAI Agents Linked to RubyGems Campaign That Gained RCE on RubyDoc Servers in May',source:'slashdot',date:'2026-09-13T09:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'A swarm of OpenAI agents launched a "major malicious attack" against RubyGems last May, according to a new report. That coordinated attack hit Ruby\'s ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/story/26/09/12/2318204/malicious-openai-agents-linked-to-rubygems-campaign-that-gained-rce-on-rubydoc-servers-in-may?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +268,7 @@
               <span class="date">13 de set. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Malicious OpenAI Agents Linked to RubyGems Campaign That Gained RCE on RubyDoc Servers in May</h3>
             <p class="card-desc">A swarm of OpenAI agents launched a "major malicious attack" against RubyGems last May, according to a new report. That coordinated attack hit Ruby's …</p>
           </div>
         </a>
@@ -302,9 +302,9 @@
            data-cat="IA"
            data-date="2026-09-13T01:00:00+00:00"
            data-url="https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Anthropic CEO Dario Amodei Calls For AI Slowdown',source:'slashdot',date:'2026-09-13T01:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'An anonymous reader quotes a report from The New York Times: The chief executive of Anthropic called for a global slowdown of artificial intelligence ',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Anthropic CEO Dario Amodei Calls For AI Slowdown',source:'slashdot',date:'2026-09-13T01:00:00+00:00',image:'',description:'An anonymous reader quotes a report from The New York Times: The chief executive of Anthropic called for a global slowdown of artificial intelligence ',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -406,6 +406,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="tailtalk: a modern async user space appletalk stack with rust and tokio"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-09-12T23:43:31.000Z"
+           data-url="https://github.com/FeralFirmware/TailTalk/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/FeralFirmware/TailTalk/',title:'TailTalk: A modern async user space AppleTalk stack with Rust and Tokio',source:'Hacker News',date:'2026-09-12T23:43:31.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://github.com/FeralFirmware/TailTalk/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">12 de set. de 2026</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 8</span>
+            </div>
+            <h3 class="card-title">TailTalk: A modern async user space AppleTalk stack with Rust and Tokio</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="why are ai agents lying, cheating and coordinating?"
            data-desc=""
            data-source="hacker news"
@@ -420,7 +442,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 248</span><span class="badge">💬 322</span>
+              <span class="badge">⬆ 400</span><span class="badge">💬 482</span>
             </div>
             <h3 class="card-title">Why are AI agents lying, cheating and coordinating?</h3>
             
@@ -428,68 +450,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="nvidia is the central bank of ai"
-           data-desc="https:&#x2f;&#x2f;archive.ph&#x2f;kt50v"
+           data-title="ai models don't kill people – people kill people"
+           data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-09-12T15:08:27.000Z"
-           data-url="https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai',title:'Nvidia is the central bank of AI',source:'Hacker News',date:'2026-09-12T15:08:27.000Z',image:'',description:'https:&#x2F;&#x2F;archive.ph&#x2F;kt50V',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-09-13T13:33:34.000Z"
+           data-url="https://www.theregister.com/ai-and-ml/2026/09/09/ai-models-dont-kill-people-people-kill-people/5295368">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theregister.com/ai-and-ml/2026/09/09/ai-models-dont-kill-people-people-kill-people/5295368',title:'AI models don\'t kill people – people kill people',source:'Hacker News',date:'2026-09-13T13:33:34.000Z',image:'https://image.theregister.com/5295388.jpg?imageId=5295388&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.theregister.com/ai-and-ml/2026/09/09/ai-models-dont-kill-people-people-kill-people/5295368" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://image.theregister.com/5295388.jpg?imageId=5295388&x=0&y=0&cropw=100&croph=100&panox=0&panoy=0&panow=100&panoh=100&width=1200&height=683')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 494</span><span class="badge">💬 344</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 19</span>
             </div>
-            <h3 class="card-title">Nvidia is the central bank of AI</h3>
-            <p class="card-desc">https:&#x2F;&#x2F;archive.ph&#x2F;kt50V</p>
+            <h3 class="card-title">AI models don't kill people – people kill people</h3>
+            
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="everyone should slow down ai development except for me"
-           data-desc=""
+           data-title="show hn: analyst index – analysts who make money telling you good stock calls"
+           data-desc="hi hn!what if analyst ratings could be relied on to help you find the next sandisk, before it takes off?on analyst index, analysts publish price targets with a maturity date. every call gets scored ag"
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-09-13T00:30:44.000Z"
-           data-url="https://xeiaso.net/notes/2026/everyone-slowdown-but-me/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://xeiaso.net/notes/2026/everyone-slowdown-but-me/',title:'Everyone should slow down AI development except for me',source:'Hacker News',date:'2026-09-13T00:30:44.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://xeiaso.net/notes/2026/everyone-slowdown-but-me/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-09-13T11:50:35.000Z"
+           data-url="https://www.analystidx.com/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.analystidx.com/',title:'Show HN: Analyst Index – analysts who make money telling you good stock calls',source:'Hacker News',date:'2026-09-13T11:50:35.000Z',image:'',description:'Hi HN!What if analyst ratings could be relied on to help you find the next Sandisk, before it takes off?On Analyst Index, analysts publish price targe',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.analystidx.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 512</span><span class="badge">💬 307</span>
+              <span class="badge">⬆ 5</span><span class="badge">💬 2</span>
             </div>
-            <h3 class="card-title">Everyone should slow down AI development except for me</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="agentsdock: an ide designed for agentic ai research"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-09-12T23:45:58.000Z"
-           data-url="https://agentsdock.net/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://agentsdock.net/',title:'AgentsDock: An IDE designed for agentic AI research',source:'Hacker News',date:'2026-09-12T23:45:58.000Z',image:'https://agentsdock.net/assets/og-card.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://agentsdock.net/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://agentsdock.net/assets/og-card.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 64</span><span class="badge">💬 29</span>
-            </div>
-            <h3 class="card-title">AgentsDock: An IDE designed for agentic AI research</h3>
-            
+            <h3 class="card-title">Show HN: Analyst Index – analysts who make money telling you good stock calls</h3>
+            <p class="card-desc">Hi HN!What if analyst ratings could be relied on to help you find the next Sandisk, before it takes off?On Analyst Index, analysts publish price targe…</p>
           </div>
         </a>
       </div>
@@ -582,8 +582,34 @@
         </a>
       </div></div>
     </section>
+    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
+      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
+      <div class="cards-grid" id="grid-produo-de-contedo">
+      <div class="card"
+           data-title="slashdot"
+           data-desc=""this is what happened when we tried to record flock installing a new camera on public roads," says emmy award-winning reporter brendan keefe in a new video for investigatetv. in an accompanying artic"
+           data-source="slashdot"
+           data-cat="Produção de Conteúdo"
+           data-date="2026-09-13T13:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-13T13:00:00+00:00',image:'',description:'"This is what happened when we tried to record Flock installing a new camera on public roads," says Emmy award-winning reporter Brendan Keefe in a new',cat:'Produção de Conteúdo'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">13 de set. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">"This is what happened when we tried to record Flock installing a new camera on public roads," says Emmy award-winning reporter Brendan Keefe in a new…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">11</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">14</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="scientists create a new form of ice at 2,357 degrees celsius"
@@ -630,6 +656,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="flock worker calls police on reporter filming public camera installation"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T13:35:31.000Z"
+           data-url="https://www.investigatetv.com/2026/09/08/flock-worker-calls-police-investigatetv-reporter-filming-public-camera-installation/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.investigatetv.com/2026/09/08/flock-worker-calls-police-investigatetv-reporter-filming-public-camera-installation/',title:'Flock worker calls police on reporter filming public camera installation',source:'Hacker News',date:'2026-09-13T13:35:31.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.investigatetv.com/2026/09/08/flock-worker-calls-police-investigatetv-reporter-filming-public-camera-installation/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 152</span><span class="badge">💬 93</span>
+            </div>
+            <h3 class="card-title">Flock worker calls police on reporter filming public camera installation</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="jetkvm mini"
            data-desc=""
            data-source="hacker news"
@@ -644,7 +692,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 145</span><span class="badge">💬 71</span>
+              <span class="badge">⬆ 308</span><span class="badge">💬 120</span>
             </div>
             <h3 class="card-title">JetKVM Mini</h3>
             
@@ -652,89 +700,67 @@
         </a>
       </div>
       <div class="card"
-           data-title="the interim computer museum"
+           data-title="'fingerprints' inside the sun could reveal if it once swallowed a planet"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-13T02:43:57.000Z"
-           data-url="https://icm.museum/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://icm.museum/',title:'The Interim Computer Museum',source:'Hacker News',date:'2026-09-13T02:43:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://icm.museum/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-09-13T12:01:52.000Z"
+           data-url="https://ras.ac.uk/news-and-press/research-highlights/fingerprints-inside-sun-could-reveal-if-it-once-swallowed-planet">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ras.ac.uk/news-and-press/research-highlights/fingerprints-inside-sun-could-reveal-if-it-once-swallowed-planet',title:'\'Fingerprints\' inside the Sun could reveal if it once swallowed a planet',source:'Hacker News',date:'2026-09-13T12:01:52.000Z',image:'https://ras.ac.uk/sites/default/files/2026-09/star_swallowing_a_planet.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://ras.ac.uk/news-and-press/research-highlights/fingerprints-inside-sun-could-reveal-if-it-once-swallowed-planet" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://ras.ac.uk/sites/default/files/2026-09/star_swallowing_a_planet.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 38</span><span class="badge">💬 16</span>
+            </div>
+            <h3 class="card-title">'Fingerprints' inside the Sun could reveal if it once swallowed a planet</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="us customs supervisor busted for stealing hardware from homeland security pcs"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T13:24:28.000Z"
+           data-url="https://www.tomshardware.com/pc-components/us-customs-supervisor-busted-for-stealing-core-i7-cpus-ram-and-hard-drives-from-homeland-security-pcs-stolen-tech-swapped-with-inferior-hardware-and-cashed-out-on-newegg">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.tomshardware.com/pc-components/us-customs-supervisor-busted-for-stealing-core-i7-cpus-ram-and-hard-drives-from-homeland-security-pcs-stolen-tech-swapped-with-inferior-hardware-and-cashed-out-on-newegg',title:'US Customs supervisor busted for stealing hardware from Homeland Security PCs',source:'Hacker News',date:'2026-09-13T13:24:28.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.tomshardware.com/pc-components/us-customs-supervisor-busted-for-stealing-core-i7-cpus-ram-and-hard-drives-from-homeland-security-pcs-stolen-tech-swapped-with-inferior-hardware-and-cashed-out-on-newegg" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 119</span><span class="badge">💬 13</span>
+              <span class="badge">⬆ 47</span><span class="badge">💬 25</span>
             </div>
-            <h3 class="card-title">The Interim Computer Museum</h3>
+            <h3 class="card-title">US Customs supervisor busted for stealing hardware from Homeland Security PCs</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="make your first edit to openstreetmap"
+           data-title="your car is selling your data"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-12T16:25:08.000Z"
-           data-url="https://high5apps.github.io/josm-plugin-website-wizard/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://high5apps.github.io/josm-plugin-website-wizard/',title:'Make your first edit to OpenStreetMap',source:'Hacker News',date:'2026-09-12T16:25:08.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://high5apps.github.io/josm-plugin-website-wizard/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-09-13T13:45:08.000Z"
+           data-url="https://www.theverge.com/column/994172/your-car-is-selling-your-data">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.theverge.com/column/994172/your-car-is-selling-your-data',title:'Your car is selling your data',source:'Hacker News',date:'2026-09-13T13:45:08.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.theverge.com/column/994172/your-car-is-selling-your-data" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 476</span><span class="badge">💬 122</span>
-            </div>
-            <h3 class="card-title">Make your first edit to OpenStreetMap</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="after math"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-13T03:16:41.000Z"
-           data-url="https://terrytao.wordpress.com/2026/09/12/after-math/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://terrytao.wordpress.com/2026/09/12/after-math/',title:'After Math',source:'Hacker News',date:'2026-09-13T03:16:41.000Z',image:'https://secure.gravatar.com/blavatar/bd4bda4207561b6998f10dec44b570f04ff4072b20f89162d525b186dfca3e49?s=200&#038;ts=1789297492',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://terrytao.wordpress.com/2026/09/12/after-math/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://secure.gravatar.com/blavatar/bd4bda4207561b6998f10dec44b570f04ff4072b20f89162d525b186dfca3e49?s=200&#038;ts=1789297492')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 90</span><span class="badge">💬 69</span>
+              <span class="badge">⬆ 39</span><span class="badge">💬 21</span>
             </div>
-            <h3 class="card-title">After Math</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="aligned to whom?"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-13T03:17:18.000Z"
-           data-url="https://hyperbo.la/w/aligned-to-whom/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hyperbo.la/w/aligned-to-whom/',title:'Aligned to whom?',source:'Hacker News',date:'2026-09-13T03:17:18.000Z',image:'https://hyperbo.la/social/w/aligned-to-whom.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://hyperbo.la/w/aligned-to-whom/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://hyperbo.la/social/w/aligned-to-whom.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 42</span>
-            </div>
-            <h3 class="card-title">Aligned to whom?</h3>
+            <h3 class="card-title">Your car is selling your data</h3>
             
           </div>
         </a>
@@ -754,7 +780,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 41</span><span class="badge">💬 8</span>
+              <span class="badge">⬆ 283</span><span class="badge">💬 124</span>
             </div>
             <h3 class="card-title">Homebrew 7.0.0</h3>
             
@@ -762,46 +788,112 @@
         </a>
       </div>
       <div class="card"
-           data-title="don't be the out of touch kung fu master"
+           data-title="make your first edit to openstreetmap"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-12T21:51:43.000Z"
-           data-url="https://twitter.com/ID_AA_Carmack/status/2098443262214230095">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/ID_AA_Carmack/status/2098443262214230095',title:'Don\'t be the out of touch Kung Fu master',source:'Hacker News',date:'2026-09-12T21:51:43.000Z',image:'https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_200x200.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://twitter.com/ID_AA_Carmack/status/2098443262214230095" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_200x200.jpg')"></div>
+           data-date="2026-09-12T16:25:08.000Z"
+           data-url="https://high5apps.github.io/josm-plugin-website-wizard/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://high5apps.github.io/josm-plugin-website-wizard/',title:'Make your first edit to OpenStreetMap',source:'Hacker News',date:'2026-09-12T16:25:08.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://high5apps.github.io/josm-plugin-website-wizard/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 137</span><span class="badge">💬 155</span>
+              <span class="badge">⬆ 525</span><span class="badge">💬 134</span>
             </div>
-            <h3 class="card-title">Don't be the out of touch Kung Fu master</h3>
+            <h3 class="card-title">Make your first edit to OpenStreetMap</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="a succession crisis that tore england apart (2023)"
+           data-title="aligned to whom?"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-13T03:18:29.000Z"
-           data-url="https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart',title:'A succession crisis that tore England apart (2023)',source:'Hacker News',date:'2026-09-13T03:18:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-09-13T03:17:18.000Z"
+           data-url="https://hyperbo.la/w/aligned-to-whom/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hyperbo.la/w/aligned-to-whom/',title:'Aligned to whom?',source:'Hacker News',date:'2026-09-13T03:17:18.000Z',image:'https://hyperbo.la/social/w/aligned-to-whom.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hyperbo.la/w/aligned-to-whom/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://hyperbo.la/social/w/aligned-to-whom.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 114</span><span class="badge">💬 61</span>
+            </div>
+            <h3 class="card-title">Aligned to whom?</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the interim computer museum"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T02:43:57.000Z"
+           data-url="https://icm.museum/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://icm.museum/',title:'The Interim Computer Museum',source:'Hacker News',date:'2026-09-13T02:43:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://icm.museum/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">13 de set. de 2026</span>
-              <span class="badge">⬆ 35</span><span class="badge">💬 28</span>
+              <span class="badge">⬆ 140</span><span class="badge">💬 16</span>
             </div>
-            <h3 class="card-title">A succession crisis that tore England apart (2023)</h3>
+            <h3 class="card-title">The Interim Computer Museum</h3>
             
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="revolut confirms customer data breach through fake government requests"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T09:59:58.000Z"
+           data-url="https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/',title:'Revolut confirms customer data breach through fake government requests',source:'Hacker News',date:'2026-09-13T09:59:58.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/09/12/revolut-confirms-customer-data-breach-through-fake-government-requests/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 105</span><span class="badge">💬 69</span>
+            </div>
+            <h3 class="card-title">Revolut confirms customer data breach through fake government requests</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fusion power startups find new partners in the defense world"
+           data-desc="fusion startups are inking defense-related deals, reigniting the relationship between fusion and national security that might have gone dormant, but never completely disappeared."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Sun, 13 Sep 2026 13:15:00 +0000"
+           data-url="https://techcrunch.com/2026/09/13/fusion-power-startups-find-new-partners-in-the-defense-world/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/09/13/fusion-power-startups-find-new-partners-in-the-defense-world/',title:'Fusion power startups find new partners in the defense world',source:'techcrunch',date:'Sun, 13 Sep 2026 13:15:00 +0000',image:'',description:'Fusion startups are inking defense-related deals, reigniting the relationship between fusion and national security that might have gone dormant, but n',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/09/13/fusion-power-startups-find-new-partners-in-the-defense-world/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">13 de set. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Fusion power startups find new partners in the defense world</h3>
+            <p class="card-desc">Fusion startups are inking defense-related deals, reigniting the relationship between fusion and national security that might have gone dormant, but n…</p>
           </div>
         </a>
       </div>
