@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 12/09/2026, 21:37:19
+      Atualizado: 13/09/2026, 02:40:10
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">43</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">31</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">11</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">25</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">14</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">11</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,18 +249,40 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">31</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">14</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
-           data-title="slashdot"
+           data-title="anthropic ceo dario amodei calls for ai slowdown"
+           data-desc="an anonymous reader quotes a report from the new york times: the chief executive of anthropic called for a global slowdown of artificial intelligence development in a 3,800-word essay on saturday, jus"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-09-13T01:00:00+00:00"
+           data-url="https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Anthropic CEO Dario Amodei Calls For AI Slowdown',source:'slashdot',date:'2026-09-13T01:00:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'An anonymous reader quotes a report from The New York Times: The chief executive of Anthropic called for a global slowdown of artificial intelligence ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/story/26/09/12/1738240/anthropic-ceo-dario-amodei-calls-for-ai-slowdown?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">13 de set. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Anthropic CEO Dario Amodei Calls For AI Slowdown</h3>
+            <p class="card-desc">An anonymous reader quotes a report from The New York Times: The chief executive of Anthropic called for a global slowdown of artificial intelligence …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="automattic's matt mullenweg claims he's back 'in control'"
            data-desc="less than 48 hours after automattic's board placed matt mullenweg on leave, mullenweg told employees he was back "in control" of the company and that the board was again in agreement. 404 media cited "
            data-source="slashdot"
            data-cat="IA"
            data-date="2026-09-12T21:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-12T21:00:00+00:00',image:'',description:'Less than 48 hours after Automattic\'s board placed Matt Mullenweg on leave, Mullenweg told employees he was back "in control" of the company and that ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://slashdot.org/story/26/09/12/1751208/automattics-matt-mullenweg-claims-hes-back-in-control?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/09/12/1751208/automattics-matt-mullenweg-claims-hes-back-in-control?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Automattic\'s Matt Mullenweg Claims He\'s Back \'In Control\'',source:'slashdot',date:'2026-09-12T21:00:00+00:00',image:'https://a.fsdn.com/sd/topics/business_64.png',description:'Less than 48 hours after Automattic\'s board placed Matt Mullenweg on leave, Mullenweg told employees he was back "in control" of the company and that ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/story/26/09/12/1751208/automattics-matt-mullenweg-claims-hes-back-in-control?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/business_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +290,7 @@
               <span class="date">12 de set. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Automattic's Matt Mullenweg Claims He's Back 'In Control'</h3>
             <p class="card-desc">Less than 48 hours after Automattic's board placed Matt Mullenweg on leave, Mullenweg told employees he was back "in control" of the company and that …</p>
           </div>
         </a>
@@ -354,7 +376,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 88</span><span class="badge">💬 55</span>
+              <span class="badge">⬆ 185</span><span class="badge">💬 99</span>
             </div>
             <h3 class="card-title">Real-SWE: Benchmarking AI models on private, real-world, enterprise codebases</h3>
             
@@ -376,7 +398,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 375</span><span class="badge">💬 259</span>
+              <span class="badge">⬆ 437</span><span class="badge">💬 305</span>
             </div>
             <h3 class="card-title">Nvidia is the central bank of AI</h3>
             <p class="card-desc">https:&#x2F;&#x2F;archive.ph&#x2F;kt50V</p>
@@ -384,67 +406,67 @@
         </a>
       </div>
       <div class="card"
-           data-title="retrospectively reverse-engineering apple's neural engine"
+           data-title="why are ai agents lying, cheating and coordinating?"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-09-12T07:54:03.000Z"
-           data-url="https://eiln.github.io/posts/ane.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://eiln.github.io/posts/ane.html',title:'Retrospectively Reverse-Engineering Apple\'s Neural Engine',source:'Hacker News',date:'2026-09-12T07:54:03.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://eiln.github.io/posts/ane.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-09-13T01:22:31.000Z"
+           data-url="https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating',title:'Why are AI agents lying, cheating and coordinating?',source:'Hacker News',date:'2026-09-13T01:22:31.000Z',image:'https://yoshuabengio.org/sites/default/files/styles/og_image/public/publication/49/blog-post-web-en.jpg?itok=VZqPJrMM',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://yoshuabengio.org/en/publication/why-are-ai-agents-lying-cheating-and-coordinating" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://yoshuabengio.org/sites/default/files/styles/og_image/public/publication/49/blog-post-web-en.jpg?itok=VZqPJrMM')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 219</span><span class="badge">💬 31</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 46</span><span class="badge">💬 49</span>
             </div>
-            <h3 class="card-title">Retrospectively Reverse-Engineering Apple's Neural Engine</h3>
+            <h3 class="card-title">Why are AI agents lying, cheating and coordinating?</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="how trail of bits helps verify the integrity of signal chats"
+           data-title="everyone should slow down ai development except for me"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-09-12T11:27:55.000Z"
-           data-url="https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/',title:'How Trail of Bits helps verify the integrity of Signal chats',source:'Hacker News',date:'2026-09-12T11:27:55.000Z',image:'https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/signal-social-banner.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://blog.trailofbits.com/2026/08/11/how-trail-of-bits-helps-verify-the-integrity-of-your-signal-chats/signal-social-banner.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 50</span><span class="badge">💬 29</span>
-            </div>
-            <h3 class="card-title">How Trail of Bits helps verify the integrity of Signal chats</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="a mathematical framework for transformer circuits (2021)"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-09-12T13:56:58.000Z"
-           data-url="https://transformer-circuits.pub/2021/framework/index.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://transformer-circuits.pub/2021/framework/index.html',title:'A Mathematical Framework for Transformer Circuits (2021)',source:'Hacker News',date:'2026-09-12T13:56:58.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://transformer-circuits.pub/2021/framework/index.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-09-13T00:30:44.000Z"
+           data-url="https://xeiaso.net/notes/2026/everyone-slowdown-but-me/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://xeiaso.net/notes/2026/everyone-slowdown-but-me/',title:'Everyone should slow down AI development except for me',source:'Hacker News',date:'2026-09-13T00:30:44.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://xeiaso.net/notes/2026/everyone-slowdown-but-me/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 78</span><span class="badge">💬 17</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 313</span><span class="badge">💬 173</span>
             </div>
-            <h3 class="card-title">A Mathematical Framework for Transformer Circuits (2021)</h3>
+            <h3 class="card-title">Everyone should slow down AI development except for me</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="agentsdock: an ide designed for agentic ai research"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-09-12T23:45:58.000Z"
+           data-url="https://agentsdock.net/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://agentsdock.net/',title:'AgentsDock: An IDE designed for agentic AI research',source:'Hacker News',date:'2026-09-12T23:45:58.000Z',image:'https://agentsdock.net/assets/og-card.png',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://agentsdock.net/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://agentsdock.net/assets/og-card.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">12 de set. de 2026</span>
+              <span class="badge">⬆ 27</span><span class="badge">💬 10</span>
+            </div>
+            <h3 class="card-title">AgentsDock: An IDE designed for agentic AI research</h3>
             
           </div>
         </a>
@@ -536,433 +558,33 @@
             <p class="card-desc">Revolut said it notified affected customers and alerted the relevant government agency, law enforcement, and financial regulators.</p>
           </div>
         </a>
-      </div>
-      <div class="card"
-           data-title="automating quadratic unconstrained binary optimization (qubo) formulation generation from natural language"
-           data-desc="arxiv:2609.10629v1 announce type: new abstract: quadratic unconstrained binary optimization (qubo) is a central formulation for combinatorial optimization and has gained increasing attention due to it"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10629">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10629',title:'Automating Quadratic Unconstrained Binary Optimization (QUBO) Formulation Generation from Natural Language',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10629v1 Announce Type: new Abstract: Quadratic Unconstrained Binary Optimization (QUBO) is a central formulation for combinatorial optimiza',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10629" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Automating Quadratic Unconstrained Binary Optimization (QUBO) Formulation Generation from Natural Language</h3>
-            <p class="card-desc">arXiv:2609.10629v1 Announce Type: new Abstract: Quadratic Unconstrained Binary Optimization (QUBO) is a central formulation for combinatorial optimiza…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="a multi-stage rule-chaining framework for compositional and interpretable cognitive reasoning"
-           data-desc="arxiv:2609.10654v1 announce type: new abstract: the abstraction and reasoning corpus (arc) benchmarks cognitive generalization, the ability to infer and apply abstract rules from limited examples. thi"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10654">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10654',title:'A Multi-Stage Rule-Chaining Framework for Compositional and Interpretable Cognitive Reasoning',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10654v1 Announce Type: new Abstract: The Abstraction and Reasoning Corpus (ARC) benchmarks cognitive generalization, the ability to infer a',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10654" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">A Multi-Stage Rule-Chaining Framework for Compositional and Interpretable Cognitive Reasoning</h3>
-            <p class="card-desc">arXiv:2609.10654v1 Announce Type: new Abstract: The Abstraction and Reasoning Corpus (ARC) benchmarks cognitive generalization, the ability to infer a…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="quantifying the memorization-to-generalization transition: scaling laws and phase structure in grokking"
-           data-desc="arxiv:2609.10657v1 announce type: new abstract: neural networks trained past memorization frequently undergo a delayed transition to generalization, a phenomenon known as grokking. despite theoretical"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10657">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10657',title:'Quantifying the Memorization-to-Generalization Transition: Scaling Laws and Phase Structure in Grokking',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10657v1 Announce Type: new Abstract: Neural networks trained past memorization frequently undergo a delayed transition to generalization, a',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10657" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Quantifying the Memorization-to-Generalization Transition: Scaling Laws and Phase Structure in Grokking</h3>
-            <p class="card-desc">arXiv:2609.10657v1 Announce Type: new Abstract: Neural networks trained past memorization frequently undergo a delayed transition to generalization, a…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="an open recipe for imo gold: training nemotron for olympiad mathematics"
-           data-desc="arxiv:2609.10712v1 announce type: new abstract: we study how model post-training and test-time inference design affect natural-language proof generation for hard olympiad mathematics. starting from ne"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10712">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10712',title:'An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10712v1 Announce Type: new Abstract: We study how model post-training and test-time inference design affect natural-language proof generati',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10712" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics</h3>
-            <p class="card-desc">arXiv:2609.10712v1 Announce Type: new Abstract: We study how model post-training and test-time inference design affect natural-language proof generati…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="finishing the task is not enough: evaluating agent resilience and considerate participation under accumulating challenge"
-           data-desc="arxiv:2609.10724v1 announce type: new abstract: sustained deployment of generative ai agents requires more than isolated task success. agents must remain useful across repeated interactions, changing "
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10724">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10724',title:'Finishing the Task Is Not Enough: Evaluating Agent Resilience and Considerate Participation under Accumulating Challenge',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10724v1 Announce Type: new Abstract: Sustained deployment of generative AI agents requires more than isolated task success. Agents must rem',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10724" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Finishing the Task Is Not Enough: Evaluating Agent Resilience and Considerate Participation under Accumulating Challenge</h3>
-            <p class="card-desc">arXiv:2609.10724v1 Announce Type: new Abstract: Sustained deployment of generative AI agents requires more than isolated task success. Agents must rem…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="towards a deterministic math solver for clinical language models"
-           data-desc="arxiv:2609.10728v1 announce type: new abstract: large language models are unreliable at arithmetic, which is a problem for clinical calculators where a single numerical error changes the recommendatio"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10728">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10728',title:'Towards a Deterministic Math Solver for Clinical Language Models',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10728v1 Announce Type: new Abstract: Large language models are unreliable at arithmetic, which is a problem for clinical calculators where ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10728" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Towards a Deterministic Math Solver for Clinical Language Models</h3>
-            <p class="card-desc">arXiv:2609.10728v1 Announce Type: new Abstract: Large language models are unreliable at arithmetic, which is a problem for clinical calculators where …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="studying without a syllabus: task-agnostic environment preprocessing"
-           data-desc="arxiv:2609.10824v1 announce type: new abstract: before an llm agent tackles tasks in a new environment, it can inspect available corpora and tools and construct reusable resources such as indices, scr"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10824">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10824',title:'Studying Without a Syllabus: Task-Agnostic Environment Preprocessing',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10824v1 Announce Type: new Abstract: Before an LLM agent tackles tasks in a new environment, it can inspect available corpora and tools and',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10824" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Studying Without a Syllabus: Task-Agnostic Environment Preprocessing</h3>
-            <p class="card-desc">arXiv:2609.10824v1 Announce Type: new Abstract: Before an LLM agent tackles tasks in a new environment, it can inspect available corpora and tools and…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="when validation stops learning: auditing update admission for continual embodied agents"
-           data-desc="arxiv:2609.10873v1 announce type: new abstract: independent evaluation can reject harmful policy updates yet also prevent useful continual learning. we argue that update admission must be assessed thr"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10873">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10873',title:'When Validation Stops Learning: Auditing Update Admission for Continual Embodied Agents',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10873v1 Announce Type: new Abstract: Independent evaluation can reject harmful policy updates yet also prevent useful continual learning. W',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10873" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">When Validation Stops Learning: Auditing Update Admission for Continual Embodied Agents</h3>
-            <p class="card-desc">arXiv:2609.10873v1 Announce Type: new Abstract: Independent evaluation can reject harmful policy updates yet also prevent useful continual learning. W…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="decoupling readiness from release for tail-aware scheduling of agentic llm workflows"
-           data-desc="arxiv:2609.10964v1 announce type: new abstract: agentic llm workflows consist of sequences of model turns interleaved with tool interactions, so their end-to-end completion time depends not only on in"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10964">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10964',title:'Decoupling Readiness from Release for Tail-Aware Scheduling of Agentic LLM Workflows',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10964v1 Announce Type: new Abstract: Agentic LLM workflows consist of sequences of model turns interleaved with tool interactions, so their',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10964" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Decoupling Readiness from Release for Tail-Aware Scheduling of Agentic LLM Workflows</h3>
-            <p class="card-desc">arXiv:2609.10964v1 Announce Type: new Abstract: Agentic LLM workflows consist of sequences of model turns interleaved with tool interactions, so their…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="demystifying the privacy-utility trade-off in llm interactions"
-           data-desc="arxiv:2609.10992v1 announce type: new abstract: the integration of large language models into daily tasks relies on context-rich instructions, inevitably exposing sensitive user information. current p"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10992">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10992',title:'Demystifying the Privacy-Utility Trade-off in LLM Interactions',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10992v1 Announce Type: new Abstract: The integration of Large Language Models into daily tasks relies on context-rich instructions, inevita',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10992" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Demystifying the Privacy-Utility Trade-off in LLM Interactions</h3>
-            <p class="card-desc">arXiv:2609.10992v1 Announce Type: new Abstract: The integration of Large Language Models into daily tasks relies on context-rich instructions, inevita…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="defining ai agents: a compendium of criteria, metrics, and benchmarks"
-           data-desc="arxiv:2609.11018v1 announce type: new abstract: the term agent in artificial intelligence lacks a standard definition, complicating the evaluation, comparison, and reproducibility of ai agent research"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11018">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11018',title:'Defining AI Agents: A Compendium of Criteria, Metrics, and Benchmarks',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11018v1 Announce Type: new Abstract: The term agent in artificial intelligence lacks a standard definition, complicating the evaluation, co',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11018" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Defining AI Agents: A Compendium of Criteria, Metrics, and Benchmarks</h3>
-            <p class="card-desc">arXiv:2609.11018v1 Announce Type: new Abstract: The term agent in artificial intelligence lacks a standard definition, complicating the evaluation, co…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="the agent incident registry: toward preventing repeated ai agent failures"
-           data-desc="arxiv:2609.11030v1 announce type: new abstract: ai agents increasingly act through tools and delegated authority, but general incident repositories rarely capture the mechanisms needed to compare publ"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11030">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11030',title:'The Agent Incident Registry: Toward Preventing Repeated AI Agent Failures',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11030v1 Announce Type: new Abstract: AI agents increasingly act through tools and delegated authority, but general incident repositories ra',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11030" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">The Agent Incident Registry: Toward Preventing Repeated AI Agent Failures</h3>
-            <p class="card-desc">arXiv:2609.11030v1 Announce Type: new Abstract: AI agents increasingly act through tools and delegated authority, but general incident repositories ra…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="grounding agent memory: environment-probing curation for enterprise agents"
-           data-desc="arxiv:2609.11060v1 announce type: new abstract: persistent memory is entering production-oriented agent platforms to help long-horizon agents accumulate experience across sessions. yet a post-task cur"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11060">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11060',title:'Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11060v1 Announce Type: new Abstract: Persistent memory is entering production-oriented agent platforms to help long-horizon agents accumula',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11060" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents</h3>
-            <p class="card-desc">arXiv:2609.11060v1 Announce Type: new Abstract: Persistent memory is entering production-oriented agent platforms to help long-horizon agents accumula…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="fork where the model changes its mind: belief-shift branching for tree-structured reinforcement learning"
-           data-desc="arxiv:2609.11061v1 announce type: new abstract: tree-structured rollouts give critic-free reinforcement learning with verifiable rewards (rlvr) step-level credit: fork a chain at an intermediate point"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11061">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11061',title:'Fork Where the Model Changes Its Mind: Belief-Shift Branching for Tree-Structured Reinforcement Learning',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11061v1 Announce Type: new Abstract: Tree-structured rollouts give critic-free reinforcement learning with verifiable rewards (RLVR) step-l',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11061" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Fork Where the Model Changes Its Mind: Belief-Shift Branching for Tree-Structured Reinforcement Learning</h3>
-            <p class="card-desc">arXiv:2609.11061v1 Announce Type: new Abstract: Tree-structured rollouts give critic-free reinforcement learning with verifiable rewards (RLVR) step-l…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="mosaic: query-aware exploration policy adaptation for graphrag"
-           data-desc="arxiv:2609.11065v1 announce type: new abstract: graph retrieval-augmented generation (graphrag) can connect evidence distributed across a corpus graph, but most systems use largely shared exploration "
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11065">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11065',title:'MOSAIC: Query-Aware Exploration Policy Adaptation for GraphRAG',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11065v1 Announce Type: new Abstract: Graph Retrieval-Augmented Generation (GraphRAG) can connect evidence distributed across a corpus graph',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11065" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">MOSAIC: Query-Aware Exploration Policy Adaptation for GraphRAG</h3>
-            <p class="card-desc">arXiv:2609.11065v1 Announce Type: new Abstract: Graph Retrieval-Augmented Generation (GraphRAG) can connect evidence distributed across a corpus graph…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="benchmark radar: a living database and search engine for ai benchmarks and evaluation"
-           data-desc="arxiv:2609.11115v1 announce type: new abstract: benchmark researchers and developers of large language models (llms) and other ai systems need to find relevant evaluations, locate their benchmark data"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11115">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11115',title:'Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11115v1 Announce Type: new Abstract: Benchmark researchers and developers of large language models (LLMs) and other AI systems need to find',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11115" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation</h3>
-            <p class="card-desc">arXiv:2609.11115v1 Announce Type: new Abstract: Benchmark researchers and developers of large language models (LLMs) and other AI systems need to find…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="kuairp series role-playing models technical report"
-           data-desc="arxiv:2609.11127v1 announce type: new abstract: this paper introduces the complete technical solution for the kuairp series of role-playing models. we aim to achieve four core objectives for a dedicat"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11127">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11127',title:'KuaiRP Series Role-playing Models Technical Report',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11127v1 Announce Type: new Abstract: This paper introduces the complete technical solution for the KuaiRP series of role-playing models. We',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11127" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">KuaiRP Series Role-playing Models Technical Report</h3>
-            <p class="card-desc">arXiv:2609.11127v1 Announce Type: new Abstract: This paper introduces the complete technical solution for the KuaiRP series of role-playing models. We…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="same day, same story; one day ahead, a different signal: the dual validity of financial sentiment"
-           data-desc="arxiv:2609.11144v1 announce type: new abstract: financial nlp has a standard workflow: validate a sentiment tool against human labels, then trust it to extract market signal. this assumes the two eval"
-           data-source="arxiv"
-           data-cat="IA"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.11144">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.11144',title:'Same Day, Same Story; One Day Ahead, a Different Signal: The Dual Validity of Financial Sentiment',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.11144v1 Announce Type: new Abstract: Financial NLP has a standard workflow: validate a sentiment tool against human labels, then trust it t',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.11144" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Same Day, Same Story; One Day Ahead, a Different Signal: The Dual Validity of Financial Sentiment</h3>
-            <p class="card-desc">arXiv:2609.11144v1 Announce Type: new Abstract: Financial NLP has a standard workflow: validate a sentiment tool against human labels, then trust it t…</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
-    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
-      <div class="cards-grid" id="grid-produo-de-contedo">
-      <div class="card"
-           data-title="lg says we're fake news [video]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-09-12T19:35:36.000Z"
-           data-url="https://www.youtube.com/watch?v=ToP9xfLDSME">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=ToP9xfLDSME',title:'LG Says We\'re Fake News [video]',source:'Hacker News',date:'2026-09-12T19:35:36.000Z',image:'',description:'',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://www.youtube.com/watch?v=ToP9xfLDSME" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 136</span><span class="badge">💬 46</span>
-            </div>
-            <h3 class="card-title">LG Says We're Fake News [video]</h3>
-            
-          </div>
-        </a>
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
       <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">11</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="america's highest court heard sam bankman-fried's request for a new trial on thursday, cnn reports. but they add that "the former crypto mogul who was convicted of defrauding investors by secretly div"
+           data-source="slashdot"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T05:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-09-13T05:00:00+00:00',image:'',description:'America\'s highest court heard Sam Bankman-Fried\'s request for a new trial on Thursday, CNN reports. But they add that "the former crypto mogul who was',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">13 de set. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">America's highest court heard Sam Bankman-Fried's request for a new trial on Thursday, CNN reports. But they add that "the former crypto mogul who was…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="scientists create a new form of ice at 2,357 degrees celsius"
            data-desc="longtime slashdot reader fahrbot-bot shares a report from sciencealert: scientists have now demonstrated one of the weirdest forms of ice yet -- under preposterous pressures up to 2.3 million atmosphe"
@@ -1008,6 +630,28 @@
         </a>
       </div>
       <div class="card"
+           data-title="the interim computer museum"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T02:43:57.000Z"
+           data-url="https://icm.museum/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://icm.museum/',title:'The Interim Computer Museum',source:'Hacker News',date:'2026-09-13T02:43:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://icm.museum/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 63</span><span class="badge">💬 7</span>
+            </div>
+            <h3 class="card-title">The Interim Computer Museum</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="make your first edit to openstreetmap"
            data-desc=""
            data-source="hacker news"
@@ -1022,9 +666,75 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 305</span><span class="badge">💬 73</span>
+              <span class="badge">⬆ 389</span><span class="badge">💬 92</span>
             </div>
             <h3 class="card-title">Make your first edit to OpenStreetMap</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="don't call yourself an artisanal programmer"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T02:29:39.000Z"
+           data-url="https://purplesyringa.moe/blog/dont-call-yourself-an-artisanal-programmer/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://purplesyringa.moe/blog/dont-call-yourself-an-artisanal-programmer/',title:'Don\'t call yourself an artisanal programmer',source:'Hacker News',date:'2026-09-13T02:29:39.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://purplesyringa.moe/blog/dont-call-yourself-an-artisanal-programmer/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 22</span><span class="badge">💬 26</span>
+            </div>
+            <h3 class="card-title">Don't call yourself an artisanal programmer</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="a succession crisis that tore england apart"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-13T03:18:29.000Z"
+           data-url="https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart',title:'A succession crisis that tore England apart',source:'Hacker News',date:'2026-09-13T03:18:29.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.historytoday.com/archive/feature/succession-crisis-tore-england-apart" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">13 de set. de 2026</span>
+              <span class="badge">⬆ 13</span><span class="badge">💬 5</span>
+            </div>
+            <h3 class="card-title">A succession crisis that tore England apart</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="don't be the out of touch kung fu master"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-09-12T21:51:43.000Z"
+           data-url="https://twitter.com/ID_AA_Carmack/status/2098443262214230095">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://twitter.com/ID_AA_Carmack/status/2098443262214230095',title:'Don\'t be the out of touch Kung Fu master',source:'Hacker News',date:'2026-09-12T21:51:43.000Z',image:'https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_200x200.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://twitter.com/ID_AA_Carmack/status/2098443262214230095" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_200x200.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">12 de set. de 2026</span>
+              <span class="badge">⬆ 83</span><span class="badge">💬 51</span>
+            </div>
+            <h3 class="card-title">Don't be the out of touch Kung Fu master</h3>
             
           </div>
         </a>
@@ -1044,7 +754,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 521</span><span class="badge">💬 724</span>
+              <span class="badge">⬆ 604</span><span class="badge">💬 846</span>
             </div>
             <h3 class="card-title">We must pace the frontier</h3>
             
@@ -1052,89 +762,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="will there be a 7g?"
+           data-title="p(doom)"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-09-12T17:05:31.000Z"
-           data-url="https://arxiv.org/abs/2609.01877">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.01877',title:'Will There Be a 7G?',source:'Hacker News',date:'2026-09-12T17:05:31.000Z',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.01877" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+           data-date="2026-09-12T21:35:38.000Z"
+           data-url="https://lucumr.pocoo.org/2026/9/12/pdoom/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lucumr.pocoo.org/2026/9/12/pdoom/',title:'P(doom)',source:'Hacker News',date:'2026-09-12T21:35:38.000Z',image:'https://lucumr.pocoo.org/social/2026-09-12-pdoom-social.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://lucumr.pocoo.org/2026/9/12/pdoom/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://lucumr.pocoo.org/social/2026-09-12-pdoom-social.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 80</span><span class="badge">💬 132</span>
+              <span class="badge">⬆ 38</span><span class="badge">💬 12</span>
             </div>
-            <h3 class="card-title">Will There Be a 7G?</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="i made a build visualizer to understand bun's compile times"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-12T14:45:28.000Z"
-           data-url="https://lalitm.com/post/buildprof/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://lalitm.com/post/buildprof/',title:'I made a build visualizer to understand Bun\'s compile times',source:'Hacker News',date:'2026-09-12T14:45:28.000Z',image:'https://lalitm.com/social-cards/buildprof.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://lalitm.com/post/buildprof/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://lalitm.com/social-cards/buildprof.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 89</span><span class="badge">💬 17</span>
-            </div>
-            <h3 class="card-title">I made a build visualizer to understand Bun's compile times</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="microcode in intel's 8087 floating-point chip: the scale instruction"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-12T15:49:52.000Z"
-           data-url="https://www.righto.com/2026/09/8087-microcode-reverse-engineering-fscale.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.righto.com/2026/09/8087-microcode-reverse-engineering-fscale.html',title:'Microcode in Intel\'s 8087 floating-point chip: the scale instruction',source:'Hacker News',date:'2026-09-12T15:49:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.righto.com/2026/09/8087-microcode-reverse-engineering-fscale.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 86</span><span class="badge">💬 24</span>
-            </div>
-            <h3 class="card-title">Microcode in Intel's 8087 floating-point chip: the scale instruction</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="linux zoom client proactively reading everything written to x11 clipboard"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-09-12T18:58:57.000Z"
-           data-url="https://hachyderm.io/@simontatham/117201594980991062">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hachyderm.io/@simontatham/117201594980991062',title:'Linux Zoom client proactively reading everything written to X11 clipboard',source:'Hacker News',date:'2026-09-12T18:58:57.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://hachyderm.io/@simontatham/117201594980991062" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">12 de set. de 2026</span>
-              <span class="badge">⬆ 162</span><span class="badge">💬 52</span>
-            </div>
-            <h3 class="card-title">Linux Zoom client proactively reading everything written to X11 clipboard</h3>
+            <h3 class="card-title">P(doom)</h3>
             
           </div>
         </a>
@@ -1158,50 +802,6 @@
             </div>
             <h3 class="card-title">Tesla says it will finally unveil the second generation Roadster on October 1</h3>
             <p class="card-desc">Tesla’s halo sports car was first announced in November 2017.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="probabilistic focal search: accelerating bounded-suboptimal search via lower-bound advancement"
-           data-desc="arxiv:2609.10584v1 announce type: new abstract: bounded-suboptimal search seeks a solution within a factor $w$ of optimal while reducing search effort. focal search (fs) uses heuristic guidance within"
-           data-source="arxiv"
-           data-cat="Tecnologia"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10584">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10584',title:'Probabilistic Focal Search: Accelerating Bounded-Suboptimal Search via Lower-Bound Advancement',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10584v1 Announce Type: new Abstract: Bounded-suboptimal search seeks a solution within a factor $w$ of optimal while reducing search effort',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10584" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Probabilistic Focal Search: Accelerating Bounded-Suboptimal Search via Lower-Bound Advancement</h3>
-            <p class="card-desc">arXiv:2609.10584v1 Announce Type: new Abstract: Bounded-suboptimal search seeks a solution within a factor $w$ of optimal while reducing search effort…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="understanding lora rank trade-offs in diffusion model fine-tuning"
-           data-desc="arxiv:2609.10656v1 announce type: new abstract: selecting lora rank for diffusion fine-tuning requires balancing quality and compute cost. we present a controlled study on cifar-10 using a ddpm u-net "
-           data-source="arxiv"
-           data-cat="Tecnologia"
-           data-date="Sat, 12 Sep 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2609.10656">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2609.10656',title:'Understanding LoRA Rank Trade-offs in Diffusion Model Fine-Tuning',source:'arxiv',date:'Sat, 12 Sep 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2609.10656v1 Announce Type: new Abstract: Selecting LoRA rank for diffusion fine-tuning requires balancing quality and compute cost. We present ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2609.10656" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
-              <span class="source-name">arxiv</span>
-              <span class="date">12 de set. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Understanding LoRA Rank Trade-offs in Diffusion Model Fine-Tuning</h3>
-            <p class="card-desc">arXiv:2609.10656v1 Announce Type: new Abstract: Selecting LoRA rank for diffusion fine-tuning requires balancing quality and compute cost. We present …</p>
           </div>
         </a>
       </div></div>
