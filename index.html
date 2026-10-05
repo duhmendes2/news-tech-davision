@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 04/10/2026, 23:17:40
+      Atualizado: 05/10/2026, 06:27:15
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">31</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">16</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">15</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">52</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">32</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">19</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,52 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">16</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">32</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="- in 2022 altair engineering open sourced "openradioss", an industry-leading finite element solver under the gnu agpl license, reports phoronix. - siemens acquired altair engineering last year - sieme"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-10-05T07:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-05T07:34:00+00:00',image:'',description:'- In 2022 Altair Engineering open sourced "OpenRadioss", an industry-leading finite element solver under the GNU AGPL License, reports Phoronix. - Sie',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">- In 2022 Altair Engineering open sourced "OpenRadioss", an industry-leading finite element solver under the GNU AGPL License, reports Phoronix. - Sie…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fbi detains teenager linked to group that stole data on 5,000 fbi employees"
+           data-desc="pc magazine reports: in september, the infamous shinyhunters hacking group claimed it had infiltrated the fbi job recruitment portal, stealing confidential data belonging to 5,000 employees and even c"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-10-05T04:34:00+00:00"
+           data-url="https://yro.slashdot.org/story/26/10/05/0355256/fbi-detains-teenager-linked-to-group-that-stole-data-on-5000-fbi-employees?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/10/05/0355256/fbi-detains-teenager-linked-to-group-that-stole-data-on-5000-fbi-employees?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'FBI Detains Teenager Linked to Group That Stole Data on 5,000 FBI Employees',source:'slashdot',date:'2026-10-05T04:34:00+00:00',image:'https://a.fsdn.com/sd/topics/crime_64.png',description:'PC Magazine reports: In September, the infamous ShinyHunters hacking group claimed it had infiltrated the FBI job recruitment portal, stealing confide',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://yro.slashdot.org/story/26/10/05/0355256/fbi-detains-teenager-linked-to-group-that-stole-data-on-5000-fbi-employees?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/crime_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">FBI Detains Teenager Linked to Group That Stole Data on 5,000 FBI Employees</h3>
+            <p class="card-desc">PC Magazine reports: In September, the infamous ShinyHunters hacking group claimed it had infiltrated the FBI job recruitment portal, stealing confide…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="openai's gpt-6 astra gets frustrated losing at starcraft and decides to cheat instead"
            data-desc="what happened when ai-created bots competed in the classic blizzard videogame starcraft? "struggling to stay apace with its competitors, openai's gpt-6 astra apparently changed strategy mid-tournament"
@@ -406,24 +450,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="surveillance company tells cops it wants to add facial recognition to flock cameras"
-           data-desc="404 media reports: "we will not add facial recognition to our devices," flock ceo garrett langley said in a recent video. but other, third-party companies are telling cops that they are willing to add"
-           data-source="slashdot"
+           data-title="in the wake of tippett studios’ closure, a digital archive appears online"
+           data-desc="https:&#x2f;&#x2f;archive.org&#x2f;details&#x2f;tippett-archive&#x2f;"
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-10-04T00:21:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/10/03/0545254/surveillance-company-tells-cops-it-wants-to-add-facial-recognition-to-flock-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/10/03/0545254/surveillance-company-tells-cops-it-wants-to-add-facial-recognition-to-flock-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Surveillance Company Tells Cops It Wants to Add Facial Recognition to Flock Cameras',source:'slashdot',date:'2026-10-04T00:21:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'404 Media reports: "We will not add facial recognition to our devices," Flock CEO Garrett Langley said in a recent video. But other, third-party compa',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/10/03/0545254/surveillance-company-tells-cops-it-wants-to-add-facial-recognition-to-flock-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+           data-date="2026-10-04T21:01:28.000Z"
+           data-url="https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/',title:'In the wake of Tippett Studios’ closure, a digital archive appears online',source:'Hacker News',date:'2026-10-04T21:01:28.000Z',image:'',description:'https:&#x2F;&#x2F;archive.org&#x2F;details&#x2F;tippett-archive&#x2F;',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              
+              <span class="badge">⬆ 132</span><span class="badge">💬 15</span>
             </div>
-            <h3 class="card-title">Surveillance Company Tells Cops It Wants to Add Facial Recognition to Flock Cameras</h3>
-            <p class="card-desc">404 Media reports: "We will not add facial recognition to our devices," Flock CEO Garrett Langley said in a recent video. But other, third-party compa…</p>
+            <h3 class="card-title">In the wake of Tippett Studios’ closure, a digital archive appears online</h3>
+            <p class="card-desc">https:&#x2F;&#x2F;archive.org&#x2F;details&#x2F;tippett-archive&#x2F;</p>
           </div>
         </a>
       </div>
@@ -442,77 +486,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">05 de out. de 2026</span>
-              <span class="badge">⬆ 13</span>
+              <span class="badge">⬆ 195</span><span class="badge">💬 160</span>
             </div>
             <h3 class="card-title">Powerless F1 drivers frustrated by Bahrain F1 software glitch</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="homa: the end of tcp for ai clusters [video]"
-           data-desc="paper: 
-https:&#x2f;&#x2f;www.usenix.org&#x2f;system&#x2f;files&#x2f;atc21-ousterhout.pdfrelated: https:&#x2f;&#x2f;lwn.net&#x2f;articles&#x2f;1003059&#x2f;, https:&#x2f;&#x2f;www.theregister.com&#x2f"
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-10-04T19:42:25.000Z"
-           data-url="https://www.youtube.com/watch?v=eZ8WWZzoaR0">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=eZ8WWZzoaR0',title:'Homa: The end of TCP for AI clusters [video]',source:'Hacker News',date:'2026-10-04T19:42:25.000Z',image:'',description:'Paper:  https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pdfRelated: https:&#x2F;&#x2F;lwn.net&#x2F;Articles&#x2F;1003059',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.youtube.com/watch?v=eZ8WWZzoaR0" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 58</span><span class="badge">💬 21</span>
-            </div>
-            <h3 class="card-title">Homa: The end of TCP for AI clusters [video]</h3>
-            <p class="card-desc">Paper: 
-https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pdfRelated: https:&#x2F;&#x2F;lwn.net&#x2F;Articles&#x2F;1003059…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="how to scale intent, quality, and artistry with ai [video]"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-10-04T08:41:58.000Z"
-           data-url="https://www.youtube.com/watch?v=GLvFTMtw4Jk">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=GLvFTMtw4Jk',title:'How to scale intent, quality, and artistry with AI [video]',source:'Hacker News',date:'2026-10-04T08:41:58.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.youtube.com/watch?v=GLvFTMtw4Jk" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 53</span><span class="badge">💬 16</span>
-            </div>
-            <h3 class="card-title">How to scale intent, quality, and artistry with AI [video]</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: ai search for every photo and every frame of video on macos"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-10-04T09:24:52.000Z"
-           data-url="https://github.com/allenv0/SCM">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/allenv0/SCM',title:'Show HN: AI search for every photo and every frame of video on macOS',source:'Hacker News',date:'2026-10-04T09:24:52.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/allenv0/SCM" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 141</span><span class="badge">💬 66</span>
-            </div>
-            <h3 class="card-title">Show HN: AI search for every photo and every frame of video on macOS</h3>
             
           </div>
         </a>
@@ -604,21 +580,421 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
             <p class="card-desc">This new task force is Trump's latest response to the debate over AI safety.</p>
           </div>
         </a>
+      </div>
+      <div class="card"
+           data-title="people really hate ai, so why can’t they get enough?"
+           data-desc="over the summer i talked to the ceo of springboards, a startup building an llm that’s designed to come up with a wider variety of responses than its mainstream rivals do. at the start of the call, he "
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 08:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/',title:'People really hate AI, so why can’t they get enough?',source:'mit',date:'Mon, 05 Oct 2026 08:00:00 +0000',image:'',description:'Over the summer I talked to the CEO of Springboards, a startup building an LLM that’s designed to come up with a wider variety of responses than its m',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/10/05/1145682/people-really-hate-ai-so-why-cant-they-get-enough/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>M</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">People really hate AI, so why can’t they get enough?</h3>
+            <p class="card-desc">Over the summer I talked to the CEO of Springboards, a startup building an LLM that’s designed to come up with a wider variety of responses than its m…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="emtech future 2026: when ai meets everything"
+           data-desc="yossi matias, vice president head of google research, explores how ai is beginning to reshape biology, infrastructure, manufacturing, and science, and why its greatest impact may come when it intersec"
+           data-source="mit"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 04:00:00 +0000"
+           data-url="https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/',title:'EmTech Future 2026: When AI Meets Everything',source:'mit',date:'Mon, 05 Oct 2026 04:00:00 +0000',image:'https://wp.technologyreview.com/wp-content/uploads/2026/10/EFT_On-Demad_WEB.png',description:'Yossi Matias, Vice President Head of Google Research, explores how AI is beginning to reshape biology, infrastructure, manufacturing, and science, and',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.technologyreview.com/2026/10/05/1145413/emtech-future-2026-when-ai-meets-everything/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://wp.technologyreview.com/wp-content/uploads/2026/10/EFT_On-Demad_WEB.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://www.technologyreview.com/favicon.ico" alt="mit" onerror="this.style.display='none'">
+              <span class="source-name">mit</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">EmTech Future 2026: When AI Meets Everything</h3>
+            <p class="card-desc">Yossi Matias, Vice President Head of Google Research, explores how AI is beginning to reshape biology, infrastructure, manufacturing, and science, and…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="mintflow: minimal trajectory intervention for constrained flow matching"
+           data-desc="arxiv:2610.02260v1 announce type: new abstract: flow matching models excel at generative modeling, and many downstream applications require their samples to satisfy prescribed constraints, such as obs"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02260">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02260',title:'MintFlow: Minimal Trajectory Intervention for Constrained Flow Matching',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02260v1 Announce Type: new Abstract: Flow matching models excel at generative modeling, and many downstream applications require their samp',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02260" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">MintFlow: Minimal Trajectory Intervention for Constrained Flow Matching</h3>
+            <p class="card-desc">arXiv:2610.02260v1 Announce Type: new Abstract: Flow matching models excel at generative modeling, and many downstream applications require their samp…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="fast models, slow evidence: a paired and self-audited evaluation of system-1 decision models for llm agent harnesses"
+           data-desc="arxiv:2610.02267v1 announce type: new abstract: agent harnesses make many small, typed decisions per task: which model to call, which tool to use, whether retrieved text is relevant, whether an input "
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02267">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02267',title:'Fast Models, Slow Evidence: A Paired and Self-Audited Evaluation of System-1 Decision Models for LLM Agent Harnesses',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02267v1 Announce Type: new Abstract: Agent harnesses make many small, typed decisions per task: which model to call, which tool to use, whe',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02267" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Fast Models, Slow Evidence: A Paired and Self-Audited Evaluation of System-1 Decision Models for LLM Agent Harnesses</h3>
+            <p class="card-desc">arXiv:2610.02267v1 Announce Type: new Abstract: Agent harnesses make many small, typed decisions per task: which model to call, which tool to use, whe…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the ai risk observatory: what can we learn from ai disclosures in annual reports about societal resilience?"
+           data-desc="arxiv:2610.02281v1 announce type: new abstract: societal resilience research relies on access to useful and actionable data, which motivates our main research question: can annual reports, processed a"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02281">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02281',title:'The AI Risk Observatory: What Can We Learn from AI Disclosures in Annual Reports About Societal Resilience?',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02281v1 Announce Type: new Abstract: Societal resilience research relies on access to useful and actionable data, which motivates our main ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02281" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">The AI Risk Observatory: What Can We Learn from AI Disclosures in Annual Reports About Societal Resilience?</h3>
+            <p class="card-desc">arXiv:2610.02281v1 Announce Type: new Abstract: Societal resilience research relies on access to useful and actionable data, which motivates our main …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="keep it calm: analyzing the limits of global unsafety in text-to-image generation"
+           data-desc="arxiv:2610.02300v1 announce type: new abstract: training-free safeguards for text-to-image generation often rely on a reusable safety signal, such as an unsafe direction or global toxic subspace, appl"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02300">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02300',title:'Keep It CALM: Analyzing the Limits of Global Unsafety in Text-to-Image Generation',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02300v1 Announce Type: new Abstract: Training-free safeguards for text-to-image generation often rely on a reusable safety signal, such as ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02300" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Keep It CALM: Analyzing the Limits of Global Unsafety in Text-to-Image Generation</h3>
+            <p class="card-desc">arXiv:2610.02300v1 Announce Type: new Abstract: Training-free safeguards for text-to-image generation often rely on a reusable safety signal, such as …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="choosing before acting: comparative value estimation for long-horizon tool-use agents"
+           data-desc="arxiv:2610.02330v1 announce type: new abstract: large language models (llms) rely on long-horizon tool invocation sequences for complex tasks, where each invocation can alter the task state and condit"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02330">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02330',title:'Choosing Before Acting: Comparative Value Estimation for Long-Horizon Tool-Use Agents',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02330v1 Announce Type: new Abstract: Large language models (LLMs) rely on long-horizon tool invocation sequences for complex tasks, where e',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02330" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Choosing Before Acting: Comparative Value Estimation for Long-Horizon Tool-Use Agents</h3>
+            <p class="card-desc">arXiv:2610.02330v1 Announce Type: new Abstract: Large language models (LLMs) rely on long-horizon tool invocation sequences for complex tasks, where e…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="world editing: intervening on executable worlds at increasing depth"
+           data-desc="arxiv:2610.02331v1 announce type: new abstract: interactive world models are increasingly capable of generating environments and acting within them, yet deliberately editing an existing executable wor"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02331">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02331',title:'World Editing: Intervening on Executable Worlds at Increasing Depth',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02331v1 Announce Type: new Abstract: Interactive world models are increasingly capable of generating environments and acting within them, y',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02331" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">World Editing: Intervening on Executable Worlds at Increasing Depth</h3>
+            <p class="card-desc">arXiv:2610.02331v1 Announce Type: new Abstract: Interactive world models are increasingly capable of generating environments and acting within them, y…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="dereact: decomposed reasoning and acting for reliable ai agents"
+           data-desc="arxiv:2610.02351v1 announce type: new abstract: react-based agents typically rely on a single llm policy to propose actions, interact with the environment, and decide when a task is complete. this cou"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02351">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02351',title:'DeReAct: Decomposed Reasoning and Acting for Reliable AI Agents',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02351v1 Announce Type: new Abstract: ReAct-based agents typically rely on a single LLM policy to propose actions, interact with the environ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02351" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">DeReAct: Decomposed Reasoning and Acting for Reliable AI Agents</h3>
+            <p class="card-desc">arXiv:2610.02351v1 Announce Type: new Abstract: ReAct-based agents typically rely on a single LLM policy to propose actions, interact with the environ…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="thpl: a vision-to-language decision support framework for rainbow trout feeding management in ras"
+           data-desc="arxiv:2610.02378v1 announce type: new abstract: in recirculating aquaculture systems (ras), precision feeding is critical for minimizing costs and improving fish welfare. however, existing methods lac"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02378">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02378',title:'THPL: A Vision-to-Language Decision Support Framework for Rainbow Trout Feeding Management in RAS',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02378v1 Announce Type: new Abstract: In Recirculating Aquaculture Systems (RAS), precision feeding is critical for minimizing costs and imp',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02378" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">THPL: A Vision-to-Language Decision Support Framework for Rainbow Trout Feeding Management in RAS</h3>
+            <p class="card-desc">arXiv:2610.02378v1 Announce Type: new Abstract: In Recirculating Aquaculture Systems (RAS), precision feeding is critical for minimizing costs and imp…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="flashsinkhorn 2: block-sparse entropic optimal transport"
+           data-desc="arxiv:2610.02395v1 announce type: new abstract: streaming gpu solvers for entropic optimal transport (eot), such as flashsinkhorn, avoid storing the dense kernel but still evaluate all $n\times m$ poi"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02395">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02395',title:'FlashSinkhorn 2: Block-Sparse Entropic Optimal Transport',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02395v1 Announce Type: new Abstract: Streaming GPU solvers for entropic optimal transport (EOT), such as FlashSinkhorn, avoid storing the d',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02395" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">FlashSinkhorn 2: Block-Sparse Entropic Optimal Transport</h3>
+            <p class="card-desc">arXiv:2610.02395v1 Announce Type: new Abstract: Streaming GPU solvers for entropic optimal transport (EOT), such as FlashSinkhorn, avoid storing the d…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="when terminal-agent training stalls: demystifying data generation and verification challenge"
+           data-desc="arxiv:2610.02405v1 announce type: new abstract: using a frontier model like claude opus as a meta-agent to generate terminal tasks and verifiers for rl training is increasingly common. yet a runnable "
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02405">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02405',title:'When Terminal-Agent Training Stalls: Demystifying Data Generation and Verification Challenge',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02405v1 Announce Type: new Abstract: Using a frontier model like Claude Opus as a meta-agent to generate terminal tasks and verifiers for R',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02405" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">When Terminal-Agent Training Stalls: Demystifying Data Generation and Verification Challenge</h3>
+            <p class="card-desc">arXiv:2610.02405v1 Announce Type: new Abstract: Using a frontier model like Claude Opus as a meta-agent to generate terminal tasks and verifiers for R…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="tropical reinforcement learning"
+           data-desc="arxiv:2610.02478v1 announce type: new abstract: reinforcement learning for large language models typically maximizes expected return, adding up the probabilities of all successful trajectories. howeve"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02478">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02478',title:'Tropical Reinforcement Learning',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02478v1 Announce Type: new Abstract: Reinforcement learning for large language models typically maximizes expected return, adding up the pr',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02478" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Tropical Reinforcement Learning</h3>
+            <p class="card-desc">arXiv:2610.02478v1 Announce Type: new Abstract: Reinforcement learning for large language models typically maximizes expected return, adding up the pr…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="mea: a reward-driven multi-agent system for faithful model explanations"
+           data-desc="arxiv:2610.02480v1 announce type: new abstract: recent years have seen the employment of a plethora of machine learning (ml) models in high-stakes domains, but they remain largely opaque to the practi"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02480">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02480',title:'MEA: A Reward-Driven Multi-Agent System for Faithful Model Explanations',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02480v1 Announce Type: new Abstract: Recent years have seen the employment of a plethora of machine learning (ML) models in high-stakes dom',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02480" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">MEA: A Reward-Driven Multi-Agent System for Faithful Model Explanations</h3>
+            <p class="card-desc">arXiv:2610.02480v1 Announce Type: new Abstract: Recent years have seen the employment of a plethora of machine learning (ML) models in high-stakes dom…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="what does a token cost? a mixture-of-agents measurement of sufficient per-token compute"
+           data-desc="arxiv:2610.02491v1 announce type: new abstract: large language models spend the same amount of computation on every token they generate, regardless of how difficult each token is to produce. methods s"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02491">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02491',title:'What Does a Token Cost? A Mixture-of-Agents Measurement of Sufficient Per-Token Compute',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02491v1 Announce Type: new Abstract: Large language models spend the same amount of computation on every token they generate, regardless of',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02491" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">What Does a Token Cost? A Mixture-of-Agents Measurement of Sufficient Per-Token Compute</h3>
+            <p class="card-desc">arXiv:2610.02491v1 Announce Type: new Abstract: Large language models spend the same amount of computation on every token they generate, regardless of…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="right order, wrong scale: auditing llm judges for occupational ai measurement"
+           data-desc="arxiv:2610.02492v1 announce type: new abstract: llm judges are increasingly used to assess whether ai outputs meet workplace requirements, but agreement on response rankings does not establish agreeme"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02492">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02492',title:'Right Order, Wrong Scale: Auditing LLM Judges for Occupational AI Measurement',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02492v1 Announce Type: new Abstract: LLM judges are increasingly used to assess whether AI outputs meet workplace requirements, but agreeme',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02492" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Right Order, Wrong Scale: Auditing LLM Judges for Occupational AI Measurement</h3>
+            <p class="card-desc">arXiv:2610.02492v1 Announce Type: new Abstract: LLM judges are increasingly used to assess whether AI outputs meet workplace requirements, but agreeme…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="hxai: hierarchical privacy-preserving explainable ai in distributed energy systems"
+           data-desc="arxiv:2610.02504v1 announce type: new abstract: balancing electricity demand and supply is increasingly difficult due to the inherent intermittency of renewable power generation and the stochastic pow"
+           data-source="arxiv"
+           data-cat="IA"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02504">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02504',title:'HXAI: Hierarchical Privacy-Preserving Explainable AI in Distributed Energy Systems',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02504v1 Announce Type: new Abstract: Balancing electricity demand and supply is increasingly difficult due to the inherent intermittency of',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02504" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">HXAI: Hierarchical Privacy-Preserving Explainable AI in Distributed Energy Systems</h3>
+            <p class="card-desc">arXiv:2610.02504v1 Announce Type: new Abstract: Balancing electricity demand and supply is increasingly difficult due to the inherent intermittency of…</p>
+          </div>
+        </a>
+      </div></div>
+    </section>
+    <section class="category" id="sec-robtica" data-cat="Robótica">
+      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
+      <div class="cards-grid" id="grid-robtica">
+      <div class="card"
+           data-title="world action modeling with progressive visual planning"
+           data-desc="arxiv:2610.02508v1 announce type: new abstract: world action models (wams) have emerged as a promising paradigm for robotic control by jointly predicting future visual dynamics and actions from an ini"
+           data-source="arxiv"
+           data-cat="Robótica"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02508">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02508',title:'World Action Modeling with Progressive Visual Planning',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02508v1 Announce Type: new Abstract: World action models (WAMs) have emerged as a promising paradigm for robotic control by jointly predict',cat:'Robótica'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02508" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">World Action Modeling with Progressive Visual Planning</h3>
+            <p class="card-desc">arXiv:2610.02508v1 Announce Type: new Abstract: World action models (WAMs) have emerged as a promising paradigm for robotic control by jointly predict…</p>
+          </div>
+        </a>
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">15</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">19</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="researcher at russian plague laboratory dies of 'unknown' infection"
            data-desc=""russian health authorities have taken precautionary measures in response to the death of a woman who worked at an anti-plague research facility," reports axios, "but have not confirmed that she contr"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-10-05T01:51:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-05T01:51:00+00:00',image:'',description:'"Russian health authorities have taken precautionary measures in response to the death of a woman who worked at an anti-plague research facility," rep',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://science.slashdot.org/story/26/10/05/0146222/researcher-at-russian-plague-laboratory-dies-of-unknown-infection?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/10/05/0146222/researcher-at-russian-plague-laboratory-dies-of-unknown-infection?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Researcher At Russian Plague Laboratory Dies of \'Unknown\' Infection',source:'slashdot',date:'2026-10-05T01:51:00+00:00',image:'https://a.fsdn.com/sd/topics/biotech_64.png',description:'"Russian health authorities have taken precautionary measures in response to the death of a woman who worked at an anti-plague research facility," rep',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://science.slashdot.org/story/26/10/05/0146222/researcher-at-russian-plague-laboratory-dies-of-unknown-infection?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/biotech_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -626,7 +1002,7 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
               <span class="date">05 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Researcher At Russian Plague Laboratory Dies of 'Unknown' Infection</h3>
             <p class="card-desc">"Russian health authorities have taken precautionary measures in response to the death of a woman who worked at an anti-plague research facility," rep…</p>
           </div>
         </a>
@@ -660,9 +1036,9 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
            data-cat="Tecnologia"
            data-date="2026-10-04T16:34:00+00:00"
            data-url="https://yro.slashdot.org/story/26/10/03/0553234/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/10/03/0553234/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'San Francisco\'s Car Crime Has Plunged. How Much Credit Does Flock Deserve?',source:'slashdot',date:'2026-10-04T16:34:00+00:00',image:'https://a.fsdn.com/sd/topics/ai_64.png',description:'Car thefts in San Francisco are down almost 59% for the first eight months of 2026 compared with the same months in 2022, according to analysis of pol',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/10/03/0553234/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'San Francisco\'s Car Crime Has Plunged. How Much Credit Does Flock Deserve?',source:'slashdot',date:'2026-10-04T16:34:00+00:00',image:'',description:'Car thefts in San Francisco are down almost 59% for the first eight months of 2026 compared with the same months in 2022, according to analysis of pol',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://yro.slashdot.org/story/26/10/03/0553234/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/ai_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -742,6 +1118,50 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
         </a>
       </div>
       <div class="card"
+           data-title="huawei and qualcomm announce broad patent license agreement"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-05T07:46:10.000Z"
+           data-url="https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement',title:'Huawei and Qualcomm Announce Broad Patent License Agreement',source:'Hacker News',date:'2026-10-05T07:46:10.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de out. de 2026</span>
+              <span class="badge">⬆ 43</span><span class="badge">💬 26</span>
+            </div>
+            <h3 class="card-title">Huawei and Qualcomm Announce Broad Patent License Agreement</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="denmark data breach exposes 8.8m people's personal data"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-05T08:09:36.000Z"
+           data-url="https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger',title:'Denmark Data Breach Exposes 8.8M People\'s Personal Data',source:'Hacker News',date:'2026-10-05T08:09:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de out. de 2026</span>
+              <span class="badge">⬆ 34</span><span class="badge">💬 9</span>
+            </div>
+            <h3 class="card-title">Denmark Data Breach Exposes 8.8M People's Personal Data</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="run qwen 3.8 flash next (125b) on consumer hardware (rtx 4090) at 100t/s"
            data-desc=""
            data-source="hacker news"
@@ -756,53 +1176,9 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 625</span><span class="badge">💬 293</span>
+              <span class="badge">⬆ 798</span><span class="badge">💬 355</span>
             </div>
             <h3 class="card-title">Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="in the wake of closure, a digital archive of animated materials appears online"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-04T21:01:28.000Z"
-           data-url="https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/',title:'In the wake of closure, a digital archive of animated materials appears online',source:'Hacker News',date:'2026-10-04T21:01:28.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 33</span><span class="badge">💬 3</span>
-            </div>
-            <h3 class="card-title">In the wake of closure, a digital archive of animated materials appears online</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="turn off apple intelligence on macos 27 and get its disk space back"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-04T19:42:25.000Z"
-           data-url="https://github.com/omlahore/RemoveMacAI">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/omlahore/RemoveMacAI',title:'Turn off Apple Intelligence on macOS 27 and get its disk space back',source:'Hacker News',date:'2026-10-04T19:42:25.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/omlahore/RemoveMacAI" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 381</span><span class="badge">💬 242</span>
-            </div>
-            <h3 class="card-title">Turn off Apple Intelligence on macOS 27 and get its disk space back</h3>
             
           </div>
         </a>
@@ -822,7 +1198,7 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 95</span><span class="badge">💬 39</span>
+              <span class="badge">⬆ 230</span><span class="badge">💬 72</span>
             </div>
             <h3 class="card-title">A browser-native classic Visual Basic VB6 IDE</h3>
             
@@ -830,45 +1206,67 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
         </a>
       </div>
       <div class="card"
-           data-title="self-hosted http tunnels with ssh and nginx"
+           data-title="replacement of petroleum based products with plant-based materials (2025)"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-04T22:25:10.000Z"
-           data-url="https://vincent.bernat.ch/en/blog/2026-http-over-ssh">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://vincent.bernat.ch/en/blog/2026-http-over-ssh',title:'Self-hosted HTTP tunnels with SSH and Nginx',source:'Hacker News',date:'2026-10-04T22:25:10.000Z',image:'https://d2pzklc15kok91.cloudfront.net/images/covers/en/blog/2026-http-over-ssh.922a043bebfeb0.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://vincent.bernat.ch/en/blog/2026-http-over-ssh" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://d2pzklc15kok91.cloudfront.net/images/covers/en/blog/2026-http-over-ssh.922a043bebfeb0.jpg')"></div>
+           data-date="2026-10-05T05:09:43.000Z"
+           data-url="https://onlinelibrary.wiley.com/doi/10.1002/eng2.70108">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://onlinelibrary.wiley.com/doi/10.1002/eng2.70108',title:'Replacement of petroleum based products with plant-based materials (2025)',source:'Hacker News',date:'2026-10-05T05:09:43.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://onlinelibrary.wiley.com/doi/10.1002/eng2.70108" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 69</span><span class="badge">💬 18</span>
+              <span class="date">05 de out. de 2026</span>
+              <span class="badge">⬆ 63</span><span class="badge">💬 23</span>
             </div>
-            <h3 class="card-title">Self-hosted HTTP tunnels with SSH and Nginx</h3>
+            <h3 class="card-title">Replacement of petroleum based products with plant-based materials (2025)</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="improper redaction reveals google data center water and electricity usage"
+           data-title="turn off apple intelligence on macos 27 and get its disk space back"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-04T19:37:05.000Z"
-           data-url="https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/',title:'Improper redaction reveals Google Data Center water and electricity usage',source:'Hacker News',date:'2026-10-04T19:37:05.000Z',image:'https://gray-koln-prod.gtv-cdn.com/resizer/v2/36VTWY3Y7JCSLEH3E3AVQDZW7I.jpg?auth=355cee73f82e9c4dcbb52fd940ebab6de819d176b660deca5d48b34dc7dcf1f5&amp;width=1200&amp;height=600&amp;smart=true',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://gray-koln-prod.gtv-cdn.com/resizer/v2/36VTWY3Y7JCSLEH3E3AVQDZW7I.jpg?auth=355cee73f82e9c4dcbb52fd940ebab6de819d176b660deca5d48b34dc7dcf1f5&amp;width=1200&amp;height=600&amp;smart=true')"></div>
+           data-date="2026-10-04T19:42:25.000Z"
+           data-url="https://github.com/omlahore/RemoveMacAI">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/omlahore/RemoveMacAI',title:'Turn off Apple Intelligence on macOS 27 and get its disk space back',source:'Hacker News',date:'2026-10-04T19:42:25.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/omlahore/RemoveMacAI" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 252</span><span class="badge">💬 365</span>
+              <span class="badge">⬆ 565</span><span class="badge">💬 377</span>
             </div>
-            <h3 class="card-title">Improper redaction reveals Google Data Center water and electricity usage</h3>
+            <h3 class="card-title">Turn off Apple Intelligence on macOS 27 and get its disk space back</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="sales of sub-€25,000 electric car models set to rise sevenfold"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-05T07:51:14.000Z"
+           data-url="https://www.transportenvironment.org/articles/wave-of-affordable-electric-cars-is-boosting-consumers-choice-sales-of-sub-eur25-000-models-set-to-rise-sevenfold">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.transportenvironment.org/articles/wave-of-affordable-electric-cars-is-boosting-consumers-choice-sales-of-sub-eur25-000-models-set-to-rise-sevenfold',title:'Sales of sub-€25,000 electric car models set to rise sevenfold',source:'Hacker News',date:'2026-10-05T07:51:14.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.transportenvironment.org/articles/wave-of-affordable-electric-cars-is-boosting-consumers-choice-sales-of-sub-eur25-000-models-set-to-rise-sevenfold" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">05 de out. de 2026</span>
+              <span class="badge">⬆ 40</span><span class="badge">💬 54</span>
+            </div>
+            <h3 class="card-title">Sales of sub-€25,000 electric car models set to rise sevenfold</h3>
             
           </div>
         </a>
@@ -888,7 +1286,7 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 821</span><span class="badge">💬 177</span>
+              <span class="badge">⬆ 871</span><span class="badge">💬 188</span>
             </div>
             <h3 class="card-title">Tell HN: Bob Cringely has died</h3>
             <p class="card-desc">I heard from a friend of the family that Bob passed away in his sleep early Saturday. Very sad news. Bob, who&#x27;s real name was Mark Stevens, was a…</p>
@@ -896,46 +1294,112 @@ https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;atc21-ousterhout.pd
         </a>
       </div>
       <div class="card"
-           data-title="xray-core concealed a certificate verification bypass vulnerability"
+           data-title="improper redaction reveals google data center water and electricity usage"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-04T17:38:54.000Z"
-           data-url="https://github.com/net4people/bbs/issues/672">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/net4people/bbs/issues/672',title:'Xray-core concealed a certificate verification bypass vulnerability',source:'Hacker News',date:'2026-10-04T17:38:54.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/net4people/bbs/issues/672" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-10-04T19:37:05.000Z"
+           data-url="https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/',title:'Improper redaction reveals Google Data Center water and electricity usage',source:'Hacker News',date:'2026-10-04T19:37:05.000Z',image:'https://gray-koln-prod.gtv-cdn.com/resizer/v2/36VTWY3Y7JCSLEH3E3AVQDZW7I.jpg?auth=355cee73f82e9c4dcbb52fd940ebab6de819d176b660deca5d48b34dc7dcf1f5&amp;width=1200&amp;height=600&amp;smart=true',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://gray-koln-prod.gtv-cdn.com/resizer/v2/36VTWY3Y7JCSLEH3E3AVQDZW7I.jpg?auth=355cee73f82e9c4dcbb52fd940ebab6de819d176b660deca5d48b34dc7dcf1f5&amp;width=1200&amp;height=600&amp;smart=true')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 55</span><span class="badge">💬 2</span>
+              <span class="badge">⬆ 386</span><span class="badge">💬 506</span>
             </div>
-            <h3 class="card-title">Xray-core concealed a certificate verification bypass vulnerability</h3>
+            <h3 class="card-title">Improper redaction reveals Google Data Center water and electricity usage</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="incentives in academic research"
-           data-desc=""
-           data-source="hacker news"
+           data-title="a multi method importance and performance efficiency analysis of topological metrics for natural visibility graph based cyber attack detection"
+           data-desc="arxiv:2610.02342v1 announce type: new abstract: natural visibility graph (nvg) based analysis characterizes network traffic through topological descriptors reflecting different structural properties. "
+           data-source="arxiv"
            data-cat="Tecnologia"
-           data-date="2026-10-04T17:42:38.000Z"
-           data-url="https://www.msoos.org/2026/10/incentives-in-academic-research/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.msoos.org/2026/10/incentives-in-academic-research/',title:'Incentives in Academic Research',source:'Hacker News',date:'2026-10-04T17:42:38.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.msoos.org/2026/10/incentives-in-academic-research/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02342">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02342',title:'A Multi Method Importance and Performance Efficiency Analysis of Topological Metrics for Natural Visibility Graph Based Cyber Attack Detection',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02342v1 Announce Type: new Abstract: Natural Visibility Graph (NVG) based analysis characterizes network traffic through topological descri',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02342" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">04 de out. de 2026</span>
-              <span class="badge">⬆ 39</span><span class="badge">💬 32</span>
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Incentives in Academic Research</h3>
-            
+            <h3 class="card-title">A Multi Method Importance and Performance Efficiency Analysis of Topological Metrics for Natural Visibility Graph Based Cyber Attack Detection</h3>
+            <p class="card-desc">arXiv:2610.02342v1 Announce Type: new Abstract: Natural Visibility Graph (NVG) based analysis characterizes network traffic through topological descri…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="traversing the satisfaction-diversity frontier in text-to-image diffusion"
+           data-desc="arxiv:2610.02372v1 announce type: new abstract: text-to-image generation enables users to explore several images generated from the same prompt. for these generated images to be useful, each one must "
+           data-source="arxiv"
+           data-cat="Tecnologia"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02372">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02372',title:'Traversing the Satisfaction-Diversity Frontier in Text-to-Image Diffusion',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02372v1 Announce Type: new Abstract: Text-to-image generation enables users to explore several images generated from the same prompt. For t',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02372" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Traversing the Satisfaction-Diversity Frontier in Text-to-Image Diffusion</h3>
+            <p class="card-desc">arXiv:2610.02372v1 Announce Type: new Abstract: Text-to-image generation enables users to explore several images generated from the same prompt. For t…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="reinforcement learning techniques for the optimization of target polarization in nuclear physics scattering experiments"
+           data-desc="arxiv:2610.02452v1 announce type: new abstract: the operation of dynamically polarized targets in nuclear physics experiments relies on continuous tuning of the microwave frequency to compensate for r"
+           data-source="arxiv"
+           data-cat="Tecnologia"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02452">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02452',title:'Reinforcement Learning Techniques for the Optimization of Target Polarization in Nuclear Physics Scattering Experiments',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02452v1 Announce Type: new Abstract: The operation of dynamically polarized targets in nuclear physics experiments relies on continuous tun',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02452" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Reinforcement Learning Techniques for the Optimization of Target Polarization in Nuclear Physics Scattering Experiments</h3>
+            <p class="card-desc">arXiv:2610.02452v1 Announce Type: new Abstract: The operation of dynamically polarized targets in nuclear physics experiments relies on continuous tun…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="&quot;i just assumed that it would translate&quot;: examining mt risk awareness among healthcare staff with abbreviations as a use case"
+           data-desc="arxiv:2610.02496v1 announce type: new abstract: in the uk, public healthcare staff report turning to machine translation (mt) - predominantly google translate (gt) - to communicate with patients acros"
+           data-source="arxiv"
+           data-cat="Tecnologia"
+           data-date="Mon, 05 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.02496">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.02496',title:'&quot;I just assumed that it would translate&quot;: examining MT risk awareness among healthcare staff with abbreviations as a use case',source:'arxiv',date:'Mon, 05 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.02496v1 Announce Type: new Abstract: In the UK, public healthcare staff report turning to machine translation (MT) - predominantly Google T',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.02496" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
+              <span class="source-name">arxiv</span>
+              <span class="date">05 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">"I just assumed that it would translate": examining MT risk awareness among healthcare staff with abbreviations as a use case</h3>
+            <p class="card-desc">arXiv:2610.02496v1 Announce Type: new Abstract: In the UK, public healthcare staff report turning to machine translation (MT) - predominantly Google T…</p>
           </div>
         </a>
       </div></div>
