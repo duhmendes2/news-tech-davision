@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 07/10/2026, 14:55:01
+      Atualizado: 07/10/2026, 19:44:29
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">84</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">47</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">35</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">85</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">52</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">32</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,30 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">47</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">52</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="at a press event today, microsoft unveiled the new surface laptop ultra featuring an nvidia rtx spark platform with a blackwell-based gpu capable of up to one petaflop of ai compute. the laptop suppor"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-10-07T19:00:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-07T19:00:00+00:00',image:'',description:'At a press event today, Microsoft unveiled the new Surface Laptop Ultra featuring an NVIDIA RTX Spark platform with a Blackwell-based GPU capable of u',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">07 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">At a press event today, Microsoft unveiled the new Surface Laptop Ultra featuring an NVIDIA RTX Spark platform with a Blackwell-based GPU capable of u…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="google enters massive 3.6-gw power deal with constellation energy"
            data-desc="an anonymous reader quotes a report from reuters: google has contracted for 3,590 megawatts of power from constellation energy on the largest us power grid, with new nuclear energy accounting for abou"
@@ -428,23 +450,133 @@
         </a>
       </div>
       <div class="card"
-           data-title="ai-assisted proof of optimal packing for 11 squares"
+           data-title="claude haiku 5.5"
            data-desc=""
            data-source="hacker news"
            data-cat="IA"
-           data-date="2026-10-07T14:10:55.000Z"
-           data-url="https://github.com/Queuingtheorydotcom/11SquaresFormalized">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/Queuingtheorydotcom/11SquaresFormalized',title:'AI-assisted proof of optimal packing for 11 squares',source:'Hacker News',date:'2026-10-07T14:10:55.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/Queuingtheorydotcom/11SquaresFormalized" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-07T18:01:32.000Z"
+           data-url="https://www.anthropic.com/claude-haiku-5-5">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.anthropic.com/claude-haiku-5-5',title:'Claude Haiku 5.5',source:'Hacker News',date:'2026-10-07T18:01:32.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 72</span><span class="badge">💬 35</span>
+              <span class="badge">⬆ 569</span><span class="badge">💬 275</span>
             </div>
-            <h3 class="card-title">AI-assisted proof of optimal packing for 11 squares</h3>
+            <h3 class="card-title">Claude Haiku 5.5</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="gpt‑6 and intelligent ui for everyone"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-10-07T18:00:58.000Z"
+           data-url="https://openai.com/index/gpt-6-for-everyone/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://openai.com/index/gpt-6-for-everyone/',title:'GPT‑6 and Intelligent UI for everyone',source:'Hacker News',date:'2026-10-07T18:00:58.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 408</span><span class="badge">💬 209</span>
+            </div>
+            <h3 class="card-title">GPT‑6 and Intelligent UI for everyone</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="docker agent"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-10-07T17:48:38.000Z"
+           data-url="https://github.com/docker/docker-agent">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/docker/docker-agent',title:'Docker Agent',source:'Hacker News',date:'2026-10-07T17:48:38.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://github.com/docker/docker-agent" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 146</span><span class="badge">💬 59</span>
+            </div>
+            <h3 class="card-title">Docker Agent</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="meta and microsoft take steps to reduce employee usage of claude ai"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-10-07T18:49:40.000Z"
+           data-url="https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/',title:'Meta and Microsoft take steps to reduce employee usage of Claude AI',source:'Hacker News',date:'2026-10-07T18:49:40.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.rswebsols.com/news/meta-and-microsoft-take-steps-to-reduce-employee-usage-of-claude-ai/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 209</span><span class="badge">💬 214</span>
+            </div>
+            <h3 class="card-title">Meta and Microsoft take steps to reduce employee usage of Claude AI</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="despite what watson said, rosalind franklin understood structure of dna first"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-10-07T19:56:16.000Z"
+           data-url="https://link.springer.com/article/10.1007/s10739-026-09866-7">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://link.springer.com/article/10.1007/s10739-026-09866-7',title:'Despite what Watson said, Rosalind Franklin understood structure of DNA first',source:'Hacker News',date:'2026-10-07T19:56:16.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://link.springer.com/article/10.1007/s10739-026-09866-7" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 68</span><span class="badge">💬 13</span>
+            </div>
+            <h3 class="card-title">Despite what Watson said, Rosalind Franklin understood structure of DNA first</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="icann reveals 2026 round applications for new generic top-level domains"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="IA"
+           data-date="2026-10-07T19:01:45.000Z"
+           data-url="https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en',title:'ICANN Reveals 2026 Round Applications for New Generic Top-Level Domains',source:'Hacker News',date:'2026-10-07T19:01:45.000Z',image:'https://itp.cdn.icann.org/en/files/homepage/icann-logo-on-blue-536x302-13-02-2023-en-large.jpg',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.icann.org/en/announcements/details/icann-reveals-2026-round-applications-for-new-generic-top-level-domains-07-10-2026-en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://itp.cdn.icann.org/en/files/homepage/icann-logo-on-blue-536x302-13-02-2023-en-large.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 31</span><span class="badge">💬 39</span>
+            </div>
+            <h3 class="card-title">ICANN Reveals 2026 Round Applications for New Generic Top-Level Domains</h3>
             
           </div>
         </a>
@@ -464,7 +596,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 237</span><span class="badge">💬 38</span>
+              <span class="badge">⬆ 279</span><span class="badge">💬 53</span>
             </div>
             <h3 class="card-title">Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai</h3>
             
@@ -472,46 +604,112 @@
         </a>
       </div>
       <div class="card"
-           data-title="show hn: a modern low-poly simcity 2000 clone, built by opus 5.5"
-           data-desc="this is a clone of simcity 2000 i (using opus 5.5) built over a few days. it started with a single prompt &quot;create a typescript webgl low-poly version (full replica of game logic) of simcity 2000."
-           data-source="hacker news"
+           data-title="nous research confirms it hit $1.5b valuation, launches ai agents for business users"
+           data-desc="the developer of hermes agent raised a $90 million series b."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-10-06T13:09:27.000Z"
-           data-url="https://dator.dev/city2026/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://dator.dev/city2026/',title:'Show HN: A modern low-poly SimCity 2000 clone, built by Opus 5.5',source:'Hacker News',date:'2026-10-06T13:09:27.000Z',image:'',description:'This is a clone of simcity 2000 I (using Opus 5.5) built over a few days. It started with a single prompt &quot;create a typescript webgl low-poly ver',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://dator.dev/city2026/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 07 Oct 2026 20:48:45 +0000"
+           data-url="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/',title:'Nous Research confirms it hit $1.5B valuation, launches AI agents for business users',source:'techcrunch',date:'Wed, 07 Oct 2026 20:48:45 +0000',image:'',description:'The developer of Hermes Agent raised a $90 million Series B.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">06 de out. de 2026</span>
-              <span class="badge">⬆ 13</span><span class="badge">💬 2</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">07 de out. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Show HN: A modern low-poly SimCity 2000 clone, built by Opus 5.5</h3>
-            <p class="card-desc">This is a clone of simcity 2000 I (using Opus 5.5) built over a few days. It started with a single prompt &quot;create a typescript webgl low-poly ver…</p>
+            <h3 class="card-title">Nous Research confirms it hit $1.5B valuation, launches AI agents for business users</h3>
+            <p class="card-desc">The developer of Hermes Agent raised a $90 million Series B.</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="show hn: durable actors – oss durable objects with configurable compute"
-           data-desc="hi hn, we&#x27;re thomas and olivier from terse (https:&#x2f;&#x2f;www.useterse.ai&#x2f;) we&#x27;ve built durable actors, an open-source alternative to cloudflare&#x27;s durable objects.a durable obj"
-           data-source="hacker news"
+           data-title="microsoft releases new nvidia-chip ai pcs with revamped windows 11"
+           data-desc="microsoft revealed the specs and price for its surface laptop ultra, ai pcs that run on nvidia chips that are designed to run ai models and agents."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-10-06T15:58:19.000Z"
-           data-url="https://github.com/TerseAI/durable-actors">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/TerseAI/durable-actors',title:'Show HN: Durable Actors – OSS Durable Objects with configurable compute',source:'Hacker News',date:'2026-10-06T15:58:19.000Z',image:'',description:'Hi HN, we&#x27;re Thomas and Olivier from Terse (https:&#x2F;&#x2F;www.useterse.ai&#x2F;) We&#x27;ve built Durable Actors, an open-source alternative ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://github.com/TerseAI/durable-actors" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 07 Oct 2026 20:22:37 +0000"
+           data-url="https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/',title:'Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11',source:'techcrunch',date:'Wed, 07 Oct 2026 20:22:37 +0000',image:'',description:'Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">06 de out. de 2026</span>
-              <span class="badge">⬆ 19</span><span class="badge">💬 12</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">07 de out. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Show HN: Durable Actors – OSS Durable Objects with configurable compute</h3>
-            <p class="card-desc">Hi HN, we&#x27;re Thomas and Olivier from Terse (https:&#x2F;&#x2F;www.useterse.ai&#x2F;) We&#x27;ve built Durable Actors, an open-source alternative …</p>
+            <h3 class="card-title">Microsoft releases new Nvidia-chip AI PCs with revamped Windows 11</h3>
+            <p class="card-desc">Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="meta&#8217;s muse launches on ipad just a month after its mobile debut"
+           data-desc="meta’s ai agent muse is now available on ipad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 07 Oct 2026 18:30:57 +0000"
+           data-url="https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/',title:'Meta&#8217;s Muse launches on iPad just a month after its mobile debut',source:'techcrunch',date:'Wed, 07 Oct 2026 18:30:57 +0000',image:'',description:'Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrati',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/metas-muse-launches-on-ipad-just-a-month-after-its-mobile-debut/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">07 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Meta&#8217;s Muse launches on iPad just a month after its mobile debut</h3>
+            <p class="card-desc">Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrati…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="chatgpt for teens keeps teens talking, even during mental health crises"
+           data-desc="chatgpt’s teen safeguards are meant to protect vulnerable users, but new testing found the chatbot continues encouraging engagement during crises and potentially encourages unhealthy relationships wit"
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 07 Oct 2026 18:15:28 +0000"
+           data-url="https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/',title:'ChatGPT for Teens keeps teens talking, even during mental health crises',source:'techcrunch',date:'Wed, 07 Oct 2026 18:15:28 +0000',image:'',description:'ChatGPT’s teen safeguards are meant to protect vulnerable users, but new testing found the chatbot continues encouraging engagement during crises and ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">07 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">ChatGPT for Teens keeps teens talking, even during mental health crises</h3>
+            <p class="card-desc">ChatGPT’s teen safeguards are meant to protect vulnerable users, but new testing found the chatbot continues encouraging engagement during crises and …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="chatgpt is getting a lot more visual, with the launch of a new interface"
+           data-desc="openai is launching a new user interface that will bring interactive visuals to chatgpt."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Wed, 07 Oct 2026 18:00:19 +0000"
+           data-url="https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/',title:'ChatGPT is getting a lot more visual, with the launch of a new interface',source:'techcrunch',date:'Wed, 07 Oct 2026 18:00:19 +0000',image:'',description:'OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">07 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">ChatGPT is getting a lot more visual, with the launch of a new interface</h3>
+            <p class="card-desc">OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.</p>
           </div>
         </a>
       </div>
@@ -754,94 +952,6 @@
             </div>
             <h3 class="card-title">Another personal AI assistant has launched — Meet Tab, which emerged from stealth with a $300M valuation</h3>
             <p class="card-desc">A new personal AI assistant has arrived. Meet Tab, which announced Tuesday that it had officially emerged from stealth.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="spotify expands audiobooks to over 180 markets"
-           data-desc="spotify will make 350,000 titles available in over 120 languages for this expansion."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Wed, 07 Oct 2026 07:00:00 +0000"
-           data-url="https://techcrunch.com/2026/10/07/spotify-expands-audiobooks-to-over-180-markets/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/spotify-expands-audiobooks-to-over-180-markets/',title:'Spotify expands audiobooks to over 180 markets',source:'techcrunch',date:'Wed, 07 Oct 2026 07:00:00 +0000',image:'',description:'Spotify will make 350,000 titles available in over 120 languages for this expansion.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/07/spotify-expands-audiobooks-to-over-180-markets/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">07 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Spotify expands audiobooks to over 180 markets</h3>
-            <p class="card-desc">Spotify will make 350,000 titles available in over 120 languages for this expansion.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ex-ramp engineers raise $20m for platform melius after scrapping their first product"
-           data-desc="instead of helping marketers manage and optimize ad spend, the company is focusing on building the tools that generate the creative assets and campaigns."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 06 Oct 2026 22:34:03 +0000"
-           data-url="https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/',title:'Ex-Ramp engineers raise $20M for platform Melius after scrapping their first product',source:'techcrunch',date:'Tue, 06 Oct 2026 22:34:03 +0000',image:'',description:'Instead of helping marketers manage and optimize ad spend, the company is focusing on building the tools that generate the creative assets and campaig',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/06/ex-ramp-engineers-raise-20m-for-platform-melius-after-scrapping-their-first-product/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Ex-Ramp engineers raise $20M for platform Melius after scrapping their first product</h3>
-            <p class="card-desc">Instead of helping marketers manage and optimize ad spend, the company is focusing on building the tools that generate the creative assets and campaig…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="silicon valley&#8217;s ai wunderkind launches underdog, the most private instinct/muse competitor yet"
-           data-desc="sigil wen, backed by a silicon valley who's who, has built an on-device ai assistant that promises to be free, fully private, and capable for everyday tasks."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 06 Oct 2026 20:47:01 +0000"
-           data-url="https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/',title:'Silicon Valley&#8217;s AI wunderkind launches Underdog, the most private Instinct/Muse competitor yet',source:'techcrunch',date:'Tue, 06 Oct 2026 20:47:01 +0000',image:'',description:'Sigil Wen, backed by a Silicon Valley who\'s who, has built an on-device AI assistant that promises to be free, fully private, and capable for everyday',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Silicon Valley&#8217;s AI wunderkind launches Underdog, the most private Instinct/Muse competitor yet</h3>
-            <p class="card-desc">Sigil Wen, backed by a Silicon Valley who's who, has built an on-device AI assistant that promises to be free, fully private, and capable for everyday…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="how ai decision models could change content moderation"
-           data-desc="on tuesday, musubi announced a lightweight decision model made for real-time moderation called policylm-1.7b, released with open weights."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Tue, 06 Oct 2026 20:35:20 +0000"
-           data-url="https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/',title:'How AI decision models could change content moderation',source:'techcrunch',date:'Tue, 06 Oct 2026 20:35:20 +0000',image:'',description:'On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/06/how-ai-decision-models-could-change-content-moderation/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">How AI decision models could change content moderation</h3>
-            <p class="card-desc">On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.</p>
           </div>
         </a>
       </div>
@@ -1312,45 +1422,19 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
-      <div class="cards-grid" id="grid-produo-de-contedo">
-      <div class="card"
-           data-title="vecos – a windows-like operating system for the vectrex for the uvmc2 [video]"
-           data-desc="https:&#x2f;&#x2f;en.wikipedia.org&#x2f;wiki&#x2f;vectrexhttps:&#x2f;&#x2f;www.safas.com&#x2f;?safas-uvmc2-uno-spettrofotometro-uv-v..."
-           data-source="hacker news"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-10-06T22:23:04.000Z"
-           data-url="https://www.youtube.com/watch?v=9ranfp_vz30">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.youtube.com/watch?v=9ranfp_vz30',title:'VECOS – A windows-like operating system for the Vectrex for the UVMC2 [video]',source:'Hacker News',date:'2026-10-06T22:23:04.000Z',image:'',description:'https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Vectrexhttps:&#x2F;&#x2F;www.safas.com&#x2F;?SAFAS-UVmc2-uno-spettrofotometro-UV-V...',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://www.youtube.com/watch?v=9ranfp_vz30" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">06 de out. de 2026</span>
-              <span class="badge">⬆ 16</span><span class="badge">💬 4</span>
-            </div>
-            <h3 class="card-title">VECOS – A windows-like operating system for the Vectrex for the UVMC2 [video]</h3>
-            <p class="card-desc">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Vectrexhttps:&#x2F;&#x2F;www.safas.com&#x2F;?SAFAS-UVmc2-uno-spettrofotometro-UV-V...</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">35</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">32</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
+           data-title="xbox secures exclusive gta 6 streaming rights"
            data-desc="microsoft has reportedly secured exclusive cloud-streaming rights for grand theft auto vi, meaning xbox cloud gaming will be the only service able to stream the game at launch. "rockstar games still h"
            data-source="slashdot"
            data-cat="Tecnologia"
            data-date="2026-10-07T15:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-07T15:00:00+00:00',image:'',description:'Microsoft has reportedly secured exclusive cloud-streaming rights for Grand Theft Auto VI, meaning Xbox Cloud Gaming will be the only service able to ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://games.slashdot.org/story/26/10/07/0321232/xbox-secures-exclusive-gta-6-streaming-rights?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://games.slashdot.org/story/26/10/07/0321232/xbox-secures-exclusive-gta-6-streaming-rights?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Xbox Secures Exclusive GTA 6 Streaming Rights',source:'slashdot',date:'2026-10-07T15:00:00+00:00',image:'https://a.fsdn.com/sd/topics/xbox_64.png',description:'Microsoft has reportedly secured exclusive cloud-streaming rights for Grand Theft Auto VI, meaning Xbox Cloud Gaming will be the only service able to ',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://games.slashdot.org/story/26/10/07/0321232/xbox-secures-exclusive-gta-6-streaming-rights?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/xbox_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1358,7 +1442,7 @@
               <span class="date">07 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Xbox Secures Exclusive GTA 6 Streaming Rights</h3>
             <p class="card-desc">Microsoft has reportedly secured exclusive cloud-streaming rights for Grand Theft Auto VI, meaning Xbox Cloud Gaming will be the only service able to …</p>
           </div>
         </a>
@@ -1436,9 +1520,9 @@
            data-cat="Tecnologia"
            data-date="2026-10-06T18:00:00+00:00"
            data-url="https://slashdot.org/story/26/10/06/1649245/licensing-costs-driving-90-of-vmware-users-to-explore-options-survey-finds?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/10/06/1649245/licensing-costs-driving-90-of-vmware-users-to-explore-options-survey-finds?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Licensing Costs Driving 90% of VMware Users To Explore Options, Survey Finds',source:'slashdot',date:'2026-10-06T18:00:00+00:00',image:'https://a.fsdn.com/sd/topics/virtualization_64.png',description:'An anonymous reader quotes a report from Ars Technica: VMware customers face multiple obstacles as they rethink their virtualization strategy to reduc',cat:'Tecnologia'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/story/26/10/06/1649245/licensing-costs-driving-90-of-vmware-users-to-explore-options-survey-finds?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Licensing Costs Driving 90% of VMware Users To Explore Options, Survey Finds',source:'slashdot',date:'2026-10-06T18:00:00+00:00',image:'',description:'An anonymous reader quotes a report from Ars Technica: VMware customers face multiple obstacles as they rethink their virtualization strategy to reduc',cat:'Tecnologia'})">⭐</button>
         <a class="card-link" href="https://slashdot.org/story/26/10/06/1649245/licensing-costs-driving-90-of-vmware-users-to-explore-options-survey-finds?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/virtualization_64.png')"></div>
+          <div class="card-img card-img--placeholder"><span>S</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -1474,111 +1558,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="old hearts become biologically younger when transplanted into younger people"
-           data-desc="alternative_right shares a report from sciencealert: it might be reasonable to think that there's an indelible link between the heart and the body it resides in -- the processes that affect one inevit"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-10-06T07:00:00+00:00"
-           data-url="https://science.slashdot.org/story/26/10/06/0419213/old-hearts-become-biologically-younger-when-transplanted-into-younger-people?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/10/06/0419213/old-hearts-become-biologically-younger-when-transplanted-into-younger-people?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Old Hearts Become Biologically Younger When Transplanted Into Younger People',source:'slashdot',date:'2026-10-06T07:00:00+00:00',image:'https://a.fsdn.com/sd/topics/medicine_64.png?refresh=now',description:'alternative_right shares a report from ScienceAlert: It might be reasonable to think that there\'s an indelible link between the heart and the body it ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://science.slashdot.org/story/26/10/06/0419213/old-hearts-become-biologically-younger-when-transplanted-into-younger-people?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/medicine_64.png?refresh=now')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Old Hearts Become Biologically Younger When Transplanted Into Younger People</h3>
-            <p class="card-desc">alternative_right shares a report from ScienceAlert: It might be reasonable to think that there's an indelible link between the heart and the body it …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="visa, mastercard, major banks facing new litigation over 'anticompetitive' fees"
+           data-title="margaret hamilton, who led software development for apollo program, dies at 90"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-07T15:09:59.000Z"
-           data-url="https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees',title:'Visa, Mastercard, Major Banks Facing New Litigation over \'Anticompetitive\' Fees',source:'Hacker News',date:'2026-10-07T15:09:59.000Z',image:'https://www.classaction.org/media/twitter-newswire-default.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://www.classaction.org/media/twitter-newswire-default.png')"></div>
+           data-date="2026-10-07T21:16:18.000Z"
+           data-url="https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007',title:'Margaret Hamilton, who led software development for Apollo program, dies at 90',source:'Hacker News',date:'2026-10-07T21:16:18.000Z',image:'https://news.mit.edu/sites/default/files/images/202610/margaret-hamilton-portrait-toan-trinh-mit-technology-review-A1_1.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://news.mit.edu/sites/default/files/images/202610/margaret-hamilton-portrait-toan-trinh-mit-technology-review-A1_1.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 212</span><span class="badge">💬 92</span>
+              <span class="badge">⬆ 151</span><span class="badge">💬 11</span>
             </div>
-            <h3 class="card-title">Visa, Mastercard, Major Banks Facing New Litigation over 'Anticompetitive' Fees</h3>
+            <h3 class="card-title">Margaret Hamilton, who led software development for Apollo program, dies at 90</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="animated ascii art for web pages"
+           data-title="push ifs up and fors down: the idiom, its algebra, and its limits"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-07T15:05:37.000Z"
-           data-url="https://ascii.rest/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ascii.rest/',title:'Animated ASCII Art for Web Pages',source:'Hacker News',date:'2026-10-07T15:05:37.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://ascii.rest/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-07T18:43:18.000Z"
+           data-url="https://debasishg.github.io/blog/push-ifs-up-fors-down/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://debasishg.github.io/blog/push-ifs-up-fors-down/',title:'Push ifs up and fors down: The idiom, its algebra, and its limits',source:'Hacker News',date:'2026-10-07T18:43:18.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://debasishg.github.io/blog/push-ifs-up-fors-down/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 121</span><span class="badge">💬 25</span>
+              <span class="badge">⬆ 68</span><span class="badge">💬 28</span>
             </div>
-            <h3 class="card-title">Animated ASCII Art for Web Pages</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="shipping jpeg xl in chrome"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T11:25:02.000Z"
-           data-url="https://developer.chrome.com/blog/jpeg-xl-in-chrome">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developer.chrome.com/blog/jpeg-xl-in-chrome',title:'Shipping JPEG XL in Chrome',source:'Hacker News',date:'2026-10-07T11:25:02.000Z',image:'https://developer.chrome.com/static/blog/jpeg-xl-in-chrome/images/cover.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://developer.chrome.com/blog/jpeg-xl-in-chrome" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://developer.chrome.com/static/blog/jpeg-xl-in-chrome/images/cover.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 367</span><span class="badge">💬 226</span>
-            </div>
-            <h3 class="card-title">Shipping JPEG XL in Chrome</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="github incident with git operations, pull requests and actions"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T15:17:23.000Z"
-           data-url="https://www.githubstatus.com/incidents/djlmxz2zd0j7">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.githubstatus.com/incidents/djlmxz2zd0j7',title:'GitHub Incident with Git Operations, Pull Requests and Actions',source:'Hacker News',date:'2026-10-07T15:17:23.000Z',image:'https://dka575ofm4ao0.cloudfront.net/pages-twitter_logos/original/36420/GitHub-Mark-120px-plus.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.githubstatus.com/incidents/djlmxz2zd0j7" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://dka575ofm4ao0.cloudfront.net/pages-twitter_logos/original/36420/GitHub-Mark-120px-plus.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 202</span><span class="badge">💬 158</span>
-            </div>
-            <h3 class="card-title">GitHub Incident with Git Operations, Pull Requests and Actions</h3>
+            <h3 class="card-title">Push ifs up and fors down: The idiom, its algebra, and its limits</h3>
             
           </div>
         </a>
@@ -1598,9 +1616,163 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 70</span><span class="badge">💬 22</span>
+              <span class="badge">⬆ 282</span><span class="badge">💬 95</span>
             </div>
             <h3 class="card-title">Show HN: Bigwords.page – Turn any screen into a sign. The URL is the app</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="shipping jpeg xl in chrome"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-07T11:25:02.000Z"
+           data-url="https://developer.chrome.com/blog/jpeg-xl-in-chrome">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developer.chrome.com/blog/jpeg-xl-in-chrome',title:'Shipping JPEG XL in Chrome',source:'Hacker News',date:'2026-10-07T11:25:02.000Z',image:'https://developer.chrome.com/static/blog/jpeg-xl-in-chrome/images/cover.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://developer.chrome.com/blog/jpeg-xl-in-chrome" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://developer.chrome.com/static/blog/jpeg-xl-in-chrome/images/cover.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 458</span><span class="badge">💬 293</span>
+            </div>
+            <h3 class="card-title">Shipping JPEG XL in Chrome</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="if somebody tries to hot-patch an already-hot-patched function"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-06T13:39:59.000Z"
+           data-url="https://devblogs.microsoft.com/oldnewthing/20261005-00/?p=112755/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://devblogs.microsoft.com/oldnewthing/20261005-00/?p=112755/',title:'If somebody tries to hot-patch an already-hot-patched function',source:'Hacker News',date:'2026-10-06T13:39:59.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://devblogs.microsoft.com/oldnewthing/20261005-00/?p=112755/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">06 de out. de 2026</span>
+              <span class="badge">⬆ 9</span>
+            </div>
+            <h3 class="card-title">If somebody tries to hot-patch an already-hot-patched function</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="navier–stokes lost in translation"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-07T15:24:38.000Z"
+           data-url="https://arxiv.org/abs/2610.08144">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.08144',title:'Navier–Stokes Lost in Translation',source:'Hacker News',date:'2026-10-07T15:24:38.000Z',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.08144" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 211</span><span class="badge">💬 140</span>
+            </div>
+            <h3 class="card-title">Navier–Stokes Lost in Translation</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="animated ascii art for web pages"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-07T15:05:37.000Z"
+           data-url="https://ascii.rest/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://ascii.rest/',title:'Animated ASCII Art for Web Pages',source:'Hacker News',date:'2026-10-07T15:05:37.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://ascii.rest/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 249</span><span class="badge">💬 55</span>
+            </div>
+            <h3 class="card-title">Animated ASCII Art for Web Pages</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="how machines learned precision"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-06T16:14:42.000Z"
+           data-url="https://glinscott.github.io/how-machines-learned-precision/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://glinscott.github.io/how-machines-learned-precision/',title:'How machines learned precision',source:'Hacker News',date:'2026-10-06T16:14:42.000Z',image:'https://glinscott.github.io/how-machines-learned-precision/machines-precision-social-card.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://glinscott.github.io/how-machines-learned-precision/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://glinscott.github.io/how-machines-learned-precision/machines-precision-social-card.jpg')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">06 de out. de 2026</span>
+              <span class="badge">⬆ 73</span><span class="badge">💬 32</span>
+            </div>
+            <h3 class="card-title">How machines learned precision</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="brownian motion"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-06T11:11:34.000Z"
+           data-url="https://gregorygundersen.com/blog/2026/04/22/brownian-motion/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://gregorygundersen.com/blog/2026/04/22/brownian-motion/',title:'Brownian Motion',source:'Hacker News',date:'2026-10-06T11:11:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://gregorygundersen.com/blog/2026/04/22/brownian-motion/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">06 de out. de 2026</span>
+              <span class="badge">⬆ 14</span>
+            </div>
+            <h3 class="card-title">Brownian Motion</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="i'm in love with a german film star"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-07T22:26:34.000Z"
+           data-url="https://heatherburns.tech/2026/10/01/im-in-love-with-a-german-film-star/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://heatherburns.tech/2026/10/01/im-in-love-with-a-german-film-star/',title:'I\'m in love with a German film star',source:'Hacker News',date:'2026-10-07T22:26:34.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://heatherburns.tech/2026/10/01/im-in-love-with-a-german-film-star/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">07 de out. de 2026</span>
+              <span class="badge">⬆ 4</span>
+            </div>
+            <h3 class="card-title">I'm in love with a German film star</h3>
             
           </div>
         </a>
@@ -1620,7 +1792,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 308</span><span class="badge">💬 55</span>
+              <span class="badge">⬆ 367</span><span class="badge">💬 62</span>
             </div>
             <h3 class="card-title">A font recreated from photographs of classic Commodore 64 keycaps</h3>
             
@@ -1628,23 +1800,23 @@
         </a>
       </div>
       <div class="card"
-           data-title="shinyhunters extorted boeing spin-off prior to arrests"
+           data-title="visa, mastercard, major banks facing new litigation over 'anticompetitive' fees"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-07T15:15:36.000Z"
-           data-url="https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/',title:'ShinyHunters Extorted Boeing Spin-Off Prior to Arrests',source:'Hacker News',date:'2026-10-07T15:15:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="2026-10-07T15:09:59.000Z"
+           data-url="https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees',title:'Visa, Mastercard, major banks facing new litigation over \'anticompetitive\' fees',source:'Hacker News',date:'2026-10-07T15:09:59.000Z',image:'https://www.classaction.org/media/twitter-newswire-default.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://www.classaction.org/media/twitter-newswire-default.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 30</span>
+              <span class="badge">⬆ 437</span><span class="badge">💬 298</span>
             </div>
-            <h3 class="card-title">ShinyHunters Extorted Boeing Spin-Off Prior to Arrests</h3>
+            <h3 class="card-title">Visa, Mastercard, major banks facing new litigation over 'anticompetitive' fees</h3>
             
           </div>
         </a>
@@ -1664,7 +1836,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">06 de out. de 2026</span>
-              <span class="badge">⬆ 59</span><span class="badge">💬 7</span>
+              <span class="badge">⬆ 135</span><span class="badge">💬 17</span>
             </div>
             <h3 class="card-title">Wood Tape (2004)</h3>
             
@@ -1672,134 +1844,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="open source 160 sound visualization experiments"
-           data-desc=""
-           data-source="hacker news"
+           data-title="x expands its &#8216;gametime&#8217; sports hub beyond the nfl, starting with mlb"
+           data-desc="x is turning its nfl-focused gametime feature into a year-round sports destination, starting with mlb and with other professional leagues to follow."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-10-07T15:46:30.000Z"
-           data-url="https://www.kagan.in/iwrzwr/visual-archive/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.kagan.in/iwrzwr/visual-archive/',title:'Open source 160 sound visualization experiments',source:'Hacker News',date:'2026-10-07T15:46:30.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.kagan.in/iwrzwr/visual-archive/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Wed, 07 Oct 2026 18:10:00 +0000"
+           data-url="https://techcrunch.com/2026/10/07/x-expands-its-gametime-sports-hub-beyond-the-nfl-starting-with-mlb/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/07/x-expands-its-gametime-sports-hub-beyond-the-nfl-starting-with-mlb/',title:'X expands its &#8216;Gametime&#8217; sports hub beyond the NFL, starting with MLB',source:'techcrunch',date:'Wed, 07 Oct 2026 18:10:00 +0000',image:'',description:'X is turning its NFL-focused Gametime feature into a year-round sports destination, starting with MLB and with other professional leagues to follow.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/07/x-expands-its-gametime-sports-hub-beyond-the-nfl-starting-with-mlb/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 24</span><span class="badge">💬 3</span>
+              
             </div>
-            <h3 class="card-title">Open source 160 sound visualization experiments</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="anti-patterns in software blogging"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T13:08:26.000Z"
-           data-url="https://refactoringenglish.com/blog/anti-patterns-software-blogging/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://refactoringenglish.com/blog/anti-patterns-software-blogging/',title:'Anti-Patterns in Software Blogging',source:'Hacker News',date:'2026-10-07T13:08:26.000Z',image:'https://refactoringenglish.com/blog/anti-patterns-software-blogging/not-quite-how-devs-read-og.webp',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://refactoringenglish.com/blog/anti-patterns-software-blogging/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://refactoringenglish.com/blog/anti-patterns-software-blogging/not-quite-how-devs-read-og.webp')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 106</span><span class="badge">💬 38</span>
-            </div>
-            <h3 class="card-title">Anti-Patterns in Software Blogging</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="emdash uses clef to moderate the plugin registry"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T17:12:28.000Z"
-           data-url="https://emdashcms.com/blog/how-emdash-uses-clef-to-moderate-the-plugin-registry">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://emdashcms.com/blog/how-emdash-uses-clef-to-moderate-the-plugin-registry',title:'EmDash uses Clef to moderate the plugin registry',source:'Hacker News',date:'2026-10-07T17:12:28.000Z',image:'https://emdashcms.com/_emdash/api/media/file/01M49MN3A7SCJFJCH42PN57H21.01M49MN4MJNMJSN8MJH68B25JX.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://emdashcms.com/blog/how-emdash-uses-clef-to-moderate-the-plugin-registry" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://emdashcms.com/_emdash/api/media/file/01M49MN3A7SCJFJCH42PN57H21.01M49MN4MJNMJSN8MJH68B25JX.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 5</span>
-            </div>
-            <h3 class="card-title">EmDash uses Clef to moderate the plugin registry</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="reverse engineering of the m-vave fm-1 pocket synthesizer firmware"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T15:19:50.000Z"
-           data-url="https://github.com/AL-255/FM-1-RE">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/AL-255/FM-1-RE',title:'Reverse Engineering of the M-VAVE FM-1 Pocket Synthesizer Firmware',source:'Hacker News',date:'2026-10-07T15:19:50.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/AL-255/FM-1-RE" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 29</span><span class="badge">💬 12</span>
-            </div>
-            <h3 class="card-title">Reverse Engineering of the M-VAVE FM-1 Pocket Synthesizer Firmware</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="all the numbers: amazon prime day 2026 powered by aws"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T13:51:11.000Z"
-           data-url="https://aws.amazon.com/blogs/aws/all-the-numbers-amazon-prime-day-2026-powered-by-aws/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://aws.amazon.com/blogs/aws/all-the-numbers-amazon-prime-day-2026-powered-by-aws/',title:'All the numbers: Amazon Prime Day 2026 powered by AWS',source:'Hacker News',date:'2026-10-07T13:51:11.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://aws.amazon.com/blogs/aws/all-the-numbers-amazon-prime-day-2026-powered-by-aws/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 17</span><span class="badge">💬 7</span>
-            </div>
-            <h3 class="card-title">All the numbers: Amazon Prime Day 2026 powered by AWS</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="show hn: a walkable 3d art history museum built from wikipedia"
-           data-desc="from li cheng to banksy"
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-07T12:51:08.000Z"
-           data-url="https://artmuseum.artfrompixels.com/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://artmuseum.artfrompixels.com/',title:'Show HN: A walkable 3D art history museum built from Wikipedia',source:'Hacker News',date:'2026-10-07T12:51:08.000Z',image:'',description:'From Li Cheng to Banksy',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://artmuseum.artfrompixels.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de out. de 2026</span>
-              <span class="badge">⬆ 101</span><span class="badge">💬 48</span>
-            </div>
-            <h3 class="card-title">Show HN: A walkable 3D art history museum built from Wikipedia</h3>
-            <p class="card-desc">From Li Cheng to Banksy</p>
+            <h3 class="card-title">X expands its &#8216;Gametime&#8217; sports hub beyond the NFL, starting with MLB</h3>
+            <p class="card-desc">X is turning its NFL-focused Gametime feature into a year-round sports destination, starting with MLB and with other professional leagues to follow.</p>
           </div>
         </a>
       </div>
@@ -1866,50 +1928,6 @@
             </div>
             <h3 class="card-title">Ring&#8217;s first smart lock can be hand-cranked when its battery dies</h3>
             <p class="card-desc">Amazon-owned Ring is entering the smart lock market with a device designed to tackle a common concern: getting locked out when the battery dies.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="how to find out if amazon thinks you have &#8216;flat buttocks&#8217;"
-           data-desc=""i stumbled upon a page of assumptions that amazon has made about me based on my purchases and i’m literally speechless," one shopper wrote on threads."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 06 Oct 2026 22:55:39 +0000"
-           data-url="https://techcrunch.com/2026/10/06/how-to-find-out-if-amazon-thinks-you-have-flat-buttocks/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/06/how-to-find-out-if-amazon-thinks-you-have-flat-buttocks/',title:'How to find out if Amazon thinks you have &#8216;flat buttocks&#8217;',source:'techcrunch',date:'Tue, 06 Oct 2026 22:55:39 +0000',image:'',description:'"I stumbled upon a page of assumptions that Amazon has made about me based on my purchases and I’m literally speechless," one shopper wrote on Threads',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/06/how-to-find-out-if-amazon-thinks-you-have-flat-buttocks/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">How to find out if Amazon thinks you have &#8216;flat buttocks&#8217;</h3>
-            <p class="card-desc">"I stumbled upon a page of assumptions that Amazon has made about me based on my purchases and I’m literally speechless," one shopper wrote on Threads…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="apple is reportedly partnering with lg to launch a smart lock, thermostat, and doorbell"
-           data-desc="apple appears poised to push into the smart home market with a slate of new devices and a key partner."
-           data-source="techcrunch"
-           data-cat="Tecnologia"
-           data-date="Tue, 06 Oct 2026 22:53:09 +0000"
-           data-url="https://techcrunch.com/2026/10/06/apple-is-reportedly-partnering-with-lg-to-launch-a-smart-lock-thermostat-and-doorbell/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/06/apple-is-reportedly-partnering-with-lg-to-launch-a-smart-lock-thermostat-and-doorbell/',title:'Apple is reportedly partnering with LG to launch a smart lock, thermostat, and doorbell',source:'techcrunch',date:'Tue, 06 Oct 2026 22:53:09 +0000',image:'',description:'Apple appears poised to push into the smart home market with a slate of new devices and a key partner.',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/06/apple-is-reportedly-partnering-with-lg-to-launch-a-smart-lock-thermostat-and-doorbell/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">06 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Apple is reportedly partnering with LG to launch a smart lock, thermostat, and doorbell</h3>
-            <p class="card-desc">Apple appears poised to push into the smart home market with a slate of new devices and a key partner.</p>
           </div>
         </a>
       </div>
