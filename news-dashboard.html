@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 22/10/2026, 21:48:36
+      Atualizado: 23/10/2026, 02:44:28
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Robótica" onclick="filterByCategory('Robótica')">⚙️ Robótica</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">76</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">53</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#f59e0b" id="stat-robtica">1</div><div class="stat-label">Robótica</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">22</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">74</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">51</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,18 +249,40 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">53</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">51</span></h2>
       <div class="cards-grid" id="grid-ia">
       <div class="card"
            data-title="slashdot"
+           data-desc="an anonymous reader quotes a report from axios: major u.s. banks are detecting unauthorized third-party ai agents operating inside customer accounts, with some agents attempting to take actions that a"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-10-23T03:30:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-23T03:30:00+00:00',image:'',description:'An anonymous reader quotes a report from Axios: Major U.S. banks are detecting unauthorized third-party AI agents operating inside customer accounts, ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">23 de out. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">An anonymous reader quotes a report from Axios: Major U.S. banks are detecting unauthorized third-party AI agents operating inside customer accounts, …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="to make way for data centers, google will pay others to use less power"
            data-desc="google is funding one of the nation's largest "virtual power plants," paying homes and businesses indirectly to reduce electricity consumption during periods of peak demand so more grid capacity can b"
            data-source="slashdot"
            data-cat="IA"
            data-date="2026-10-22T23:00:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-10-22T23:00:00+00:00',image:'',description:'Google is funding one of the nation\'s largest "virtual power plants," paying homes and businesses indirectly to reduce electricity consumption during ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-url="https://hardware.slashdot.org/story/26/10/22/180226/to-make-way-for-data-centers-google-will-pay-others-to-use-less-power?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/10/22/180226/to-make-way-for-data-centers-google-will-pay-others-to-use-less-power?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'To Make Way For Data Centers, Google Will Pay Others to Use Less Power',source:'slashdot',date:'2026-10-22T23:00:00+00:00',image:'https://a.fsdn.com/sd/topics/power_64.png',description:'Google is funding one of the nation\'s largest "virtual power plants," paying homes and businesses indirectly to reduce electricity consumption during ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/10/22/180226/to-make-way-for-data-centers-google-will-pay-others-to-use-less-power?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/power_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -268,7 +290,7 @@
               <span class="date">22 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">To Make Way For Data Centers, Google Will Pay Others to Use Less Power</h3>
             <p class="card-desc">Google is funding one of the nation's largest "virtual power plants," paying homes and businesses indirectly to reduce electricity consumption during …</p>
           </div>
         </a>
@@ -442,7 +464,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 62</span><span class="badge">💬 22</span>
+              <span class="badge">⬆ 237</span><span class="badge">💬 130</span>
             </div>
             <h3 class="card-title">LLMs are making formal software verification feasible at a much larger scale</h3>
             
@@ -464,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 287</span><span class="badge">💬 147</span>
+              <span class="badge">⬆ 349</span><span class="badge">💬 184</span>
             </div>
             <h3 class="card-title">OpenShell – A safe, private runtime for fleets of autonomous AI agents</h3>
             
@@ -486,7 +508,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 222</span><span class="badge">💬 270</span>
+              <span class="badge">⬆ 318</span><span class="badge">💬 351</span>
             </div>
             <h3 class="card-title">Every AI model has the same "controversial" take on humans</h3>
             
@@ -494,90 +516,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="jailbreaking the switch 2"
-           data-desc=""
-           data-source="hacker news"
+           data-title="oura sues rival ultrahuman again, threatening its u.s. smart ring comeback"
+           data-desc="oura alleges in its newest lawsuit that ultrahuman's ring pro infringes two of its patents."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-10-22T08:01:52.000Z"
-           data-url="https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/',title:'Jailbreaking the Switch 2',source:'Hacker News',date:'2026-10-22T08:01:52.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://pepsipu.com/blog/2026-10-switch2-jailbreak-ns2jb/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Fri, 23 Oct 2026 04:22:57 +0000"
+           data-url="https://techcrunch.com/2026/10/22/oura-sues-rival-ultrahuman-again-threatening-its-u-s-smart-ring-comeback/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/22/oura-sues-rival-ultrahuman-again-threatening-its-u-s-smart-ring-comeback/',title:'Oura sues rival Ultrahuman again, threatening its U.S. smart ring comeback',source:'techcrunch',date:'Fri, 23 Oct 2026 04:22:57 +0000',image:'',description:'Oura alleges in its newest lawsuit that Ultrahuman\'s Ring Pro infringes two of its patents.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/22/oura-sues-rival-ultrahuman-again-threatening-its-u-s-smart-ring-comeback/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 704</span><span class="badge">💬 246</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">23 de out. de 2026</span>
+              
             </div>
-            <h3 class="card-title">Jailbreaking the Switch 2</h3>
-            
+            <h3 class="card-title">Oura sues rival Ultrahuman again, threatening its U.S. smart ring comeback</h3>
+            <p class="card-desc">Oura alleges in its newest lawsuit that Ultrahuman's Ring Pro infringes two of its patents.</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="ai compute is the new oil–and needs a new market"
-           data-desc=""
-           data-source="hacker news"
+           data-title="uber rival indrive eyes 2027 robotaxi tests in central asia with pony.ai and nvidia"
+           data-desc="indrive plans to begin testing pony.ai's robotaxis in kazakhstan's capital in the first half of 2027."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-10-22T23:45:16.000Z"
-           data-url="https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market',title:'AI compute is the new oil–and needs a new market',source:'Hacker News',date:'2026-10-22T23:45:16.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.economist.com/finance-and-economics/2026/10/22/ai-compute-is-the-new-oil-and-needs-a-new-market" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Fri, 23 Oct 2026 04:00:00 +0000"
+           data-url="https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/',title:'Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia',source:'techcrunch',date:'Fri, 23 Oct 2026 04:00:00 +0000',image:'',description:'inDrive plans to begin testing Pony.ai\'s robotaxis in Kazakhstan\'s capital in the first half of 2027.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 6</span><span class="badge">💬 2</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">23 de out. de 2026</span>
+              
             </div>
-            <h3 class="card-title">AI compute is the new oil–and needs a new market</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="ai and the enclosure of the scientific commons"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-10-22T18:28:16.000Z"
-           data-url="https://arxiv.org/abs/2610.27251">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.27251',title:'AI and the Enclosure of the Scientific Commons',source:'Hacker News',date:'2026-10-22T18:28:16.000Z',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.27251" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 105</span><span class="badge">💬 61</span>
-            </div>
-            <h3 class="card-title">AI and the Enclosure of the Scientific Commons</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="railpass"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="IA"
-           data-date="2026-10-22T21:38:32.000Z"
-           data-url="https://train.samismith.com/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://train.samismith.com/',title:'Railpass',source:'Hacker News',date:'2026-10-22T21:38:32.000Z',image:'https://train.samismith.com/img/railpass-card.jpg',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://train.samismith.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://train.samismith.com/img/railpass-card.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 38</span><span class="badge">💬 9</span>
-            </div>
-            <h3 class="card-title">Railpass</h3>
-            
+            <h3 class="card-title">Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia</h3>
+            <p class="card-desc">inDrive plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027.</p>
           </div>
         </a>
       </div>
@@ -890,28 +868,6 @@
         </a>
       </div>
       <div class="card"
-           data-title="investors break down how founders can raise a series a today"
-           data-desc="raising a series a these days isn't so simple — top investors break down what founders need to know now."
-           data-source="techcrunch"
-           data-cat="IA"
-           data-date="Thu, 22 Oct 2026 15:15:00 +0000"
-           data-url="https://techcrunch.com/2026/10/22/investors-break-down-how-founders-can-raise-a-series-a-today/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/22/investors-break-down-how-founders-can-raise-a-series-a-today/',title:'Investors break down how founders can raise a Series A today',source:'techcrunch',date:'Thu, 22 Oct 2026 15:15:00 +0000',image:'',description:'Raising a Series A these days isn\'t so simple — top investors break down what founders need to know now.',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/22/investors-break-down-how-founders-can-raise-a-series-a-today/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">22 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Investors break down how founders can raise a Series A today</h3>
-            <p class="card-desc">Raising a Series A these days isn't so simple — top investors break down what founders need to know now.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
            data-title="designing an ai serving harness built to last"
            data-desc="the next competitive advantage in enterprise ai has less to do with which model you choose than with what you build around it. that’s an important shift. for the past several years, much of the ai con"
            data-source="mit"
@@ -1022,430 +978,404 @@
         </a>
       </div>
       <div class="card"
-           data-title="a small model asks better: fine-tuning query clarification for retrieval-augmented generation"
-           data-desc="arxiv:2610.28686v1 announce type: new abstract: query clarification is essential for retrieval-augmented generation (rag) systems that face ambiguous user queries. we consider multi-turn grounded conv"
+           data-title="the cost of saying hello: an empirical study of handshake overhead in ai agent communication protocols"
+           data-desc="arxiv:2610.30151v1 announce type: new abstract: every interaction between ai agents begins with a handshake: the initiating agent must locate its counterpart, learn what it can do, and establish a ses"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28686">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28686',title:'A Small Model Asks Better: Fine-Tuning Query Clarification for Retrieval-Augmented Generation',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28686v1 Announce Type: new Abstract: Query clarification is essential for retrieval-augmented generation (RAG) systems that face ambiguous ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28686" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30151">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30151',title:'The Cost of Saying Hello: An Empirical Study of Handshake Overhead in AI Agent Communication Protocols',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30151v1 Announce Type: new Abstract: Every interaction between AI agents begins with a handshake: the initiating agent must locate its coun',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30151" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">A Small Model Asks Better: Fine-Tuning Query Clarification for Retrieval-Augmented Generation</h3>
-            <p class="card-desc">arXiv:2610.28686v1 Announce Type: new Abstract: Query clarification is essential for retrieval-augmented generation (RAG) systems that face ambiguous …</p>
+            <h3 class="card-title">The Cost of Saying Hello: An Empirical Study of Handshake Overhead in AI Agent Communication Protocols</h3>
+            <p class="card-desc">arXiv:2610.30151v1 Announce Type: new Abstract: Every interaction between AI agents begins with a handshake: the initiating agent must locate its coun…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="scaling in games: continued pre-training for embodied agents in diverse virtual worlds"
-           data-desc="arxiv:2610.28698v1 announce type: new abstract: scaling data, diversity and model capacity has improved embodied learning in physical environments, where diverse experiences remain grounded in shared "
+           data-title="mcp vs cli for ai agents: a comparative analysis of tool integration strategies for autonomous systems"
+           data-desc="arxiv:2610.30157v1 announce type: new abstract: ai agents require interfaces to interact with external systems such as files, apis, databases, and cloud services. two competing paradigms have emerged:"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28698">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28698',title:'Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28698v1 Announce Type: new Abstract: Scaling data, diversity and model capacity has improved embodied learning in physical environments, wh',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28698" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30157">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30157',title:'MCP vs CLI for AI Agents: A Comparative Analysis of Tool Integration Strategies for Autonomous Systems',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30157v1 Announce Type: new Abstract: AI agents require interfaces to interact with external systems such as files, APIs, databases, and clo',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30157" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Scaling in Games: Continued Pre-Training For Embodied Agents In Diverse Virtual Worlds</h3>
-            <p class="card-desc">arXiv:2610.28698v1 Announce Type: new Abstract: Scaling data, diversity and model capacity has improved embodied learning in physical environments, wh…</p>
+            <h3 class="card-title">MCP vs CLI for AI Agents: A Comparative Analysis of Tool Integration Strategies for Autonomous Systems</h3>
+            <p class="card-desc">arXiv:2610.30157v1 Announce Type: new Abstract: AI agents require interfaces to interact with external systems such as files, APIs, databases, and clo…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="specevo: speculative evolution with large language models for cost-efficient scientific discovery"
-           data-desc="arxiv:2610.28706v1 announce type: new abstract: llm-driven evolutionary search is a promising paradigm for scientific discovery, but existing methods remain costly and slow, often applying expensive r"
+           data-title="accelerating wildfire hazard mapping across canada with an ai surrogate modelling framework"
+           data-desc="arxiv:2610.30170v1 announce type: new abstract: canada's increasing wildfire activity requires frequent national hazard mapping to guide proactive mitigation, including fuel management, land-use plann"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28706">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28706',title:'SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28706v1 Announce Type: new Abstract: LLM-driven evolutionary search is a promising paradigm for scientific discovery, but existing methods ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28706" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30170">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30170',title:'Accelerating Wildfire Hazard Mapping Across Canada with an AI Surrogate Modelling Framework',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30170v1 Announce Type: new Abstract: Canada\'s increasing wildfire activity requires frequent national hazard mapping to guide proactive mit',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30170" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery</h3>
-            <p class="card-desc">arXiv:2610.28706v1 Announce Type: new Abstract: LLM-driven evolutionary search is a promising paradigm for scientific discovery, but existing methods …</p>
+            <h3 class="card-title">Accelerating Wildfire Hazard Mapping Across Canada with an AI Surrogate Modelling Framework</h3>
+            <p class="card-desc">arXiv:2610.30170v1 Announce Type: new Abstract: Canada's increasing wildfire activity requires frequent national hazard mapping to guide proactive mit…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="automating ml for science: can frontier agents climb scientific hills in the wild?"
-           data-desc="arxiv:2610.28763v1 announce type: new abstract: frontier coding agents are increasingly framed as end-to-end automated researchers, and ml for science offers a demanding test of that promise: improvin"
+           data-title="neural networks with differentiable belief-function layers"
+           data-desc="arxiv:2610.30173v1 announce type: new abstract: yager's 1987 rule of combination $\boxplus$ was proposed on epistemic grounds: under high conflict, mass should be redistributed to ignorance rather tha"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28763">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28763',title:'Automating ML for Science: Can Frontier Agents Climb Scientific Hills in the Wild?',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28763v1 Announce Type: new Abstract: Frontier coding agents are increasingly framed as end-to-end automated researchers, and ML for science',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28763" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30173">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30173',title:'Neural Networks with Differentiable Belief-Function Layers',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30173v1 Announce Type: new Abstract: Yager\'s 1987 rule of combination $\boxplus$ was proposed on epistemic grounds: under high conflict, ma',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30173" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Automating ML for Science: Can Frontier Agents Climb Scientific Hills in the Wild?</h3>
-            <p class="card-desc">arXiv:2610.28763v1 Announce Type: new Abstract: Frontier coding agents are increasingly framed as end-to-end automated researchers, and ML for science…</p>
+            <h3 class="card-title">Neural Networks with Differentiable Belief-Function Layers</h3>
+            <p class="card-desc">arXiv:2610.30173v1 Announce Type: new Abstract: Yager's 1987 rule of combination $\boxplus$ was proposed on epistemic grounds: under high conflict, ma…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="forging more tasks into better harnesses: agentic harness evolution via successive scale racing"
-           data-desc="arxiv:2610.28815v1 announce type: new abstract: agentic harness evolution optimizes an agent's instructions, tools, and control flow by using its task execution experiences as evolving evidence. while"
+           data-title="feedback that backfires in games: do llm players repeat the move they just watched fail?"
+           data-desc="arxiv:2610.30205v1 announce type: new abstract: when an llm agent's move fails, the harness writes the move and the failure message into the transcript and asks again. in tool calling, this record mak"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28815">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28815',title:'Forging More Tasks into Better Harnesses: Agentic Harness Evolution via Successive Scale Racing',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28815v1 Announce Type: new Abstract: Agentic harness evolution optimizes an agent\'s instructions, tools, and control flow by using its task',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28815" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30205">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30205',title:'Feedback That Backfires in Games: Do LLM Players Repeat the Move They Just Watched Fail?',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30205v1 Announce Type: new Abstract: When an LLM agent\'s move fails, the harness writes the move and the failure message into the transcrip',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30205" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Forging More Tasks into Better Harnesses: Agentic Harness Evolution via Successive Scale Racing</h3>
-            <p class="card-desc">arXiv:2610.28815v1 Announce Type: new Abstract: Agentic harness evolution optimizes an agent's instructions, tools, and control flow by using its task…</p>
+            <h3 class="card-title">Feedback That Backfires in Games: Do LLM Players Repeat the Move They Just Watched Fail?</h3>
+            <p class="card-desc">arXiv:2610.30205v1 Announce Type: new Abstract: When an LLM agent's move fails, the harness writes the move and the failure message into the transcrip…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="decision language models as affordable and rapid alternatives to llm judges of clinical generative ai"
-           data-desc="arxiv:2610.28826v1 announce type: new abstract: automated judges of clinical artificial intelligence (ai) outputs are necessary, but large language model (llm) judges are costly and slow at scale. we "
+           data-title="breaking the high-degree barrier in lehmer's problem with a human-ai discovery loop"
+           data-desc="arxiv:2610.30277v1 announce type: new abstract: while artificial intelligence has made rapid progress in mathematical reasoning, many open problems depend on structure that is revealed only through la"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28826">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28826',title:'Decision language models as affordable and rapid alternatives to LLM judges of clinical generative AI',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28826v1 Announce Type: new Abstract: Automated judges of clinical artificial intelligence (AI) outputs are necessary, but large language mo',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28826" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30277">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30277',title:'Breaking the high-degree barrier in Lehmer\'s problem with a human-AI discovery loop',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30277v1 Announce Type: new Abstract: While artificial intelligence has made rapid progress in mathematical reasoning, many open problems de',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30277" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Decision language models as affordable and rapid alternatives to LLM judges of clinical generative AI</h3>
-            <p class="card-desc">arXiv:2610.28826v1 Announce Type: new Abstract: Automated judges of clinical artificial intelligence (AI) outputs are necessary, but large language mo…</p>
+            <h3 class="card-title">Breaking the high-degree barrier in Lehmer's problem with a human-AI discovery loop</h3>
+            <p class="card-desc">arXiv:2610.30277v1 Announce Type: new Abstract: While artificial intelligence has made rapid progress in mathematical reasoning, many open problems de…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="speedrunning relational foundation model pretraining"
-           data-desc="arxiv:2610.28855v1 announce type: new abstract: progress on foundation model pretraining is gated by who can afford a trial, and relational pretraining is no exception. recipes are developed inside in"
+           data-title="route-and-generate: kl-regularized router improvement for reasoning routing in llms"
+           data-desc="arxiv:2610.30351v1 announce type: new abstract: large language models often apply complex reasoning indiscriminately, leading to overthinking on simple tasks and underthinking on harder ones. we prese"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28855">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28855',title:'Speedrunning Relational Foundation Model Pretraining',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28855v1 Announce Type: new Abstract: Progress on foundation model pretraining is gated by who can afford a trial, and relational pretrainin',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28855" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30351">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30351',title:'Route-and-Generate: KL-Regularized Router Improvement for Reasoning Routing in LLMs',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30351v1 Announce Type: new Abstract: Large language models often apply complex reasoning indiscriminately, leading to overthinking on simpl',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30351" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Speedrunning Relational Foundation Model Pretraining</h3>
-            <p class="card-desc">arXiv:2610.28855v1 Announce Type: new Abstract: Progress on foundation model pretraining is gated by who can afford a trial, and relational pretrainin…</p>
+            <h3 class="card-title">Route-and-Generate: KL-Regularized Router Improvement for Reasoning Routing in LLMs</h3>
+            <p class="card-desc">arXiv:2610.30351v1 Announce Type: new Abstract: Large language models often apply complex reasoning indiscriminately, leading to overthinking on simpl…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="to manipulate or not: opinion dynamics in llm interactions"
-           data-desc="arxiv:2610.28875v1 announce type: new abstract: large language models increasingly take part in extended conversations where they can both shape and be shaped by another party's views, yet most persua"
+           data-title="roleflow: self-evolving multi-role agentic collaboration via structural adaptation"
+           data-desc="arxiv:2610.30429v1 announce type: new abstract: large language model (llm) based multi-agent systems often rely on predefined collaboration structures, limiting their adaptability to evolving task req"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28875">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28875',title:'To Manipulate or Not: Opinion Dynamics in LLM Interactions',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28875v1 Announce Type: new Abstract: Large language models increasingly take part in extended conversations where they can both shape and b',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28875" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30429">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30429',title:'RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30429v1 Announce Type: new Abstract: Large language model (LLM) based multi-agent systems often rely on predefined collaboration structures',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30429" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">To Manipulate or Not: Opinion Dynamics in LLM Interactions</h3>
-            <p class="card-desc">arXiv:2610.28875v1 Announce Type: new Abstract: Large language models increasingly take part in extended conversations where they can both shape and b…</p>
+            <h3 class="card-title">RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation</h3>
+            <p class="card-desc">arXiv:2610.30429v1 Announce Type: new Abstract: Large language model (LLM) based multi-agent systems often rely on predefined collaboration structures…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="fig: automated multiagent behavior elicitor"
-           data-desc="arxiv:2610.28891v1 announce type: new abstract: many social evaluations for multiagent systems study behaviors as they emerge from environments instead of systematically intervening in the environment"
+           data-title="secure agentic ai and multimodal intelligence in 6g communication systems"
+           data-desc="arxiv:2610.30436v1 announce type: new abstract: sixth-generation (6g) communication systems are expected to support immersive, intent-driven, and latency-critical services through tight integration of"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28891">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28891',title:'Fig: Automated Multiagent Behavior Elicitor',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28891v1 Announce Type: new Abstract: Many social evaluations for multiagent systems study behaviors as they emerge from environments instea',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28891" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30436">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30436',title:'Secure Agentic AI and Multimodal Intelligence in 6G Communication Systems',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30436v1 Announce Type: new Abstract: Sixth-generation (6G) communication systems are expected to support immersive, intent-driven, and late',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30436" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Fig: Automated Multiagent Behavior Elicitor</h3>
-            <p class="card-desc">arXiv:2610.28891v1 Announce Type: new Abstract: Many social evaluations for multiagent systems study behaviors as they emerge from environments instea…</p>
+            <h3 class="card-title">Secure Agentic AI and Multimodal Intelligence in 6G Communication Systems</h3>
+            <p class="card-desc">arXiv:2610.30436v1 Announce Type: new Abstract: Sixth-generation (6G) communication systems are expected to support immersive, intent-driven, and late…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="hidden messages between diffusion language model agents: causal evidence for latent communication"
-           data-desc="arxiv:2610.28905v1 announce type: new abstract: diffusion language models form answers through a sequence of revisable continuous states, but multi-agent systems usually discard those states and make "
+           data-title="specmagic: specification-guided multi-task generalization in multi-agent reinforcement learning"
+           data-desc="arxiv:2610.30443v1 announce type: new abstract: multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learning (marl). many real-world applications require m"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28905">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28905',title:'Hidden Messages Between Diffusion Language Model Agents: Causal Evidence for Latent Communication',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28905v1 Announce Type: new Abstract: Diffusion language models form answers through a sequence of revisable continuous states, but multi-ag',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28905" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30443">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30443',title:'SpecMAGIC: Specification-Guided Multi-Task Generalization in Multi-Agent Reinforcement Learning',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30443v1 Announce Type: new Abstract: Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learn',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30443" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Hidden Messages Between Diffusion Language Model Agents: Causal Evidence for Latent Communication</h3>
-            <p class="card-desc">arXiv:2610.28905v1 Announce Type: new Abstract: Diffusion language models form answers through a sequence of revisable continuous states, but multi-ag…</p>
+            <h3 class="card-title">SpecMAGIC: Specification-Guided Multi-Task Generalization in Multi-Agent Reinforcement Learning</h3>
+            <p class="card-desc">arXiv:2610.30443v1 Announce Type: new Abstract: Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learn…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="diffresearch: accelerating deep research with diffusion language models"
-           data-desc="arxiv:2610.28909v1 announce type: new abstract: deep research systems iteratively plan, gather evidence, synthesize, and revise, making end-to-end latency a key bottleneck for interactive use. almost "
+           data-title="a three-pillar governance framework for safe and trustworthy ai agents"
+           data-desc="arxiv:2610.30445v1 announce type: new abstract: ai agents capable of autonomous decision-making introduce significant challenges related to safety, alignment, accountability, and human oversight. exis"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28909">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28909',title:'DiffResearch: Accelerating Deep Research with Diffusion Language Models',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28909v1 Announce Type: new Abstract: Deep research systems iteratively plan, gather evidence, synthesize, and revise, making end-to-end lat',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28909" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30445">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30445',title:'A Three-Pillar Governance Framework for Safe and Trustworthy AI Agents',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30445v1 Announce Type: new Abstract: AI agents capable of autonomous decision-making introduce significant challenges related to safety, al',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30445" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">DiffResearch: Accelerating Deep Research with Diffusion Language Models</h3>
-            <p class="card-desc">arXiv:2610.28909v1 Announce Type: new Abstract: Deep research systems iteratively plan, gather evidence, synthesize, and revise, making end-to-end lat…</p>
+            <h3 class="card-title">A Three-Pillar Governance Framework for Safe and Trustworthy AI Agents</h3>
+            <p class="card-desc">arXiv:2610.30445v1 Announce Type: new Abstract: AI agents capable of autonomous decision-making introduce significant challenges related to safety, al…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="d-skill: distilling teacher knowledge through agent skills"
-           data-desc="arxiv:2610.28914v1 announce type: new abstract: frontier language-model agents excel at complex tasks, but high inference costs make transferring their capabilities to smaller models essential. tradit"
+           data-title="same beliefs, different policies: learning reusable representations for early stopping in llm reasoning"
+           data-desc="arxiv:2610.30450v1 announce type: new abstract: reasoning llms often continue reasoning after reaching a correct answer, wasting computation and sometimes replacing it with an incorrect one. deciding "
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28914">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28914',title:'D-Skill: Distilling Teacher Knowledge through Agent Skills',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28914v1 Announce Type: new Abstract: Frontier language-model agents excel at complex tasks, but high inference costs make transferring thei',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28914" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30450">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30450',title:'Same Beliefs, Different Policies: Learning Reusable Representations for Early Stopping in LLM Reasoning',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30450v1 Announce Type: new Abstract: Reasoning LLMs often continue reasoning after reaching a correct answer, wasting computation and somet',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30450" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">D-Skill: Distilling Teacher Knowledge through Agent Skills</h3>
-            <p class="card-desc">arXiv:2610.28914v1 Announce Type: new Abstract: Frontier language-model agents excel at complex tasks, but high inference costs make transferring thei…</p>
+            <h3 class="card-title">Same Beliefs, Different Policies: Learning Reusable Representations for Early Stopping in LLM Reasoning</h3>
+            <p class="card-desc">arXiv:2610.30450v1 Announce Type: new Abstract: Reasoning LLMs often continue reasoning after reaching a correct answer, wasting computation and somet…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="back up before you regret: measuring backup awareness and automating backup in coding agents"
-           data-desc="arxiv:2610.28934v1 announce type: new abstract: coding agents now complete tasks autonomously, modifying real-world state such as artifacts, software environments, and configurations along the way. ye"
+           data-title="why bother me again? benchmarking personal agent memory for interaction preferences"
+           data-desc="arxiv:2610.30485v1 announce type: new abstract: personal intelligence systems are taking on increasingly complex everyday tasks, yet repeated questions, unnecessary confirmations, and unwanted outreac"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28934">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28934',title:'Back Up Before You Regret: Measuring Backup Awareness and Automating Backup in Coding Agents',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28934v1 Announce Type: new Abstract: Coding agents now complete tasks autonomously, modifying real-world state such as artifacts, software ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28934" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30485">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30485',title:'Why Bother Me Again? Benchmarking Personal Agent Memory for Interaction Preferences',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30485v1 Announce Type: new Abstract: Personal intelligence systems are taking on increasingly complex everyday tasks, yet repeated question',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30485" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Back Up Before You Regret: Measuring Backup Awareness and Automating Backup in Coding Agents</h3>
-            <p class="card-desc">arXiv:2610.28934v1 Announce Type: new Abstract: Coding agents now complete tasks autonomously, modifying real-world state such as artifacts, software …</p>
+            <h3 class="card-title">Why Bother Me Again? Benchmarking Personal Agent Memory for Interaction Preferences</h3>
+            <p class="card-desc">arXiv:2610.30485v1 Announce Type: new Abstract: Personal intelligence systems are taking on increasingly complex everyday tasks, yet repeated question…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="self-improving agents with world model predictive paths"
-           data-desc="arxiv:2610.28945v1 announce type: new abstract: large language model (llm) agents are increasingly expected to interact with environments and improve their decisions during deployment. however, how an"
+           data-title="from single-actor environments to multi-actor event worlds: can llms be event world models?"
+           data-desc="arxiv:2610.30488v1 announce type: new abstract: world models help agents assess the consequences of their actions before acting. many real systems, however, involve multiple actors who make their own "
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28945">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28945',title:'Self-Improving Agents with World Model Predictive Paths',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28945v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly expected to interact with environments and improve ',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28945" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30488">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30488',title:'From Single-Actor Environments to Multi-Actor Event Worlds: Can LLMs Be Event World Models?',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30488v1 Announce Type: new Abstract: World models help agents assess the consequences of their actions before acting. Many real systems, ho',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30488" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Self-Improving Agents with World Model Predictive Paths</h3>
-            <p class="card-desc">arXiv:2610.28945v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly expected to interact with environments and improve …</p>
+            <h3 class="card-title">From Single-Actor Environments to Multi-Actor Event Worlds: Can LLMs Be Event World Models?</h3>
+            <p class="card-desc">arXiv:2610.30488v1 Announce Type: new Abstract: World models help agents assess the consequences of their actions before acting. Many real systems, ho…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="behavior beyond text: evaluating refusal transfer failure in llm agents"
-           data-desc="arxiv:2610.28982v1 announce type: new abstract: while large language models are increasingly deployed as tool-calling agents, their safety evaluations still focus primarily on their ability to refuse "
+           data-title="what the trace shows and what the label says: auditing behavioral detectors in agent evaluation"
+           data-desc="arxiv:2610.30491v1 announce type: new abstract: llm agents are often evaluated by reducing execution traces to labels such as final-answer correctness, tool verification, and fault propagation. these "
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28982">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28982',title:'Behavior Beyond Text: Evaluating Refusal Transfer Failure in LLM Agents',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28982v1 Announce Type: new Abstract: While large language models are increasingly deployed as tool-calling agents, their safety evaluations',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28982" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30491">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30491',title:'What the Trace Shows and What the Label Says: Auditing Behavioral Detectors in Agent Evaluation',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30491v1 Announce Type: new Abstract: LLM agents are often evaluated by reducing execution traces to labels such as final-answer correctness',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30491" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Behavior Beyond Text: Evaluating Refusal Transfer Failure in LLM Agents</h3>
-            <p class="card-desc">arXiv:2610.28982v1 Announce Type: new Abstract: While large language models are increasingly deployed as tool-calling agents, their safety evaluations…</p>
+            <h3 class="card-title">What the Trace Shows and What the Label Says: Auditing Behavioral Detectors in Agent Evaluation</h3>
+            <p class="card-desc">arXiv:2610.30491v1 Announce Type: new Abstract: LLM agents are often evaluated by reducing execution traces to labels such as final-answer correctness…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="permit: securing persistent memory for llm agents via machine-checked integrity theorems and scalable community trust"
-           data-desc="arxiv:2610.28987v1 announce type: new abstract: persistent memory is a largely undefended surface for injection and poisoning, and the same risk limits memory sharing among agents. we present permit, "
+           data-title="from prose to properties: testing research claims with aratest for agent-native science"
+           data-desc="arxiv:2610.30495v1 announce type: new abstract: ai agents now run experiments and report findings, so research produces claims faster than researchers can check them. each empirical claim implies a pr"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28987">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28987',title:'PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28987v1 Announce Type: new Abstract: Persistent memory is a largely undefended surface for injection and poisoning, and the same risk limit',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28987" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30495">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30495',title:'From Prose to Properties: Testing Research Claims with ARATest for Agent-Native Science',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30495v1 Announce Type: new Abstract: AI agents now run experiments and report findings, so research produces claims faster than researchers',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30495" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust</h3>
-            <p class="card-desc">arXiv:2610.28987v1 Announce Type: new Abstract: Persistent memory is a largely undefended surface for injection and poisoning, and the same risk limit…</p>
+            <h3 class="card-title">From Prose to Properties: Testing Research Claims with ARATest for Agent-Native Science</h3>
+            <p class="card-desc">arXiv:2610.30495v1 Announce Type: new Abstract: AI agents now run experiments and report findings, so research produces claims faster than researchers…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="agentpolicyforge: from executable environments to policy benchmarks and adaptive guards"
-           data-desc="arxiv:2610.28989v1 announce type: new abstract: customized agent deployments define policies over tools, resources, and execution conditions. providing these policies in the task agent's prompt does n"
+           data-title="can llms improve their own harness? a controlled study on arc-agi-3"
+           data-desc="arxiv:2610.30499v1 announce type: new abstract: a generally intelligent system acquires new skills efficiently without requiring humans to redesign its software scaffold for every new task. yet langua"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28989">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28989',title:'AgentPolicyForge: From Executable Environments to Policy Benchmarks and Adaptive Guards',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28989v1 Announce Type: new Abstract: Customized agent deployments define policies over tools, resources, and execution conditions. Providin',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28989" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30499">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30499',title:'Can LLMs Improve Their Own Harness? A Controlled Study on ARC-AGI-3',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'',description:'arXiv:2610.30499v1 Announce Type: new Abstract: A generally intelligent system acquires new skills efficiently without requiring humans to redesign it',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30499" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>A</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">AgentPolicyForge: From Executable Environments to Policy Benchmarks and Adaptive Guards</h3>
-            <p class="card-desc">arXiv:2610.28989v1 Announce Type: new Abstract: Customized agent deployments define policies over tools, resources, and execution conditions. Providin…</p>
+            <h3 class="card-title">Can LLMs Improve Their Own Harness? A Controlled Study on ARC-AGI-3</h3>
+            <p class="card-desc">arXiv:2610.30499v1 Announce Type: new Abstract: A generally intelligent system acquires new skills efficiently without requiring humans to redesign it…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="an evidence-driven multi-agent compound ai system for head and neck proton radiotherapy planning"
-           data-desc="arxiv:2610.29010v1 announce type: new abstract: radiation treatment planning requires balancing competing objectives to satisfy clinical criteria while accommodating physicians' preferences. this stud"
+           data-title="ple: physical-engineering's last exam"
+           data-desc="arxiv:2610.30537v1 announce type: new abstract: frontier language models now score above 90% on popular knowledge benchmarks and are increasingly deployed as agents that carry out multi-hour professio"
            data-source="arxiv"
            data-cat="IA"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.29010">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.29010',title:'An Evidence-Driven Multi-Agent Compound AI System for Head and Neck Proton Radiotherapy Planning',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.29010v1 Announce Type: new Abstract: Radiation treatment planning requires balancing competing objectives to satisfy clinical criteria whil',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.29010" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30537">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30537',title:'PLE: Physical-Engineering\'s Last Exam',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30537v1 Announce Type: new Abstract: Frontier language models now score above 90% on popular knowledge benchmarks and are increasingly depl',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30537" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">An Evidence-Driven Multi-Agent Compound AI System for Head and Neck Proton Radiotherapy Planning</h3>
-            <p class="card-desc">arXiv:2610.29010v1 Announce Type: new Abstract: Radiation treatment planning requires balancing competing objectives to satisfy clinical criteria whil…</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
-    <section class="category" id="sec-robtica" data-cat="Robótica">
-      <h2 class="category-title" style="--cat-color:#f59e0b">⚙️ Robótica <span class="count" id="cnt-robtica">1</span></h2>
-      <div class="cards-grid" id="grid-robtica">
-      <div class="card"
-           data-title="spotify confirms family plan crackdown, but calls it a &#8216;routine improvement&#8217;"
-           data-desc="spotify told investors its rollout of qr code verification to ensure family plan members live in the same household is not a "crackdown," just a routine improvement."
-           data-source="techcrunch"
-           data-cat="Robótica"
-           data-date="Thu, 22 Oct 2026 15:24:32 +0000"
-           data-url="https://techcrunch.com/2026/10/22/spotify-confirms-family-plan-crackdown-but-calls-it-a-routine-improvement/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/10/22/spotify-confirms-family-plan-crackdown-but-calls-it-a-routine-improvement/',title:'Spotify confirms Family Plan crackdown, but calls it a &#8216;routine improvement&#8217;',source:'techcrunch',date:'Thu, 22 Oct 2026 15:24:32 +0000',image:'',description:'Spotify told investors its rollout of QR code verification to ensure Family Plan members live in the same household is not a "crackdown," just a routi',cat:'Robótica'})">⭐</button>
-        <a class="card-link" href="https://techcrunch.com/2026/10/22/spotify-confirms-family-plan-crackdown-but-calls-it-a-routine-improvement/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>T</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
-              <span class="source-name">techcrunch</span>
-              <span class="date">22 de out. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Spotify confirms Family Plan crackdown, but calls it a &#8216;routine improvement&#8217;</h3>
-            <p class="card-desc">Spotify told investors its rollout of QR code verification to ensure Family Plan members live in the same household is not a "crackdown," just a routi…</p>
+            <h3 class="card-title">PLE: Physical-Engineering's Last Exam</h3>
+            <p class="card-desc">arXiv:2610.30537v1 Announce Type: new Abstract: Frontier language models now score above 90% on popular knowledge benchmarks and are increasingly depl…</p>
           </div>
         </a>
       </div></div>
     </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">22</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">23</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
            data-title="microsoft says october updates didn't actually fix vpn issues"
@@ -1536,6 +1466,50 @@
         </a>
       </div>
       <div class="card"
+           data-title="move slow and fix things"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-23T05:12:39.000Z"
+           data-url="https://endler.dev/2024/move-slow-and-fix-things/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://endler.dev/2024/move-slow-and-fix-things/',title:'Move Slow and Fix Things',source:'Hacker News',date:'2026-10-23T05:12:39.000Z',image:'https://endler.dev/2024/move-slow-and-fix-things/social.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://endler.dev/2024/move-slow-and-fix-things/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://endler.dev/2024/move-slow-and-fix-things/social.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de out. de 2026</span>
+              <span class="badge">⬆ 35</span>
+            </div>
+            <h3 class="card-title">Move Slow and Fix Things</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="docker is weird"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-22T23:45:56.000Z"
+           data-url="https://codeandcake.dev/posts/2026-10-22-docker-is-weird">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://codeandcake.dev/posts/2026-10-22-docker-is-weird',title:'Docker is weird',source:'Hacker News',date:'2026-10-22T23:45:56.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://codeandcake.dev/posts/2026-10-22-docker-is-weird" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">22 de out. de 2026</span>
+              <span class="badge">⬆ 292</span><span class="badge">💬 143</span>
+            </div>
+            <h3 class="card-title">Docker is weird</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
            data-title="quad9 (dns resolver) to exit france"
            data-desc=""
            data-source="hacker news"
@@ -1550,7 +1524,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 973</span><span class="badge">💬 351</span>
+              <span class="badge">⬆ 1097</span><span class="badge">💬 385</span>
             </div>
             <h3 class="card-title">Quad9 (DNS Resolver) to Exit France</h3>
             
@@ -1558,67 +1532,89 @@
         </a>
       </div>
       <div class="card"
-           data-title="docker is weird"
-           data-desc=""
+           data-title="median product &quot;lifespan&quot; has fallen from ~4y down to ~1.5y"
+           data-desc="the &quot;product graveyard&quot; of saashub has been tracking the status (and lifespan) of hundreds of thousands of products. it&#x27;s been hovering around 4y for quite some time. however, there&#x2"
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-22T23:45:56.000Z"
-           data-url="https://codeandcake.dev/posts/2026-10-22-docker-is-weird">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://codeandcake.dev/posts/2026-10-22-docker-is-weird',title:'Docker Is Weird',source:'Hacker News',date:'2026-10-22T23:45:56.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://codeandcake.dev/posts/2026-10-22-docker-is-weird" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-23T03:20:38.000Z"
+           data-url="https://news.ycombinator.com/item?id=50204125">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.ycombinator.com/item?id=50204125',title:'Median product &quot;lifespan&quot; has fallen from ~4y down to ~1.5y',source:'Hacker News',date:'2026-10-23T03:20:38.000Z',image:'',description:'The &quot;product graveyard&quot; of SaaSHub has been tracking the status (and lifespan) of hundreds of thousands of products. It&#x27;s been hovering',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://news.ycombinator.com/item?id=50204125" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 31</span><span class="badge">💬 13</span>
+              <span class="date">23 de out. de 2026</span>
+              <span class="badge">⬆ 32</span><span class="badge">💬 10</span>
             </div>
-            <h3 class="card-title">Docker Is Weird</h3>
-            
+            <h3 class="card-title">Median product "lifespan" has fallen from ~4y down to ~1.5y</h3>
+            <p class="card-desc">The &quot;product graveyard&quot; of SaaSHub has been tracking the status (and lifespan) of hundreds of thousands of products. It&#x27;s been hovering…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="woman faces six years in prison over cash app account she never opened"
+           data-title="woman charged with computer fraud due to scam cashapp account being in her name"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
            data-date="2026-10-22T13:11:00.000Z"
-           data-url="https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html',title:'Woman faces six years in prison over Cash App account she never opened',source:'Hacker News',date:'2026-10-22T13:11:00.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.techspot.com/news/114296-woman-spends-three-nights-jail-faces-six-years.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-url="https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/',title:'Woman charged with computer fraud due to scam CashApp account being in her name',source:'Hacker News',date:'2026-10-22T13:11:00.000Z',image:'https://storage.ghost.io/c/0f/76/0f76b548-bc58-4f25-abc3-3f5ebca07da4/content/images/size/w1200/2026/10/CASHAPP_B.jpg',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.404media.co/amanda-smith-opened-a-cashapp-in-her-name-she-faces-years-in-prison-cashapp-fraud/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://storage.ghost.io/c/0f/76/0f76b548-bc58-4f25-abc3-3f5ebca07da4/content/images/size/w1200/2026/10/CASHAPP_B.jpg')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 469</span><span class="badge">💬 484</span>
+              <span class="badge">⬆ 614</span><span class="badge">💬 606</span>
             </div>
-            <h3 class="card-title">Woman faces six years in prison over Cash App account she never opened</h3>
+            <h3 class="card-title">Woman charged with computer fraud due to scam CashApp account being in her name</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="getting ready to operate gnu taler in germany"
+           data-title="this i believe"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-22T16:14:31.000Z"
-           data-url="https://www.taler.net/en/news/2026-13.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.taler.net/en/news/2026-13.html',title:'Getting ready to operate GNU Taler in Germany',source:'Hacker News',date:'2026-10-22T16:14:31.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.taler.net/en/news/2026-13.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-23T02:19:38.000Z"
+           data-url="https://www.awakin.org/v2/read/view.php?tid=468">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.awakin.org/v2/read/view.php?tid=468',title:'This I Believe',source:'Hacker News',date:'2026-10-23T02:19:38.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.awakin.org/v2/read/view.php?tid=468" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 221</span><span class="badge">💬 84</span>
+              <span class="date">23 de out. de 2026</span>
+              <span class="badge">⬆ 28</span><span class="badge">💬 4</span>
             </div>
-            <h3 class="card-title">Getting ready to operate GNU Taler in Germany</h3>
+            <h3 class="card-title">This I Believe</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the foolishness of &quot;natural language programming&quot; (1978)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-10-23T00:52:01.000Z"
+           data-url="https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html',title:'The foolishness of &quot;natural language programming&quot; (1978)',source:'Hacker News',date:'2026-10-23T00:52:01.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">23 de out. de 2026</span>
+              <span class="badge">⬆ 89</span><span class="badge">💬 60</span>
+            </div>
+            <h3 class="card-title">The foolishness of "natural language programming" (1978)</h3>
             
           </div>
         </a>
@@ -1638,7 +1634,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 318</span><span class="badge">💬 120</span>
+              <span class="badge">⬆ 370</span><span class="badge">💬 137</span>
             </div>
             <h3 class="card-title">Run full iOS 16.5 firmware on Android Devices</h3>
             <p class="card-desc">https:&#x2F;&#x2F;hackios-web.vercel.app&#x2F;en</p>
@@ -1646,67 +1642,45 @@
         </a>
       </div>
       <div class="card"
-           data-title="mapping the northern sky"
+           data-title="getting ready to operate gnu taler in germany"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-22T23:56:39.000Z"
-           data-url="https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/',title:'Mapping the Northern Sky',source:'Hacker News',date:'2026-10-22T23:56:39.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.maps.com/star-map-charts-stars-and-constellations-of-northern-hemisphere/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-22T16:14:31.000Z"
+           data-url="https://www.taler.net/en/news/2026-13.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.taler.net/en/news/2026-13.html',title:'Getting ready to operate GNU Taler in Germany',source:'Hacker News',date:'2026-10-22T16:14:31.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.taler.net/en/news/2026-13.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 7</span>
+              <span class="badge">⬆ 248</span><span class="badge">💬 99</span>
             </div>
-            <h3 class="card-title">Mapping the Northern Sky</h3>
+            <h3 class="card-title">Getting ready to operate GNU Taler in Germany</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="hedra is a 3d open world game i wrote from scratch while in highschool"
+           data-title="jank – the native clojure dialect with seamless c++ interop"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-10-22T18:44:36.000Z"
-           data-url="https://github.com/maxilevi/project-hedra/tree/pre-ai">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/maxilevi/project-hedra/tree/pre-ai',title:'Hedra is a 3D open world game I wrote from scratch while in highschool',source:'Hacker News',date:'2026-10-22T18:44:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/maxilevi/project-hedra/tree/pre-ai" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-10-22T23:56:36.000Z"
+           data-url="https://jank-lang.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://jank-lang.org/',title:'Jank – The native Clojure dialect with seamless C++ interop',source:'Hacker News',date:'2026-10-22T23:56:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://jank-lang.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 119</span><span class="badge">💬 28</span>
+              <span class="badge">⬆ 57</span><span class="badge">💬 2</span>
             </div>
-            <h3 class="card-title">Hedra is a 3D open world game I wrote from scratch while in highschool</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="emudhra to exit global ssl/tls certificate business"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-22T13:33:39.000Z"
-           data-url="https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business',title:'eMudhra to exit global SSL/TLS certificate business',source:'Hacker News',date:'2026-10-22T13:33:39.000Z',image:'/images/press-release/thumbs/emudhra-to-exit-global-ssl-tls-certificate-business.jpg',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://emudhra.com/en/press-release/emudhra-to-exit-global-ssl-tls-certificate-business" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/images/press-release/thumbs/emudhra-to-exit-global-ssl-tls-certificate-business.jpg')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 914</span><span class="badge">💬 623</span>
-            </div>
-            <h3 class="card-title">eMudhra to exit global SSL/TLS certificate business</h3>
+            <h3 class="card-title">Jank – The native Clojure dialect with seamless C++ interop</h3>
             
           </div>
         </a>
@@ -1726,7 +1700,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 347</span><span class="badge">💬 145</span>
+              <span class="badge">⬆ 464</span><span class="badge">💬 190</span>
             </div>
             <h3 class="card-title">Tell HN: I unknowingly broke the PHP RCE embargo. I am sorry.</h3>
             <p class="card-desc">I posted here about the then-upcoming PHP RCEs related to CVE-2026-109618 &amp; CVE-2026-109619. I appreciate this has had considerable knock-on effec…</p>
@@ -1748,31 +1722,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 194</span><span class="badge">💬 197</span>
+              <span class="badge">⬆ 266</span><span class="badge">💬 231</span>
             </div>
             <h3 class="card-title">Xbox wants you to pay 24 to 40 cents per hour to stream games you bought</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="jared kushner hacked phone reveals secret negotiations, millions in transactions"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-10-22T21:24:41.000Z"
-           data-url="https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations',title:'Jared Kushner Hacked Phone Reveals Secret Negotiations, Millions in Transactions',source:'Hacker News',date:'2026-10-22T21:24:41.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://www.vanityfair.com/story/jared-kushner-hacked-phone-secret-negotiations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">22 de out. de 2026</span>
-              <span class="badge">⬆ 280</span><span class="badge">💬 117</span>
-            </div>
-            <h3 class="card-title">Jared Kushner Hacked Phone Reveals Secret Negotiations, Millions in Transactions</h3>
             
           </div>
         </a>
@@ -1888,46 +1840,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="sketch2sim: an end-to-end modular framework for hand-drawn circuit analysis"
-           data-desc="arxiv:2610.28836v1 announce type: new abstract: this study proposes a sketch-to-simulation system to solve handwritten circuit diagrams. the system converts raw images into a simulation program with i"
+           data-title="when stable and preferred semantics agree: a path-based approach"
+           data-desc="arxiv:2610.30176v1 announce type: new abstract: we investigate structural conditions under which preferred and stable semantics agree in abstract argumentation frameworks. our approach is based on sui"
            data-source="arxiv"
            data-cat="Tecnologia"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28836">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28836',title:'Sketch2Sim: an end-to-end modular framework for hand-drawn circuit analysis',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28836v1 Announce Type: new Abstract: This study proposes a sketch-to-simulation system to solve handwritten circuit diagrams. The system co',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28836" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30176">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30176',title:'When Stable and Preferred Semantics Agree: A Path-Based Approach',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30176v1 Announce Type: new Abstract: We investigate structural conditions under which preferred and stable semantics agree in abstract argu',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30176" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Sketch2Sim: an end-to-end modular framework for hand-drawn circuit analysis</h3>
-            <p class="card-desc">arXiv:2610.28836v1 Announce Type: new Abstract: This study proposes a sketch-to-simulation system to solve handwritten circuit diagrams. The system co…</p>
+            <h3 class="card-title">When Stable and Preferred Semantics Agree: A Path-Based Approach</h3>
+            <p class="card-desc">arXiv:2610.30176v1 Announce Type: new Abstract: We investigate structural conditions under which preferred and stable semantics agree in abstract argu…</p>
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="simply logical -- the first three decades"
-           data-desc="arxiv:2610.28912v1 announce type: new abstract: this paper charts the evolution of the prolog textbook simply logical -- intelligent reasoning by example from print with runnable programmes on a 3.5-i"
+           data-title="soft ontology priors over latent concept posteriors for weakly supervised neuro-symbolic learning"
+           data-desc="arxiv:2610.30391v1 announce type: new abstract: neuro-symbolic (nesy) predictors that supervise only the task label suffer from reasoning shortcuts: distinct concept mappings achieve the same maximum "
            data-source="arxiv"
            data-cat="Tecnologia"
-           data-date="Thu, 22 Oct 2026 00:00:00 -0400"
-           data-url="https://arxiv.org/abs/2610.28912">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.28912',title:'Simply Logical -- The First Three Decades',source:'arxiv',date:'Thu, 22 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.28912v1 Announce Type: new Abstract: This paper charts the evolution of the Prolog textbook Simply Logical -- Intelligent Reasoning by Exam',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://arxiv.org/abs/2610.28912" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="Fri, 23 Oct 2026 00:00:00 -0400"
+           data-url="https://arxiv.org/abs/2610.30391">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://arxiv.org/abs/2610.30391',title:'Soft Ontology Priors over Latent Concept Posteriors for Weakly Supervised Neuro-Symbolic Learning',source:'arxiv',date:'Fri, 23 Oct 2026 00:00:00 -0400',image:'/static/browse/0.3.4/images/arxiv-logo-fb.png',description:'arXiv:2610.30391v1 Announce Type: new Abstract: Neuro-symbolic (NeSy) predictors that supervise only the task label suffer from reasoning shortcuts: d',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://arxiv.org/abs/2610.30391" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img" style="background-image:url('/static/browse/0.3.4/images/arxiv-logo-fb.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://arxiv.org/favicon.ico" alt="arxiv" onerror="this.style.display='none'">
               <span class="source-name">arxiv</span>
-              <span class="date">22 de out. de 2026</span>
+              <span class="date">23 de out. de 2026</span>
               
             </div>
-            <h3 class="card-title">Simply Logical -- The First Three Decades</h3>
-            <p class="card-desc">arXiv:2610.28912v1 Announce Type: new Abstract: This paper charts the evolution of the Prolog textbook Simply Logical -- Intelligent Reasoning by Exam…</p>
+            <h3 class="card-title">Soft Ontology Priors over Latent Concept Posteriors for Weakly Supervised Neuro-Symbolic Learning</h3>
+            <p class="card-desc">arXiv:2610.30391v1 Announce Type: new Abstract: Neuro-symbolic (NeSy) predictors that supervise only the task label suffer from reasoning shortcuts: d…</p>
           </div>
         </a>
       </div></div>
