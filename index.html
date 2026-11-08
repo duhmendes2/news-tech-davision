@@ -215,7 +215,7 @@
     <div class="logo">🔥 HotNews</div>
     <div class="header-meta">
       <strong>IA & Tecnologia</strong><br>
-      Atualizado: 08/11/2026, 10:47:12
+      Atualizado: 08/11/2026, 15:39:24
     </div>
     <div class="header-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="triggerUpdate()">↻ Atualizar</button>
@@ -224,7 +224,7 @@
 
   <nav class="toolbar">
     <button class="nav-btn active" data-cat="all" onclick="filterByCategory('all')">✦ Todas</button>
-    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Produção de Conteúdo" onclick="filterByCategory('Produção de Conteúdo')">🎬 Produção de Conteúdo</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
+    <button class="nav-btn" data-cat="IA" onclick="filterByCategory('IA')">🤖 IA</button><button class="nav-btn" data-cat="Tecnologia" onclick="filterByCategory('Tecnologia')">💻 Tecnologia</button><button class="nav-btn" data-cat="saved" onclick="filterByCategory('saved')">⭐ Salvos <span class="saved-count" id="savedCount">0</span></button>
     <div class="toolbar-sep"></div>
     <div class="date-filter-group">
       <button class="date-btn active" data-date="all"   onclick="filterByDate('all')">Todos os dias</button>
@@ -240,8 +240,8 @@
 
   <main>
     <div class="stats" id="statsBar">
-      <div class="stat"><div class="stat-value" id="statTotal">37</div><div class="stat-label">notícias (hoje + ontem)</div></div>
-      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">15</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#ec4899" id="stat-produo-de-contedo">1</div><div class="stat-label">Produção de Conteúdo</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">21</div><div class="stat-label">Tecnologia</div></div>
+      <div class="stat"><div class="stat-value" id="statTotal">42</div><div class="stat-label">notícias (hoje + ontem)</div></div>
+      <div class="stat"><div class="stat-value" style="color:#6366f1" id="stat-ia">19</div><div class="stat-label">IA</div></div><div class="stat"><div class="stat-value" style="color:#10b981" id="stat-tecnologia">23</div><div class="stat-label">Tecnologia</div></div>
     </div>
 
     <div class="result-info" id="resultInfo" style="display:none"></div>
@@ -249,8 +249,74 @@
     <div id="sections">
       
     <section class="category" id="sec-ia" data-cat="IA">
-      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">15</span></h2>
+      <h2 class="category-title" style="--cat-color:#6366f1">🤖 IA <span class="count" id="cnt-ia">19</span></h2>
       <div class="cards-grid" id="grid-ia">
+      <div class="card"
+           data-title="slashdot"
+           data-desc="be careful with the file .claude/settings.local.json, warns the hacker news: passwords and api keys that developers typed into commands they approved in claude code are sitting in public github reposi"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-11-08T18:34:00+00:00"
+           data-url="https://slashdot.org/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-11-08T18:34:00+00:00',image:'',description:'Be careful with the file .claude/settings.local.json, warns The Hacker News: Passwords and API keys that developers typed into commands they approved ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>S</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Slashdot</h3>
+            <p class="card-desc">Be careful with the file .claude/settings.local.json, warns The Hacker News: Passwords and API keys that developers typed into commands they approved …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="norwegians release foss gnome software for music recording, internet radio, and cameras"
+           data-desc="ole (slashdot reader #19,909) writes in about his free, norwegian open-source music recording studio for gnome called garagejam, which he says allows musicians to compose, record, and share original m"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-11-08T16:34:00+00:00"
+           data-url="https://entertainment.slashdot.org/story/26/11/08/039242/norwegians-release-foss-gnome-software-for-music-recording-internet-radio-and-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://entertainment.slashdot.org/story/26/11/08/039242/norwegians-release-foss-gnome-software-for-music-recording-internet-radio-and-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Norwegians Release FOSS GNOME Software for Music Recording, Internet Radio, and Cameras',source:'slashdot',date:'2026-11-08T16:34:00+00:00',image:'https://a.fsdn.com/sd/topics/music_64.png',description:'ole (Slashdot reader #19,909) writes in about his free, Norwegian open-source music recording studio for GNOME called GarageJam, which he says allows ',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://entertainment.slashdot.org/story/26/11/08/039242/norwegians-release-foss-gnome-software-for-music-recording-internet-radio-and-cameras?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/music_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Norwegians Release FOSS GNOME Software for Music Recording, Internet Radio, and Cameras</h3>
+            <p class="card-desc">ole (Slashdot reader #19,909) writes in about his free, Norwegian open-source music recording studio for GNOME called GarageJam, which he says allows …</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="python's cves triple. anthropic funds a new security developer"
+           data-desc="in the last year cves have increased 3x for python and its package manager pip, according to python's security developer in residence seth larson. "and the amount of malware published and removed from"
+           data-source="slashdot"
+           data-cat="IA"
+           data-date="2026-11-08T15:34:00+00:00"
+           data-url="https://developers.slashdot.org/story/26/11/08/0558256/pythons-cves-triple-anthropic-funds-a-new-security-developer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://developers.slashdot.org/story/26/11/08/0558256/pythons-cves-triple-anthropic-funds-a-new-security-developer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Python\'s CVEs Triple. Anthropic Funds a New Security Developer',source:'slashdot',date:'2026-11-08T15:34:00+00:00',image:'https://a.fsdn.com/sd/topics/python_64.png',description:'In the last year CVEs have increased 3x for Python and its package manager Pip, according to Python\'s security developer in residence Seth Larson. "An',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://developers.slashdot.org/story/26/11/08/0558256/pythons-cves-triple-anthropic-funds-a-new-security-developer?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/python_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Python's CVEs Triple. Anthropic Funds a New Security Developer</h3>
+            <p class="card-desc">In the last year CVEs have increased 3x for Python and its package manager Pip, according to Python's security developer in residence Seth Larson. "An…</p>
+          </div>
+        </a>
+      </div>
       <div class="card"
            data-title="scifi magazine 'starlog' relaunches, and back issues return to internet archive"
            data-desc="slashdot reader sandbagger brings news about the classic science ficdtion magazine starlog. it's 33-year run from 1976 to 2009 is now available on the internet archive. and 17 years after publishing i"
@@ -384,24 +450,24 @@
         </a>
       </div>
       <div class="card"
-           data-title="vibrating mattress helps clear alzheimer's protein from the brain"
-           data-desc="a vibrating mattress combined with two pills that release nitric oxide enhanced the brain's ability to clear an alzheimer's-related protein. according to new scientist, the experiment "caused the brai"
-           data-source="slashdot"
+           data-title="goldman sachs is pulling claude code from its bankers and traders"
+           data-desc=""
+           data-source="hacker news"
            data-cat="IA"
-           data-date="2026-11-07T07:00:00+00:00"
-           data-url="https://science.slashdot.org/story/26/11/07/0216257/vibrating-mattress-helps-clear-alzheimers-protein-from-the-brain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://science.slashdot.org/story/26/11/07/0216257/vibrating-mattress-helps-clear-alzheimers-protein-from-the-brain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Vibrating Mattress Helps Clear Alzheimer\'s Protein From the Brain',source:'slashdot',date:'2026-11-07T07:00:00+00:00',image:'https://a.fsdn.com/sd/topics/medicine_64.png?refresh=now',description:'A vibrating mattress combined with two pills that release nitric oxide enhanced the brain\'s ability to clear an Alzheimer\'s-related protein. According',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://science.slashdot.org/story/26/11/07/0216257/vibrating-mattress-helps-clear-alzheimers-protein-from-the-brain?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/medicine_64.png?refresh=now')"></div>
+           data-date="2026-11-08T18:16:07.000Z"
+           data-url="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers',title:'Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders',source:'Hacker News',date:'2026-11-08T18:16:07.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de nov. de 2026</span>
-              
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de nov. de 2026</span>
+              <span class="badge">⬆ 7</span>
             </div>
-            <h3 class="card-title">Vibrating Mattress Helps Clear Alzheimer's Protein From the Brain</h3>
-            <p class="card-desc">A vibrating mattress combined with two pills that release nitric oxide enhanced the brain's ability to clear an Alzheimer's-related protein. According…</p>
+            <h3 class="card-title">Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders</h3>
+            
           </div>
         </a>
       </div>
@@ -420,7 +486,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 52</span><span class="badge">💬 19</span>
+              <span class="badge">⬆ 248</span><span class="badge">💬 79</span>
             </div>
             <h3 class="card-title">Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU</h3>
             
@@ -434,7 +500,7 @@
            data-cat="IA"
            data-date="2026-11-08T03:11:48.000Z"
            data-url="https://caleb.software/posts/claude-to-pi.html">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://caleb.software/posts/claude-to-pi.html',title:'Goodbye Claude, Hello Pi',source:'Hacker News',date:'2026-11-08T03:11:48.000Z',image:'',description:'',cat:'IA'})">⭐</button>
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://caleb.software/posts/claude-to-pi.html',title:'Goodbye Claude, hello Pi',source:'Hacker News',date:'2026-11-08T03:11:48.000Z',image:'',description:'',cat:'IA'})">⭐</button>
         <a class="card-link" href="https://caleb.software/posts/claude-to-pi.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
@@ -442,9 +508,9 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 427</span><span class="badge">💬 269</span>
+              <span class="badge">⬆ 580</span><span class="badge">💬 372</span>
             </div>
-            <h3 class="card-title">Goodbye Claude, Hello Pi</h3>
+            <h3 class="card-title">Goodbye Claude, hello Pi</h3>
             
           </div>
         </a>
@@ -464,7 +530,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 455</span><span class="badge">💬 318</span>
+              <span class="badge">⬆ 513</span><span class="badge">💬 374</span>
             </div>
             <h3 class="card-title">Claude Code's "Don't Ask Again" exposes passwords in 1,122 public GitHub files</h3>
             
@@ -486,7 +552,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 79</span><span class="badge">💬 70</span>
+              <span class="badge">⬆ 134</span><span class="badge">💬 95</span>
             </div>
             <h3 class="card-title">Agent memory needs its OpenTelemetry moment</h3>
             
@@ -494,24 +560,46 @@
         </a>
       </div>
       <div class="card"
-           data-title="consumer brain wave headsets threaten privacy"
-           data-desc=""
-           data-source="hacker news"
+           data-title="he arrested a hacker, then spent 18 months clearing his own name. now he’s a cybersecurity vc."
+           data-desc="stephen ward, a former secret service agent and home depot ciso, is preparing a second fund of roughly $250 million for brightmind partners."
+           data-source="techcrunch"
            data-cat="IA"
-           data-date="2026-11-08T02:02:38.000Z"
-           data-url="https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F',title:'Consumer brain wave headsets threaten privacy',source:'Hacker News',date:'2026-11-08T02:02:38.000Z',image:'',description:'',cat:'IA'})">⭐</button>
-        <a class="card-link" href="https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Sun, 08 Nov 2026 17:30:00 +0000"
+           data-url="https://techcrunch.com/2026/11/08/the-ex-secret-service-agent-who-flipped-a-hacker-is-now-raising-a-second-250m-cybersecurity-fund/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/11/08/the-ex-secret-service-agent-who-flipped-a-hacker-is-now-raising-a-second-250m-cybersecurity-fund/',title:'He arrested a hacker, then spent 18 months clearing his own name. Now he’s a cybersecurity VC.',source:'techcrunch',date:'Sun, 08 Nov 2026 17:30:00 +0000',image:'',description:'Stephen Ward, a former Secret Service agent and Home Depot CISO, is preparing a second fund of roughly $250 million for Brightmind Partners.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/11/08/the-ex-secret-service-agent-who-flipped-a-hacker-is-now-raising-a-second-250m-cybersecurity-fund/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 81</span><span class="badge">💬 45</span>
+              
             </div>
-            <h3 class="card-title">Consumer brain wave headsets threaten privacy</h3>
-            
+            <h3 class="card-title">He arrested a hacker, then spent 18 months clearing his own name. Now he’s a cybersecurity VC.</h3>
+            <p class="card-desc">Stephen Ward, a former Secret Service agent and Home Depot CISO, is preparing a second fund of roughly $250 million for Brightmind Partners.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="techcrunch mobility: the cybertruck experiment is over"
+           data-desc="welcome back to techcrunch mobility, your hub for the future of transportation and now, more than ever, the role ai is playing in it."
+           data-source="techcrunch"
+           data-cat="IA"
+           data-date="Sun, 08 Nov 2026 17:02:00 +0000"
+           data-url="https://techcrunch.com/2026/11/08/techcrunch-mobility-the-cybertruck-experiment-is-over/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/11/08/techcrunch-mobility-the-cybertruck-experiment-is-over/',title:'TechCrunch Mobility: The Cybertruck experiment is over',source:'techcrunch',date:'Sun, 08 Nov 2026 17:02:00 +0000',image:'',description:'Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.',cat:'IA'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/11/08/techcrunch-mobility-the-cybertruck-experiment-is-over/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">TechCrunch Mobility: The Cybertruck experiment is over</h3>
+            <p class="card-desc">Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, the role AI is playing in it.</p>
           </div>
         </a>
       </div>
@@ -582,45 +670,19 @@
         </a>
       </div></div>
     </section>
-    <section class="category" id="sec-produo-de-contedo" data-cat="Produção de Conteúdo">
-      <h2 class="category-title" style="--cat-color:#ec4899">🎬 Produção de Conteúdo <span class="count" id="cnt-produo-de-contedo">1</span></h2>
-      <div class="cards-grid" id="grid-produo-de-contedo">
-      <div class="card"
-           data-title="eu says tiktok's 'rabbit hole' effect must stop"
-           data-desc="the european commission has preliminarily found that tiktok violates the digital services act because its for you recommendation algorithm can create a "rabbit hole effect," repeatedly exposing users "
-           data-source="slashdot"
-           data-cat="Produção de Conteúdo"
-           data-date="2026-11-07T00:00:00+00:00"
-           data-url="https://tech.slashdot.org/story/26/11/06/2210231/eu-says-tiktoks-rabbit-hole-effect-must-stop?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://tech.slashdot.org/story/26/11/06/2210231/eu-says-tiktoks-rabbit-hole-effect-must-stop?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'EU Says TikTok\'s \'Rabbit Hole\' Effect Must Stop',source:'slashdot',date:'2026-11-07T00:00:00+00:00',image:'https://a.fsdn.com/sd/topics/social_64.png',description:'The European Commission has preliminarily found that TikTok violates the Digital Services Act because its For You recommendation algorithm can create ',cat:'Produção de Conteúdo'})">⭐</button>
-        <a class="card-link" href="https://tech.slashdot.org/story/26/11/06/2210231/eu-says-tiktoks-rabbit-hole-effect-must-stop?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/social_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de nov. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">EU Says TikTok's 'Rabbit Hole' Effect Must Stop</h3>
-            <p class="card-desc">The European Commission has preliminarily found that TikTok violates the Digital Services Act because its For You recommendation algorithm can create …</p>
-          </div>
-        </a>
-      </div></div>
-    </section>
     <section class="category" id="sec-tecnologia" data-cat="Tecnologia">
-      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">21</span></h2>
+      <h2 class="category-title" style="--cat-color:#10b981">💻 Tecnologia <span class="count" id="cnt-tecnologia">23</span></h2>
       <div class="cards-grid" id="grid-tecnologia">
       <div class="card"
-           data-title="slashdot"
-           data-desc=""aaron swartz would have turned forty this year," writes fsf deputy director sean o'brien. "november 8 is aaron swartz day, when we remember a pioneer of free software and information sharing whose co"
+           data-title="do data centers have a smaller effect on electricity prices than we think?"
+           data-desc=""according to a new study by researchers at harvard university and the university of pennsylvania, data centers are probably having only a small effect on residential electricity prices," reports the "
            data-source="slashdot"
            data-cat="Tecnologia"
-           data-date="2026-11-08T12:34:00+00:00"
-           data-url="https://slashdot.org/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://slashdot.org/',title:'Slashdot',source:'slashdot',date:'2026-11-08T12:34:00+00:00',image:'',description:'"Aaron Swartz would have turned forty this year," writes FSF deputy director Sean O\'Brien. "November 8 is Aaron Swartz Day, when we remember a pioneer',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://slashdot.org/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>S</span></div>
+           data-date="2026-11-08T17:34:00+00:00"
+           data-url="https://hardware.slashdot.org/story/26/11/07/0412226/do-data-centers-have-a-smaller-effect-on-electricity-prices-than-we-think?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://hardware.slashdot.org/story/26/11/07/0412226/do-data-centers-have-a-smaller-effect-on-electricity-prices-than-we-think?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Do Data Centers Have a Smaller Effect on Electricity Prices Than We Think?',source:'slashdot',date:'2026-11-08T17:34:00+00:00',image:'https://a.fsdn.com/sd/topics/power_64.png',description:'"According to a new study by researchers at Harvard University and the University of Pennsylvania, data centers are probably having only a small effec',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://hardware.slashdot.org/story/26/11/07/0412226/do-data-centers-have-a-smaller-effect-on-electricity-prices-than-we-think?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/power_64.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
@@ -628,7 +690,29 @@
               <span class="date">08 de nov. de 2026</span>
               
             </div>
-            <h3 class="card-title">Slashdot</h3>
+            <h3 class="card-title">Do Data Centers Have a Smaller Effect on Electricity Prices Than We Think?</h3>
+            <p class="card-desc">"According to a new study by researchers at Harvard University and the University of Pennsylvania, data centers are probably having only a small effec…</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="aaron swartz would've been 40 today.  his 'legacy lives on' says fsf"
+           data-desc=""aaron swartz would have turned forty this year," writes fsf deputy director sean o'brien. "november 8 is aaron swartz day, when we remember a pioneer of free software and information sharing whose co"
+           data-source="slashdot"
+           data-cat="Tecnologia"
+           data-date="2026-11-08T12:34:00+00:00"
+           data-url="https://yro.slashdot.org/story/26/11/07/0825245/aaron-swartz-wouldve-been-40-today-his-legacy-lives-on-says-fsf?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/11/07/0825245/aaron-swartz-wouldve-been-40-today-his-legacy-lives-on-says-fsf?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Aaron Swartz Would\'ve Been 40 Today.  His \'Legacy Lives On\' Says FSF',source:'slashdot',date:'2026-11-08T12:34:00+00:00',image:'https://a.fsdn.com/sd/topics/eff_64.png',description:'"Aaron Swartz would have turned forty this year," writes FSF deputy director Sean O\'Brien. "November 8 is Aaron Swartz Day, when we remember a pioneer',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://yro.slashdot.org/story/26/11/07/0825245/aaron-swartz-wouldve-been-40-today-his-legacy-lives-on-says-fsf?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/eff_64.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
+              <span class="source-name">slashdot</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Aaron Swartz Would've Been 40 Today.  His 'Legacy Lives On' Says FSF</h3>
             <p class="card-desc">"Aaron Swartz would have turned forty this year," writes FSF deputy director Sean O'Brien. "November 8 is Aaron Swartz Day, when we remember a pioneer…</p>
           </div>
         </a>
@@ -722,89 +806,89 @@
         </a>
       </div>
       <div class="card"
-           data-title="cryosphere faces permanent damage when world overshoots 1.5c, scientists warn"
-           data-desc="a un-backed report warns that even temporarily overshooting the paris agreement's 1.5c warming target could cause permanent and widespread losses of glaciers, snow and polar ice sheets. with greenland"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-11-07T11:00:00+00:00"
-           data-url="https://news.slashdot.org/story/26/11/07/0249215/cryosphere-faces-permanent-damage-when-world-overshoots-15c-scientists-warn?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://news.slashdot.org/story/26/11/07/0249215/cryosphere-faces-permanent-damage-when-world-overshoots-15c-scientists-warn?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Cryosphere Faces Permanent Damage When World Overshoots 1.5C, Scientists Warn',source:'slashdot',date:'2026-11-07T11:00:00+00:00',image:'https://a.fsdn.com/sd/topics/earth_64.png',description:'A UN-backed report warns that even temporarily overshooting the Paris agreement\'s 1.5C warming target could cause permanent and widespread losses of g',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://news.slashdot.org/story/26/11/07/0249215/cryosphere-faces-permanent-damage-when-world-overshoots-15c-scientists-warn?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/earth_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de nov. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Cryosphere Faces Permanent Damage When World Overshoots 1.5C, Scientists Warn</h3>
-            <p class="card-desc">A UN-backed report warns that even temporarily overshooting the Paris agreement's 1.5C warming target could cause permanent and widespread losses of g…</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="mexico's senate approves isp rules to disconnect persistent online pirates"
-           data-desc="an anonymous reader quotes a report from torrentfreak: on tuesday, mexico's senate approved (pdf) a reform of the federal copyright law that ties isp liability to having a policy to terminate repeat i"
-           data-source="slashdot"
-           data-cat="Tecnologia"
-           data-date="2026-11-07T03:30:00+00:00"
-           data-url="https://yro.slashdot.org/story/26/11/07/025259/mexicos-senate-approves-isp-rules-to-disconnect-persistent-online-pirates?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://yro.slashdot.org/story/26/11/07/025259/mexicos-senate-approves-isp-rules-to-disconnect-persistent-online-pirates?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed',title:'Mexico\'s Senate Approves ISP Rules To Disconnect Persistent Online Pirates',source:'slashdot',date:'2026-11-07T03:30:00+00:00',image:'https://a.fsdn.com/sd/topics/piracy_64.png',description:'An anonymous reader quotes a report from TorrentFreak: On Tuesday, Mexico\'s Senate approved (PDF) a reform of the Federal Copyright Law that ties ISP ',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://yro.slashdot.org/story/26/11/07/025259/mexicos-senate-approves-isp-rules-to-disconnect-persistent-online-pirates?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://a.fsdn.com/sd/topics/piracy_64.png')"></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://slashdot.org/favicon.ico" alt="slashdot" onerror="this.style.display='none'">
-              <span class="source-name">slashdot</span>
-              <span class="date">07 de nov. de 2026</span>
-              
-            </div>
-            <h3 class="card-title">Mexico's Senate Approves ISP Rules To Disconnect Persistent Online Pirates</h3>
-            <p class="card-desc">An anonymous reader quotes a report from TorrentFreak: On Tuesday, Mexico's Senate approved (PDF) a reform of the Federal Copyright Law that ties ISP …</p>
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="person of interest"
+           data-title="a field guide to captcha types and how they break"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-11-08T11:23:28.000Z"
-           data-url="https://krthr.co/person-of-interest/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://krthr.co/person-of-interest/',title:'Person of Interest',source:'Hacker News',date:'2026-11-08T11:23:28.000Z',image:'https://bear-images.sfo2.cdn.digitaloceanspaces.com/krthr/474167074_9348806235164701_1627609488563106497_n.webp',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://krthr.co/person-of-interest/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('https://bear-images.sfo2.cdn.digitaloceanspaces.com/krthr/474167074_9348806235164701_1627609488563106497_n.webp')"></div>
+           data-date="2026-11-08T17:09:55.000Z"
+           data-url="https://github.com/vsmutok/FuckCaptcha">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/vsmutok/FuckCaptcha',title:'A field guide to CAPTCHA types and how they break',source:'Hacker News',date:'2026-11-08T17:09:55.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://github.com/vsmutok/FuckCaptcha" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 121</span><span class="badge">💬 73</span>
+              <span class="badge">⬆ 17</span><span class="badge">💬 1</span>
             </div>
-            <h3 class="card-title">Person of Interest</h3>
+            <h3 class="card-title">A field guide to CAPTCHA types and how they break</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="petered (what happens after the peter principle)"
+           data-title="a little snitch for windows"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-11-08T10:56:43.000Z"
-           data-url="https://aworkinglibrary.com/writing/petered">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://aworkinglibrary.com/writing/petered',title:'Petered (what happens after the Peter Principle)',source:'Hacker News',date:'2026-11-08T10:56:43.000Z',image:'/img/social-2026.png',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://aworkinglibrary.com/writing/petered" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img" style="background-image:url('/img/social-2026.png')"></div>
+           data-date="2026-11-08T17:16:07.000Z"
+           data-url="https://packethound.app/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://packethound.app/',title:'A Little Snitch for Windows',source:'Hacker News',date:'2026-11-08T17:16:07.000Z',image:'https://packethound.app/assets/img/social-preview.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://packethound.app/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://packethound.app/assets/img/social-preview.png')"></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 67</span><span class="badge">💬 35</span>
+              <span class="badge">⬆ 9</span><span class="badge">💬 1</span>
             </div>
-            <h3 class="card-title">Petered (what happens after the Peter Principle)</h3>
+            <h3 class="card-title">A Little Snitch for Windows</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="writing as a thinking tool"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-11-08T10:41:52.000Z"
+           data-url="http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html',title:'Writing as a thinking tool',source:'Hacker News',date:'2026-11-08T10:41:52.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de nov. de 2026</span>
+              <span class="badge">⬆ 148</span><span class="badge">💬 42</span>
+            </div>
+            <h3 class="card-title">Writing as a thinking tool</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="i'm not a fan of deno's security model (2024)"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-11-08T14:42:38.000Z"
+           data-url="https://goldstein.lol/posts/deno-security/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://goldstein.lol/posts/deno-security/',title:'I\'m not a fan of Deno\'s security model (2024)',source:'Hacker News',date:'2026-11-08T14:42:38.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://goldstein.lol/posts/deno-security/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>H</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de nov. de 2026</span>
+              <span class="badge">⬆ 39</span><span class="badge">💬 17</span>
+            </div>
+            <h3 class="card-title">I'm not a fan of Deno's security model (2024)</h3>
             
           </div>
         </a>
@@ -824,7 +908,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 30</span><span class="badge">💬 6</span>
+              <span class="badge">⬆ 75</span><span class="badge">💬 11</span>
             </div>
             <h3 class="card-title">JIT bitmap text rendering for microcontrollers</h3>
             
@@ -846,7 +930,7 @@
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 648</span><span class="badge">💬 119</span>
+              <span class="badge">⬆ 711</span><span class="badge">💬 127</span>
             </div>
             <h3 class="card-title">What I run on my $10 USD OpenStick homelab</h3>
             
@@ -854,112 +938,134 @@
         </a>
       </div>
       <div class="card"
-           data-title="need for speed underground 2 online in the browser"
+           data-title="how to prove equations using diagrams, part 1"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-11-07T09:36:36.000Z"
-           data-url="https://nfsu2.xyz/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://nfsu2.xyz/',title:'Need for Speed Underground 2 online in the browser',source:'Hacker News',date:'2026-11-07T09:36:36.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://nfsu2.xyz/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 1043</span><span class="badge">💬 258</span>
-            </div>
-            <h3 class="card-title">Need for Speed Underground 2 online in the browser</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="making any integer with four 2s (2025)"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-11-07T22:38:58.000Z"
-           data-url="https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/',title:'Making any integer with four 2s (2025)',source:'Hacker News',date:'2026-11-07T22:38:58.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
-          <div class="card-body">
-            <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 160</span><span class="badge">💬 44</span>
-            </div>
-            <h3 class="card-title">Making any integer with four 2s (2025)</h3>
-            
-          </div>
-        </a>
-      </div>
-      <div class="card"
-           data-title="wavedudenext 2d wave simulator"
-           data-desc=""
-           data-source="hacker news"
-           data-cat="Tecnologia"
-           data-date="2026-11-08T07:09:02.000Z"
-           data-url="https://github.com/graealex/WaveDudeNext">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://github.com/graealex/WaveDudeNext',title:'WaveDudeNext 2D Wave Simulator',source:'Hacker News',date:'2026-11-08T07:09:02.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://github.com/graealex/WaveDudeNext" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-11-08T12:51:38.000Z"
+           data-url="https://www.epatters.org/post/e-graphs-1/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.epatters.org/post/e-graphs-1/',title:'How to prove equations using diagrams, part 1',source:'Hacker News',date:'2026-11-08T12:51:38.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.epatters.org/post/e-graphs-1/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">08 de nov. de 2026</span>
-              <span class="badge">⬆ 30</span><span class="badge">💬 7</span>
+              <span class="badge">⬆ 26</span><span class="badge">💬 3</span>
             </div>
-            <h3 class="card-title">WaveDudeNext 2D Wave Simulator</h3>
+            <h3 class="card-title">How to prove equations using diagrams, part 1</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="every mac comes with an (undocumented) family member classifier"
+           data-title="petered"
            data-desc=""
            data-source="hacker news"
            data-cat="Tecnologia"
-           data-date="2026-11-07T09:46:03.000Z"
-           data-url="https://8rank.ai/game/apple-intelligence-personal-knowledge-graph">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://8rank.ai/game/apple-intelligence-personal-knowledge-graph',title:'Every Mac comes with an (undocumented) family member classifier',source:'Hacker News',date:'2026-11-07T09:46:03.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://8rank.ai/game/apple-intelligence-personal-knowledge-graph" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+           data-date="2026-11-08T10:56:43.000Z"
+           data-url="https://aworkinglibrary.com/writing/petered">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://aworkinglibrary.com/writing/petered',title:'Petered',source:'Hacker News',date:'2026-11-08T10:56:43.000Z',image:'/img/social-2026.png',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://aworkinglibrary.com/writing/petered" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('/img/social-2026.png')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de nov. de 2026</span>
+              <span class="badge">⬆ 130</span><span class="badge">💬 81</span>
+            </div>
+            <h3 class="card-title">Petered</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="person of interest"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-11-08T11:23:28.000Z"
+           data-url="https://krthr.co/person-of-interest/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://krthr.co/person-of-interest/',title:'Person of Interest',source:'Hacker News',date:'2026-11-08T11:23:28.000Z',image:'https://bear-images.sfo2.cdn.digitaloceanspaces.com/krthr/474167074_9348806235164701_1627609488563106497_n.webp',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://krthr.co/person-of-interest/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img" style="background-image:url('https://bear-images.sfo2.cdn.digitaloceanspaces.com/krthr/474167074_9348806235164701_1627609488563106497_n.webp')"></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
+              <span class="source-name">Hacker News</span>
+              <span class="date">08 de nov. de 2026</span>
+              <span class="badge">⬆ 246</span><span class="badge">💬 164</span>
+            </div>
+            <h3 class="card-title">Person of Interest</h3>
+            
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="the gordon gekko effect: the role of culture in the financial industry (2016) [pdf]"
+           data-desc=""
+           data-source="hacker news"
+           data-cat="Tecnologia"
+           data-date="2026-11-07T14:18:45.000Z"
+           data-url="https://www.newyorkfed.org/medialibrary/media/research/epr/2016/epr_2016_gordon-gekko-effect_lo.pdf">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://www.newyorkfed.org/medialibrary/media/research/epr/2016/epr_2016_gordon-gekko-effect_lo.pdf',title:'The Gordon Gekko effect: The role of culture in the financial industry (2016) [pdf]',source:'Hacker News',date:'2026-11-07T14:18:45.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://www.newyorkfed.org/medialibrary/media/research/epr/2016/epr_2016_gordon-gekko-effect_lo.pdf" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
           <div class="card-img card-img--placeholder"><span>H</span></div>
           <div class="card-body">
             <div class="card-meta">
               <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
               <span class="source-name">Hacker News</span>
               <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 763</span><span class="badge">💬 415</span>
+              <span class="badge">⬆ 71</span><span class="badge">💬 46</span>
             </div>
-            <h3 class="card-title">Every Mac comes with an (undocumented) family member classifier</h3>
+            <h3 class="card-title">The Gordon Gekko effect: The role of culture in the financial industry (2016) [pdf]</h3>
             
           </div>
         </a>
       </div>
       <div class="card"
-           data-title="maxxbench – &quot;nice deepswe score. but is it true?&quot;"
-           data-desc=""
-           data-source="hacker news"
+           data-title="snl has a new impression of elon musk, ‘the worst thing south africa has ever done’"
+           data-desc="snl seems to have its knives out for tech executives."
+           data-source="techcrunch"
            data-cat="Tecnologia"
-           data-date="2026-11-07T17:19:00.000Z"
-           data-url="https://maxxbench.unlap.ai/research/why-maxxbench/">
-        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://maxxbench.unlap.ai/research/why-maxxbench/',title:'MaxxBench – &quot;Nice DeepSWE score. But is it true?&quot;',source:'Hacker News',date:'2026-11-07T17:19:00.000Z',image:'',description:'',cat:'Tecnologia'})">⭐</button>
-        <a class="card-link" href="https://maxxbench.unlap.ai/research/why-maxxbench/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
-          <div class="card-img card-img--placeholder"><span>H</span></div>
+           data-date="Sun, 08 Nov 2026 18:00:04 +0000"
+           data-url="https://techcrunch.com/2026/11/08/snl-has-a-new-impression-of-elon-musk-the-worst-thing-south-africa-has-ever-done/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/11/08/snl-has-a-new-impression-of-elon-musk-the-worst-thing-south-africa-has-ever-done/',title:'SNL has a new impression of Elon Musk, ‘the worst thing South Africa has ever done’',source:'techcrunch',date:'Sun, 08 Nov 2026 18:00:04 +0000',image:'',description:'SNL seems to have its knives out for tech executives.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/11/08/snl-has-a-new-impression-of-elon-musk-the-worst-thing-south-africa-has-ever-done/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
           <div class="card-body">
             <div class="card-meta">
-              <img class="source-logo" src="https://news.ycombinator.com/favicon.ico" alt="Hacker News" onerror="this.style.display='none'">
-              <span class="source-name">Hacker News</span>
-              <span class="date">07 de nov. de 2026</span>
-              <span class="badge">⬆ 338</span><span class="badge">💬 91</span>
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de nov. de 2026</span>
+              
             </div>
-            <h3 class="card-title">MaxxBench – "Nice DeepSWE score. But is it true?"</h3>
-            
+            <h3 class="card-title">SNL has a new impression of Elon Musk, ‘the worst thing South Africa has ever done’</h3>
+            <p class="card-desc">SNL seems to have its knives out for tech executives.</p>
+          </div>
+        </a>
+      </div>
+      <div class="card"
+           data-title="ninja&#8217;s autobarista is impressively versatile, but one feature was a dealbreaker for me"
+           data-desc="the autobarista's "grind iq" technology allows the machine to analyze your coffee beans to inform how it pulls a shot of espresso."
+           data-source="techcrunch"
+           data-cat="Tecnologia"
+           data-date="Sun, 08 Nov 2026 15:00:00 +0000"
+           data-url="https://techcrunch.com/2026/11/08/ninjas-autobarista-is-impressively-versatile-but-one-feature-was-a-dealbreaker-for-me/">
+        <button class="save-btn" title="Salvar notícia" onclick="toggleSave(event, this, {url:'https://techcrunch.com/2026/11/08/ninjas-autobarista-is-impressively-versatile-but-one-feature-was-a-dealbreaker-for-me/',title:'Ninja&#8217;s AutoBarista is impressively versatile, but one feature was a dealbreaker for me',source:'techcrunch',date:'Sun, 08 Nov 2026 15:00:00 +0000',image:'',description:'The AutoBarista\'s "Grind iQ" technology allows the machine to analyze your coffee beans to inform how it pulls a shot of espresso.',cat:'Tecnologia'})">⭐</button>
+        <a class="card-link" href="https://techcrunch.com/2026/11/08/ninjas-autobarista-is-impressively-versatile-but-one-feature-was-a-dealbreaker-for-me/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;">
+          <div class="card-img card-img--placeholder"><span>T</span></div>
+          <div class="card-body">
+            <div class="card-meta">
+              <img class="source-logo" src="https://techcrunch.com/favicon.ico" alt="techcrunch" onerror="this.style.display='none'">
+              <span class="source-name">techcrunch</span>
+              <span class="date">08 de nov. de 2026</span>
+              
+            </div>
+            <h3 class="card-title">Ninja&#8217;s AutoBarista is impressively versatile, but one feature was a dealbreaker for me</h3>
+            <p class="card-desc">The AutoBarista's "Grind iQ" technology allows the machine to analyze your coffee beans to inform how it pulls a shot of espresso.</p>
           </div>
         </a>
       </div>
